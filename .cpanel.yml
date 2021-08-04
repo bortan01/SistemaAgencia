@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/a147409/admin/
-    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
     - /bin/cp home.php $DEPLOYPATH
     - /bin/cp reset_password.php $DEPLOYPATH
 
