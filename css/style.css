@@ -1,0 +1,84 @@
+/*mis estilos JcMoz*/
+
+#titulo {}
+
+.hidden {
+    visibility: hidden;
+}
+
+.center {
+    width: 75%;
+    margin: 0px auto;
+}
+
+#cargoExpres {
+    width: 33%;
+    font-size: 30px;
+    margin-top: -46px;
+}
+
+#cargoExpres img {
+    display: block;
+    float: left;
+    height: px;
+    margin-top: 28px;
+    margin-right: -257px;
+    width: 130%;
+    /*animation: girar infinite 30s linear;*/
+}
+
+
+/*para cargo expres reglas*/
+
+#cargoExpresRe {
+    width: 33%;
+    font-size: 30px;
+    margin-top: -20px;
+}
+
+#cargoExpresRe img {
+    display: block;
+    float: right;
+    height: 215px;
+    margin-top: -6px;
+    margin-right: -257px;
+    width: 119%;
+    /*animation: girar infinite 30s linear;*/
+}
+
+
+/*@keyframes girar{
+from{
+   transform: rotate(0deg);
+}
+to{
+    transform: rotate(360deg);
+}
+}*/
+
+
+/*css para actualizacionEnvio.php*/
+
+#formulario-busqueda-encomienda {
+    float: none;
+    margin-top: -12%;
+}
+
+#buscador-encomieda {
+    margin-top: -2%;
+}
+
+#alinear-buscador {
+    margin-top: -6%;
+}
+
+#mover_tablas {
+    margin-top: 5%;
+}
+
+
+/*css final milano actualizacion
+/*final de la champios Kiev*/
+
+
+/*mis estilos JcMoz*/

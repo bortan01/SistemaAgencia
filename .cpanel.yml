@@ -1,0 +1,18 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/a147409/admin/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp home.php $DEPLOYPATH
+    - /bin/cp reset_password.php $DEPLOYPATH
+
+    - /bin/cp -r css $DEPLOYPATH
+    - /bin/cp -r dist $DEPLOYPATH
+    - /bin/cp -r config $DEPLOYPATH
+    - /bin/cp -r img $DEPLOYPATH
+    - /bin/cp -r js $DEPLOYPATH
+    - /bin/cp -r pages $DEPLOYPATH
+    - /bin/cp -r plantillas $DEPLOYPATH
+    - /bin/cp -r plugins $DEPLOYPATH
+    - /bin/cp -r vistas $DEPLOYPATH
+    - /bin/cp -r vendor $DEPLOYPATH

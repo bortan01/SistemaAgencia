@@ -1,0 +1,12 @@
+.ocultar {
+    display: none;
+
+}
+
+a:hover .ocultar {
+    position: absolute;
+    display: block;
+    left: 200;
+    width: 450px;
+ 
+}
