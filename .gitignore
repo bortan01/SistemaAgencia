@@ -1,1 +1,3 @@
 js/controladores/firebase/firestore-config.js
+config/parametros.php
+js/controladores/conf.js
