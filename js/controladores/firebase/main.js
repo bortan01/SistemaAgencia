@@ -124,7 +124,7 @@ function login() {
       }
 
     }).fail(function (resp) {
-      console.log("here")
+      console.log(resp);
       const Toast = Swal.mixin();
       $("#login-btn").prop('disabled', false);
       if (resp.responseJSON.err) {
