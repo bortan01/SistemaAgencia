@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/a147409/admin/
     - /bin/cp index.php $DEPLOYPATH
-    - /bin/cp favicon.png $DEPLOYPATH
+    - /bin/cp favicon.ico $DEPLOYPATH
     - /bin/cp home.php $DEPLOYPATH
     - /bin/cp reset_password.php $DEPLOYPATH
 
