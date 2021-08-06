@@ -17,12 +17,14 @@
          <!-- Right navbar links -->
          <ul class="navbar-nav ml-auto">
             <!-- Messages Dropdown Menu -->
+            <?php  if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-item dropdown">
                <a class="nav-link" href="<?= $base_url ?>vistas/chat/messenger.php">
                   <i class="far fa-comments"></i>
                   <span id="mensajesPendientes" class="badge badge-danger navbar-badge">0</span>
                </a>
             </li>
+            <?php endif; ?>
             <!-- Notifications Dropdown Menu -->
             <!-- <li class="nav-item dropdown">
                <a class="nav-link" data-toggle="dropdown" href="#">

@@ -81,7 +81,8 @@ function login() {
     }).done(function (resp) {
       //NUESTRO SERVICIO RETORNARA UN TOKEN QUE ES EL
       // QUE OCUPAREMOS PARA MANEJAR LA SESION DEL USUARIO
-      $("#login-btn").prop('disabled', true);
+      $("#login-btn").prop('disabled', false);
+      $("#login-btn").html(btnHTML);
       if (!resp.err) {
         if (resp.nivel == 'EMPLEADO' || resp.nivel == 'ADMINISTRADOR' || resp.nivel == 'RENTA CARS') {
           //aqui estamos guardando la foto de perfil del usuario          
@@ -127,6 +128,7 @@ function login() {
       console.log(resp);
       const Toast = Swal.mixin();
       $("#login-btn").prop('disabled', false);
+      $("#login-btn").html(btnHTML);
       if (resp.responseJSON.err) {
         if (resp.responseJSON.mensaje == 'EMAIL_NOT_FOUND') {
 
@@ -155,6 +157,9 @@ function login() {
       }
       $("#login-btn").html(btnHTML);
 
+    }).always(function (resp) {
+      $("#login-btn").prop('disabled', false);
+      $("#login-btn").html(btnHTML);
     });
 
   } else {

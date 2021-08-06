@@ -40,6 +40,7 @@
                         <p>Registro de Cliente</p>
                      </a>
                   </li>
+                  <?php  if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/catalogoCliente.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
@@ -52,10 +53,11 @@
                         <p>Bitácora de Usuarios</p>
                      </a>
                   </li>
+                  <?php endif; ?>
                </ul>
             </li>
             <li class="nav-header">SERVICIOS</li>
-
+            <?php  if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-umbrella-beach"></i>
@@ -155,7 +157,6 @@
                   </li>
                </ul>
             </li>
-
             <li class="nav-item">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-map-marked-alt"></i>
@@ -267,7 +268,6 @@
 
                </ul>
             </li>
-
             <!--INCIA CARGO EXPRES MENU-->
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
@@ -376,82 +376,6 @@
                </ul>
             </li>
             <!--TERMINA ASESORIA MIGRATORIA MENU-->
-
-            <!--INCIA RENTA CARS MENU-->
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-car"></i>
-                  <p>
-                     Renta Cars
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
-               </a>
-
-               <ul class="nav nav-treeview">
-
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/disponibilidad.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Disponibilidad de Reserva</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/cotizarVehiculo.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Cotización de Vehiculo</p>
-                     </a>
-                  </li>
-
-
-
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/registroVehiculo.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Registro de Vehículo</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/mantenimiento.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Registrar Mantenimiento</p>
-                     </a>
-                  </li>
-
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/mostrarRegistros.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Mostrar Registros de Flota</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/vehiculosAlquilados.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Vehículos Alquilados</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/verMantenimientos.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Mantenimientos Realizados</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/mostrarCotizacionAutos.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Mostrar Cotizaciones</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/vehiculos/mostrarServicios.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Servicios Adicionales</p>
-                     </a>
-                  </li>
-               </ul>
-            </li>
-
-
-
             <!--INCIA VUELOS MENU-->
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
@@ -520,6 +444,80 @@
             </li>
             <!--TERMINA VUELOS MIGRATORIA MENU-->
 
+            <?php endif; ?>
+
+            <!--INCIA RENTA CARS MENU-->
+            <li class="nav-item has-treeview">
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-car"></i>
+                  <p>
+                     Renta Cars
+                     <i class="fas fa-angle-left right"></i>
+                  </p>
+               </a>
+
+               <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/disponibilidad.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Disponibilidad de Reserva</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/cotizarVehiculo.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Cotización de Vehiculo</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/registroVehiculo.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Registro de Vehículo</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/mantenimiento.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Registrar Mantenimiento</p>
+                     </a>
+                  </li>
+
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/mostrarRegistros.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Mostrar Registros de Flota</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/vehiculosAlquilados.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Vehículos Alquilados</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/verMantenimientos.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Mantenimientos Realizados</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/mostrarCotizacionAutos.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Mostrar Cotizaciones</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vehiculos/mostrarServicios.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Servicios Adicionales</p>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+
+
+            <?php  if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-header">CONTROL</li>
 
             <li class="nav-item has-treeview">
@@ -559,6 +557,7 @@
                </ul>
 
             </li>
+            <?php endif; ?>
          </ul>
       </nav>
       <!-- /.sidebar-menu -->

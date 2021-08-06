@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["activoA"]) && isset($_SESSION["nivelA"])) {
+   header('Location: home.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -50,7 +56,8 @@
                   </div>
                </div>
                <div class="input-group mb-3">
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" autocomplete="off">
+                  <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña"
+                     autocomplete="off">
                   <div class="input-group-append">
                      <div class="input-group-text">
                         <span class="fas fa-lock"></span>
