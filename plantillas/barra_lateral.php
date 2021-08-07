@@ -40,7 +40,7 @@
                         <p>Registro de Cliente</p>
                      </a>
                   </li>
-                  <?php  if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
+                  <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/catalogoCliente.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
@@ -57,7 +57,7 @@
                </ul>
             </li>
             <li class="nav-header">SERVICIOS</li>
-            <?php  if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
+            <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-umbrella-beach"></i>
@@ -517,7 +517,7 @@
             </li>
 
 
-            <?php  if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
+            <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-header">CONTROL</li>
 
             <li class="nav-item has-treeview">
@@ -558,6 +558,30 @@
 
             </li>
             <?php endif; ?>
+            <li class="nav-item has-treeview">
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-redo-alt"></i>
+                  <p>
+                     Mi Cuenta
+                     <i class="fas fa-angle-left right"></i>
+                  </p>
+               </a>
+               <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/cliente/actualizarMisDatos.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Informacion Personal</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/agencia/mostrarInfo.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Documentos</p>
+                     </a>
+                  </li>
+               </ul>
+
+            </li>
          </ul>
       </nav>
       <!-- /.sidebar-menu -->

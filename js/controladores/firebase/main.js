@@ -92,7 +92,7 @@ function login() {
             .signInWithCustomToken(token)
             .then(function (data) {
               initPreferencias(resp);
-              $("#login-btn").html(btnHTML);
+           
               if (data.user.uid != "") {
                 console.log(resp);
                 $.post("vistas/session/start.php", { action: "start", nivel: resp.nivel },
@@ -107,7 +107,6 @@ function login() {
               alert(errorMessage);
             });
         } else {
-          $("#login-btn").html(btnHTML);
           Toast.fire({
             title: 'Oops...',
             icon: 'error',
@@ -155,8 +154,6 @@ function login() {
           showConfirmButton: true,
         });
       }
-      $("#login-btn").html(btnHTML);
-
     }).always(function (resp) {
       $("#login-btn").prop('disabled', false);
       $("#login-btn").html(btnHTML);
