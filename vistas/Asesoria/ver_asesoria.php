@@ -1,5 +1,8 @@
 <?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../../plantillas/cabecera.php'; ?>
+<?php include_once '../../plantillas/cabecera.php'; 
+include_once '../session/isEmpleado.php';
+?>
+
 <!-- COLORAR ESTILOS ADICIONALES AQUI -->
 <!-- CONTINUAMOS CON LA INICIALIZACION -->
 <?php include_once  '../../plantillas/navbar.php'; ?> <?php include_once '../../plantillas/barra_lateral.php'; ?>

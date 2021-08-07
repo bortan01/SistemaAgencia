@@ -6,7 +6,7 @@ $(document).on('click', '.btn-group .btn-primary', function () {
    let fila = $(this).closest("tr");
    let data = tabla.row(fila).data();
    let id_cita = data.id_cita;
-   window.location = `registroMigratoriaBoris.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}`;
+   window.location = `registroMigratoria.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}`;
 });
 
 $(document).on('click', '.btn-group .btn-secondary', function () {
@@ -14,7 +14,7 @@ $(document).on('click', '.btn-group .btn-secondary', function () {
    let fila = $(this).closest("tr");
    let data = tabla.row(fila).data();
    let id_cita = data.id_cita;
-   window.location = `editarInformacionBoris.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}`;
+   window.location = `editarInformacion.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}`;
 });
 
 function inicializarTabla() {

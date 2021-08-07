@@ -65,10 +65,10 @@ include_once '../../plantillas/cabecera.php';
                                  </div>
                               </div>
 
-                              <div class="timeline-footer" style="text-align: right;">
+                              <div class="timeline-footer" style="margin-left: 1086px;">
                               <a class="btn btn-info btn-sm" id="procesar" style="color: white">Procesar</a>
 
-                           </div>
+                              </div>
 
                            </div>
                            <div>
@@ -149,8 +149,8 @@ include_once '../../plantillas/cabecera.php';
       </div>
    </section>
 
-   <?php
-  include_once '../cliente/modalCliente.php';
+<?php
+include_once '../cliente/modalCliente.php';
 include_once '../../plantillas/footer.php';
 ?>
    <!--alerta del sistema-->

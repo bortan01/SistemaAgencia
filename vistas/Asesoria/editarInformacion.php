@@ -1,6 +1,7 @@
 <?php
 include_once '../../config/parametros.php';
 include_once '../../plantillas/cabecera.php';
+include_once '../session/isEmpleado.php';
 include_once  '../../plantillas/navbar.php'; ?>
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" type="text/css" />
 <link href="<?= $base_url ?>plugins/toastr/toastr.min.css" rel="stylesheet">
