@@ -13,7 +13,7 @@ $(document).ready(function() {
 
         $('#loadingActualizar').show();
         $.ajax({
-            url: URL_SERVIDOR+"cotizarVuelo/mostrarCotizacion?id_cotizacion=" + idCotizar,
+            url: URL_SERVIDOR+"CotizarVuelo/mostrarCotizacion?id_cotizacion=" + idCotizar,
             method: "GET"
         }).done(function(response) {
             //MANDALOS LOS VALORES AL MODAL
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
         $('#loadingActualizar').show();
         $.ajax({
-            url: URL_SERVIDOR+"cotizarVuelo/mostrarCotizacion?id_cotizacion=" + idCotizar,
+            url: URL_SERVIDOR+"CotizarVuelo/mostrarCotizacion?id_cotizacion=" + idCotizar,
             method: "GET"
         }).done(function(response) {
             //MANDALOS LOS VALORES AL MODAL
@@ -154,7 +154,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "GET",
-            url: URL_SERVIDOR + "cotizarVuelo/mostrarCotizacion",
+            url: URL_SERVIDOR + "CotizarVuelo/mostrarCotizacion",
 
             dataType: "json",
             success: function(response) {
@@ -248,7 +248,7 @@ $(document).ready(function() {
         };
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO
         $.ajax({
-            url: URL_SERVIDOR + "cotizarVuelo/actualizarCotizacion",
+            url: URL_SERVIDOR + "CotizarVuelo/actualizarCotizacion",
             method: "PUT",
             timeout: 0,
             data: data
@@ -287,7 +287,7 @@ $(document).ready(function() {
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO
 
         $.ajax({
-            url: URL_SERVIDOR + "cotizarVuelo/eliminarCotizacion",
+            url: URL_SERVIDOR + "CotizarVuelo/eliminarCotizacion",
             method: "DELETE",
             timeout: 0,
             data: data
