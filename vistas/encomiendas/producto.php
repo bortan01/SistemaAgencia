@@ -10,7 +10,7 @@ include_once  '../../plantillas/navbar.php';?>
 include_once '../../plantillas/barra_lateral.php';
 ?>
 
-<div class="content-wrapper" style="min-height: 1185.73px;">
+<div class="content-wrapper">
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <div class="container-fluid">

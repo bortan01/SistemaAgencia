@@ -170,11 +170,11 @@ $(document).ready(function() {
                             if (json.product[i].estado_producto == 1) {
 
                                 html += '        <button type="button" name="' + json.product[i].id_producto + '" class="btn btn-danger">';
-                                html += '            <i class="fas fa-arrow-down" style="color: white"></i>';
+                                html += '             <i class="fas fa-trash" style="color: white"></i>';
                                 html += '        </button>';
                             } else {
                                 html += '        <button type="button" name="' + json.product[i].id_producto + '" class="btn btn-success">';
-                                html += '            <i class="fas fa-trash" style="color: white"></i>';
+                                html += '            <i class="fas fa-arrow-up" style="color: white"></i>';
                                 html += '        </button>';
                             }
                             html += '    </div>';

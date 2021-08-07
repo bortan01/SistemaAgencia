@@ -1,7 +1,8 @@
-<?php
-include_once '../../config/parametros.php';
-include_once '../../plantillas/cabecera.php';
+<?php include_once '../../config/parametros.php'; ?>
+<?php include_once '../../plantillas/cabecera.php'; ?>
+
 ?>
+<!-- COLOCAR ESTILOS ADICIONALES AQUI -->
 <!--para la subida de fotos al sistema-->
 <link href="<?= $base_url ?>plugins/subir-foto/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
 <link href="<?= $base_url ?>plugins/subir-foto/css/avatar.css" media="all" rel="stylesheet" type="text/css" />
@@ -12,9 +13,13 @@ include_once '../../plantillas/cabecera.php';
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"
    type="text/css" />
 
-<?php include_once  '../../plantillas/navbar.php'; ?> <?php include_once '../../plantillas/barra_lateral.php'; ?>
+<!--COTINUANDO CON LA INICIALIZACION -->
 
-<div class="content-wrapper" style="min-height: 1185.73px;">
+<?php include_once '../../plantillas/navbar.php'; ?>
+<?php include_once '../../plantillas/barra_lateral.php'; ?>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <div class="container-fluid">
@@ -68,7 +73,7 @@ include_once '../../plantillas/cabecera.php';
                               <div class="timeline-footer" style="margin-left: 1086px;">
                               <a class="btn btn-info btn-sm" id="procesar" style="color: white">Procesar</a>
 
-                              </div>
+                           </div>
 
                            </div>
                            <div>
@@ -115,7 +120,6 @@ include_once '../../plantillas/cabecera.php';
                            </div>
 
 
-
                         </div>
                         <div class="row">
                            <div class="col-md-1 col-md-offset-1"> </div>
@@ -149,12 +153,12 @@ include_once '../../plantillas/cabecera.php';
       </div>
    </section>
 
-<?php
-include_once '../cliente/modalCliente.php';
-include_once '../../plantillas/footer.php';
-?>
-   <!--alerta del sistema-->
-   <script src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
+</div>
+<!-- /.content-wrapper -->
+<?php include_once '../../plantillas/footer.php';?>
+<!-- PONER SCRIPT ADICIONALES ACA -->
+<!--alerta del sistema-->
+<script src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
    <!--validaciones del sistema-->
    <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
    <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
@@ -165,5 +169,5 @@ include_once '../../plantillas/footer.php';
    
    <script src="<?= $base_url ?>js/controladores/asesorias/ingresos.js"></script>
 
-
-   <?php include_once '../../plantillas/cierre.php'; ?>
+<!-- CIERRE DE ETIQUETAS -->
+<?php include_once '../../plantillas/cierre.php'; ?>

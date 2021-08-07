@@ -13,7 +13,7 @@ include_once '../session/isEmpleado.php';
 
 <?php include_once  '../../plantillas/navbar.php'; ?> <?php include_once '../../plantillas/barra_lateral.php'; ?>
 
-<div class="content-wrapper" style="min-height: 1185.73px;">
+<div class="content-wrapper">
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <div class="container-fluid">
@@ -455,7 +455,7 @@ include_once '../session/isEmpleado.php';
       <!-- /.modal-content -->
    </div>
    <!--MODAL ACTUALIZAR COMISION-->
-
+</div>
    <?php
    include_once '../cliente/modalCliente.php';
    include_once '../../plantillas/footer.php';
