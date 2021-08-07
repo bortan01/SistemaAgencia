@@ -35,11 +35,7 @@
                                                 placeholder="Describir.." autocomplete="off"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="hidden">
-                                        <label name="detalle" id="detalle">Ingresó nuevo Tipo de Viaje</label>
-                                    </div>
+                                    
                                 </div>
 
                                 </div>
@@ -64,5 +60,4 @@
 </div>
 
 
-<script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/insertarTipoViaje.js"></script>

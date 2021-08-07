@@ -231,7 +231,6 @@ window.onload = function(){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <script type="text/javascript" src="<?= $base_url ?>js/controladores/vuelos/disponibilidad-app.js"></script>
-    <script type="text/javascript" src="<?= $base_url ?>js/controladores/vuelos/validarPromo.js"></script>
     <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
     <!--fecha actual-->
 

@@ -62,6 +62,4 @@
     <!-- /.modal-dialog -->
 </div>
 
-
-<script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/insertarClase.js"></script>

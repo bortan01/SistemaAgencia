@@ -15,7 +15,7 @@ $(document).ready(function() {
             data: myData
 
         }).done(function(response) {
-            guardarBitacora();
+    
             $("#modal-tipoViaje").modal('toggle');
             document.getElementById("register-viaje").reset();
 
