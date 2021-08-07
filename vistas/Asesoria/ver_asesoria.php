@@ -6,7 +6,7 @@ include_once '../session/isEmpleado.php';
 <!-- COLORAR ESTILOS ADICIONALES AQUI -->
 <!-- CONTINUAMOS CON LA INICIALIZACION -->
 <?php include_once  '../../plantillas/navbar.php'; ?> <?php include_once '../../plantillas/barra_lateral.php'; ?>
-<div class="content-wrapper" style="min-height: 1185.73px;">
+<div class="content-wrapper">
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <div class="container-fluid">
