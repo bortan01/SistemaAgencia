@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    let explorer = $("#kv-explorer");
     let idPromocion;
     let tabla;
 
@@ -39,7 +39,47 @@ $(document).ready(function() {
     });
 
     
+//BOTON EDITAR LA FOTO
+$(document).on('click', '.btn-group .btn-warning', function () {
+    $('#modal-imagenes').modal('show');
+    let identificador = $(this).attr("name");
+    let nombreTabla = 'promocion_vuelo';
+    let informacionAdicional = { tipo: nombreTabla, identificador: identificador };
+    let urlFotos = [];
+    let infoFotos = [];
 
+    $.ajax({
+        url: URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador,
+        method: "GET",
+
+    }).done(function (response) {
+        //REST_Controller::HTTP_OK
+        console.log(URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador);
+        response.forEach(element => {
+            let informacion = {
+                url: URL_SERVIDOR + "Imagen/delete",
+                key: element.id_foto
+            };
+            infoFotos.push(informacion);
+            urlFotos.push(element.foto_path);
+        });
+        explorer.fileinput({
+            theme: 'fas',
+            language: 'es',
+            uploadUrl: URL_SERVIDOR + 'Imagen/save',
+            uploadExtraData: informacionAdicional,
+            overwriteInitial: false,
+            initialPreviewAsData: true,
+            initialPreview: urlFotos,
+            initialPreviewConfig: infoFotos,
+            required: true,
+            maxFileSize: 2000,
+            maxFilesNum: 10,
+            allowedFileExtensions: ["jpg", "png", "gif"]
+
+        });
+    });
+});
     //Boton Eliminar
     $(document).on('click', '.btn-group .btn-danger', function(evento) {
         idCotizar = $(this).attr("name");
@@ -73,7 +113,11 @@ $(document).ready(function() {
     });
 
 
-
+  //CUANDO EL MODAL SE CIERRA
+  $('#modal-imagenes').on('hidden.bs.modal', function (e) {
+    console.log("cerrando modal")
+    explorer.fileinput('destroy');
+})
 
 
     function inicializarTabla() {
@@ -96,6 +140,10 @@ $(document).ready(function() {
                             html += '        <button type="button" name="' + json.promociones[i].idpromocion_vuelo + '" class="btn btn-primary" data-toggle="modal"';
                             html += '            data-target="#modal-editar">';
                             html += '            <i class="fas fa-edit" style="color: white"></i>';
+                            html += '        </button>';
+                            html += '        <button type="button" name="' + json.promociones[i].idpromocion_vuelo + '" class="btn btn-warning" data-toggle="modal"';
+                            html += '            data-target="#modal-imagenes">';
+                            html += '            <i class="fas fa-image" style="color: white"></i>';
                             html += '        </button>';
                             html += '        <button type="button" name="' + json.promociones[i].idpromocion_vuelo + '" class="btn btn-danger" data-toggle="modal"';
                             html += '            data-target="#modal-eliminar">';
