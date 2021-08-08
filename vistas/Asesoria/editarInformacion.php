@@ -99,6 +99,12 @@ include_once  '../../plantillas/navbar.php'; ?>
             </div>
       </section>
    </div>
+   <div class="col-sm-6">
+      <!-- text input -->
+      <div class="hidden">
+         <label name="detalle" id="detalle">Actualización de llenado de formulario migratorio</label>
+      </div>
+   </div>
 </div>
 <!--CODIGO DEL REPORTE-->
 <form id="miFormulario" name="miFormulario" role="form" onsubmit="return false">

@@ -173,7 +173,12 @@ $(document).ready(function () {
                 icon: 'success',
                 text: 'Error en el envio de información',
                 showConfirmButton: true,
+            }).then((result) => {
+                //TODO BIEN Y RECARGAMOS LA PAGINA 
+                window.location = `${URL_SISTEMA}vistas/Asesoria/ver_asesoria.php`;
+                //location.reload(); 
             });
+            guardarBitacora();
         });
     }
     function guardarPasaportes() {

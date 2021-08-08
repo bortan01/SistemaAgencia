@@ -159,7 +159,7 @@ $(document).ready(function () {
         let id_cita = data.id_cita;
         let nombre = data.nombre;
         let id_cliente = data.id_cliente;
-        window.location = `editarInformacionBoris.php?idCita=${id_cita}&cliente=${nombre}&idCliente=${id_cliente}`;
+        window.location = `editarInformacion.php?idCita=${id_cita}&cliente=${nombre}&idCliente=${id_cliente}`;
     });
 
     //BOTON PARA ELIMINAR

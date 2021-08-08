@@ -164,7 +164,12 @@ $(document).ready(function () {
             icon: 'success',
             text: 'Registro Guardado Exitosamente',
             showConfirmButton: true,
-         });
+         }).then((result) => {
+            //TODO BIEN Y RECARGAMOS LA PAGINA 
+            window.location = `${URL_SISTEMA}vistas/Asesoria/ver_asesoria.php`;
+            //location.reload(); 
+        });
+         guardarBitacora();
       }).fail(function (response) {
          //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
          const Toast = Swal.mixin();

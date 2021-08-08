@@ -65,6 +65,12 @@ include_once '../../plantillas/barra_lateral.php';
                                        </select>
                                     </div>
                                  </div>
+                                 <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="hidden">
+                                       <label name="detalle" id="detalle">Registro una Pregunta</label>
+                                    </div>
+                                 </div>
                               </div>
                            </form>
                            <!--fin de Una fila para jugar-->

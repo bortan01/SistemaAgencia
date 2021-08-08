@@ -99,6 +99,12 @@ include_once  '../../plantillas/navbar.php';
             </div>
       </section>
    </div>
+   <div class="col-sm-6">
+      <!-- text input -->
+      <div class="hidden">
+         <label name="detalle" id="detalle">Registro de llenado de formulario migratorio</label>
+      </div>
+   </div>
 </div>
 <!--CODIGO DEL REPORTE-->
 <form id="miFormulario" name="miFormulario" role="form" onsubmit="return false">
@@ -226,5 +232,6 @@ include_once '../../plantillas/footer.php';
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>js/imprimir.js"></script>
 <script src="<?= $base_url ?>js/controladores/asesorias/registroMigratoria.js"></script>
+<script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
 <!--para los reportes-->
 <?php include_once '../../plantillas/cierre.php'; ?>

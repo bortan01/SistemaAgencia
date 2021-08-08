@@ -59,7 +59,7 @@
                      <div class="col-sm-6">
                               <!-- text input -->
                               <div class="hidden">
-                                 <label name="detalle" id="detalle">Registró una Asesoria</label>
+                                 <label name="detalle" id="detalle">Registró una cita para Asesoria</label>
                               </div>
                            </div>
                   </div>
