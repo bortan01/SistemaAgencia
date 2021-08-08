@@ -43,7 +43,7 @@ $(document).ready(function () {
          explorer.fileinput({
             theme: 'fas',
             language: 'es',
-            uploadUrl: URL_SERVIDOR + '/Imagen/save',
+            uploadUrl: URL_SERVIDOR + 'Imagen/save',
             uploadExtraData: informacionAdicional,
             overwriteInitial: false,
             initialPreviewAsData: true,
@@ -187,7 +187,7 @@ $(document).ready(function () {
          columns: [
             { data: "nombreTours" },
             { data: "precio" },
-         
+
             { data: "tipo" },
             { data: "botones" },
             { data: "id_tours" },

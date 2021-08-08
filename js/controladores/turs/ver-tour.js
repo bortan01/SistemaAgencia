@@ -43,7 +43,7 @@ $(document).ready(function () {
          explorer.fileinput({
             theme: 'fas',
             language: 'es',
-            uploadUrl: URL_SERVIDOR + '/Imagen/save',
+            uploadUrl: URL_SERVIDOR + 'Imagen/save',
             uploadExtraData: informacionAdicional,
             overwriteInitial: false,
             initialPreviewAsData: true,
@@ -77,7 +77,7 @@ $(document).ready(function () {
          }
       })
    });
-    //BOTON PARA ACTUALIZAR
+   //BOTON PARA ACTUALIZAR
    $(document).on('click', '#btnActualizar', function (evento) {
       evento.preventDefault();//para evitar que la pagina se recargue
       let form = $("#formularioEditar");
@@ -107,14 +107,14 @@ $(document).ready(function () {
       let fechaFinViaje = dataFilaTur.end;
       window.location = `itinerario.php?viaje=${idViaje}&&fechaInicioViaje=${fechaInicioViaje}&&fechaFinViaje=${fechaFinViaje}`;
    });
-     //BOTON DE ANALITICAS
-     $(document).on('click', '.btn-group .btn-info', function (evento) {
+   //BOTON DE ANALITICAS
+   $(document).on('click', '.btn-group .btn-info', function (evento) {
       evento.preventDefault();//para evitar que la pagina se recargue
       let idSeleccionado = $(this).attr("name");
       window.location = `analitica.php?tur=${idSeleccionado}`;
    });
-     //BOTON DE PRECHEQUEO
-     $(document).on('click', '.btn-group .btn-secondary', function (evento) {
+   //BOTON DE PRECHEQUEO
+   $(document).on('click', '.btn-group .btn-secondary', function (evento) {
       evento.preventDefault();//para evitar que la pagina se recargue
       let idSeleccionado = $(this).attr("name");
       window.location = `chekeo.php?viaje=${idSeleccionado}`;

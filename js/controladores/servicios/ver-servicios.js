@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let explorer = $("#kv-explorer");
     let ListaDatos;
     let idSerevicio;
@@ -9,7 +9,7 @@ $(document).ready(function() {
     inicializarCombo();
 
     //BOTON DE EDITAR
-    $(document).on('click', '.btn-group .btn-primary', function() {
+    $(document).on('click', '.btn-group .btn-primary', function () {
         $('#loadingActualizar').hide();
         let fila = $(this).closest("tr");
         let data = tabla.row(fila).data();
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
     });
     //BOTON EDITAR LA FOTO
-    $(document).on('click', '.btn-group .btn-warning', function() {
+    $(document).on('click', '.btn-group .btn-warning', function () {
         $('#modal-imagenes').modal('show');
         let identificador = $(this).attr("name");
         let nombreTabla = 'servicios_adicionales';
@@ -77,7 +77,7 @@ $(document).ready(function() {
             url: URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador,
             method: "GET",
 
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             response.forEach(element => {
                 let informacion = {
@@ -90,7 +90,7 @@ $(document).ready(function() {
             explorer.fileinput({
                 theme: 'fas',
                 language: 'es',
-                uploadUrl: URL_SERVIDOR + '/Imagen/save',
+                uploadUrl: URL_SERVIDOR + 'Imagen/save',
                 uploadExtraData: informacionAdicional,
                 overwriteInitial: false,
                 initialPreviewAsData: true,
@@ -105,7 +105,7 @@ $(document).ready(function() {
         });
     });
     //BOTON PARA ELIMINAR
-    $(document).on('click', '.btn-group .btn-danger', function(evento) {
+    $(document).on('click', '.btn-group .btn-danger', function (evento) {
         idSerevicio = $(this).attr("name");
         fila = $(this).closest("tr");
 
@@ -126,7 +126,7 @@ $(document).ready(function() {
         })
     });
     //BOTON PARA ACTUALIZAR
-    $(document).on('click', '#btnActualizar', function(evento) {
+    $(document).on('click', '#btnActualizar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#miFormulario");
         form.validate();
@@ -143,12 +143,12 @@ $(document).ready(function() {
         }
     });
     //CUANDO EL MODAL SE CIERRA
-    $('#modal-imagenes').on('hidden.bs.modal', function(e) {
-            console.log("cerrando modal")
-            explorer.fileinput('destroy');
-        })
-        //CLICK EN EL LINK DEL CONTACTO
-    $(document).on('click', '.info_contacto', function() {
+    $('#modal-imagenes').on('hidden.bs.modal', function (e) {
+        console.log("cerrando modal")
+        explorer.fileinput('destroy');
+    })
+    //CLICK EN EL LINK DEL CONTACTO
+    $(document).on('click', '.info_contacto', function () {
         $('#modal_ver_contacto').modal('show');
         let fila = $(this).closest("tr");
         let data = tabla.row(fila).data();
@@ -160,7 +160,7 @@ $(document).ready(function() {
         $("#imgContacto").attr("src", data.url);
     });
     // BOTON DE IMPRIMIR
-    $(document).on('click', '#print', function() {
+    $(document).on('click', '#print', function () {
         // OBTENEMOS EL VALOR DEL FILTRO DE LA TABLA
         let MiTabla = $("#tabla_servicios").DataTable();
         let data = MiTabla.rows({ search: 'applied' }).data().length;
@@ -171,7 +171,7 @@ $(document).ready(function() {
     });
 
     //CUANDO HAY CAMBIOS EN EL COMBO TIPO DE SERVICIO 
-    $('#tipo_servicio').on('select2:select', function(e) {
+    $('#tipo_servicio').on('select2:select', function (e) {
         let id = e.params.data.id;
         // si el id es 2 (TRANSPORTE) MOSTTRAREMOS LA OPCION PARA AGREGARLO
         if (id == 2) {
@@ -207,7 +207,7 @@ $(document).ready(function() {
             "ajax": {
                 "url": URL_SERVIDOR + "ServiciosAdicionales/obtenerServicio",
                 "method": "GET",
-                "dataSrc": function(json) {
+                "dataSrc": function (json) {
                     //PARA CONPROVAR QUE EL SERVICIO EXISTE
                     if (json.servicio) {
                         for (let i = 0, ien = json.servicio.length; i < ien; i++) {
@@ -294,7 +294,7 @@ $(document).ready(function() {
         $.ajax({
             url: URL_SERVIDOR + "TipoServicio/show",
             method: "GET"
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             let myData = [];
             if (response.tipo) {
@@ -309,10 +309,10 @@ $(document).ready(function() {
             } else {
                 $('#tipo_servicio').select2();
             }
-        }).fail(function(response) {
+        }).fail(function (response) {
             $('#tipo_servicio').select2();
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loading').hide();
         });
     }
@@ -391,14 +391,14 @@ $(document).ready(function() {
 
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }
@@ -444,7 +444,7 @@ $(document).ready(function() {
             timeout: 0,
             processData: false,
             contentType: false,
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             console.log(response);
             const Toast = Swal.mixin();
@@ -457,7 +457,7 @@ $(document).ready(function() {
                 $('#modal-editar').modal('hide');;
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log(response);
 
             const Toast = Swal.mixin();
@@ -468,7 +468,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizar').hide();
         });
     }
@@ -484,7 +484,7 @@ $(document).ready(function() {
             method: "DELETE",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
             tabla.ajax.reload(null, false);
@@ -494,7 +494,7 @@ $(document).ready(function() {
                 text: response.mensaje,
                 showConfirmButton: true,
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
 
             console.log(response);
             const Toast = Swal.mixin();
@@ -505,7 +505,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizar').hide();
         });
     }
@@ -517,7 +517,7 @@ $(document).ready(function() {
         $.ajax({
             url: URL_SERVIDOR + "Contacto/show",
             method: "GET"
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             let myData = [];
             if (response.contactos) {
@@ -532,10 +532,10 @@ $(document).ready(function() {
             } else {
                 $('#contacto_servicio').select2();
             }
-        }).fail(function(response) {
+        }).fail(function (response) {
             $('#contacto_servicio').select2();
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             //  $('#loading').hide();
         });
     }

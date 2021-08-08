@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let explorer = $("#kv-explorer");
     let idSeleccionado;
     let tabla;
@@ -8,7 +8,7 @@ $(document).ready(function() {
     inicializarFoto();
 
     //BOTON DE EDITAR
-    $(document).on('click', '.btn-group .btn-primary', function() {
+    $(document).on('click', '.btn-group .btn-primary', function () {
         $('#loadingActualizar').hide();
         $('#modal-editar').modal('show');
         let fila = $(this).closest("tr");
@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     });
     //BOTON EDITAR FOTO PERFIL 
-    $(document).on('click', 'a[name ="camara"]', function() {
+    $(document).on('click', 'a[name ="camara"]', function () {
         //inicializamos nuevamente el input de foto
         inicializarFoto();
         ///abrimos el modal
@@ -38,7 +38,7 @@ $(document).ready(function() {
         idSeleccionado = data.id_cliente;
     });
     //OTRA PARA CAMBIAR LA FOTO DE PERFIL 
-    $(document).on('click', '.img-responsive', function() {
+    $(document).on('click', '.img-responsive', function () {
         //inicializamos nuevamente el input de foto
         inicializarFoto();
         ///abrimos el modal
@@ -55,7 +55,7 @@ $(document).ready(function() {
         idSeleccionado = data.id_cliente;
     });
     //BOTON EDITAR DOCUMENTOS
-    $(document).on('click', '.btn-group .btn-warning', function() {
+    $(document).on('click', '.btn-group .btn-warning', function () {
         $('#modal-imagenes').modal('show');
         let identificador = $(this).attr("name");
         let nombreTabla = 'usuario_documentos';
@@ -67,7 +67,7 @@ $(document).ready(function() {
             url: URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador,
             method: "GET",
 
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             response.forEach(element => {
                 let informacion = {
@@ -80,7 +80,7 @@ $(document).ready(function() {
             explorer.fileinput({
                 theme: 'fas',
                 language: 'es',
-                uploadUrl: URL_SERVIDOR + '/Imagen/save',
+                uploadUrl: URL_SERVIDOR + 'Imagen/save',
                 uploadExtraData: informacionAdicional,
                 overwriteInitial: false,
                 initialPreviewAsData: true,
@@ -94,7 +94,7 @@ $(document).ready(function() {
         });
     });
     //BOTON PARA ELIMINAR
-    $(document).on('click', '.btn-group .btn-danger', function(evento) {
+    $(document).on('click', '.btn-group .btn-danger', function (evento) {
         idSeleccionado = $(this).attr("name");
 
         const Toast = Swal.mixin();
@@ -114,7 +114,7 @@ $(document).ready(function() {
         });
     });
     //BOTON PARA RESTAURAR USUARIOS 
-    $(document).on('click', '.restaurarUsuario', function(evento) {
+    $(document).on('click', '.restaurarUsuario', function (evento) {
         idSeleccionado = $(this).attr("name");
 
         Swal.fire({
@@ -133,7 +133,7 @@ $(document).ready(function() {
         });
     });
     //BOTON PARA ACTUALIZAR
-    $(document).on('click', '#btnActualizar', function(evento) {
+    $(document).on('click', '#btnActualizar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#formularioEditar");
         form.validate();
@@ -142,7 +142,7 @@ $(document).ready(function() {
         }
     });
     //BOTON DEL MODAL PARA ACTUALIZA LA FOTO DE PERFIL
-    $(document).on('click', '#actualizarFotoPerfil', function(evento) {
+    $(document).on('click', '#actualizarFotoPerfil', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         //PARA SABER SI SE HA SELECCIONADO UNA FOTO 
         if (document.getElementById("foto").files[0]) {
@@ -158,14 +158,14 @@ $(document).ready(function() {
         }
     });
     //CUANDO EL MODAL SE CIERRA DE LOS DOCUUMENTOS
-    $('#modal-imagenes').on('hidden.bs.modal', function(e) {
+    $('#modal-imagenes').on('hidden.bs.modal', function (e) {
         console.log("cerrando modal")
         explorer.fileinput('destroy');
     });
 
 
     //BOTON DE EDITAR
-    $(document).on('click', '.btn-group .btn-info', function() {
+    $(document).on('click', '.btn-group .btn-info', function () {
         $('#loadingActualizar').hide();
         id_cliente = $(this).attr("name");
 
@@ -174,13 +174,13 @@ $(document).ready(function() {
 
     });
     //CUANDO EL MODAL DE LA FOTOGRAFIA 
-    $('#modal-perfil').on('hidden.bs.modal', function(e) {
-            console.log("DESTRUYENDO DE NUEVO");
-            $("#foto").fileinput('destroy');
-            $("#formulario_perfil").trigger("reset");
+    $('#modal-perfil').on('hidden.bs.modal', function (e) {
+        console.log("DESTRUYENDO DE NUEVO");
+        $("#foto").fileinput('destroy');
+        $("#formulario_perfil").trigger("reset");
 
-        })
-        //INICIALIZANDO LA TABLA
+    })
+    //INICIALIZANDO LA TABLA
     function inicializarTabla() {
         tabla = $("#tabla_cliente").DataTable({
             responsive: true,
@@ -207,7 +207,7 @@ $(document).ready(function() {
             ajax: {
                 url: URL_SERVIDOR + "Usuario/obtenerUsuario",
                 method: "GET",
-                dataSrc: function(json) {
+                dataSrc: function (json) {
                     //PARA CONPROVAR QUE EL SERVICIO EXISTE
                     if (json.usuarios) {
                         for (let i = 0, ien = json.usuarios.length; i < ien; i++) {
@@ -277,12 +277,12 @@ $(document).ready(function() {
 
     }
     //CUANDO HAY CAMBIO EN EL RADIO BUTTON
-    $(document).on('change', 'input[type=radio][name="radioUsuario"]', function() {
+    $(document).on('change', 'input[type=radio][name="radioUsuario"]', function () {
         tabla.draw();
     });
     // PARA HACER FILTRAR REGISTROS EN LA TABLA DE A CUERDO CON RADIO BUTTON
     $.fn.dataTable.ext.search.push(
-        function(settings, data, dataIndex) {
+        function (settings, data, dataIndex) {
             let opcionSeleccionada = $("input[name='radioUsuario']:checked").val();
             switch (opcionSeleccionada) {
                 case 'CLIENTE':
@@ -337,14 +337,14 @@ $(document).ready(function() {
                 }
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }
@@ -375,7 +375,7 @@ $(document).ready(function() {
             method: "PUT",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             console.log(response);
             const Toast = Swal.mixin();
@@ -389,7 +389,7 @@ $(document).ready(function() {
                 $('#modal-editar').modal('hide');;
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log(response);
 
             const Toast = Swal.mixin();
@@ -400,7 +400,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             //  $('#loadingActualizar').hide();
         });
     }
@@ -416,7 +416,7 @@ $(document).ready(function() {
             method: "DELETE",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
             Toast.fire({
@@ -427,7 +427,7 @@ $(document).ready(function() {
             }).then((result) => {
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log(response);
             const Toast = Swal.mixin();
             Toast.fire({
@@ -437,7 +437,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizar').hide();
         });
     }
@@ -452,7 +452,7 @@ $(document).ready(function() {
             method: "PUT",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
             Toast.fire({
@@ -463,7 +463,7 @@ $(document).ready(function() {
             }).then((result) => {
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log(response);
             const Toast = Swal.mixin();
             Toast.fire({
@@ -473,7 +473,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizar').hide();
         });
     }
@@ -529,7 +529,7 @@ $(document).ready(function() {
             timeout: 0,
             processData: false,
             contentType: false,
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             console.log(response);
             tabla.ajax.reload(null, false);
@@ -545,7 +545,7 @@ $(document).ready(function() {
                 $("#miFormulario").trigger("reset");
                 $('#modal-perfil').modal('hide');
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             console.log(response);
 
@@ -557,7 +557,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loading').hide();
         });
     }

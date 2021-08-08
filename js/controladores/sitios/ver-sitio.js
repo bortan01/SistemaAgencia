@@ -62,7 +62,7 @@ $(document).ready(function () {
                 theme: 'fas',
                 language: 'es',
                 // POR CADA FOTO SE LLAMARA A ESTE SERVICIO
-                uploadUrl: URL_SERVIDOR + '/Imagen/save',
+                uploadUrl: URL_SERVIDOR + 'Imagen/save',
                 uploadExtraData: informacionAdicional,
                 overwriteInitial: false,
                 initialPreviewAsData: true,

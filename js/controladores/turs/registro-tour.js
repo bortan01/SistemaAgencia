@@ -185,8 +185,12 @@ $(document).on('click', '#btnguardar', function(evento) {
     let form = $("#miFormulario");
     form.validate();
     //verificamos que se hallan cumplido las validaciones 
-    if (form.valid()) guardar();
-    mensajeError("Complete los campos");
+    if (form.valid()) {
+        guardar();
+    }else{
+        mensajeError("Complete los campos");
+    }
+      
 });
 //BOTON + AGREGAR UN NUEVO SERVICIO 
 $(document).on('click', '#newServicio', function(evento) {
