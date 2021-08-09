@@ -1,5 +1,5 @@
 <?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../session/isAdmin.php'; ; ?>
+<?php include_once '../session/isAdmin.php'; ?>
 <?php include_once '../../plantillas/cabecera.php'; ?>
 <!-- COLORAR ESTILOS ADICIONALES AQUI -->
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"
