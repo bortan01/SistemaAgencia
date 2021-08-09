@@ -1,7 +1,7 @@
-<?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../../plantillas/cabecera.php'; ?>
+<?php include_once '../../config/parametros.php'; 
+include_once '../session/isEmpleado.php'; 
+include_once '../../plantillas/cabecera.php'; ?>
 
-?>
 <!-- COLOCAR ESTILOS ADICIONALES AQUI -->
 <!--para la subida de fotos al sistema-->
 <link href="<?= $base_url ?>plugins/subir-foto/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
@@ -44,7 +44,7 @@
             <div class="timeline">
                <!-- timeline item -->
                <div id="formulario">
-                  <i class="fas fa-box-open bg-green"></i>
+                  <i class="fas fa-calendar-check bg-blue"></i>
                   <div class="timeline-item">
                      <h3 class="timeline-header"><a href="#">Ingrese las fechas a consultar</a></h3>
 
@@ -87,7 +87,7 @@
                <!-- END timeline item -->
                <!-- timeline item -->
                <div id="tabla">
-                  <i class="fas fa-user bg-green"></i>
+                  <i class="fas fa-hand-holding-usd bg-green"></i>
                   <div class="timeline-item">
                      <h3 class="timeline-header no-border"><a href="#">Mostrando Información</a></h3>
                      <div class="timeline-body">
