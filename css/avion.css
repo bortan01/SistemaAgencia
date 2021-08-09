@@ -1,0 +1,28 @@
+html {
+    background-color: #28505d;
+  }
+
+  .caminoAvion {
+    stroke: #d9dada;
+    stroke-width: 0.1%;
+    stroke-width: 0.5%;
+    stroke-dasharray: 1% 2%;
+    stroke-linecap: round;
+    fill: none;
+  }
+  
+  .fil1 {
+    fill: #d9dada;
+  }
+  
+  .fil2 {
+    fill: #c5c6c6;
+  }
+  
+  .fil4 {
+    fill: #9d9e9e;
+  }
+  
+  .fil3 {
+    fill: #aeafb0;
+  }
