@@ -6,6 +6,7 @@ $(document).ready(function() {
     inicializarComboTipoSitios();
     inicializarValidacionesSitios();
     inicializarGaleriaSitios();
+       $('#loadingTipoSitio').hide();
 
     //BOTON ABRIR MODAL DE CONTACTO
     $(document).on('click', '#btn-nuevoContactoSitio', function(evento) {
@@ -15,7 +16,7 @@ $(document).ready(function() {
     $(document).on('click', '#btnAgregarTipoSitio', function(evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#formularioAgregarTipoSitio");
-        form.validate();
+         form.validate();
         if (form.valid()) {
             guardarTipoSitio();
         }
@@ -270,7 +271,7 @@ $(document).ready(function() {
     }
 
     function guardarTipoSitio() {
-        $('#loadingSitio').show();
+        $('#loadingTipoSitio').show();
         let myData = {
             tipo_sitio: document.getElementById("nombreTipo").value
         }
@@ -315,7 +316,7 @@ $(document).ready(function() {
         }).always(function(xhr, opts) {
             $("#formularioAgregarTipoSitio").trigger("reset");
             $('#modal-agregarTipoSitio').modal('hide');
-            $('#loadingSitio').hide();
+            $('#loadingTipoSitio').hide();
         });
     }
 

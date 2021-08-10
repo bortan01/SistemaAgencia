@@ -761,7 +761,7 @@ function guardar() {
         Toast.fire({
             title: 'Exito...',
             icon: 'success',
-            text: "Viaje Guardado Exitosamente",
+            text: "Registro Guardado Exitosamente",
             showConfirmButton: true,
         }).then((result) => {
             //TODO BIEN Y RECARGAMOS LA PAGINA 

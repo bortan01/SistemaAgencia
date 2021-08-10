@@ -447,15 +447,14 @@ $(document).ready(function () {
         }).done(function (response) {
             //REST_Controller::HTTP_OK
             console.log(response);
+            $('#modal-editar').modal('hide');;
+            tabla.ajax.reload(null, false);
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
                 icon: 'success',
                 text: response.mensaje,
                 showConfirmButton: true,
-            }).then((result) => {
-                $('#modal-editar').modal('hide');;
-                tabla.ajax.reload(null, false);
             });
         }).fail(function (response) {
             console.log(response);
