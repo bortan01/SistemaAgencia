@@ -22,7 +22,8 @@ $(document).ready(function () {
    });
    //BOTON EDITAR FOTO PERFIL 
    $(document).on('click', 'a[name ="camara"]', function () {
-      //inicializamos nuevamente el input de foto
+      $('#loadingFotoPerfil').hide();
+            //inicializamos nuevamente el input de foto
       inicializarFoto();
       ///abrimos el modal
       $('#modal-perfil').modal('show');
@@ -313,7 +314,7 @@ $(document).ready(function () {
       });
    }
    function ActualizarFotoPerfil() {
-      $('#loading').show();
+      $('#loadingFotoPerfil').show();
       let form = new FormData();
       //ESTO ES PARA LA FOTO DE PERFIL
       let foto_perfil = document.getElementById("foto").files[0];
@@ -359,7 +360,7 @@ $(document).ready(function () {
          });
 
       }).always(function (xhr, opts) {
-         $('#loading').hide();
+         $('#loadingFotoPerfil').hide();
       });
    }
 

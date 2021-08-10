@@ -14,7 +14,7 @@ $(document).ready(function () {
         idSeleccionado = $(this).attr("name");
 
         $.ajax({
-            url: `${URL_SERVIDOR}SitioTuristico/show?id_sitio_turistico=${idSeleccionado}&estado=1`,
+            url: `${URL_SERVIDOR}SitioTuristico/show?id_sitio_turistico=${idSeleccionado}&sitio_turistico.estado=1`,
             method: "GET"
         }).done(function (response) {
             let lista = response.sitios;
