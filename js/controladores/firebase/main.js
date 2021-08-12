@@ -81,9 +81,7 @@ function login() {
     }).done(function (resp) {
       //NUESTRO SERVICIO RETORNARA UN TOKEN QUE ES EL
       // QUE OCUPAREMOS PARA MANEJAR LA SESION DEL USUARIO
-      $("#login-btn").prop('disabled', false);
-      $("#login-btn").html(btnHTML);
-      if (!resp.err) {
+          if (!resp.err) {
         if (resp.nivel == 'EMPLEADO' || resp.nivel == 'ADMINISTRADOR' || resp.nivel == 'RENTA CARS') {
           //aqui estamos guardando la foto de perfil del usuario          
           let token = resp.token;

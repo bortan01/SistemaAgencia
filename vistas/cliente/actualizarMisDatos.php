@@ -123,7 +123,7 @@ include_once '../../plantillas/cabecera.php';
                                     </div>
                                  </div>
                                  <div class="col-sm-3 d-flex justify-content-center" style="margin: auto;">
-                                    <div class="form-group">
+                                    <div id="conteinerImagen" class="form-group">
                                        <div class="hovereffect">
                                           <img id="currentPhoto" class="img-responsive rounded" src="" alt="">
                                           <div class="my-overlay">
@@ -161,33 +161,39 @@ include_once '../../plantillas/cabecera.php';
       <!-- Modal EDITAR-->
       <div class="modal-dialog" style="max-width: 35%;">
          <div class="modal-content">
-            <div class="modal-header">
-               <h4 class="modal-title">Selecciona una Foto</h4>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-               </button>
-            </div>
-            <div class="modal-body">
-               <div class="row">
-                  <div class="col-sm-3">
-
+            <div class="overlay-wrapper">
+               <div id="loadingFotoPerfil" class="overlay">
+                  <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                  <div class="text-bold pt-2">Cargando...
                   </div>
-                  <div class="col-sm-9">
-                     <div class="form-group">
-                        <div class="kv-avatar">
-                           <div class="file-loading">
-                              <input style="width: 180px;" id="foto" name="foto" type="file">
+               </div>
+               <div class="modal-header">
+                  <h4 class="modal-title">Selecciona una Foto</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="row">
+                     <div class="col-sm-3">
+                     </div>
+                     <div class="col-sm-9">
+                        <div class="form-group">
+                           <div class="kv-avatar">
+                              <div class="file-loading">
+                                 <input style="width: 180px;" id="foto" name="foto" type="file">
+                              </div>
                            </div>
+                           <!-- /.input group -->
                         </div>
-                        <!-- /.input group -->
                      </div>
                   </div>
                </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-               <button name="actualizarFotoPerfil" id="actualizarFotoPerfil" class="btn btn-info btn-sm"
-                  style="color: white">Actualizar</button>
+               <div class="modal-footer justify-content-between">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                  <button name="actualizarFotoPerfil" id="actualizarFotoPerfil" class="btn btn-info btn-sm"
+                     style="color: white">Actualizar</button>
+               </div>
             </div>
          </div>
          <!-- /.modal-content -->

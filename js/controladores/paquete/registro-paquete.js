@@ -26,6 +26,8 @@ let tabla = $('#TablaCostos').DataTable({
 
     columnDefs: [
         { className: "dt-center", targets: "_all" },
+        { targets: [2], visible: false },
+        { targets: [4], visible: false },
         { targets: [6], visible: false },
         { targets: [7], visible: false },
         { targets: [8], visible: false },

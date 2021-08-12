@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('#loadingCliente').hide();
+    $('#loadingFotoPerfil').hide();
     init();
     inicializarValidaciones();
     inicializarMascara();
@@ -14,7 +15,7 @@ $(document).ready(function () {
         }
     });
     //BOTON EDITAR FOTO PERFIL 
-    $(document).on('click', 'a[name ="camara"]', function () {
+    $(document).on('click', '#conteinerImagen', function () {
         ///abrimos el modal
         $('#modal-perfil').modal('show');
 
@@ -181,13 +182,13 @@ $(document).ready(function () {
         });
     }
     function ActualizarFotoPerfil() {
-        $('#loading').show();
+        $('#loadingFotoPerfil').show();
         let form = new FormData();
         //ESTO ES PARA LA FOTO DE PERFIL
         let foto_perfil = document.getElementById("foto").files[0];
         form.append('foto', foto_perfil);
         form.append('tipo', 'usuario_perfil');
-        form.append('identificador', localStorage.getItem('id_cliente'));
+        form.append('identificador', localStorage.getItem('id_clienteA'));
 
         //OCUPAR ESTA CONFIGURACION CUANDO SE ENVIAEN ARCHIVOS(FOTOS-IMAGENES)
         $.ajax({
@@ -204,6 +205,8 @@ $(document).ready(function () {
             let data = JSON.parse(response);
             localStorage.setItem('foto', data.path);
             document.getElementById("currentPhoto").src = data.path;
+            document.getElementById("fotoA").src = data.path;
+            localStorage.setItem('fotoA', data.path);
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
@@ -229,7 +232,7 @@ $(document).ready(function () {
             });
 
         }).always(function (xhr, opts) {
-            $('#loading').hide();
+            $('#loadingFotoPerfil').hide();
         });
     }
 });
