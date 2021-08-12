@@ -574,7 +574,7 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/agencia/mostrarInfo.php" class="nav-link">
+                     <a href="<?= $base_url ?>vistas/cliente/actualizarDocumentos.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
                         <p>Documentos</p>
                      </a>
