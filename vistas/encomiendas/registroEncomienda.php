@@ -64,7 +64,7 @@ include_once '../session/isEmpleado.php';
                               <div class="col-sm-6">
                                  <label>Teléfono</label>
                                  <div class="input-group">
-                                    <input disabled="true" type="text" name="telefono" id="telefono" class="form-control" autocomplete="off" placeholder="(503)7232-2345">
+                                    <input disabled="true" type="text" name="telefono" id="telefono" class="form-control" autocomplete="off" placeholder="(+503)7232-2345">
                                  </div>
                               </div>
                               <div class="col-sm-6">
@@ -80,7 +80,7 @@ include_once '../session/isEmpleado.php';
                               <div class="col-sm-6">
                                  <div class="form-group">
                                     <label>Código</label>
-                                    <input name="codigo" id="codigo" type="number" min=0  class="form-control"  pattern="[0-9]{1,10}" placeholder="Introduzca el Código postal de origen">
+                                    <input name="codigo" id="codigo" type="text"  class="form-control" placeholder="Introduzca el Código postal de origen">
                                  </div>
                               </div>
                               <div class="col-sm-6">
@@ -118,7 +118,7 @@ include_once '../session/isEmpleado.php';
                               <div class="col-sm-6">
                                  <label>Teléfono</label>
                                  <div class="input-group">
-                                    <input type="text" name="telefono_des" id="telefono_des" class="form-control" autocomplete="off">
+                                    <input type="text" name="telefono_des" id="telefono_des" class="form-control" autocomplete="off" placeholder="(+503)7232-2345">
                                  </div>
                               </div>
                               <div class="col-sm-6">
