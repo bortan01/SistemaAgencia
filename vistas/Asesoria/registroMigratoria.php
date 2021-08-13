@@ -51,41 +51,45 @@ include_once  '../../plantillas/navbar.php';
                         <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
                         </ul>
                      </div>
-                     <div class="card-body">
-                        <div class="tab-content" id="custom-tabs-four-tabContent">
-                           <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel"
-                              aria-labelledby="custom-tabs-four-home-tab">
-                              <div class="row">
-                                 <div class="col-sm-12">
-                                    <form id="migratorio-form" name="register-form" onsubmit="return false"
-                                       class="form-inline" role="form">
-
-                                       <!-- text input -->
-                                       <div class="form-group" style="width: 100%;">
-                                          <div class="algo" style="width: 100%;">
-                                             <div class="col-sm-12">
-                                                <!-- text input -->
-                                                <div class="form-group ">
-                                                   <div class="input-group" style="width: 100%;">
-                                                      <div style="width: 100%;" class="tab-content"
-                                                         id="custom-tabs-one-tabContent">
+                     <div class="overlay-wrapper">
+                        <div id="loading" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                           <div class="text-bold pt-2">Cargando...
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           <div class="tab-content" id="custom-tabs-four-tabContent">
+                              <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel"
+                                 aria-labelledby="custom-tabs-four-home-tab">
+                                 <div class="row">
+                                    <div class="col-sm-12">
+                                       <form id="migratorio-form" name="register-form" onsubmit="return false"
+                                          class="form-inline" role="form">
+                                          <!-- text input -->
+                                          <div class="form-group" style="width: 100%;">
+                                             <div class="algo" style="width: 100%;">
+                                                <div class="col-sm-12">
+                                                   <!-- text input -->
+                                                   <div class="form-group ">
+                                                      <div class="input-group" style="width: 100%;">
+                                                         <div style="width: 100%;" class="tab-content"
+                                                            id="custom-tabs-one-tabContent">
+                                                         </div>
                                                       </div>
                                                    </div>
                                                 </div>
                                              </div>
                                           </div>
-                                       </div>
-
-                                    </form>
-                                    <div class="col-sm-12">
-                                       <!-- text input -->
-                                       <div class="form-group ">
-                                          <div class="timeline-footer" style="text-align: right;">
-                                             <button type="button" id="btnFormulario" class="btn btn-info btn-sm"
-                                                style=" margin-top: 10px; color: white">Guardar</button>
-                                             <button type="button" class="btn btn-danger btn-sm"
-                                                style="margin-top: 10px; color: white"
-                                                data-dismiss="modal">Cancelar</button>
+                                       </form>
+                                       <div class="col-sm-12">
+                                          <!-- text input -->
+                                          <div class="form-group ">
+                                             <div class="timeline-footer" style="text-align: right;">
+                                                <button type="button" id="btnFormulario" class="btn btn-info btn-sm"
+                                                   style=" margin-top: 10px; color: white">Guardar</button>
+                                                <button type="button" class="btn btn-danger btn-sm"
+                                                   style="margin-top: 10px; color: white"
+                                                   data-dismiss="modal">Cancelar</button>
+                                             </div>
                                           </div>
                                        </div>
                                     </div>

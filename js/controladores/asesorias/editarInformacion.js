@@ -7,6 +7,7 @@ $(document).ready(function () {
    let cliente = urlParams.get('cliente');
    $('#titulo').html(`Registro de Información Migratoria - ${cliente}`);
 
+
    validaciones();
    llamarRamas();
 
@@ -148,7 +149,7 @@ $(document).ready(function () {
       });
    }
    function actualizar() {
-
+      $('#loading').show();
       $.ajax({
          url: URL_SERVIDOR + "FormularioMigratorio/update",
          method: "POST",
@@ -158,6 +159,7 @@ $(document).ready(function () {
          processData: false,
          contentType: false,
       }).done(function (response) {
+         $('#loading').hide();
          const Toast = Swal.mixin();
          Toast.fire({
             title: 'Exito...',
@@ -172,6 +174,7 @@ $(document).ready(function () {
          guardarBitacora();
       }).fail(function (response) {
          //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
+         $('#loading').hide();
          const Toast = Swal.mixin();
          Toast.fire({
             title: 'Exito...',
@@ -321,7 +324,7 @@ $(document).ready(function () {
                }
             }
             crearTabGaleria($selectTop, $nuevoTop, data.pasaportes);
-
+            $('#loading').hide();
          },
          error: function (err) {
             const Toast = Swal.mixin();

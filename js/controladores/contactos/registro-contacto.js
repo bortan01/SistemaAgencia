@@ -1,4 +1,4 @@
-$('#loadingContacto').hide();
+$('#loadingModalContacto').hide();
 inicializarValidacionesSitios();
 inicializarFotoContactoSitio();
 inicializarMascara();
@@ -109,7 +109,7 @@ function inicializarValidacionesSitios() {
 }
 
 function guardarContactoSitios() {
-    $('#loadingSitio').show();
+    $('#loadingModalContacto').show();
     let form = new FormData();
 
     let foto_perfil = document.getElementById("fotoContactoSitio").files[0];
@@ -166,7 +166,7 @@ function guardarContactoSitios() {
 
     }).always(function(xhr, opts) {
         $("#formularioAgregarContacto").trigger("reset");
-        $('#loadingSitio').hide();
+        $('#loadingModalContacto').hide();
     });
 }
 

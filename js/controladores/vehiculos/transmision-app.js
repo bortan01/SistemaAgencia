@@ -1,17 +1,19 @@
-$("#btnGuardar").on('click', function(e) {
+$('#loadingTransmision').hide();
+$("#btnGuardar").on('click', function (e) {
+    $('#loadingTransmision').show();
 
     e.preventDefault();
     let data = {
         "transmision": document.getElementById("transmision").value
     };
-   
+
     $.ajax({
         url: URL_SERVIDOR + "transmisionVehiculo/transmision",
         method: 'POST',
         data: data
 
-    }).done(function(response) {
-
+    }).done(function (response) {
+        $('#loadingTransmision').hide();
         $("#modal-transmision").modal('toggle');
         ///TODO OK CIERRA EL MODAL CARGA EL COMBO ANTES VACIARLO
 
@@ -22,8 +24,8 @@ $("#btnGuardar").on('click', function(e) {
             url: URL_SERVIDOR + "transmisionVehiculo/transmision",
             async: false,
             dataType: "json",
-            success: function(data) {
-    
+            success: function (data) {
+
                 let myData = [];
                 DATA_TRANSMISION = data.transmision;
                 for (let index = 0; index < DATA_TRANSMISION.length; index++) {
@@ -34,10 +36,11 @@ $("#btnGuardar").on('click', function(e) {
                 }
                 ///LE CARGAMOS LA DATA 
                 $('#id_transmision').select2({ data: myData });
-    
-             
+
+
             },
-            error: function(err) {
+            error: function (err) {
+                $('#loadingTransmision').hide();
                 //si da un error ya que quede la alerta
                 const Toast = Swal.mixin();
                 Toast.fire({
@@ -60,9 +63,9 @@ $("#btnGuardar").on('click', function(e) {
             text: response.mensaje,
             showConfirmButton: true,
         }).then((result) => {
-          
+
         });
-    }).fail(function(response) {
+    }).fail(function (response) {
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
         let respuestaDecodificada = JSON.parse(response.responseText);
         let listaErrores = "";

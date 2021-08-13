@@ -134,6 +134,7 @@ $(document).ready(function () {
                 });
                 crearTabGaleria($select, $nuevo);
                 llamarPreguntita();
+                $('#loading').hide();
             },
             error: function (err) {
                 const Toast = Swal.mixin();
@@ -147,7 +148,7 @@ $(document).ready(function () {
         });
     }
     function guardar() {
-      
+        $('#loading').show();
         $.ajax({
             url: URL_SERVIDOR + "FormularioMigratorio/save",
             method: "POST",
@@ -157,6 +158,7 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
         }).done(function (response) {
+            $('#loading').hide();
             console.log(response);
             const Toast = Swal.mixin();
             Toast.fire({
@@ -166,6 +168,7 @@ $(document).ready(function () {
                 showConfirmButton: true,
             })
         }).fail(function (response) {
+            $('#loading').hide();
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             const Toast = Swal.mixin();
             Toast.fire({
@@ -216,7 +219,7 @@ $(document).ready(function () {
                 showConfirmButton: true,
             })
 
-        }); 
+        });
     }
     function validaciones() {
 

@@ -41,11 +41,6 @@ include_once '../../plantillas/barra_lateral.php';
       <div class="row">
          <div class="col-md-12">
             <div class="timeline">
-               <!-- timeline time label -->
-               <div class="time-label">
-                  <span class="bg-red">Información</span>
-               </div>
-               <!-- /.timeline-label -->
                <!-- timeline item -->
                <div>
                   <i class="fas fa-plane bg-blue"></i>

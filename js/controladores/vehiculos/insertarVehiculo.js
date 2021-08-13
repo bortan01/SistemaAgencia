@@ -2,6 +2,7 @@
 $(document).ready(function() {
     inicializarGaleriaAutos();
     inicializarGaleriaDocumentos();
+    $('#loadingRegistroVehiculo').hide();
 
     //BOTON DE GUARDAR
     $(document).on('click', '#btnguardar', function(evento) {
@@ -15,7 +16,7 @@ $(document).ready(function() {
 
 
     function guardar() {
-        $('#loading').show();
+        $('#loadingRegistroVehiculo').show();
         let form = new FormData();
 
 
@@ -94,7 +95,7 @@ $(document).ready(function() {
             });
 
         }).always(function(xhr, opts) {
-            $('#loading').hide();
+            $('#loadingRegistroVehiculo').hide();
         });
     }
 

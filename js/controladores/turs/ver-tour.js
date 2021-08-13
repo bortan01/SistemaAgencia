@@ -142,11 +142,11 @@ $(document).ready(function () {
                      html = "";
                      html += '<td>';
                      html += '    <div class="btn-group">';
-                     html += '        <button type="button" name="' + json[i].id_tours + '" class="btn btn-primary" data-toggle="modal"';
+                     html += '        <button disabled type="button" name="' + json[i].id_tours + '" class="btn btn-primary" data-toggle="modal"';
                      html += '            data-target="">';
                      html += '            <i class="fas fa-edit" style="color: white"></i>';
                      html += '        </button>';
-                     html += '        <button type="button" name="' + json[i].id_tours + '" class="btn btn-danger" data-toggle="modal"';
+                     html += '        <button  type="button" name="' + json[i].id_tours + '" class="btn btn-danger" data-toggle="modal"';
                      html += '            data-target="#modal-eliminar">';
                      html += '            <i class="fas fa-trash" style="color: white"></i>';
                      html += '        </button>';

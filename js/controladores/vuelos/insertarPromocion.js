@@ -2,6 +2,7 @@
 $(document).ready(function() {
     inicializarGaleria();
     inicializarValidaciones();
+    $('#loadingPromocion').hide();
     //BOTON DE GUARDAR
     $(document).on('click', '#btnguardar', function(evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
@@ -14,7 +15,7 @@ $(document).ready(function() {
 
 
     function guardar() {
-        $('#loading').show();
+        $('#loadingPromocion').show();
         let form = new FormData();
 
         //ESTO ES PARA L A GALERIA 
@@ -69,7 +70,7 @@ $(document).ready(function() {
             });
 
         }).always(function(xhr, opts) {
-            $('#loading').hide();
+            $('#loadingPromocion').hide();
         });
     }
 

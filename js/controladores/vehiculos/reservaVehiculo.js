@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     const ID_VEHICULO = urlParams.get('vehiculo');
     const estadoReservado = 2;
 
@@ -10,6 +10,7 @@ $(document).ready(function() {
     let TOTALVEHICULO = 0.0;
     let contadorServicio = 0;
     let TOTAL_DIAS = 1;
+    $('#loadingReserva').hide();
 
 
 
@@ -40,7 +41,7 @@ $(document).ready(function() {
 
     });
 
-    $(document).on('click', '#agregarTabla', function(evento) {
+    $(document).on('click', '#agregarTabla', function (evento) {
 
 
         evento.preventDefault();
@@ -50,7 +51,7 @@ $(document).ready(function() {
 
 
         //alert(cantidad);
-        if (!costo) {} else {
+        if (!costo) { } else {
 
             let id = document.getElementById("comboServicio").value;
             let costo = document.getElementById("costo").value;
@@ -99,7 +100,7 @@ $(document).ready(function() {
 
     function ExisteFila(id, cantidadd, costo) {
         let encontrado = false;
-        tabla.rows().every(function(value, index) {
+        tabla.rows().every(function (value, index) {
             let data = this.data();
             if (id == data.id_servicio) {
                 let subTotoal = (costo * cantidadd).toFixed(2);
@@ -117,7 +118,7 @@ $(document).ready(function() {
 
     function modificarTotal() {
         TOTAL = 0.0;
-        tabla.rows().every(function(value, index) {
+        tabla.rows().every(function (value, index) {
             let data = this.data();
             TOTAL += parseFloat(data.sub_total);
         });
@@ -142,29 +143,29 @@ $(document).ready(function() {
                 }
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }
         });
     }
     //BOTON DE ELIMINAR
-    $(document).on('click', '.btn-group .btn-danger', function(evento) {
+    $(document).on('click', '.btn-group .btn-danger', function (evento) {
 
         tabla.row($(this).parents('tr')).remove().draw();
         modificarTotal();
 
     });
 
-    $(function() {
-        $("#fecha_salida").on("change", function() {
+    $(function () {
+        $("#fecha_salida").on("change", function () {
             let inicio = moment($('#fecha_salida').data('daterangepicker').startDate._d);
             let fin = moment($('#fecha_salida').data('daterangepicker').endDate._d);
             TOTAL_DIAS = fin.diff(inicio, 'days');
@@ -227,11 +228,12 @@ $(document).ready(function() {
         });
 
     }
-    $("#btnGuardar").on('click', function(e) {
+    $("#btnGuardar").on('click', function (e) {
         e.preventDefault();
         let form = $("#register-reserva");
         form.validate();
         if (form.valid()) {
+            $('#loadingReserva').show();
 
             /*let comboServicios = $("#comboServicio").select2('data');
                 let arregloServicios = [];
@@ -240,8 +242,6 @@ $(document).ready(function() {
                     arregloServicios.push(comboServicios[index].text);
                 }
                 console.log(arregloServicios);*/
-
-
             let form = new FormData();
 
             form.append("id_vehiculo", ID_VEHICULO);
@@ -256,7 +256,7 @@ $(document).ready(function() {
             form.append("activo_detalle", estadoReservado);
 
             let detalle_servicios = [];
-            tabla.rows().every(function(value, index) {
+            tabla.rows().every(function (value, index) {
                 let data = this.data();
 
                 let servicios = data['servicio'];
@@ -281,7 +281,8 @@ $(document).ready(function() {
                 processData: false,
                 contentType: false,
 
-            }).done(function(response) {
+            }).done(function (response) {
+                $('#loadingReserva').hide();
                 guardarBitacora();
 
                 document.getElementById("register-reserva").reset();
@@ -296,9 +297,8 @@ $(document).ready(function() {
                     //TODO BIEN Y RECARGAMOS LA PAGINA 
                     location.reload();
                 });
-            }).fail(function(response) {
-
-
+            }).fail(function (response) {
+                $('#loadingReserva').hide();
                 //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
                 let respuestaDecodificada = JSON.parse(response.responseText);
                 let listaErrores = "";

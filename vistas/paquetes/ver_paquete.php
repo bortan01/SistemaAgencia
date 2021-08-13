@@ -46,7 +46,7 @@
                            <th>Nombre</th>
                            <th>Precio ($)</th>
 
-                           <th>Tipo de Tour</th>
+                           <th>Tipo de Paquete</th>
                            <th>Acciones</th>
                            <th>id</th>
 

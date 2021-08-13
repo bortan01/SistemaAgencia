@@ -116,12 +116,6 @@ include_once '../../plantillas/barra_lateral.php';
                      </div>
                   </div>
                   <!-- END timeline item -->
-
-                  <!-- timeline time label -->
-                  <div class="time-label">
-                     <span class="bg-green">Actualizaciones de Envió</span>
-                  </div>
-                  <!-- /.timeline-label -->
                </div>
             </div>
             <!-- END timeline item -->

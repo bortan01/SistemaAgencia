@@ -43,11 +43,6 @@
                   </div>
                </div>
                <div class="timeline">
-                  <!-- timeline time label -->
-                  <div class="time-label">
-                     <span class="bg-red">Registrar Reserva</span>
-                  </div>
-                  <!-- /.timeline-label -->
                   <!-- timeline item -->
                   <div>
                      <i class="fas fa-map-marked-alt bg-blue"></i>

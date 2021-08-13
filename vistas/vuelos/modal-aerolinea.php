@@ -48,7 +48,6 @@
                         <div class="timeline-footer" style="text-align: right;">
                            <a class="btn btn-info btn-sm" style="color: white" type="button"
                               id="btnAerolinea">Guardar</a>
-                           <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
                         </div>
 
                      </div>
