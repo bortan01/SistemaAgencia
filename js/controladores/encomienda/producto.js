@@ -54,7 +54,7 @@ $(document).ready(function() {
                     $('#costo').val(index.tarifa);
 
                      select.append('<label for="cars">Ingrese la Cantidad('+index.unidad_medida+')</label>'+
-                    '<input name="cantidad" id="cantidad" type="text" class="form-control" placeholder="'+index.unidad_medida+'">');
+                    '<input name="cantidad" id="cantidad" type="number" min="1" class="form-control" placeholder="'+index.unidad_medida+'">');
 
                     
 
