@@ -168,7 +168,7 @@ $(document).ready(function () {
             //TODO BIEN Y RECARGAMOS LA PAGINA 
             window.location = `${URL_SISTEMA}vistas/Asesoria/ver_asesoria.php`;
             //location.reload(); 
-        });
+         });
          guardarBitacora();
       }).fail(function (response) {
          //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
@@ -287,7 +287,7 @@ $(document).ready(function () {
          url: `${URL_SERVIDOR}Asesoria/respuestas?id_cliente=${ID_CLIENTE}`,
          dataType: "json",
          success: function (data) {
-            console.log(data)
+            // console.log(data)
             var contador = 0;
             let cont = 0;
 
@@ -304,7 +304,7 @@ $(document).ready(function () {
                      // agregamos el input a la vista
                      $select.append(crearPreguntaMultiple(data.preguntas[i]));
                      // obtenemos el input para agregarle la mascara
-                     let contendorInpus = $select.find('.caja-multiple');
+                     let contendorInpus = $select.find('.caja-multiple').last();;
                      // agregamos la mascara al input
                      agregarMascaraMultiple(contendorInpus, data.preguntas[i].tipo, data.preguntas[i].respuesta);
                      modificarColorDeBotones(contendorInpus);
@@ -497,7 +497,7 @@ $(document).ready(function () {
             input.inputmask({ "mask": "A99999999" }); //specifying options
             break;
          case 'nit':
-            input.inputmask("1013-110795-101-0"); //static mask
+            input.inputmask("9999-999999-999-9"); //static mask
             input.inputmask({ "mask": "9999-999999-999-9" }); //specifying options
             break;
          default:
