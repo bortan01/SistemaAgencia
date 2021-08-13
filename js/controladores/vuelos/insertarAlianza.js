@@ -1,3 +1,4 @@
+inicializarValidaciones();
 inicializarMascara();
 
 $("#btnAgregar").on('click', function(e) {
@@ -62,4 +63,46 @@ function inicializarMascara() {
     let telef = $('#telef');
     telef.inputmask("(+123) 1234-5678");
     telef.inputmask({ "mask": "(+999) 9999-9999" });
+}
+
+function inicializarValidaciones() {
+    $('#registro-alianza').validate({
+        rules: {
+            nombre_alianza: {
+                required: true,
+                maxlength: 50
+            },
+            sitioWeb_alianza: {
+                required: true,
+                email: true
+            }
+
+           
+        },
+        messages: {
+            nombre_alianza: {
+                required: "Ingrese nombre de Alianza",
+                minlength: "Logitud del nombre debe ser mayor a 3",
+                maxlength: "Logitud del nombre no debe exceder a 50",
+            },
+            sitioWeb_alianza: {
+                required: "Ingrese la url del sitio web",
+                email: "Ingrese un correo valido"
+            }
+
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function(element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
+
+        }
+    });
+
 }

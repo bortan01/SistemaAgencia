@@ -124,8 +124,7 @@ $(document).ready(function() {
             rules: {
                 sitioWeb: {
                     required: true,
-                    minlength: 3,
-                    maxlength: 40
+                    email: true
                 },
 
                 telefonoContacto: {
@@ -137,8 +136,7 @@ $(document).ready(function() {
             messages: {
                 sitioWeb: {
                     required: "Ingrese la url del sitio web",
-                    minlength: "Logitud de url debe ser mayor a 3",
-                    maxlength: "Logitud de url no debe exceder a 40",
+                    email: "Ingrese un correo valido"
                 },
 
                 telefonoContacto: {

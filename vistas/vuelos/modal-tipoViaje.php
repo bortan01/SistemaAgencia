@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h4 class="modal-title">Registrar Tipo de Viaje</h4>
+                <h4 class="modal-title">Registrar Tipo de Viaje</h4>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -23,7 +23,8 @@
                                         <div class="form-group">
                                             <label>Nombre de Tipo de Viaje</label>
                                             <input type="text" name="nombre_tipoviajes" id="nombre_tipoviajes"
-                                                class="form-control" placeholder="Digite nombre de tipo de viaje" autocomplete="off">
+                                                class="form-control" placeholder="Digite nombre de tipo de viaje"
+                                                autocomplete="off">
                                         </div>
                                     </div>
 
@@ -31,33 +32,31 @@
                                         <!-- text input -->
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <textarea class="form-control" rows="3" name="descripcion_tipoViaje" id="descripcion_tipoViaje"
-                                                placeholder="Describir.." autocomplete="off"></textarea>
+                                            <textarea class="form-control" rows="3" name="descripcion_tipoViaje"
+                                                id="descripcion_tipoViaje" placeholder="Describir.."
+                                                autocomplete="off"></textarea>
                                         </div>
                                     </div>
-                                    
-                                </div>
 
                                 </div>
-                                <div class="timeline-footer" style="text-align: right;">
-                                    <a class="btn btn-info btn-sm" style="color: white" type="button"
-                                        id="btnAgregarViaje">Guardar</a>
-                                    <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
-                                </div>
+
                             </div>
 
-
                         </div>
-
+                        <div class="timeline-footer" style="text-align: right;">
+                            <a class="btn btn-info btn-sm" style="color: white" type="button"
+                                id="btnAgregarViaje">Guardar</a>
+                            <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
+                        </div>
                     </section>
-                    <p>
                 </div>
             </form>
         </div>
-        <!-- /.modal-content -->
+
     </div>
-    <!-- /.modal-dialog -->
+    <!-- /.modal-content -->
 </div>
+
 
 
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/insertarTipoViaje.js"></script>

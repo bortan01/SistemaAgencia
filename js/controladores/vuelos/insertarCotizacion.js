@@ -88,6 +88,9 @@ $(document).ready(function() {
     function inicializarValidaciones() {
         $('#register-cotizarv').validate({
             rules: {
+                id_cliente: {
+                    required: true
+                },
                 ciudad_partida: {
                     required: true,
                     minlength: 10
@@ -95,6 +98,12 @@ $(document).ready(function() {
                 ciudad_llegada: {
                     required: true,
                     minlength: 10
+                },
+                fechaPartida: {
+                    required: true
+                },
+                fechaLlegada: {
+                    required: true
                 },
                 idaerolinea: {
                     required: true
@@ -120,6 +129,9 @@ $(document).ready(function() {
                 }
             },
             messages: {
+                id_cliente: {
+                    required: "Seleccione Cliente",
+                },
                 ciudad_partida: {
                     required: "Debe de proporcionar la ciudad de partida",
                 },
@@ -127,9 +139,14 @@ $(document).ready(function() {
                     required: "Debe de proporcionar la ciudad de llegada",
 
                 },
+                fechaPartida: {
+                    required: "Seleccione Fecha de Partida",
+                },
+                fechaLlegada: {
+                    required: "Seleccione Fecha de Llegada",
+                },
                 idaerolinea: {
                     required: "Seleccione Aerolinea",
-
                 },
                 idclase: {
                     required: "Seleccione el tipo de clase"

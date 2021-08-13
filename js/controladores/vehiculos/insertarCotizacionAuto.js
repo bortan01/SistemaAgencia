@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    inicializarValidaciones();
     $("#btnGuardarCotizacionV").on('click', function(e) {
 
 
@@ -64,4 +64,92 @@ $(document).ready(function() {
 
 
     });
+
+    function inicializarValidaciones() {
+        $('#register-cotizarVehiculo').validate({
+            rules: {
+                id_cliente: {
+                    required: true
+                },
+                modelo: {
+                    required: true
+                },
+                anio: {
+                    required: true,
+                    minlength: 4
+                },
+                caracteristicas: {
+                    required: true,
+                    minlength: 10
+                },
+                direccion_recogida: {
+                    required: true,
+                    minlength: 10
+                },
+                fechaRecogida: {
+                    required: true
+                },
+                HoraRecogida: {
+                    required: true
+                },
+                direccion_devolucion: {
+                    required: true,
+                    minlength: 10
+                },
+                fechaDevolucion: {
+                    required: true
+                },
+                HoraDevolucion: {
+                    required: true
+                }
+            },
+            messages: {
+                id_cliente: {
+                    required: "Seleccione Cliente"
+                },
+                modelo: {
+                    required: "Seleccione el Modelo"
+                },
+                anio: {
+                    required: "Debe de proporcionar el Año"
+                },
+                caracteristicas: {
+                    required: "Describa las caracteristicas del Vehículo que necesita"
+                },
+                direccion_recogida: {
+                    required: "Debe proporcionar la Dirección en la cual recogera el vehículo"
+                },
+                fechaRecogida: {
+                    required: "Seleccione Fecha de Recogida"
+                },
+                HoraRecogida: {
+                    required: "Seleccione Hora de Recogida"
+                },
+                direccion_devolucion: {
+                    required: "Debe proporcionar la Dirección en la cual devolvera el vehículo"
+                },
+                fechaDevolucion: {
+                    required: "Seleccione Fecha de Devolución"
+                },
+                HoraDevolucion: {
+                    required: "Seleccione Hora de Devolución"
+                }
+
+            },
+            errorElement: 'span',
+            errorPlacement: function(error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+
+            }
+        });
+
+
+    }
 });
