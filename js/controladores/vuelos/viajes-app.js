@@ -7,29 +7,12 @@
     $('#loadingActualizarViaje').hide();
     //BOTON MOSTRAR 
     $(document).on('click', '.btn-group .btn-primary', function() {
-
-        idTipoViaje = $(this).attr("name");
-
-        $('#loadingActualizar').show();
-        $.ajax({
-            url: URL_SERVIDOR+"tipo_viaje/viajes?idtipo_viaje=" + idTipoViaje,
-            method: "GET"
-        }).done(function(response) {
-            //MANDALOS LOS VALORES AL MODAL
-            for (let i = 0, ien = response.viaje.length; i < ien; i++) {
-
-                document.getElementById("nombre_tipoviajes").value = response.viaje[i].nombre_tipoviaje;
-                document.getElementById("descripcion_tipoViaje").value = response.viaje[i].descripcion;
-
-            }
-            
-
-        }).fail(function(response) {
-
-        }).always(function(xhr, opts) {
-            $('#modal-editar').modal('show');
-            $('#loadingActualizar').hide();
-        });
+        let fila = $(this).closest("tr");
+        let data = tabla.row(fila).data();
+        console.log(data);
+        idTipoViaje = data.idtipo_viaje;
+        document.getElementById("nombre_tipoviaje").value = data.nombre_tipoviaje;
+        document.getElementById("descripcion").value = data.descripcion;   
     });
 
 
