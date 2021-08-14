@@ -16,7 +16,7 @@ $(document).ready(function () {
         idAlquiler = $(this).attr("name");
         id_vehiculo = $(this).attr("id");
 
-        $('#loadingActualizar').show();
+        $('#loadingActualizarAlquiler').show();
         $.ajax({
             url: URL_SERVIDOR + "DetalleVehiculo/obtenerDetalleVehiculo?id_detalle=" + idAlquiler,
             method: "GET"
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
         }).always(function (xhr, opts) {
             $('#modal-editar').modal('show');
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarAlquiler').hide();
         });
     });
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
         idAlquiler = $(this).attr("name");
         id_vehiculo = $(this).attr("id");
 
-        $('#loadingActualizar').show();
+        $('#loadingActualizarAlquiler').show();
         $.ajax({
             url: URL_SERVIDOR + "DetalleVehiculo/obtenerDetalleVehiculo?id_detalle=" + idAlquiler,
             method: "GET"
@@ -246,7 +246,7 @@ $(document).ready(function () {
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingActualizarAlquiler').show();
         let data = {
             "id_detalle": idAlquiler,
             "kilometraje": document.getElementById("kilometraje").value,
@@ -287,7 +287,7 @@ $(document).ready(function () {
             });
 
         }).always(function (xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarAlquiler').hide();
         });
     }
 

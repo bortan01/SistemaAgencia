@@ -1,11 +1,13 @@
-$(document).ready(function() {
+$(document).ready(function () {
     inicializarValidaciones();
+    $('#loadingMantenimiento').hide();
 
-    $("#btnGuardar").on('click', function(e) {
+    $("#btnGuardar").on('click', function (e) {
         e.preventDefault();
         let form = $("#register-mantenimiento");
         form.validate();
         if (form.valid()) {
+            $('#loadingMantenimiento').show();
 
             let comboMabtenimiento = $("#mantenimiento_realizado").select2('data');
             let comboPiezas = $("#piezas_cambiadas").select2('data');
@@ -43,7 +45,8 @@ $(document).ready(function() {
                 processData: false,
                 contentType: false,
 
-            }).done(function(response) {
+            }).done(function (response) {
+                $('#loadingMantenimiento').hide();
                 guardarBitacora();
                 document.getElementById("register-mantenimiento").reset();
 
@@ -57,7 +60,9 @@ $(document).ready(function() {
                     //TODO BIEN Y RECARGAMOS LA PAGINA 
                     location.reload();
                 });
-            }).fail(function(response) {
+            }).fail(function (response) {
+                $('#loadingMantenimiento').hide();
+
                 //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
                 let respuestaDecodificada = JSON.parse(response.responseText);
                 let listaErrores = "";
@@ -123,14 +128,14 @@ $(document).ready(function() {
 
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }

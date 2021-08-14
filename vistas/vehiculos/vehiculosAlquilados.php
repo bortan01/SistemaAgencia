@@ -108,7 +108,10 @@ include_once '../../plantillas/cabecera.php'; ?>
          <div class="modal-content">
 
             <div class="overlay-wrapper">
-
+               <div id="loadingActualizarAlquiler" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                  <div class="text-bold pt-2">Cargando...
+                  </div>
+               </div>
                <div class="modal-header">
                   <h4 class="modal-title">Regresar Vehiculo</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
