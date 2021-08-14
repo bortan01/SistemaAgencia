@@ -39,7 +39,7 @@ include_once '../../plantillas/cabecera.php'; ?>
    <!-- Main content -->
    <section class="content">
       <div class="row">
-         <div class="col-12">
+         <div class="col-12">zzz
 
 
             <div class="card">
@@ -103,8 +103,11 @@ include_once '../../plantillas/cabecera.php'; ?>
    <div class="modal fade" id="modal-editar">
       <div class="modal-dialog modal-lg modal-dialog-centered">
          <div class="modal-content">
-
             <div class="overlay-wrapper">
+               <div id="loadingActualizarServicio" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                  <div class="text-bold pt-2">Cargando...
+                  </div>
+               </div>
 
                <div class="modal-header">
                   <h4 class="modal-title">Modificar Servicio</h4>

@@ -5,6 +5,8 @@ $(document).ready(function() {
 
     inicializarValidaciones();
     inicializarTabla();
+    $('#loadingActualizarServicio').hide();
+
 
     //BOTON MOSTRAR 
     $(document).on('click', '.btn-group .btn-primary', function() {
@@ -168,7 +170,7 @@ $(document).ready(function() {
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingActualizarServicio').show();
         let data = {
             "idservicios_opc": idServicio,
             "nombre_servicio": document.getElementById("nombre_servicio").value,
@@ -206,7 +208,7 @@ $(document).ready(function() {
             });
 
         }).always(function(xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarServicio').hide();
         });
     }
 
