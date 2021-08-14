@@ -1,4 +1,3 @@
-$(document).ready(function() {
 
     let idAerolineas;
     let tabla;
@@ -247,4 +246,3 @@ $(document).ready(function() {
         telef.inputmask("(+123) 1234-5678");
         telef.inputmask({ "mask": "(+999) 9999-9999" });
     }
-});
