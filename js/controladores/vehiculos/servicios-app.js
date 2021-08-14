@@ -127,7 +127,7 @@ $(document).ready(function() {
                 descripcion: {
                     required: true,
                     minlength: 3,
-                    maxlength: 100
+                    maxlength: 200
                 },
                 precio: {
                     required: true,
@@ -144,7 +144,7 @@ $(document).ready(function() {
                 descripcion: {
                     required: "Ingrese en que consiste el Servicio",
                     minlength: "Logitud del nombre debe ser mayor a 3",
-                    maxlength: "Logitud del nombre no debe exceder a 40",
+                    maxlength: "Logitud del nombre no debe exceder a 200",
                 },
                 precio: {
                     required: "Ingrese un numero",
