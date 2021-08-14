@@ -15,7 +15,8 @@ $(document).ready(function() {
             data: myData
 
         }).done(function(response) {
-            guardarBitacora();
+            // la  bitacora genera error
+            // guardarBitacora();
             $("#modal-tipoClase").modal('toggle');
             document.getElementById("register-clase").reset();
 
