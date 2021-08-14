@@ -1,7 +1,7 @@
 $(document).ready(function (){
 
     inicializarValidaciones();
-  
+    $('#loadingRegistroProducto').hide();
     //BOTON PARA AGREGAR
     $(document).on('click', '#btn-producto', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
@@ -57,13 +57,14 @@ $(document).ready(function (){
     }
     
 function add_producto() {
-
+        $('#loadingRegistroProducto').show();
         $.ajax({
             url: URL_SERVIDOR+"Producto/producto",
             method: 'POST',
             data: $("#register-form").serialize()
 
         }).done(function (response) {
+        $('#loadingRegistroProducto').hide();
         document.getElementById("register-form").reset();
       $('#id_unidad').val('').trigger('change');
         //$('#id_producto').load('#id_producto');
@@ -86,6 +87,7 @@ function add_producto() {
                 //location.reload(); NO QUIERO QUE RECARGUE ME ACTUALIZA SOLA
             });
         }).fail(function (response) {
+            $('#loadingRegistroProducto').hide();
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             let respuestaDecodificada = JSON.parse(response.responseText);
             let listaErrores = "";

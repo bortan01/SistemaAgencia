@@ -117,81 +117,82 @@ include_once '../../plantillas/barra_lateral.php';
          aria-hidden="true">
          <div class="modal-dialog" role="document">
             <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="">Modificar producto</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               <form id="register-form" name="register-form" onsubmit="return false" role="form">
-                  <div class="modal-body">
-                     <form id="register-form" name="register-form" onsubmit="return false">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <div class="form-group">
-                                 <label>Nombre</label>
-                                 <input name="nombre_producto" id="producto" type="text" class="form-control"
-                                    placeholder="Introduzca el nombre" autocomplete="off">
-                                 <input name="id_producto" id="id_producto" type="hidden">
+               <div class="overlay-wrapper">
+                  <div id="loadingModificarProducto" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                     <div class="text-bold pt-2">Cargando...
+                     </div>
+                  </div>
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="">Modificar producto</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <form id="register-form" name="register-form" onsubmit="return false" role="form">
+                     <div class="modal-body">
+                        <form id="register-form" name="register-form" onsubmit="return false">
+                           <div class="row">
+                              <div class="col-sm-6">
+                                 <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input name="nombre_producto" id="producto" type="text" class="form-control"
+                                       placeholder="Introduzca el nombre" autocomplete="off">
+                                    <input name="id_producto" id="id_producto" type="hidden">
+                                 </div>
                               </div>
-                           </div>
-
-                           <div class="col-sm-6">
-                              <div class="form-group">
-                                 <label>Tarifa</label>
-                                 <input name="tarifa" id="tarifa" type="number" min=0 class="form-control"
-                                    placeholder="Introduzca la tarifa" autocomplete="off">
+                              <div class="col-sm-6">
+                                 <div class="form-group">
+                                    <label>Tarifa</label>
+                                    <input name="tarifa" id="tarifa" type="number" min=0 class="form-control"
+                                       placeholder="Introduzca la tarifa" autocomplete="off">
+                                 </div>
                               </div>
-                           </div>
-                           <div class="col-sm-6">
-                           <!-- text input -->
-                           <div class="hidden">
-                              <label name="detalle" id="detalle">Modifico un Producto</label>
-                           </div>
-                        </div>
-                        </div>
-
-
-                     </form>
-                     <form id="unidad-form" name="register-form" onsubmit="return false">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <div class="form-group">
-                                 <div class="input-group">
-                                    <label>Unidad de medida</label>
-                                    <select name="id_unidad" id="id_unidad"
-                                       class="select2 select2-hidden-accessible form-control"
-                                       data-placeholder="Seleccione" style="width: 100%;">
-                                    </select>
+                              <div class="col-sm-6">
+                                 <!-- text input -->
+                                 <div class="hidden">
+                                    <label name="detalle" id="detalle">Modifico un Producto</label>
                                  </div>
                               </div>
                            </div>
-
-                           <div class="col-sm-5">
-                              <div class="form-group">
-                                 <label>Nueva Unidad</label>
-                                 <input name="unidad_medida" id="unidad_medida" type="text" class="form-control"
-                                    placeholder="Introduzca la unidad" autocomplete="off">
+                        </form>
+                        <form id="unidad-form" name="register-form" onsubmit="return false">
+                           <div class="row">
+                              <div class="col-sm-6">
+                                 <div class="form-group">
+                                    <div class="input-group">
+                                       <label>Unidad de medida</label>
+                                       <select name="id_unidad" id="id_unidad"
+                                          class="select2 select2-hidden-accessible form-control"
+                                          data-placeholder="Seleccione" style="width: 100%;">
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-sm-5">
+                                 <div class="form-group">
+                                    <label>Nueva Unidad</label>
+                                    <input name="unidad_medida" id="unidad_medida" type="text" class="form-control"
+                                       placeholder="Introduzca la unidad" autocomplete="off">
+                                 </div>
+                              </div>
+                              <div class="col-sm-1">
+                                 <br>
+                                 <span class="input-group-btn">
+                                    <button type="button" class="btn btn-success btn-add" id="btn-unidad"
+                                       name="btn-unidad" style="margin-top: 7px; width: 119%;">+</button>
+                                 </span>
                               </div>
                            </div>
-                           <div class="col-sm-1">
-                              <br>
-                              <span class="input-group-btn">
-                                 <button type="button" class="btn btn-success btn-add" id="btn-unidad" name="btn-unidad"
-                                    style="margin-top: 7px; width: 119%;">+</button>
-                              </span>
-                           </div>
-                        </div>
-                     </form>
-
-                  </div>
-                  <div class="modal-footer">
-                     <button type="button" id="btnActualizarProducto" class="btn btn-info btn-sm"
-                        style="color: white">Actualizar</button>
-                     <button type="button" class="btn btn-danger btn-sm" style="color: white"
-                        data-dismiss="modal">Cancelar</button>
-                  </div>
-               </form>
+                        </form>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" id="btnActualizarProducto" class="btn btn-info btn-sm"
+                           style="color: white">Actualizar</button>
+                        <button type="button" class="btn btn-danger btn-sm" style="color: white"
+                           data-dismiss="modal">Cancelar</button>
+                     </div>
+                  </form>
+               </div>
             </div>
          </div>
       </div>

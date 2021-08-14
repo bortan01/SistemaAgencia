@@ -32,65 +32,65 @@ include_once '../../plantillas/barra_lateral.php';
    <section class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="timeline">
-
-               <div>
-                  <i class="fas fa-box-open bg-blue"></i>
-                  <div class="timeline-item">
-                     <h3 class="timeline-header"><a href="#">Datos Generales</a></h3>
-
-                     <div class="timeline-body">
-                        <form id="register-form" name="register-form" onsubmit="return false">
-                           <div class="row">
-                              <div class="col-sm-5">
-                                 <div class="form-group">
-                                    <label>Nombre</label>
-                                    <input name="nombre_producto" type="text" class="form-control"
-                                       placeholder="Introduzca el nombre" autocomplete="off">
-                                 </div>
-                              </div>
-
-                              <div class="col-sm-3">
-                                 <div class="form-group">
-                                    <label>Tarifa</label>
-                                    <input name="tarifa" type="text" class="form-control"
-                                       placeholder="Introduzca la tarifa" autocomplete="off">
-                                 </div>
-                              </div>
-
-                              <div class="col-sm-3">
-                                 <div class="form-group">
-                                    <label>Unidad de medida</label>
-                                    <div class="input-group">
-                                       <select name="id_unidad" id="id_unidad"
-                                          class="select2 select2-hidden-accessible form-control"
-                                          data-placeholder="Seleccione" style="width: 100%;">
-                                       </select>
+            <div class="overlay-wrapper">
+               <div id="loadingRegistroProducto" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                  <div class="text-bold pt-2">Cargando...
+                  </div>
+               </div>
+               <div class="timeline">
+                  <div>
+                     <i class="fas fa-box-open bg-blue"></i>
+                     <div class="timeline-item">
+                        <h3 class="timeline-header"><a href="#">Datos Generales</a></h3>
+                        <div class="timeline-body">
+                           <form id="register-form" name="register-form" onsubmit="return false">
+                              <div class="row">
+                                 <div class="col-sm-5">
+                                    <div class="form-group">
+                                       <label>Nombre</label>
+                                       <input name="nombre_producto" type="text" class="form-control"
+                                          placeholder="Introduzca el nombre" autocomplete="off">
                                     </div>
                                  </div>
+                                 <div class="col-sm-3">
+                                    <div class="form-group">
+                                       <label>Tarifa</label>
+                                       <input name="tarifa" type="text" class="form-control"
+                                          placeholder="Introduzca la tarifa" autocomplete="off">
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-3">
+                                    <div class="form-group">
+                                       <label>Unidad de medida</label>
+                                       <div class="input-group">
+                                          <select name="id_unidad" id="id_unidad"
+                                             class="select2 select2-hidden-accessible form-control"
+                                             data-placeholder="Seleccione" style="width: 100%;">
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-1">
+                                    <br>
+                                    <span class="input-group-btn">
+                                       <button type="button" class="btn btn-success btn-add" id="unidad-add" name=""
+                                          style="margin-top: 10px; width: 100%;">+</button>
+                                    </span>
+                                 </div>
                               </div>
-                              <div class="col-sm-1">
-                                 <br>
-                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-add" id="unidad-add" name=""
-                                       style="margin-top: 10px; width: 100%;">+</button>
-                                 </span>
+                              <div class="col-sm-6">
+                                 <!-- text input -->
+                                 <div class="hidden">
+                                    <label name="detalle" id="detalle">Registró un Producto</label>
+                                 </div>
                               </div>
-
+                           </form>
+                           <div class="timeline-footer" style="text-align: right;">
+                              <a class="btn btn-info btn-sm" id="btn-producto" style="color: white">Guardar</a>
+                              <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
                            </div>
-                           <div class="col-sm-6">
-                              <!-- text input -->
-                              <div class="hidden">
-                                 <label name="detalle" id="detalle">Registró un Producto</label> 
-                              </div>
-                           </div>
-                        </form>
-                        <div class="timeline-footer" style="text-align: right;">
-                           <a class="btn btn-info btn-sm" id="btn-producto" style="color: white">Guardar</a>
-                           <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
                         </div>
                      </div>
-
                   </div>
                </div>
             </div>

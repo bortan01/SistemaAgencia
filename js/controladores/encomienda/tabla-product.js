@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     inicializarValidaciones();
     inicializarTabla();
+    $('#loadingModificarProducto').hide();
 
     //BOTON MOSTRAR EL REPORTE
     $(document).on('click', '#btnRepoteActivo', function() {
@@ -270,7 +271,7 @@ $(document).ready(function() {
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingModificarProducto').show();
         let data = {
             "nombre_producto": document.getElementById("producto").value,
             "tarifa": document.getElementById("tarifa").value,
@@ -309,7 +310,7 @@ $(document).ready(function() {
             });
 
         }).always(function(xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingModificarProducto').hide();
         });
     }
 
