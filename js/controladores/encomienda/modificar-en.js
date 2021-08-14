@@ -16,6 +16,7 @@ $(document).ready(function () {
     inicializarValidaciones();
     mostrarDatos();
     inicializarTabla();
+    $('#loadingModificarEncomienda').hide();
 
     //AGREGANDO LA INFORMACION DE UN TUR A LA TABLA
     $(document).on('click', '#agregarTabla', function (evento) {
@@ -287,7 +288,7 @@ $(document).ready(function () {
     }
 
     function modificar() {
-        $('#loading').show();
+        $('#loadingModificarEncomienda').show();
         let form = obtenerData();
 
         //OCUPAR ESTA CONFIGURACION CUANDO SE ENVIAEN ARCHIVOS(FOTOS-IMAGENES)
@@ -328,7 +329,7 @@ $(document).ready(function () {
             });*/
 
         }).always(function (xhr, opts) {
-            $('#loading').hide();
+            $('#loadingModificarEncomienda').hide();
         });
     }
 
