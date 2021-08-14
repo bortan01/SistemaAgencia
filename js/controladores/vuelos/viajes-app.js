@@ -1,11 +1,10 @@
-$(document).ready(function() {
 
     let idTipoViaje;
     let tabla;
 
     inicializarValidaciones();
     inicializarTabla();
-
+    $('#loadingActualizarViaje').hide();
     //BOTON MOSTRAR 
     $(document).on('click', '.btn-group .btn-primary', function() {
 
@@ -23,6 +22,7 @@ $(document).ready(function() {
                 document.getElementById("descripcion_tipoViaje").value = response.viaje[i].descripcion;
 
             }
+            
 
         }).fail(function(response) {
 
@@ -159,7 +159,7 @@ $(document).ready(function() {
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingActualizarViaje').hide();
         let data = {
             "idtipo_viaje": idTipoViaje,
             "nombre_tipoviaje": document.getElementById("nombre_tipoviaje").value,
@@ -197,7 +197,7 @@ $(document).ready(function() {
             });
 
         }).always(function(xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarViaje').hide();
         });
     }
 
@@ -239,6 +239,3 @@ $(document).ready(function() {
         });
     }
 
-
-
-});

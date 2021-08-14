@@ -160,7 +160,7 @@ include_once '../../plantillas/cabecera.php';
 
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
-
+<script type="text/javascript" src="<?= $base_url ?>js/controladores/vuelos/insertarClase.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/clases-app.js"></script>
 <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 

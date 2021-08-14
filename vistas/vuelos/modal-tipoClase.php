@@ -60,5 +60,3 @@
    </div>
    <!-- /.modal-dialog -->
 </div>
-
-<script type="text/javascript" src="<?= $base_url ?>js/controladores/vuelos/insertarClase.js"></script>

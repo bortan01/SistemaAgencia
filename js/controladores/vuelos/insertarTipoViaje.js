@@ -1,7 +1,8 @@
 $(document).ready(function() {
-
+    $('#loadingTipoViaje').hide();
+    
     $("#btnAgregarViaje").on('click', function(e) {
-
+        $('#loadingTipoViaje').show();
         e.preventDefault();
 
         let myData = {
@@ -15,11 +16,12 @@ $(document).ready(function() {
             data: myData
 
         }).done(function(response) {
-    
+            $('#loadingTipoViaje').hide();
             $("#modal-tipoViaje").modal('toggle');
             document.getElementById("register-viaje").reset();
 
             $('#idtipo_viaje').empty();
+           
             let DATA_VIAJE;
 
             $.ajax({
@@ -28,6 +30,8 @@ $(document).ready(function() {
                 async: false,
                 dataType: "json",
                 success: function(data) {
+                    // let tabla esta definada en viajes-app.js
+                    tabla.ajax.reload(null, false);
 
                     let myData = [];
                     DATA_VIAJE = data.viaje;
@@ -51,7 +55,7 @@ $(document).ready(function() {
                 }
             });
 
-            // document.getElementById("register-viaje").reset();
+          // document.getElementById("register-viaje").reset();
             //fin actualizar combo sin recargar
             const Toast = Swal.mixin();
             Toast.fire({
@@ -61,9 +65,10 @@ $(document).ready(function() {
                 showConfirmButton: true,
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA 
-                location.reload();
+            //location.reload();
             });
         }).fail(function(response) {
+            $('#loadingTipoViaje').hide();
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             let respuestaDecodificada = JSON.parse(response.responseText);
             let listaErrores = "";

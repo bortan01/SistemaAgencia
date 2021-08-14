@@ -99,7 +99,7 @@ include_once '../../plantillas/cabecera.php';
             <div class="modal-content">
 
                 <div class="overlay-wrapper">
-                    <div id="loadingActualizar" class="overlay">
+                    <div id="loadingActualizarViaje" class="overlay">
                         <i class="fas fa-3x fa-sync-alt fa-spin"></i>
                         <div class="text-bold pt-2">Cargando...
                         </div>
@@ -157,7 +157,7 @@ include_once '../../plantillas/cabecera.php';
 
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
-
+<script src="<?= $base_url ?>js/controladores/vuelos/insertarTipoViaje.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/viajes-app.js"></script>
 <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 
