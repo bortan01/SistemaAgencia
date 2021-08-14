@@ -104,6 +104,10 @@ include_once '../../plantillas/cabecera.php'; ?>
          <div class="modal-content">
 
             <div class="overlay-wrapper">
+               <div id="loadingActualizarMantenimiento" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                  <div class="text-bold pt-2">Cargando...
+                  </div>
+               </div>
 
                <div class="modal-header">
                   <h4 class="modal-title">Modificar Mantenimiento</h4>

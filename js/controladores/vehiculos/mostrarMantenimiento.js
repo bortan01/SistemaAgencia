@@ -6,6 +6,7 @@ $(document).ready(function() {
 
     inicializarValidaciones();
     inicializarTabla();
+    $('#loadingActualizarMantenimiento').hide();
 
     //BOTON DE EDITAR
     $(document).on('click', '.btn-group .btn-primary', function() {
@@ -227,7 +228,7 @@ $(document).on('click', '.btn-group .btn-secondary', function() {
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingActualizarMantenimiento').show();
         let data = {
             "id_mantenimiento": idMantenimiento,
             "fecha": document.getElementById("fecha").value,
@@ -266,7 +267,7 @@ $(document).on('click', '.btn-group .btn-secondary', function() {
             });
 
         }).always(function(xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarMantenimiento').hide();
         });
     }
 
