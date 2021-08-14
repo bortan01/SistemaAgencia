@@ -396,12 +396,17 @@ function OpcAvanzada() {
 
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
+<script src="<?= $base_url ?>plugins/inputmask/jquery.inputmask.min.js"></script>
+
 <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="<?= $base_url ?>plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-
+<script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/comboAlianza.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/comboAerolinea.js"></script>
+<script src="<?= $base_url ?>js/controladores/vuelos/insertarAerolinea.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/comboClase.js"></script>
+<script src="<?= $base_url ?>js/controladores/vuelos/insertarTipoViaje.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/comboViaje.js"></script>
+<script src="<?= $base_url ?>js/controladores/vuelos/insertarClase.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/mostrarCondiciones.js"></script>
 
 <script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
