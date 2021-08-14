@@ -224,6 +224,7 @@ function add_comision() {
 
     
 function add_producto() {
+        $('#loadingActualizar').show();
         let data = {
          "nombre_producto":          document.getElementById("producto").value,
          "tarifa":                   document.getElementById("tarifa").value,
@@ -236,6 +237,7 @@ function add_producto() {
             data: data
 
         }).done(function (response) {
+        $('#loadingActualizar').hide();
         document.getElementById("register-form").reset();
         $('#id_producto').empty();
         llenarCombo();
@@ -261,6 +263,7 @@ function add_producto() {
             });
         }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
+            $('#loadingActualizar').hide();
             let respuestaDecodificada = JSON.parse(response.responseText);
             let listaErrores = "";
 

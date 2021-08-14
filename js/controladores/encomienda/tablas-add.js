@@ -4,7 +4,7 @@ $(document).ready(function () {
     inicializarGaleria();
 
     telefono();
-
+    $('#loadingRegistroEncomienda').hide();
     let contadorTabla = 0;
     let TOTAL = 0.0;
     let COMISION = 0.0;
@@ -261,7 +261,7 @@ $(document).ready(function () {
     }
 
     function guardar() {
-        $('#loading').show();
+        $('#loadingRegistroEncomienda').show();
         let form = obtenerData();
 
         //ESTO ES PARA LA GALERIA 
@@ -314,7 +314,7 @@ $(document).ready(function () {
             });*/
 
         }).always(function (xhr, opts) {
-            $('#loading').hide();
+            $('#loadingRegistroEncomienda').hide();
         });
     }
 
