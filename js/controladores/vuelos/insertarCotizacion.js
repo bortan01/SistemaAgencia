@@ -1,7 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
     inicializarValidaciones();
+    inicializarMascara();
+    $('#loadingRegistroAerolinea').hide();
+    $('#loadingTipoClase').hide();
+    $('#loadingTipoViaje').hide();
 
-    $("#btnGuardarCotizacion").on('click', function(e) {
+    $("#btnGuardarCotizacion").on('click', function (e) {
         e.preventDefault();
         let form = $("#register-cotizarv");
         form.validate();
@@ -42,7 +46,7 @@ $(document).ready(function() {
                 processData: false,
                 contentType: false,
 
-            }).done(function(response) {
+            }).done(function (response) {
                 guardarBitacora();
                 document.getElementById("register-cotizarv").reset();
 
@@ -56,7 +60,7 @@ $(document).ready(function() {
                     //TODO BIEN Y RECARGAMOS LA PAGINA 
                     location.reload();
                 });
-            }).fail(function(response) {
+            }).fail(function (response) {
                 //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
                 let respuestaDecodificada = JSON.parse(response.responseText);
                 let listaErrores = "";
@@ -82,6 +86,179 @@ $(document).ready(function() {
             })
 
         }
+
+    });
+    $("#btnAerolinea").on('click', function (e) {
+        $('#loadingRegistroAerolinea').show();
+        e.preventDefault();
+        let myData = {
+            "idalianza": document.getElementById("id_alianza").value,
+            "nombre_aerolinea": document.getElementById("nombreAerolinea").value,
+            "sitioWeb": document.getElementById("sitioW").value,
+            "telefonoContacto": document.getElementById("tel").value
+        }
+        $.ajax({
+            url: URL_SERVIDOR + "aerolinea/aerolinea",
+            method: 'POST',
+            data: myData
+        }).done(function (response) {
+            $("#modal-aerolinea").modal('toggle');
+            let texto = document.getElementById("nombreAerolinea").value;
+            let id = response.aerolinea_id;
+            let newOption = new Option(texto, id, false, false);
+            $('#idaerolinea').append(newOption).trigger('change');
+            document.getElementById("register-aerolinea").reset();
+
+            console.log(response);
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Exito...',
+                icon: 'success',
+                text: response.mensaje,
+                showConfirmButton: true,
+            });
+        }).fail(function (response) {
+            //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
+            $('#loadingRegistroAerolinea').hide();
+            let respuestaDecodificada = JSON.parse(response.responseText);
+            let listaErrores = "";
+
+            if (respuestaDecodificada.errores) {
+                ///ARREGLO DE ERRORES 
+                let erroresEnvioDatos = respuestaDecodificada.errores;
+                for (mensaje in erroresEnvioDatos) {
+                    listaErrores += erroresEnvioDatos[mensaje] + "\n";
+                    //toastr.error(erroresEnvioDatos[mensaje]);
+                };
+            } else {
+                listaErrores = respuestaDecodificada.mensaje
+            }
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Oops...',
+                icon: 'error',
+                text: listaErrores,
+                showConfirmButton: true,
+            });
+        })
+    });
+    $("#btnAgregarClase").on('click', function (e) {
+        e.preventDefault();
+        $('#loadingTipoClase').show();
+        let myData = {
+            "nombre_clase": document.getElementById("nombre_clases").value,
+            "descripcion": document.getElementById("descripcion_clases").value,
+        }
+
+        $.ajax({
+            url: URL_SERVIDOR + "tipo_clases/clases",
+            method: 'POST',
+            data: myData
+
+        }).done(function (response) {
+            // la  bitacora genera error
+            // guardarBitacora();
+            $('#loadingTipoClase').hide();
+            $("#modal-tipoClase").modal('toggle');
+            let texto = document.getElementById("nombre_clases").value;
+            let id = response.clase_id;
+            let newOption = new Option(texto, id, false, false);
+            $('#idclase').append(newOption).trigger('change');
+            document.getElementById("register-clase").reset();
+
+            //fin actualizar combo
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Exito...',
+                icon: 'success',
+                text: response.mensaje,
+                showConfirmButton: true,
+            });
+        }).fail(function (response) {
+            $('#loadingTipoClase').hide();
+            //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
+            let respuestaDecodificada = JSON.parse(response.responseText);
+            let listaErrores = "";
+
+            if (respuestaDecodificada.errores) {
+                ///ARREGLO DE ERRORES 
+                let erroresEnvioDatos = respuestaDecodificada.errores;
+                for (mensaje in erroresEnvioDatos) {
+                    listaErrores += erroresEnvioDatos[mensaje] + "\n";
+                    //toastr.error(erroresEnvioDatos[mensaje]);
+                };
+            } else {
+                listaErrores = respuestaDecodificada.mensaje
+            }
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Oops...',
+                icon: 'error',
+                text: listaErrores,
+                showConfirmButton: true,
+            });
+
+        })
+
+    });
+    $("#btnAgregarViaje").on('click', function (e) {
+        $('#loadingTipoViaje').show();
+        e.preventDefault();
+
+        let myData = {
+            "nombre_tipoviaje": document.getElementById("nombre_tipoviajes").value,
+            "descripcion": document.getElementById("descripcion_tipoViaje").value,
+        }
+        $.ajax({
+            url: URL_SERVIDOR + "tipo_viaje/viajes",
+            method: 'POST',
+            data: myData
+        }).done(function (response) {
+            $('#loadingTipoViaje').hide();
+            $("#modal-tipoViaje").modal('toggle');
+
+            let texto = document.getElementById("nombre_tipoviajes").value;
+            let id = response.viaje_id;
+            let newOption = new Option(texto, id, false, false);
+            $('#idtipo_viaje').append(newOption).trigger('change');
+
+            document.getElementById("register-viaje").reset();
+
+
+            //fin actualizar combo sin recargar
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Exito...',
+                icon: 'success',
+                text: response.mensaje,
+                showConfirmButton: true,
+            });
+        }).fail(function (response) {
+            $('#loadingTipoViaje').hide();
+            //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
+            let respuestaDecodificada = JSON.parse(response.responseText);
+            let listaErrores = "";
+
+            if (respuestaDecodificada.errores) {
+                ///ARREGLO DE ERRORES 
+                let erroresEnvioDatos = respuestaDecodificada.errores;
+                for (mensaje in erroresEnvioDatos) {
+                    listaErrores += erroresEnvioDatos[mensaje] + "\n";
+                    //toastr.error(erroresEnvioDatos[mensaje]);
+                };
+            } else {
+                listaErrores = respuestaDecodificada.mensaje
+            }
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Oops...',
+                icon: 'error',
+                text: listaErrores,
+                showConfirmButton: true,
+            });
+
+        })
+
 
     });
     //PARA LAS VALIDACIONES 
@@ -166,19 +343,24 @@ $(document).ready(function() {
 
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }
         });
 
 
+    }
+    function inicializarMascara() {
+        let telef = $('#tel');
+        telef.inputmask("(+123) 1234-5678");
+        telef.inputmask({ "mask": "(+999) 9999-9999" });
     }
 });
