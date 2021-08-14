@@ -7,6 +7,7 @@ $(document).ready(function () {
    inicializarTabla();
    inicializarMascara();
    inicializarFoto();
+   $('#loadingActualizarContacto').hide();
 
    //BOTON DE EDITAR
    $(document).on('click', '.btn-group .btn-primary', function () {
@@ -205,7 +206,7 @@ $(document).ready(function () {
 
    }
    function actualizar() {
-      $('#loadingActualizar').show();
+      $('#loadingActualizarContacto').show();
       let data = {
 
          "correo": document.getElementById("correoContacto").value,
@@ -222,6 +223,8 @@ $(document).ready(function () {
       }).done(function (response) {
          //REST_Controller::HTTP_OK
    
+         $("#formularioEditar").trigger("reset");
+         tabla.ajax.reload(null, false);
          const Toast = Swal.mixin();
          Toast.fire({
             title: 'Exito...',
@@ -229,9 +232,7 @@ $(document).ready(function () {
             text: response.mensaje,
             showConfirmButton: true,
          }).then((result) => {
-            $("#formularioEditar").trigger("reset");
             $('#modal-editar').modal('hide');;
-            tabla.ajax.reload(null, false);
          });
       }).fail(function (response) {
          console.log(response);
@@ -245,7 +246,7 @@ $(document).ready(function () {
          });
 
       }).always(function (xhr, opts) {
-         //  $('#loadingActualizar').hide();
+        $('#loadingActualizarContacto').hide();
       });
    }
    function eliminar() {
