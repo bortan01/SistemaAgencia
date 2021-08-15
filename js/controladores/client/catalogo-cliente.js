@@ -230,11 +230,7 @@ $(document).ready(function () {
                                 html += '            data-target="#modal-eliminar">';
                                 html += '            <i class="fas fa-trash" style="color: white"></i>';
                                 html += '        </button>';
-                                html += '        <button type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-success" data-toggle="modal"';
-                                html += '            data-target="">';
-                                html += '            <i class="fab fa-telegram-plane" style="color: white"></i>';
-                                html += '        </button>';
-
+                         
                             } else {
                                 html += '        <button type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-success restaurarUsuario" data-toggle="modal"';
                                 html += '            data-target="">';
