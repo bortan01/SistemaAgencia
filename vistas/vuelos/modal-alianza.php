@@ -27,7 +27,7 @@
                               </div>
                               <div class="form-group">
                                  <label>URL de Sitio Web</label>
-                                 <input type="text" class="form-control" name="sitio" id="sitio"
+                                 <input type="email" class="form-control" name="sitio" id="sitio"
                                     placeholder="Digite nombre de sitio Web" autocomplete="off">
                               </div>
 
@@ -42,7 +42,7 @@
                         </div>
                         <div class="timeline-footer" style="text-align: right;">
                            <a class="btn btn-info btn-sm" style="color: white" type="button" id="btnAgregar">Guardar</a>
-                           <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
+                         
                         </div>
                      </div>
                   </div>

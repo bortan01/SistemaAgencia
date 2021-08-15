@@ -1,4 +1,6 @@
 inicializarMascara();
+inicializarValidaciones();
+
 $('#loadingRegistroAerolinea').hide();
 //FUNCION CLICK
 $("#btnAerolinea").on('click', function(e) {
@@ -94,7 +96,48 @@ $("#btnAerolinea").on('click', function(e) {
 
 });
 
+function inicializarValidaciones() {
+    $('#register-aerolinea').validate({
+        rules: {
+            idalianza: {
+                required: true
+            },
+            nombre_aerolinea: {
+                required: true,
+                minlength: 2
+            },
+            sitioWeb: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            idalianza: {
+                required: "Seleccione Alianza",
+            },
+            nombre_aerolinea: {
+                required: "Debe de proporcionar el nombre de Aerolinea",
+            },
+            sitioWeb: {
+                required: "Ingrese una url correcta",
+            }
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
 
+        }
+    });
+
+
+}
 function inicializarMascara() {
     let telef = $('#tel');
     telef.inputmask("(+123) 1234-5678");
