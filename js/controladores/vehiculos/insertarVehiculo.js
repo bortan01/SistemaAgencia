@@ -90,7 +90,7 @@ $(document).ready(function() {
             Toast.fire({
                 title: 'Oops...',
                 icon: 'error',
-                text: "ERROR EN EL ENVIO DE INFORMACIÓN",
+                text: "FALTA COMPLETAR INFORMACIÓN",
                 showConfirmButton: true,
             });
 
