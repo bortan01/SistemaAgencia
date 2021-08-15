@@ -89,15 +89,7 @@ $(document).ready(function () {
                 let tr = crearFila(event);
                 tablaReporte.appendChild(tr);
             });
-           /* for (let j = 0, jen = response.detalle_servicio.length; j < jen; j++) {
-
-                $('#servicioA').text(response.detalle_servicio[j].servicio_adicional);
-                $('#precioA').text(response.detalle_servicio[j].costo_servicio);
-                $('#cantidadA').text(response.detalle_servicio[j].cantidad_servicio);
-
-
-            }*/
-
+           
         }).fail(function (response) {
 
         }).always(function (xhr, opts) {
@@ -124,7 +116,7 @@ $(document).ready(function () {
         td.classList.add('textcenter');
         return td;
     }
-        //**********funciones para crear las tablas fin
+        //*funciones para crear las tablas fin
 
     //BOTON PARA ELIMINAR
     $(document).on('click', '.btn-group .btn-danger', function (evento) {
@@ -282,7 +274,7 @@ $(document).ready(function () {
             Toast.fire({
                 title: 'Oops...',
                 icon: 'error',
-                text: "ERROR EN ENVIO DE INFORMACION",
+                text: "FALTA COMPLETAR INFORMACIÓN",
                 showConfirmButton: true,
             });
 
