@@ -39,17 +39,13 @@ include_once '../../plantillas/cabecera.php'; ?>
    <!-- Main content -->
    <section class="content">
       <div class="row">
-         <div class="col-12">zzz
-
-
+         <div class="col-12">
             <div class="card">
                <div class="card-header">
                   <h3 class="card-title">Datos Generales</h3>
                   <div class="timeline-footer" style="text-align: right;">
                      <a class="btn btn-info btn-sm" style="color: white" data-toggle="modal"
                         data-target="#modal-servicio">Nuevo Servicio</a>
-
-
                   </div>
                </div>
                <!-- /.card-header -->
