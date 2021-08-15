@@ -4,9 +4,12 @@ $(document).ready(function () {
     $('#loadingRegistroAerolinea').hide();
     $('#loadingTipoClase').hide();
     $('#loadingTipoViaje').hide();
+    $('#loadingCotizarVehiculo').hide();
+
 
     $("#btnGuardarCotizacion").on('click', function (e) {
         e.preventDefault();
+        $('#loadingCotizarVehiculo').show();
         let form = $("#register-cotizarv");
         form.validate();
         if (form.valid()) {
@@ -47,6 +50,7 @@ $(document).ready(function () {
                 contentType: false,
 
             }).done(function (response) {
+                $('#loadingTipoViaje').hide();
                 guardarBitacora();
                 document.getElementById("register-cotizarv").reset();
 
@@ -61,6 +65,7 @@ $(document).ready(function () {
                     location.reload();
                 });
             }).fail(function (response) {
+                $('#loadingTipoViaje').hide();
                 //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
                 let respuestaDecodificada = JSON.parse(response.responseText);
                 let listaErrores = "";
