@@ -103,7 +103,7 @@ include_once '../../plantillas/cabecera.php';
          <div class="modal-content">
 
             <div class="overlay-wrapper">
-               <div id="loadingActualizar" class="overlay">
+               <div id="loadingActualizarAerolinea" class="overlay">
                   <i class="fas fa-3x fa-sync-alt fa-spin"></i>
                   <div class="text-bold pt-2">Cargando...
                   </div>
@@ -184,8 +184,10 @@ include_once '../../plantillas/footer.php'; ?>
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
 <script src="<?= $base_url ?>plugins/inputmask/jquery.inputmask.min.js"></script>
-<script src="<?= $base_url ?>js/controladores/vuelos/mostrarAerolinea.js"></script>
 <script src="<?= $base_url ?>js/controladores/vuelos/comboAlianza.js"></script>
 <script src="<?= $base_url ?>js/controladores/vuelos/insertarAerolinea.js"></script>
 <script src="<?= $base_url ?>js/controladores/vuelos/insertarAlianza.js"></script>
+<script src="<?= $base_url ?>js/controladores/vuelos/mostrarAerolinea.js"></script>
+
+
 <?php include_once '../../plantillas/cierre.php'; ?>

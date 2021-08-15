@@ -1,9 +1,9 @@
 inicializarMascara();
-$('#loadingRegistroAerolinea').hide();
+$('#loadingAerolinea').hide();
 //FUNCION CLICK
 $("#btnAerolinea").on('click', function(e) {
 
-    $('#loadingRegistroAerolinea').show();
+    $('#loadingAerolinea').show();
 
     e.preventDefault();
     let myData = {
@@ -19,6 +19,7 @@ $("#btnAerolinea").on('click', function(e) {
         data: myData
 
     }).done(function(response) {
+        $('#loadingAerolinea').hide();
         $("#modal-aerolinea").modal('toggle');
         document.getElementById("register-aerolinea").reset();
 
@@ -30,7 +31,7 @@ $("#btnAerolinea").on('click', function(e) {
             url: URL_SERVIDOR + "aerolinea/aerolinea",
             dataType: "json",
             success: function(data) {
-                $('#loadingRegistroAerolinea').hide();
+                tabla.ajax.reload(null, false);
                 let myData = [];
                 DATA_AEROLINEA = data.aerolineas;
                 for (let index = 0; index < DATA_AEROLINEA.length; index++) {
@@ -42,8 +43,7 @@ $("#btnAerolinea").on('click', function(e) {
                 $('#idaerolinea').select2({ data: myData });
             },
             error: function(err) {
-                $('#loadingRegistroAerolinea').hide();
-                //si da un error ya que quede la alerta
+                 //si da un error ya que quede la alerta
                 const Toast = Swal.mixin();
                 Toast.fire({
                     title: 'Oops...',
@@ -67,7 +67,7 @@ $("#btnAerolinea").on('click', function(e) {
         });
     }).fail(function(response) {
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-        $('#loadingRegistroAerolinea').hide();
+        $('#loadingAerolinea').hide();
         let respuestaDecodificada = JSON.parse(response.responseText);
         let listaErrores = "";
 

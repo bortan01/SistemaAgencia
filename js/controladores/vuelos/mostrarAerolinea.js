@@ -5,33 +5,19 @@
 
     inicializarValidaciones();
     inicializarTabla();
-
+    $('#loadingActualizarAerolinea').hide();
+    
     //BOTON MOSTRAR
+    
     $(document).on('click', '.btn-group .btn-primary', function() {
-
-        $('#loadingActualizar').hide();
-
-        idAerolineas = $(this).attr("name");
-        // $('#loadingActualizar').show();
-        $.ajax({
-            url: URL_SERVIDOR + "aerolinea/aerolinea?idaerolinea=" + idAerolineas,
-            method: "GET"
-        }).done(function(response) {
-            //MANDALOS LOS VALORES AL MODAL
-            for (let i = 0, ien = response.aerolineas.length; i < ien; i++) {
-
-                document.getElementById("nombre_aerolinea").value = response.aerolineas[i].nombre_aerolinea;
-                document.getElementById("nombre_alianza").value = response.aerolineas[i].nombre_alianza;
-                document.getElementById("sitioWeb").value = response.aerolineas[i].sitioWeb;
-                document.getElementById("telefonoContacto").value = response.aerolineas[i].telefonoContacto;
-            }
-
-        }).fail(function(response) {
-
-        }).always(function(xhr, opts) {
-            $('#modal-editar').modal('show');
-            $('#loadingActualizar').hide();
-        });
+        let fila = $(this).closest("tr");
+        let data = tabla.row(fila).data();
+        console.log(data);
+        idAerolineas = data.idaerolinea;
+        document.getElementById("nombre_aerolinea").value = data.nombre_aerolinea;
+        document.getElementById("nombre_alianza").value = data.nombre_alianza; 
+        document.getElementById("sitioWeb").value = data.sitioWeb;   
+        document.getElementById("telefonoContacto").value = data.telefonoContacto; 
     });
 
     //BOTON PARA ELIMINAR
@@ -162,7 +148,7 @@
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingActualizarAerolinea').show();
         let data = {
             "idaerolinea": idAerolineas,
             "sitioWeb": document.getElementById("sitioWeb").value,
@@ -199,7 +185,7 @@
             });
 
         }).always(function(xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarAerolinea').hide();
         });
     }
 
