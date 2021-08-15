@@ -7,6 +7,7 @@ $(document).ready(function() {
     inicializarValidaciones();
     inicializarTabla();
     $('#loadingActualizarMantenimiento').hide();
+    $('#loadingActualizar').hide();
 
     //BOTON DE EDITAR
     $(document).on('click', '.btn-group .btn-primary', function() {
@@ -43,7 +44,7 @@ $(document).ready(function() {
 
 //BOTON MOSTRAR 
 $(document).on('click', '.btn-group .btn-secondary', function() {
-
+    
     idMantenimiento = $(this).attr("name");
 
     $('#loadingActualizar').show();
@@ -73,6 +74,9 @@ $(document).on('click', '.btn-group .btn-secondary', function() {
 
     }).always(function(xhr, opts) {
         $('#modal-reporte').modal('show');
+        $('#loadingActualizar').hide();
+
+       
 
     });
 });
