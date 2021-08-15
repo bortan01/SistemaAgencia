@@ -1,37 +1,22 @@
-$(document).ready(function() {
+
 
     let idClase;
     let tabla;
 
     inicializarValidaciones();
     inicializarTabla();
-
+    $('#loadingActualizarClase').hide();
     //BOTON MOSTRAR 
+    
+
     $(document).on('click', '.btn-group .btn-primary', function() {
-
-        idClase = $(this).attr("name");
-
-        $('#loadingActualizar').show();
-        $.ajax({
-            url: URL_SERVIDOR+"tipo_clases/clases?idclase=" + idClase,
-            method: "GET"
-        }).done(function(response) {
-            //MANDALOS LOS VALORES AL MODAL
-            for (let i = 0, ien = response.clase.length; i < ien; i++) {
-
-                document.getElementById("nombre_clase").value = response.clase[i].nombre_clase;
-                document.getElementById("descripcion").value = response.clase[i].descripcion;
-
-            }
-
-        }).fail(function(response) {
-
-        }).always(function(xhr, opts) {
-            $('#modal-editar').modal('show');
-            $('#loadingActualizar').hide();
-        });
+        let fila = $(this).closest("tr");
+        let data = tabla.row(fila).data();
+        console.log(data);
+        idClase = data.idclase;
+        document.getElementById("nombre_clase").value = data.nombre_clase;
+        document.getElementById("descripcion").value = data.descripcion;   
     });
-
 
     //Boton Eliminar
     $(document).on('click', '.btn-group .btn-danger', function(evento) {
@@ -159,7 +144,7 @@ $(document).ready(function() {
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingActualizarClase').show();
         let data = {
             "idclase": idClase,
             "nombre_clase": document.getElementById("nombre_clase").value,
@@ -197,7 +182,7 @@ $(document).ready(function() {
             });
 
         }).always(function(xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarClase').hide();
         });
     }
 
@@ -240,5 +225,3 @@ $(document).ready(function() {
     }
 
 
-
-});

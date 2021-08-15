@@ -1,7 +1,8 @@
 $(document).ready(function() {
+    $('#loadingTipoClase').hide();
 
     $("#btnAgregarClase").on('click', function(e) {
-
+        $('#loadingTipoClase').show();
         e.preventDefault();
 
         let myData = {
@@ -15,8 +16,8 @@ $(document).ready(function() {
             data: myData
 
         }).done(function(response) {
-            // la  bitacora genera error
-            // guardarBitacora();
+
+            $('#loadingTipoClase').hide();
             $("#modal-tipoClase").modal('toggle');
             document.getElementById("register-clase").reset();
 
@@ -30,6 +31,10 @@ $(document).ready(function() {
                 async: false,
                 dataType: "json",
                 success: function(data) {
+                      // let tabla esta definada en clases-app.js
+                  
+                    tabla.ajax.reload(null, false);
+
                     let myData = [];
                     DATA_CLASE = data.clase;
                     for (let index = 0; index < DATA_CLASE.length; index++) {
@@ -60,9 +65,10 @@ $(document).ready(function() {
                 text: response.mensaje,
                 showConfirmButton: true,
             }).then((result) => {
-                location.reload();
+               // location.reload();
             });
         }).fail(function(response) {
+            $('#loadingTipoClase').hide();
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             let respuestaDecodificada = JSON.parse(response.responseText);
             let listaErrores = "";

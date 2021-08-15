@@ -63,7 +63,7 @@ $("#btnAerolinea").on('click', function(e) {
             showConfirmButton: true,
         }).then((result) => {
 
-            location.reload();
+           // location.reload();
         });
     }).fail(function(response) {
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
