@@ -1,9 +1,9 @@
 inicializarMascara();
-$('#loadingAerolinea').hide();
+$('#loadingRegistroAerolinea').hide();
 //FUNCION CLICK
 $("#btnAerolinea").on('click', function(e) {
 
-    $('#loadingAerolinea').show();
+    $('#loadingRegistroAerolinea').show();
 
     e.preventDefault();
     let myData = {
@@ -19,7 +19,7 @@ $("#btnAerolinea").on('click', function(e) {
         data: myData
 
     }).done(function(response) {
-        $('#loadingAerolinea').hide();
+        $('#loadingRegistroAerolinea').hide();
         $("#modal-aerolinea").modal('toggle');
         document.getElementById("register-aerolinea").reset();
 
@@ -67,7 +67,7 @@ $("#btnAerolinea").on('click', function(e) {
         });
     }).fail(function(response) {
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-        $('#loadingAerolinea').hide();
+        $('#loadingRegistroAerolinea').hide();
         let respuestaDecodificada = JSON.parse(response.responseText);
         let listaErrores = "";
 
