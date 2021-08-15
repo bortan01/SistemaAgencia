@@ -1,7 +1,8 @@
+$('#loadingMarcaVehiculo').hide();
 $("#btnAgregar").on('click', function(e) {
 
     e.preventDefault();
-    $('#loadingActualizar').show();
+    $('#loadingMarcaVehiculo').show();
 
     $.ajax({
         url: URL_SERVIDOR + "marcaVehiculo/marca",
@@ -9,7 +10,7 @@ $("#btnAgregar").on('click', function(e) {
         data: $("#register-marca").serialize()
 
     }).done(function(response) {
-
+        $('#loadingMarcaVehiculo').hide();
         $("#modal-marca").modal('toggle');
 
         document.getElementById("register-marca").reset();
@@ -25,6 +26,7 @@ $("#btnAgregar").on('click', function(e) {
             location.reload();
         });
     }).fail(function(response) {
+        $('#loadingMarcaVehiculo').hide();
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
         let respuestaDecodificada = JSON.parse(response.responseText);
         let listaErrores = "";

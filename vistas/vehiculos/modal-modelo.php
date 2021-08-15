@@ -15,29 +15,34 @@
                <p>
                   <!-- Main content -->
                <section class="content">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <!-- INICIO de primera fila -->
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <!-- text input -->
-                              <div class="form-group">
-                                 <label>Seleccione Marca</label>
-                                 <select name="id_marca" id="id_marca" class="form-control">
-                                    <option disabled="" selected="">Seleccione</option>
-                                 </select>
-                              </div>
-                              <div class="form-group">
-                                 <label>Nombre de Modelo</label>
-                                 <input type="text" class="form-control" name="modeloCarro" id="modeloCarro"
-                                    placeholder="Digite nombre de modelo" autocomplete="off">
+                  <div class="overlay-wrapper">
+                     <div id="loadingModeloVehiculo" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                        <div class="text-bold pt-2">Cargando...
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <!-- INICIO de primera fila -->
+                           <div class="row">
+                              <div class="col-sm-12">
+                                 <!-- text input -->
+                                 <div class="form-group">
+                                    <label>Seleccione Marca</label>
+                                    <select name="id_marca" id="id_marca" class="form-control">
+                                       <option disabled="" selected="">Seleccione</option>
+                                    </select>
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Nombre de Modelo</label>
+                                    <input type="text" class="form-control" name="modeloCarro" id="modeloCarro"
+                                       placeholder="Digite nombre de modelo" autocomplete="off">
+                                 </div>
                               </div>
                            </div>
-                        </div>
-
-                        <div class="timeline-footer" style="text-align: right;">
-                           <a class="btn btn-info btn-sm" style="color: white" type="button" id="btnModelo">Guardar</a>
-
+                           <div class="timeline-footer" style="text-align: right;">
+                              <a class="btn btn-info btn-sm" style="color: white" type="button"
+                                 id="btnModelo">Guardar</a>
+                           </div>
                         </div>
                      </div>
                   </div>

@@ -1,6 +1,9 @@
+$('#loadingCategoriaVehiculo').hide();
+
 $("#btnCategoria").on('click', function(e) {
 
     e.preventDefault();
+    $('#loadingCategoriaVehiculo').show();
     let myData = {
         "nombre_categoria": document.getElementById("nombreCategoria").value,
         "descripcion_categoria":document.getElementById("descripcionCategoria").value 
@@ -11,7 +14,7 @@ $("#btnCategoria").on('click', function(e) {
         data: myData
 
     }).done(function(response) {
-
+        $('#loadingCategoriaVehiculo').hide();
         $("#modal-categoria").modal('toggle');
 
         //document.getElementById("register-form").reset();
@@ -27,6 +30,7 @@ $("#btnCategoria").on('click', function(e) {
             location.reload();
         });
     }).fail(function(response) {
+        $('#loadingCategoriaVehiculo').hide();
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
         let respuestaDecodificada = JSON.parse(response.responseText);
         let listaErrores = "";

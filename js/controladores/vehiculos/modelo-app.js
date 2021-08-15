@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    $('#loadingModeloVehiculo').hide();
     $("#btnModelo").on('click', function(e) {
 
 
@@ -8,7 +8,7 @@ $(document).ready(function() {
             "modelo": document.getElementById("modeloCarro").value,
             "id_marca": document.getElementById("id_marca").value
         }
-        $('#loadingActualizar').show();
+        $('#loadingModeloVehiculo').show();
 
         $.ajax({
             url: URL_SERVIDOR + "modeloVehiculo/modelo",
@@ -16,7 +16,7 @@ $(document).ready(function() {
             data: myData
 
         }).done(function(response) {
-
+            $('#loadingModeloVehiculo').hide();
             $("#modal-modelo").modal('toggle');
             //inicio actualizar combo sin recargar pagina
             $('#id_modelo').empty();
@@ -62,6 +62,7 @@ $(document).ready(function() {
                 //location.reload();
             });
         }).fail(function(response) {
+            $('#loadingModeloVehiculo').hide();
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             let respuestaDecodificada = JSON.parse(response.responseText);
             let listaErrores = "";
