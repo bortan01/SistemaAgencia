@@ -5,7 +5,7 @@ $(document).ready(function() {
 
    inicializarValidaciones();
     inicializarTabla();
-
+    $('#loadingActualizarPromociones').hide();
     //BOTON Modificar
     $(document).on('click', '.btn-group .btn-primary', function() {
 
@@ -215,7 +215,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
     }
 
     function actualizar() {
-        $('#loadingActualizar').show();
+        $('#loadingActualizarPromociones').show();
         let data = {
             "idpromocion_vuelo": idPromocion,
             "precio_promocion": document.getElementById("precio").value,
@@ -254,7 +254,8 @@ $(document).on('click', '.btn-group .btn-warning', function () {
             });
 
         }).always(function(xhr, opts) {
-            $('#loadingActualizar').hide();
+            $('#loadingActualizarPromociones').hide();
+
         });
     }
 

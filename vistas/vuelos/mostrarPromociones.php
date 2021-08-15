@@ -111,7 +111,7 @@ include_once '../../plantillas/cabecera.php';
          <div class="modal-content">
 
             <div class="overlay-wrapper">
-               <div id="loadingActualizar" class="overlay">
+               <div id="loadingActualizarPromociones" class="overlay">
                   <i class="fas fa-3x fa-sync-alt fa-spin"></i>
                   <div class="text-bold pt-2">Cargando...
                   </div>
