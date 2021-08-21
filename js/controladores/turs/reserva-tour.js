@@ -157,7 +157,7 @@ $(document).ready(function() {
             url: `${URL_SERVIDOR}TurPaquete/showReserva?id_tours=${idTour}`,
             method: "GET"
         }).done(function(response) {
-            $('#titulo').html(`Reservar Paquete (${response.nombre})`);
+            $('#titulo').html(`Reservar Tours (${response.nombre})`);
             nombre_producto = response.nombre;
             descripcionProducto = response.descripcion_tur;
             requisitos = response.requisitos;
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }
 
     function guardarReserva() {
-        $('#loadingReservaTur').hide();
+        $('#loadingReservaTur').show();
         let form = getData();
         $.ajax({
             url: URL_SERVIDOR + "DetalleTour/saveByAgency",

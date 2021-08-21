@@ -142,7 +142,7 @@ $(document).ready(function () {
     }
 
     function guardarReserva() {
-        $('#loadingReservaTur').hide();
+        $('#loadingReservaTur').show();
         let form = getData();
         $.ajax({
             url: URL_SERVIDOR + "DetalleTour/saveByAgency",
