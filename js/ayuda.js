@@ -141,3 +141,67 @@
           $("#modal-ayuda").modal();
         });
   */
+/* $("#botonAyudaEncomienda").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+ /* $("#botonAyudaMostrarEncomiendas").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+  /* $("#botonAyudaModificarEncomienda").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+   /* $("#botonAyudaCalculoEncomienda").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+   /* $("#botonAyudaActualizacion").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+  /* $("#botonAyudaActualizacionEnvio").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+  /* $("#botonAyudaProductos").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+  /* $("#botonAyudaMostrarProductos").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */

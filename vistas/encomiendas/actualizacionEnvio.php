@@ -18,12 +18,14 @@ include_once '../../plantillas/barra_lateral.php';
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Actualización de Envió</h1>
+               <h1>Actualización de Envío</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Modificación de Encomienda</li>
+                  <li class="breadcrumb-item active">Actualización de Envío</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaActualizacion"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -70,8 +72,8 @@ include_once '../../plantillas/barra_lateral.php';
                               <thead style="text-align: center;">
                                  <tr>
                                     <th>Nombre</th>
-                                    <th>Ciudad de origen</th>
-                                    <th>Código postal</th>
+                                    <th>Ciudad de Origen</th>
+                                    <th>Código Postal</th>
                                     <th>Fecha</th>
                                     <th>Acciones</th>
                                     <th>estado</th>
@@ -108,7 +110,8 @@ include_once '../../plantillas/barra_lateral.php';
 
 
 <?php
-  include_once '../../plantillas/footer.php';
+   include_once '../../vistas/ayuda/modal-ayuda.php';
+   include_once '../../plantillas/footer.php';
 ?>
 <!-- SCRIPT ADICIONALES -->
 <script type="text/javascript" src="<?= $base_url?>js/controladores/encomienda/actu-envio.js"></script>

@@ -28,12 +28,14 @@ include_once '../../plantillas/barra_lateral.php';
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Registro de actualización de envió</h1>
+               <h1>Registro de Actualización de Envío</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Actualización</li>
+                  <li class="breadcrumb-item active">Actualización de Envío</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaActualizacionEnvio"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -531,7 +533,8 @@ include_once '../../plantillas/barra_lateral.php';
 
 </div>
 
-<?php
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once '../../plantillas/footer.php';
 ?>
 <script type="text/javascript">
