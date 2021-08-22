@@ -36,4 +36,7 @@
    <link rel="stylesheet" href="<?= $base_url ?>plugins/fullcalendar-bootstrap/main.min.css">
    <!-- Theme style -->
    <link rel="stylesheet" type="text/css" href="<?= $base_url ?>css/bootstrap-clockpicker.css">
+   <!-- CSS para mostrar modal de AYUDA -->
+   <link href="<?= $base_url ?>css/ayuda.css" all rel="stylesheet" type="text/css" />
+
    <script src="<?= $base_url ?>plugins/jquery/jquery.min.js"></script>
