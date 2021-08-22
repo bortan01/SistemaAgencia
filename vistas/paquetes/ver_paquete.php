@@ -24,6 +24,8 @@
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                   <li class="breadcrumb-item active">Paquetes Registrados</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaMostrarPaquetes"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -160,7 +162,7 @@
                      <div class="row">
                         <div class="col-sm-12">
                            <div class="form-group">
-                              <label>Descripcion del Servicio</label>
+                              <label>Descripción del Servicio</label>
                               <textarea name="descripcion" id="descripcion" class="form-control" rows="3"
                                  placeholder="Digitar aquí ..."></textarea>
                            </div>
@@ -187,7 +189,7 @@
          <div class="modal-dialog modal-xl">
             <div class="modal-content">
                <div class="modal-header">
-                  <h4 class="modal-title">Editar Imagenes</h4>
+                  <h4 class="modal-title">Editar Imágenes</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                   </button>
@@ -206,14 +208,11 @@
       </div>
       <!-- End Modal EDITAR-->
    </form>
-
-
-
-
-
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 
 <!-- SCRIPT ADICIONALES AQUI -->
 <!-- jquery-validation -->

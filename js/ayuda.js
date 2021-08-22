@@ -99,3 +99,45 @@
           $("#modal-ayuda").modal();
         });
   */
+ /* $("#botonAyudaPaquetePublico").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+  /* $("#botonAyudaPaquetePrivado").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+ /* $("#botonAyudaSeleccionarPaquete").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+
+/* $("#botonAyudaMostrarPaquetes").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */
+
+/* $("#botonAyudaCotizacionPaquetes").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+          $("#modal-ayuda").modal();
+        });
+  */

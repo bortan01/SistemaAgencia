@@ -23,7 +23,9 @@
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
-                  <li class="breadcrumb-item active">Paquetes Registrados</li>
+                  <li class="breadcrumb-item active">Solicitudes de Cotización</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaCotizacionPaquetes"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -44,13 +46,11 @@
                      <thead style="text-align: center;">
                         <tr>
                            <th>Cliente</th>
-                           <th>Correo</th>
+                           <th>Correo Electrónico</th>
                            <th>Teléfono</th>
                            <th>Fecha de Viaje</th>
                            <th>Solicitud</th>
                            <th>Responder Solicitud</th>
-
-
                         </tr>
                      </thead>
                      <div class="overlay-wrapper">
@@ -117,7 +117,9 @@
    </form>
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+ include_once '../../vistas/ayuda/modal-ayuda.php';
+ include_once '../../plantillas/footer.php'; ?>
 
 <!-- SCRIPT ADICIONALES AQUI -->
 <!-- jquery-validation -->
