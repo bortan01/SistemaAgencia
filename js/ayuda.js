@@ -15,14 +15,13 @@
         $("#modal-ayuda").modal();
       });
 
-/* $("#botonAyudaCatalogo").click(function() {
+ $("#botonAyudaCatalogo").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Catalogo-usuarios.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
 
 /* $("#botonAyudaBitacora").click(function() {
         document.getElementById("register-ayuda").reset();
