@@ -25,6 +25,8 @@
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                   <li class="breadcrumb-item active">Servicios disponibles</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaMostrarServicios"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -105,7 +107,7 @@
                         </div>
                         <div class="col-sm-3">
                            <div class="form-group">
-                              <label>Costo promedio</label>
+                              <label>Costo Promedio</label>
                               <div class="input-group">
                                  <input id="costos_defecto" name="costos_defecto" type="number" class="form-control">
                               </div>
@@ -140,7 +142,7 @@
                         <div class="col-sm-12">
                            <!-- text input -->
                            <div class="form-group">
-                              <label>Descripcion del Servicio</label>
+                              <label>Descripción del Servicio</label>
                               <textarea name="descripcion_servicio" id="descripcion_servicio" class="form-control"
                                  rows="3" placeholder="Digitar aquí ..."></textarea>
                            </div>
@@ -149,7 +151,7 @@
                      <div class="row" id="configuracionAsientos">
                         <div class="col-sm-3">
                            <div class="form-group">
-                              <label>numero de filas </label>
+                              <label>Número de filas </label>
                               <div class="input-group">
                                  <input id="numero_filas" name="numero_filas" type="number" min="2" value="2" step="1"
                                     max="30" class="form-control">
@@ -220,7 +222,7 @@
          <div class="modal-dialog modal-xl">
             <div class="modal-content">
                <div class="modal-header">
-                  <h4 class="modal-title">Editar Imagenes</h4>
+                  <h4 class="modal-title">Editar Imágenes</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                   </button>
@@ -243,7 +245,9 @@
 
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 
 <!-- SCRIPT ADICIONALES AQUI -->
 <!-- jquery-validation -->

@@ -27,6 +27,8 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                         <li class="breadcrumb-item active">Registrar Servicios Adicionales</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaServicios"> <i class="fas fa-question"></i></button>
                     </ol>
                 </div>
             </div>
@@ -242,7 +244,9 @@
     <?php include_once './registro_tipo.php'  ?>
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 <!-- PONER SCRIPT ADICIONALES ACA -->
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>

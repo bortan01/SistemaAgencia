@@ -22,6 +22,14 @@
             <div class="col-sm-6">
                <h1>Catálogo de Usuarios</h1>
             </div>
+            <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                        <li class="breadcrumb-item active">Catálogo de Usuarios</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaCatalogo"> <i class="fas fa-question"></i></button>
+                    </ol>
+                </div>
          </div>
       </div><!-- /.container-fluid -->
    </section>
@@ -273,7 +281,9 @@
 
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 
 <!-- SCRIPT ADICIONALES AQUI -->
 <!-- jquery-validation -->

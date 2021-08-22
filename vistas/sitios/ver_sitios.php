@@ -18,12 +18,14 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Sitios Turisticos</h1>
+               <h1>Sitios Turísticos</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="../../home.php">Home</a></li>
-                  <li class="breadcrumb-item active">Sitios Turisticos </li>
+                  <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
+                  <li class="breadcrumb-item active">Sitios Turísticos </li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaMostrarSitios"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -38,7 +40,7 @@
 
             <div class="card">
                <div class="card-header">
-                  <h3 class="card-title">Sitios Turisticos</h3>
+                  <h3 class="card-title">Sitios Turísticos</h3>
                </div>
                <!-- /.card-header -->
                <div class="card-body">
@@ -227,7 +229,9 @@
 
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 
 <!-- SCRIPT ADICIONALES AQUI -->
 <!-- jquery-validation -->

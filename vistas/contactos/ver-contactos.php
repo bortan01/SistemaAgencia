@@ -25,7 +25,9 @@
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
-                  <li class="breadcrumb-item active">Contactos</li>
+                  <li class="breadcrumb-item active">Contactos Registrados</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaMostrarContactos"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -48,8 +50,8 @@
                         <tr>
                            <th>Foto de Perfil</th>
                            <th>Nombre</th>
-                           <th>Correo</th>
-                           <th>Célular</th>
+                           <th>Correo Electrónico</th>
+                           <th>Teléfono</th>
                            <th>Acciones</th>
                            <th>Url</th>
                         </tr>
@@ -103,7 +105,7 @@
                         </div>
                         <div class="col-sm-12">
                            <div class="form-group">
-                              <label>Telefono de Contactos</label>
+                              <label>Teléfono de Contacto</label>
                               <div class="input-group">
                                  <input type="text" class="form-control" id="telefonoContacto" name="telefonoContacto">
                               </div>
@@ -112,7 +114,7 @@
                         </div>
                         <div class="col-sm-12">
                            <div class="form-group">
-                              <label>Correo Electronico</label>
+                              <label>Correo Electrónico</label>
                               <div class="input-group">
                                  <input type="text" class="form-control" name="correoContacto" id="correoContacto">
                               </div>
@@ -209,7 +211,9 @@
    </form>
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 
 <!-- SCRIPT ADICIONALES AQUI -->
 <!-- jquery-validation -->

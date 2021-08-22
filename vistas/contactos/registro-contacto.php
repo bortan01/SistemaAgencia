@@ -25,6 +25,8 @@
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                   <li class="breadcrumb-item active">Registrar Contacto</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                                id="botonAyudaContacto"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -68,7 +70,7 @@
                                        </div>
                                        <div class="col-sm-12">
                                           <div class="form-group">
-                                             <label>Teléfono de Contactos(opcional) </label>
+                                             <label>Teléfono de Contacto(opcional) </label>
                                              <div class="input-group">
                                                 <input placeholder="Digite Teléfono" type="text" class="form-control"
                                                    id="telefonoContactoSitio" name="telefonoContactoSitio">
@@ -135,7 +137,9 @@
    </section>
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 <!-- PONER SCRIPT ADICIONALES ACA -->
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
