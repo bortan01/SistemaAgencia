@@ -13,6 +13,7 @@ deployment:
     - /bin/cp -r img $DEPLOYPATH
     - /bin/cp -r js $DEPLOYPATH
     - /bin/cp -r pages $DEPLOYPATH
+    - /bin/cp -r pdf $DEPLOYPATH
     - /bin/cp -r plantillas $DEPLOYPATH
     - /bin/cp -r plugins $DEPLOYPATH
     - /bin/cp -r vistas $DEPLOYPATH
