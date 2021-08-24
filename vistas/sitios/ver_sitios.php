@@ -48,7 +48,7 @@
                      <thead style="text-align: center;">
                         <tr>
                            <th>Sitio</th>
-                           <th>Precio</th>
+                           <th>Precio ($)</th>
                            <th>Contacto</th>
                            <th>Descripción</th>
                            <th>Acciones</th>
