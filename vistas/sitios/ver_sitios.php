@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-sm-6">
                            <div class="form-group">
-                              <label>Precio</label>
+                              <label>Precio ($)</label>
                               <div class="input-group">
                                  <input type="number" min="0" class=" form-control" name="precio_sitio"
                                     id="precio_sitio">
