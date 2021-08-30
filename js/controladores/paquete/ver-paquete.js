@@ -78,7 +78,7 @@ $(document).ready(function () {
       })
    });
    //BOTON DE ANALITICAS
-   $(document).on('click', '.btn-group .btn-info', function (evento) {
+   $(document).on('click', '.btn-group .btn-secondary', function (evento) {
       evento.preventDefault();//para evitar que la pagina se recargue
       let idSeleccionado = $(this).attr("name");
       window.location = `${URL_SISTEMA}vistas/paquetes/analitica.php?tur=${idSeleccionado}`;
@@ -93,7 +93,7 @@ $(document).ready(function () {
       }
    });
    //BOTON DE PRECHEQUEO
-   $(document).on('click', '.btn-group .btn-secondary', function (evento) {
+   $(document).on('click', '.btn-group .btn-info', function (evento) {
       evento.preventDefault();//para evitar que la pagina se recargue
       let idSeleccionado = $(this).attr("name");
       window.location = `../tours/chekeo.php?viaje=${idSeleccionado}`;
@@ -146,23 +146,23 @@ $(document).ready(function () {
                      html = "";
                      html += '<td>';
                      html += '    <div class="btn-group">';
-                     html += '        <button disabled type="button" name="' + json[i].id_tours + '" class="btn btn-primary" data-toggle="modal"';
+                     html += '        <button title="Editar" disabled type="button" name="' + json[i].id_tours + '" class="btn btn-primary" data-toggle="modal"';
                      html += '            data-target="">';
                      html += '            <i class="fas fa-edit" style="color: white"></i>';
                      html += '        </button>';
-                     html += '        <button  type="button" name="' + json[i].id_tours + '" class="btn btn-danger" data-toggle="modal"';
+                     html += '        <button title="Eliminar" type="button" name="' + json[i].id_tours + '" class="btn btn-danger" data-toggle="modal"';
                      html += '            data-target="#modal-eliminar">';
                      html += '            <i class="fas fa-trash" style="color: white"></i>';
                      html += '        </button>';
-                     html += '        <button type="button" name="' + json[i].id_tours + '" class="btn btn-warning" data-toggle="modal"';
+                     html += '        <button title="Galería" type="button" name="' + json[i].id_tours + '" class="btn btn-warning" data-toggle="modal"';
                      html += '            data-target="#modal-galeria">';
                      html += '            <i class="fas fa-image" style="color: white"></i>';
                      html += '        </button>';
-                     html += '        <button type="button" name="' + json[i].id_tours + '"  class="btn btn-info" data-toggle="modal"';
+                     html += '        <button title="Reporte" type="button" name="' + json[i].id_tours + '"  class="btn btn-secondary" data-toggle="modal"';
                      html += '            data-target="">';
-                     html += '            <i class="fa fa-signal" style="color: white"></i>';
+                     html += '            <i class="fa fa-eye" style="color: white"></i>';
                      html += '        </button>';
-                     html += '        <button type="button" name="' + json[i].id_tours + '"  class="btn btn-secondary" data-toggle="modal"';
+                     html += '        <button title="Pre Chequeo" type="button" name="' + json[i].id_tours + '"  class="btn btn-info" data-toggle="modal"';
                      html += '            data-target="">';
                      html += '            <i class="fas fa-check-circle" style="color: white"></i>';
                      html += '        </button>';

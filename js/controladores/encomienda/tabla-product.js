@@ -164,17 +164,17 @@ $(document).ready(function() {
                             html = "";
                             html += '<td>';
                             html += '    <div class="btn-group">';
-                            html += '        <button type="button" name="' + json.product[i].id_producto + '" id="' + json.product[i].id_unidad + '" class="btn btn-primary" data-toggle="modal"';
+                            html += '        <button title="Editar" type="button" name="' + json.product[i].id_producto + '" id="' + json.product[i].id_unidad + '" class="btn btn-primary" data-toggle="modal"';
                             html += '         data-target="#modal-editar">';
                             html += '            <i class="fas fa-edit" style="color: white"></i>';
                             html += '        </button>';
                             if (json.product[i].estado_producto == 1) {
 
-                                html += '        <button type="button" name="' + json.product[i].id_producto + '" class="btn btn-danger">';
+                                html += '        <button title="Eliminar" type="button" name="' + json.product[i].id_producto + '" class="btn btn-danger">';
                                 html += '             <i class="fas fa-trash" style="color: white"></i>';
                                 html += '        </button>';
                             } else {
-                                html += '        <button type="button" name="' + json.product[i].id_producto + '" class="btn btn-success">';
+                                html += '        <button title="Restaurar" type="button" name="' + json.product[i].id_producto + '" class="btn btn-success">';
                                 html += '            <i class="fas fa-arrow-up" style="color: white"></i>';
                                 html += '        </button>';
                             }

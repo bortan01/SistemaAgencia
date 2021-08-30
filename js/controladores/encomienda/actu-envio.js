@@ -7,7 +7,7 @@ $(document).ready(function() {
     inicializarTabla();
 
     //BOTON DE EDITAR
-    $(document).on('click', '.btn-group .btn-success', function() {
+    $(document).on('click', '.btn-group .btn-white', function() {
         $('#loadingActualizar').hide();
         id_encomienda = $(this).attr("name");
 
@@ -66,7 +66,7 @@ $(document).ready(function() {
                             html = "";
                             html += '<td>';
                             html += '    <div class="btn-group">';
-                            html += '        <button type="button" name="' + json.Encomiendas[i].id_encomienda + '" class="btn btn-success" style="background-color:#0E6251;"; data-toggle="modal"';
+                            html += '        <button title="Actualizar Envío" type="button" name="' + json.Encomiendas[i].id_encomienda + '" class="btn btn-white" style="background-color:#0E6251;"; data-toggle="modal"';
                             html += '         data-target="#modal-editar">';
                             html += '            <i class="fas fa-map-marked-alt" style="color: white"></i>';
                             html += '        </button>';

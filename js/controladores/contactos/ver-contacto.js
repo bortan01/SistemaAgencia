@@ -120,11 +120,11 @@ $(document).ready(function () {
                      html = "";
                      html += '<td>';
                      html += '    <div class="btn-group">';
-                     html += '        <button type="button" name="' + json.contactos[i].id_contacto + '" class="btn btn-primary" data-toggle="modal"';
+                     html += '        <button title="Editar" type="button" name="' + json.contactos[i].id_contacto + '" class="btn btn-primary" data-toggle="modal"';
                      html += '            data-target="">';
                      html += '            <i class="fas fa-edit" style="color: white"></i>';
                      html += '        </button>';
-                     html += '        <button type="button" name="' + json.contactos[i].id_contacto + '" class="btn btn-danger" data-toggle="modal"';
+                     html += '        <button title="Eliminar" type="button" name="' + json.contactos[i].id_contacto + '" class="btn btn-danger" data-toggle="modal"';
                      html += '            data-target="#modal-eliminar">';
                      html += '            <i class="fas fa-trash" style="color: white"></i>';
                      html += '        </button>';

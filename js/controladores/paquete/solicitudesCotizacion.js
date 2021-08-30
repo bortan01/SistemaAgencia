@@ -45,7 +45,7 @@ $(document).ready(function () {
                      html = "";
                      html += '<td>';
                      html += '    <div class="btn-group">';
-                     html += '        <button type="button" name="" class="btn btn-primary" data-toggle="modal"';
+                     html += '        <button title="Responder Solicitud" type="button" name="" class="btn btn-primary" data-toggle="modal"';
                      html += '            data-target="">';
                      html += '            <i class="fas fa-edit" style="color: white"></i>';
                      html += '        </button>';

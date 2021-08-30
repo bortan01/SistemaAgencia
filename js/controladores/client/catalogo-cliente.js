@@ -216,28 +216,28 @@ $(document).ready(function () {
                             html = "";
                             html += '<td>';
                             html += '    <div class="btn-group">';
-                            html += '        <button type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-primary" data-toggle="modal"';
+                            html += '        <button title="Editar" type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-primary" data-toggle="modal"';
                             html += '            data-target="">';
                             html += '            <i class="fas fa-edit" style="color: white"></i>';
                             html += '        </button>';
-                            html += '        <button type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-warning" data-toggle="modal"';
+                            html += '        <button title="Galería" type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-warning" data-toggle="modal"';
                             html += '            data-target="#modal-galeria">';
                             html += '            <i class="fas fa-image" style="color: white"></i>';
                             html += '        </button>';
 
                             if (json.usuarios[i].activo == "1") {
-                                html += '        <button type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-danger" data-toggle="modal"';
+                                html += '        <button title="Eliminar" type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-danger" data-toggle="modal"';
                                 html += '            data-target="#modal-eliminar">';
                                 html += '            <i class="fas fa-trash" style="color: white"></i>';
                                 html += '        </button>';
                          
                             } else {
-                                html += '        <button type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-success restaurarUsuario" data-toggle="modal"';
+                                html += '        <button title="Restaurar" type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-success restaurarUsuario" data-toggle="modal"';
                                 html += '            data-target="">';
                                 html += '            <i class="fa fa-arrow-alt-circle-up" style="color: white"></i>';
                                 html += '        </button>';
                             }
-                            html += '        <button type="button" name="' + json.usuarios[i].id_cliente + '"  class="btn btn-info" data-toggle="modal"';
+                            html += '        <button title="Servicios Adquiridos" type="button" name="' + json.usuarios[i].id_cliente + '"  class="btn btn-info" data-toggle="modal"';
                             html += '            data-target="">';
                             html += '            <i class="fa fa-signal" style="color: white"></i>';
                             html += '        </button>';

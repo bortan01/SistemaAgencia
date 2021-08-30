@@ -60,7 +60,7 @@ $(document).ready(function () {
                             html += '         data-target="#registro-actualizacion">';
                             html += '            <i class="fas fa-car" style="color: white"></i>';
                             html += '        </button>';
-                            html += '        <button type="button" name="' + json.Encomiendas[i].id_encomienda+ '" class="btn btn-primary" data-toggle="modal"';
+                            html += '        <button title="Reporte" type="button" name="' + json.Encomiendas[i].id_encomienda+ '" class="btn btn-primary" data-toggle="modal"';
                             html += '            data-target="#modal-eliminar">';
                             html += '            <i class="fas fa-eye" style="color: white"></i>';
                             html += '        </button>';

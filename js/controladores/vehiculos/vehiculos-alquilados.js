@@ -172,11 +172,11 @@ $(document).ready(function () {
                             html = "";
                             html += '<td>';
                             html += '    <div class="btn-group">';
-                            html += '        <button type="button" name="' + json.detalleVehiculo[i].id_detalle + '" id="' + json.detalleVehiculo[i].id_vehiculo + '" class="btn btn-primary" data-toggle="modal"';
+                            html += '        <button title="Editar" type="button" name="' + json.detalleVehiculo[i].id_detalle + '" id="' + json.detalleVehiculo[i].id_vehiculo + '" class="btn btn-primary" data-toggle="modal"';
                             html += '            data-target="#modal-editar">';
                             html += '            <i class="fas fa-edit" style="color: white"></i>';
                             html += '        </button>';
-                            html += '        <button type="button" name="' + json.detalleVehiculo[i].id_detalle + '" id="' + json.detalleVehiculo[i].id_vehiculo + '" class="btn btn-secondary" data-toggle="modal"';
+                            html += '        <button title="Reporte" type="button" name="' + json.detalleVehiculo[i].id_detalle + '" id="' + json.detalleVehiculo[i].id_vehiculo + '" class="btn btn-secondary" data-toggle="modal"';
                             html += '            data-target="#modal-cotizacion">';
                             html += '            <i class="fas fa-eye" style="color: white"></i>';
                             html += '        </button>';

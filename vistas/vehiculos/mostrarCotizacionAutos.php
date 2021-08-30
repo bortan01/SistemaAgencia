@@ -35,7 +35,7 @@ include_once '../../plantillas/cabecera.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Cotizaciones de Vehiculos Registradas</h1>
+                    <h1>Cotizaciones de Vehículos Registradas</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -64,7 +64,7 @@ include_once '../../plantillas/cabecera.php';
                                         <thead style="text-align: center;">
                                             <tr>
                                                 <th>Cliente</th>
-                                                <th>Vehiculo</th>
+                                                <th>Vehículo</th>
                                                 <th>Año</th>
                                                 <th>Acciones</th>
                                             </tr>
