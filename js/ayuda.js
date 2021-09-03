@@ -23,38 +23,38 @@
           $("#modal-ayuda").modal();
         });
 
-/* $("#botonAyudaBitacora").click(function() {
+$("#botonAyudaBitacora").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Bitacora-usuarios.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
-/* $("#botonAyudaSitio").click(function() {
+  
+ $("#botonAyudaSitio").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Registro_SitiosTuristicos.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
-/* $("#botonAyudaMostrarSitios").click(function() {
+  
+ $("#botonAyudaMostrarSitios").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Mostrar_SitiosTuristicos.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
-/* $("#botonAyudaServicios").click(function() {
+ 
+ $("#botonAyudaServicios").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Registro_ServiciosAdicionales.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+  
 /* $("#botonAyudaMostrarServicios").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();

@@ -9,7 +9,7 @@
                   </div>
                </div>
                <div class="modal-header">
-                  <h4 class="modal-title">Agregar Tipo de Sitio Turistico</h4>
+                  <h4 class="modal-title">Agregar Tipo de Sitio Turístico</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                   </button>
@@ -18,7 +18,7 @@
                   <div class="row">
                      <div class="col-sm-12">
                         <div class="form-group">
-                           <label>Tipo de Sitio Turistico</label>
+                           <label>Tipo de Sitio Turístico</label>
                            <div class="input-group">
                               <input placeholder="Digite el Tipo" type="text" class="form-control" name="nombreTipo"
                                  id="nombreTipo">

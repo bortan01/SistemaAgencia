@@ -19,12 +19,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Registrar Sitio Turísticos</h1>
+                    <h1>Registrar Sitio Turístico</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
-                        <li class="breadcrumb-item active">Registrar Sitio Turísticos</li>
+                        <li class="breadcrumb-item active">Registrar Sitio Turístico</li>
                         <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
                                 id="botonAyudaSitio"> <i class="fas fa-question"></i></button>
                     </ol>
@@ -57,10 +57,10 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Nombre del sitio turístico</label>
+                                                    <label>Nombre del Sitio Turístico</label>
                                                     <div class="input-group">
                                                         <input type="text"
-                                                            placeholder="Digite el nombre del sitio Turístiico"
+                                                            placeholder="Digite el Nombre del Sitio Turístico"
                                                             class="form-control" name="nombreSitio" id="nombreSitio">
                                                     </div>
                                                     <!-- /.input group -->
@@ -68,7 +68,7 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Precio</label>
+                                                    <label>Precio ($)</label>
                                                     <div class="input-group">
                                                         <input type="number" min="0" class=" form-control"
                                                             name="precioSitio" value="1" id="precioSitio">
@@ -134,7 +134,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label>Descripción del Servicio</label>
+                                                    <label>Descripción del Sitio Turístico</label>
                                                     <textarea name="descripcionSitio" id="descripcionSitio"
                                                         class="form-control" rows="3"
                                                         placeholder="Digitar aquí ..."></textarea>
