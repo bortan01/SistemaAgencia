@@ -36,9 +36,9 @@ let tabla = $('#TablaCostos').DataTable({
 
    columnDefs: [
       { className: "dt-center", targets: "_all" },
-      { targets: [6], visible: false },
-      { targets: [7], visible: false },
-      { targets: [8], visible: false },
+      // { targets: [6], visible: false },
+      // { targets: [7], visible: false },
+      // { targets: [8], visible: false },
    ]
 });
 //CUANDO HAY CAMBIOS EN EL COMBO TUR
@@ -321,7 +321,7 @@ function inicializarComboServicio() {
       $('#ComboTransporte').select2();
 
    }).always(function (xhr, opts) {
-      // agregarInformacionContacto();
+      agregarInformacionContacto();
       $('#loading').hide();
    });
 }

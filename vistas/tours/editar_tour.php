@@ -10,6 +10,8 @@
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"
    type="text/css" />
 <link href="<?= $base_url ?>css/miniatura-tabla.css" media="all" rel="stylesheet" type="text/css" />
+<link rel=" stylesheet" type="text/css" href="<?= $base_url ?>plugins/asiento-bus/css/jquery.seat-charts.css">
+<link rel=" stylesheet" type="text/css" href="<?= $base_url ?>plugins/asiento-bus/css/styleAdmin.css">
 <!--COTINUANDO CON LA INICIALIZACION -->
 <?php include_once '../../plantillas/navbar.php'; ?>
 <?php include_once '../../plantillas/barra_lateral.php'; ?>
@@ -19,12 +21,14 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Editar Tours</h1>
+               <h1 id="titulo">Editar Tour</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Editar</li>
+                  <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
+                  <li class="breadcrumb-item active">Editar Tour</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                     id="botonAyudaTour"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -39,11 +43,11 @@
             <div class="col-md-12">
                <div class="overlay-wrapper">
                   <div id="loading" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
-
                      <div class="text-bold pt-2">Cargando...
                      </div>
                   </div>
                   <div class="timeline">
+
                      <!-- timeline item -->
                      <div>
                         <i class="fas fa-umbrella-beach bg-blue"></i>
@@ -55,7 +59,8 @@
                                     <div class="form-group">
                                        <label>Título del viaje</label>
                                        <div class="input-group">
-                                          <input type="text" class="form-control" id="nombreTours" name="nombreTours">
+                                          <input placeholder="Digite el Título" type="text" class="form-control"
+                                             id="nombreTours" name="nombreTours">
                                        </div>
                                        <!-- /.input group -->
                                     </div>
@@ -69,6 +74,24 @@
                                        </div>
                                        <!-- /.input group -->
                                     </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="ml-2"><label for="">Tipo de Tour</label></div>
+                                 <div class="form-check mx-auto icheck-success">
+
+                                    <input class="form-check-input" type="radio" name="radioTipoPaquete"
+                                       id="radioTipoPaqueteNacional" value="Tour Nacional" checked>
+                                    <label class="form-check-label" for="radioTipoPaqueteNacional">
+                                       Tour Nacional
+                                    </label>
+                                 </div>
+                                 <div class="form-check mx-auto icheck-success">
+                                    <input class="form-check-input" type="radio" name="radioTipoPaquete"
+                                       id="radioTipoPaqueteInternacional" value="Tour Internacional">
+                                    <label class="form-check-label" for="radioTipoPaqueteInternacional">
+                                       Tour Internacional
+                                    </label>
                                  </div>
                               </div>
                               <div class="row">
@@ -91,8 +114,7 @@
                         <i class="fas fa-map-marked-alt bg-red"></i>
                         <div class="timeline-item">
                            <h3 class="timeline-header no-border">
-                              <a href="#">Sitios
-                                 Turístico</a>
+                              <a href="#">Sitios Turístico</a>
                            </h3>
                            <div class="timeline-body">
                               <div class="row">
@@ -107,9 +129,16 @@
                                        </div>
                                     </div>
                                  </div>
+                                 <div class="col-sm-1">
+                                    <br>
+                                    <span class="input-group-btn">
+                                       <button type="button" class="btn btn-success btn-add" id="newSitio"
+                                          name="newSitio" style="margin-top: 7px; width: 100%;">+</button>
+                                    </span>
+                                 </div>
                                  <div class="col-sm-2">
                                     <div class="form-group">
-                                       <label>Precio</label>
+                                       <label>Precio ($)</label>
                                        <div class="input-group">
                                           <input type="number" min="0" class=" form-control" name="precio_sitio"
                                              id="precio_sitio">
@@ -118,12 +147,13 @@
                                     </div>
                                  </div>
 
-                                 <div class="col-sm-2">
+                                 <div class="col-sm-1">
                                     <div class="form-group">
                                        <label>Contacto</label>
                                        <br>
                                        <a style="position:absolute; z-index:1;" href="#">
-                                          <div id="namePreviewTur">Nombre de Contacto
+                                          <div class="info_contacto" id="namePreviewTur">Nombre de
+                                             Contacto
                                           </div>
                                           <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                                              <div class="ocultar card bg-light">
@@ -211,6 +241,7 @@
                            </h3>
                            <div class="timeline-body">
                               <div class="row">
+
                                  <div class="col-sm-4">
                                     <div class="form-group multiple-form-group input-group">
                                        <label>Seleccione los Servicios Adicionales</label>
@@ -222,9 +253,16 @@
                                        </div>
                                     </div>
                                  </div>
+                                 <div class="col-sm-1">
+                                    <br>
+                                    <span class="input-group-btn">
+                                       <button type="button" class="btn btn-success btn-add" id="newServicio"
+                                          name="newServicio" style="margin-top: 7px; width: 100%;">+</button>
+                                    </span>
+                                 </div>
                                  <div class="col-sm-2">
                                     <div class="form-group">
-                                       <label>Precio</label>
+                                       <label>Precio ($)</label>
                                        <div class="input-group">
                                           <input type="number" min="0" class=" form-control" name="precio_servicio"
                                              id="precio_servicio">
@@ -233,7 +271,7 @@
                                     </div>
                                  </div>
 
-                                 <div class="col-sm-2">
+                                 <div class="col-sm-1">
                                     <div class="form-group">
                                        <label>Contacto</label>
                                        <br>
@@ -422,10 +460,10 @@
                                        </div>
                                        <thead>
                                           <tr style="text-align: center;">
-                                             <th>Sitio Turísto/Servicio Adicional</th>
+                                             <th>Sitio Turístico/Servicio Adicional</th>
                                              <th>Costo</th>
                                              <th>Cantidad</th>
-                                             <th>por pasajero</th>
+                                             <th>Por pasajero</th>
                                              <th>Sub Total</th>
                                              <th>Eliminar</th>
                                              <th>tipo</th>
@@ -444,7 +482,9 @@
                                  </div>
                                  <div class="col-md-2 ">
                                     <label class="text-primary ">
-                                       Total de Ingresos:
+                                       Total
+                                       de
+                                       Ingresos:
                                     </label>
                                  </div>
                                  <div class="col-md-9">
@@ -454,7 +494,9 @@
                                  </div>
                                  <div class="col-md-2">
                                     <label class="text-danger ">
-                                       Total de Gastos:
+                                       Total
+                                       de
+                                       Gastos:
                                     </label>
                                  </div>
                                  <div class="col-md-9">
@@ -553,12 +595,10 @@
                                     <label>Número de Asientos</label>
                                  </div>
                                  <div class="col-sm-4">
-                                    <label>Costo del Pasaje($)</label>
+                                    <label>Costo del Pasaje ($)</label>
                                  </div>
                               </div>
                               <div id="contenedorPromociones">
-                                 <div id="labelPromociones"> </div>
-
                                  <div class="row" id="promocione_especiales">
                                     <div class="col-sm-4">
                                        <div class="form-group multiple-form-group input-group">
@@ -583,17 +623,9 @@
                                  </div>
                               </div>
                            </div>
-                           <br> <br>
-                           <div class="timeline-footer" style="text-align: right;">
-                              <button name="btnguardar" id="btnguardar" class="btn btn-info btn-sm"
-                                 style="color: white">Actualizar</button>
-                              <button class="btn btn-danger btn-sm" style="color: white">Cancelar</button>
-                           </div>
                         </div>
                      </div>
                      <!-- END timeline item -->
-
-
                   </div>
                </div>
 
@@ -602,9 +634,18 @@
          <!-- END timeline item -->
       </form>
    </section>
+   <?php include_once '../sitios/formulario_sitio.php' ?>
+   <?php include_once '../servicios/formulario_servicio.php' ?>
+   <?php include_once '../servicios/registro_tipo.php' ?>
+   <?php include_once '../sitios/registro_tipo.php' ?>
+   <?php include_once '../contactos/modal-contacto.php' ?>
+   <?php include_once '../../vistas/mapa/coordenadas.php' ?>
+   <?php include_once '../contactos/modal-verContacto.php'; ?>
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 <!-- PONER SCRIPT ADICIONALES ACA -->
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
@@ -613,9 +654,15 @@
 <script src="<?= $base_url ?>plugins/subir-foto/js/fileinput.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/js/locales/es.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/themes/fas/theme.js" type="text/javascript"></script>
-<script src="<?= $base_url ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="<?= $base_url ?>/plugins/sweetalert2/sweetalert2.js"></script>
 
 <!-- EN EL CONTROLADOR ESTA LA LOGICA DE ESTA PANTALLA -->
+<script src="<?= $base_url ?>plugins/asiento-bus/js/jquery.seat-charts.js"></script>
+<script src="<?= $base_url ?>plugins/asiento-bus/js/admin-configuracion.js"></script>
+<script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
 <script src="<?= $base_url ?>js/controladores/turs/editar.js"></script>
+<script src="<?= $base_url ?>js/controladores/servicios/registro-servicio.js"></script>
+<script src="<?= $base_url ?>js/controladores/sitios/registro-sitio.js"></script>
+<script src="<?= $base_url ?>js/controladores/contactos/registro-contacto.js"></script>
 <!-- CIERRE DE ETIQUETAS -->
 <?php include_once '../../plantillas/cierre.php'; ?>
