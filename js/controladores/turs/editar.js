@@ -321,7 +321,7 @@ function inicializarComboServicio() {
       $('#ComboTransporte').select2();
 
    }).always(function (xhr, opts) {
-      agregarInformacionContacto();
+      // agregarInformacionContacto();
       $('#loading').hide();
    });
 }
@@ -881,7 +881,7 @@ function setDatos() {
       document.getElementById("nombreTours").value = response.nombre;
       document.getElementById("descripcion_tur").value = response.descripcion_tur;
       document.getElementById("CostoPasaje").value = response.precio;
-      document.getElementById("cantidad").value = response.cupos;
+      cantidadByTransporte  = response.cupos;
       inicializarCalendario(response.start, response.end);
 
 
