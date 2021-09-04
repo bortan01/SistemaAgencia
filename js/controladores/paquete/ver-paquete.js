@@ -11,7 +11,7 @@ $(document).ready(function () {
    //BOTON DE EDITAR
    $(document).on('click', '.btn-group .btn-primary', function () {
       let idSeleccionado = $(this).attr("name");
-      window.location = `../tours/editar_tour.php?tur=${idSeleccionado}`;
+      window.location = `../tours/editar_paquete.php?tur=${idSeleccionado}`;
    });
    //BOTON EDITAR LA FOTO
    $(document).on('click', '.btn-group .btn-warning', function () {
@@ -146,7 +146,7 @@ $(document).ready(function () {
                      html = "";
                      html += '<td>';
                      html += '    <div class="btn-group">';
-                     html += '        <button title="Editar" disabled type="button" name="' + json[i].id_tours + '" class="btn btn-primary" data-toggle="modal"';
+                     html += '        <button title="Editar"  type="button" name="' + json[i].id_tours + '" class="btn btn-primary" data-toggle="modal"';
                      html += '            data-target="">';
                      html += '            <i class="fas fa-edit" style="color: white"></i>';
                      html += '        </button>';
