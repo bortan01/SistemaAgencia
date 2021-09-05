@@ -841,7 +841,8 @@ function obtenerData() {
     form.append("incluye", JSON.stringify(incluye));
     form.append("lugar_salida", JSON.stringify(salida));
     form.append("promociones", JSON.stringify(promocion));
-    form.append("cupos_disponibles", cantidadByTransporte);
+    form.append("cupos_disponibles", document.getElementById("cantidad").value);
+    form.append("cupos_originales", document.getElementById("cantidad").value);
     form.append("tipo", 'Paquete Privado');
     form.append("start", start);
     form.append("end", end);

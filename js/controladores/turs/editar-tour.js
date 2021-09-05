@@ -16,7 +16,6 @@ $(document).ready(function () {
    let totalGastos = 0.0;
    let totalIngresos = 0.0;
    let ganancias = 0.0;
-   let fechasalida ;
    let cantidad = document.getElementById("cantidad");
    const htmlOtrasOpciones = $('#otras_opciones').clone();
    const htmlPromociones = $('#promocione_especiales').clone();
@@ -756,12 +755,9 @@ $(document).ready(function () {
 
       return encontrado;
    }
-
-
-
+   function modificarIngresos() {
+      totalIngresos = parseFloat(cantidadByTransporte * $("#CostoPasaje").val());
+      $('#totalIngresos').text("$" + totalIngresos);
+   }
 });
 
-function modificarIngresos() {
-   totalIngresos = parseFloat(cantidadByTransporte * $("#CostoPasaje").val());
-   $('#totalIngresos').text("$" + totalIngresos);
-}

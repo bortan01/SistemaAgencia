@@ -49,39 +49,6 @@
                   <div class="timeline">
                      <!-- timeline item -->
                      <div>
-                        <i class="fas fa-user bg-yellow"></i>
-                        <div class="timeline-item">
-                           <!--<span class="time"><i class="fas fa-clock"></i> 12:05</span>-->
-                           <h3 class="timeline-header"><a href="#">Datos Generales:</a></h3>
-
-                           <div class="timeline-body">
-                              <div class="row">
-                                 <div class="col-sm-11">
-                                    <div class="form-group">
-                                       <label>Seleccione el Cliente</label>
-                                       <select name="comboUsuario" id="comboUsuario"
-                                          class="select2 select2-hidden-accessible form-control"
-                                          data-placeholder="Seleccione el tipo" style="width: 100%;">
-                                       </select>
-                                    </div>
-                                 </div>
-                                 <div class="col-sm-1">
-                                    <br>
-                                    <span class="input-group-btn">
-                                       <button type="button" class="btn btn-success btn-add" id="btnNuevoCliente"
-                                          name="btnNuevoCliente" style="margin-top: 10px; width: 100%;">+</button>
-                                    </span>
-                                 </div>
-
-                              </div>
-                           </div>
-
-                        </div>
-                     </div>
-                     <!-- END timeline item -->
-
-                     <!-- timeline item -->
-                     <div>
                         <i class="fas fa-umbrella-beach bg-blue"></i>
                         <div class="timeline-item">
                            <h3 class="timeline-header"><a href="#">Datos Generales</a> </h3>
