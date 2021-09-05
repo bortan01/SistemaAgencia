@@ -11,7 +11,7 @@ $(document).ready(function () {
    //BOTON DE EDITAR
    $(document).on('click', '.btn-group .btn-primary', function () {
       let idSeleccionado = $(this).attr("name");
-      window.location = `../tours/editar_paquete.php?tur=${idSeleccionado}`;
+      window.location = `editar_paquete.php?paquete=${idSeleccionado}`;
    });
    //BOTON EDITAR LA FOTO
    $(document).on('click', '.btn-group .btn-warning', function () {
