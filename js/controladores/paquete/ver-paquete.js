@@ -86,8 +86,15 @@ $(document).ready(function () {
    //BOTON DE ANALITICAS
    $(document).on('click', '.btn-group .btn-secondary', function (evento) {
       evento.preventDefault();//para evitar que la pagina se recargue
-      let idSeleccionado = $(this).attr("name");
-      window.location = `${URL_SISTEMA}vistas/paquetes/analitica.php?tur=${idSeleccionado}`;
+
+      let fila = $(this).closest("tr");
+      let data = tabla.row(fila).data();
+      console.log(data);
+      if (data.tipo == 'Paquete Privado') {
+         window.location = `analitica_privada.php?paquete=${data.id_tours}`;
+      } else {
+         window.location = `analitica.php?tur=${data.id_tours}`;
+      }
    });
    //BOTON PARA ACTUALIZAR
    $(document).on('click', '#btnActualizar', function (evento) {
