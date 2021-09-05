@@ -251,14 +251,6 @@ $(document).on('click', '.info_contacto', function () {
 });
 
 
-function inicializarTipo(tipo) {
-   if (tipo == 'Paquete Internacional') {
-      document.getElementById('radioTipoPaqueteInternacional').checked = true;
-   } else {
-      document.getElementById('radioTipoPaqueteNacional').checked = true;
-   }
-}
-
 function inicializarComboTuristico() {
    //COMBO DE TIPOS 
    $('#ComboTur').select2();
@@ -762,8 +754,7 @@ function obtenerData() {
          });
       }
    });
-   let tipoPaquete = $("input[name='radioTipoPaquete']:checked").val();
-
+ 
    let salida = $("input[name='lugar_salida[]']").map(function () { return $(this).val(); }).get();
    // ELIMINAMOS CAMBOS VACIOS
    salida = salida.filter(value => value != '');
@@ -780,16 +771,6 @@ function obtenerData() {
    // ELIMINAMOS CAMBOS VACIOS
    requisitos = requisitos.filter(value => value != '');
 
-   let pasajes = $("input[name='pasajes[]']").map(function () { return $(this).val(); }).get();
-   let asientos = $("input[name='asientos[]']").map(function () { return $(this).val(); }).get();
-   let titulos = $("input[name='titulos[]']").map(function () { return $(this).val(); }).get();
-
-   for (let index = 0; index < titulos.length; index++) {
-      if (titulos[index] != "" && asientos[index] != "" && pasajes[index] != "") {
-         promocion.push({ 'titulo': titulos[index], 'asiento': asientos[index], "pasaje": pasajes[index] });
-      }
-
-   }
    let valor = document.getElementById("fecha_salida").value;
    let fecha = valor.split(" - ");
    let start = fecha[0]
@@ -803,7 +784,8 @@ function obtenerData() {
    form.append("incluye", JSON.stringify(incluye));
    form.append("lugar_salida", JSON.stringify(salida));
    form.append("nombreTours", document.getElementById("nombreTours").value);
-   form.append("precio", document.getElementById("CostoPasaje").value);
+   form.append("precio", document.getElementById("cantidad").value);
+   console.log(document.getElementById("cantidad").value);
    form.append("descripcion_tur", document.getElementById("descripcion_tur").value);
    form.append("cupos_disponibles", cantidadByTransporte);
    form.append("tipo", tipoPaquete);
@@ -826,7 +808,7 @@ function setDatos() {
       document.getElementById("CostoPasaje").value = response.precio;
       cantidadByTransporte = response.cupos_originales;
       inicializarCalendario(response.start, response.end);
-      inicializarTipo(response.tipo);
+     
 
       AgregarItems(response.lugar_salidas, $('#labelLugar'), $("[name='grupo_lugar']"), $grupoLugar);
       AgregarItems(response.incluye, $('#labelIncluye'), $("[name='grupo_incluye']"), $grupo_incluye);

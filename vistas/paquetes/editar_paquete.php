@@ -21,12 +21,12 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1 id="titulo">Publicar Paquete</h1>
+               <h1 id="titulo">Editar Paquete</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
-                  <li class="breadcrumb-item active">Publicar Paquete</li>
+                  <li class="breadcrumb-item active">Editar Paquete</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
                      id="botonAyudaPaquetePublico"> <i class="fas fa-question"></i></button>
                </ol>

@@ -153,8 +153,8 @@ function login() {
         });
       }
     }).always(function (resp) {
-      $("#login-btn").prop('disabled', false);
-      $("#login-btn").html(btnHTML);
+      // $("#login-btn").prop('disabled', false);
+      // $("#login-btn").html(btnHTML);
     });
 
   } else {

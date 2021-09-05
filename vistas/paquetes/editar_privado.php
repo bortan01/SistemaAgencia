@@ -461,8 +461,8 @@
                            </div>
                         </div>
                      </div>
-                     <!-- timeline item -->
                      <!-- END timeline item -->
+                     <!-- timeline item -->
                      <div>
                         <i class="fas fa-clipboard-check bg-purple"></i>
                         <div class="timeline-item">
@@ -472,9 +472,9 @@
                            <div class="timeline-body">
                               <div id="contenedor_opcions">
                                  <div class="row" id="otras_opciones">
-                                    <div class="col-sm-3">
-                                       <label>Lugar(es) de Salida</label>
-                                       <div class="form-group multiple-form-group input-group">
+                                    <div class="col-sm-3" id="contenedor_lugar">
+                                       <label id="labelLugar">Lugar(es) de Salida</label>
+                                       <div class="form-group multiple-form-group input-group" name="grupo_lugar">
                                           <input type="text" name="lugar_salida[]" class="form-control"
                                              placeholder="Digite el lugar">
                                           <span class="input-group-btn">
@@ -484,8 +484,8 @@
                                        </div>
                                     </div>
                                     <div class="col-sm-3">
-                                       <label>El viaje incluye</label>
-                                       <div class="form-group multiple-form-group input-group">
+                                       <label id="labelIncluye">El viaje incluye</label>
+                                       <div class="form-group multiple-form-group input-group" name="grupo_incluye">
                                           <input type="text" name="incluye[]" class="form-control"
                                              placeholder="¿Qué incluye el viaje?">
                                           <span class="input-group-btn">
@@ -495,8 +495,8 @@
                                        </div>
                                     </div>
                                     <div class="col-sm-3">
-                                       <label>El viaje no incluye</label>
-                                       <div class="form-group multiple-form-group input-group">
+                                       <label id="labelNoIncluye">El viaje no incluye</label>
+                                       <div class="form-group multiple-form-group input-group" name='grupo_noIncluye'>
                                           <input type="text" name="no_incluye[]" class="form-control"
                                              placeholder="¿Qué incluye no incluye viaje?">
                                           <span class="input-group-btn">
@@ -506,8 +506,8 @@
                                        </div>
                                     </div>
                                     <div class="col-sm-3">
-                                       <label>Requisitos</label>
-                                       <div class="form-group multiple-form-group input-group">
+                                       <label id="labelRequisito">Requisitos</label>
+                                       <div class="form-group multiple-form-group input-group" name="grupo_requisitos">
                                           <input type="text" name="requisitos[]" class="form-control"
                                              placeholder="Digite los requisitos">
                                           <span class="input-group-btn">
@@ -519,19 +519,12 @@
                                  </div>
                               </div>
                            </div>
-                           <div class="col-sm-6">
-                              <!-- text input -->
-                              <div class="hidden">
-                                 <label name="detalle" id="detalle">Registró Paquete Turístico Privado</label>
-                              </div>
-                           </div>
                            <br> <br>
                            <div class="timeline-footer" style="text-align: right;">
                               <button name="btnguardar" id="btnguardar" class="btn btn-info btn-sm"
                                  style="color: white">Guardar</button>
                               <button class="btn btn-danger btn-sm" style="color: white">Cancelar</button>
                            </div>
-
                         </div>
                      </div>
                      <!-- END timeline item -->
@@ -572,7 +565,7 @@ include_once '../../plantillas/footer.php'; ?>
 <script src="<?= $base_url ?>plugins/asiento-bus/js/jquery.seat-charts.js"></script>
 <script src="<?= $base_url ?>plugins/asiento-bus/js/admin-configuracion.js"></script>
 <script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
-<script src="<?= $base_url ?>js/controladores/paquete/registro-privado.js"></script>
+<script src="<?= $base_url ?>js/controladores/paquete/editar-privado.js"></script>
 <script src="<?= $base_url ?>js/controladores/servicios/registro-servicio.js"></script>
 <script src="<?= $base_url ?>js/controladores/sitios/registro-sitio.js"></script>
 <script src="<?= $base_url ?>js/controladores/contactos/registro-contacto.js"></script>

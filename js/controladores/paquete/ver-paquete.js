@@ -10,8 +10,14 @@ $(document).ready(function () {
 
    //BOTON DE EDITAR
    $(document).on('click', '.btn-group .btn-primary', function () {
-      let idSeleccionado = $(this).attr("name");
-      window.location = `editar_paquete.php?paquete=${idSeleccionado}`;
+      let fila = $(this).closest("tr");
+      let data = tabla.row(fila).data();
+      console.log(data);
+      if (data.tipo == 'Paquete Privado') {
+         window.location = `editar_privado.php?paquete=${data.id_tours}`;
+      } else {
+         window.location = `editar_paquete.php?paquete=${data.id_tours}`;
+      }
    });
    //BOTON EDITAR LA FOTO
    $(document).on('click', '.btn-group .btn-warning', function () {
