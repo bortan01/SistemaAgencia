@@ -35,8 +35,8 @@ let tabla = $('#TablaCostos').DataTable({
 
    columnDefs: [
       { className: "dt-center", targets: "_all" },
-      { targets: [2], visible: false },
-      { targets: [4], visible: false },
+      // { targets: [2], visible: false },
+      // { targets: [4], visible: false },
       { targets: [6], visible: false },
       { targets: [7], visible: false },
       { targets: [8], visible: false },
@@ -676,126 +676,6 @@ function mensajeError(mensaje = 'erro') {
       showConfirmButton: true,
    });
 }
-
-
-
-function editar() {
-   $('#loading').show();
-   let form = obtenerData();
-
-   //OCUPAR ESTA CONFIGURACION CUANDO SE ENVIAEN ARCHIVOS(FOTOS-IMAGENES)
-   $.ajax({
-      url: URL_SERVIDOR + "TurPaquete/update",
-      method: "POST",
-      mimeType: "multipart/form-data",
-      data: form,
-      timeout: 0,
-      processData: false,
-      contentType: false,
-   }).done(function (response) {
-      const Toast = Swal.mixin();
-      Toast.fire({
-         title: 'Exito...',
-         icon: 'success',
-         text: "Viaje Actualizado Exitosamente",
-         showConfirmButton: true,
-      });
-   }).fail(function (response) {
-      //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-      console.log(response);
-
-      const Toast = Swal.mixin();
-      Toast.fire({
-         title: 'Oops...',
-         icon: 'error',
-         text: "ERROR EN EL ENVIO DE INFORMACIÓN",
-         showConfirmButton: true,
-      });
-
-   }).always(function (xhr, opts) {
-      $('#loading').hide();
-   });
-}
-
-function obtenerData() {
-   let form = new FormData();
-   let serviciosAdicionales = [];
-   let sistiosTuristicos = [];
-   let promocion = [];
-
-   //ESTO ES PARA L A GALERIA 
-   let galeria = document.getElementById("fotos").files;
-   for (let i = 0; i < galeria.length; i++) {
-      form.append('fotos[]', galeria[i]);
-   }
-   tabla.rows().every(function (value, index) {
-      let data = this.data();
-      let title = data[0];
-      let costo = data[1];
-      let por_pasajero = data[3];
-      let tipo = data[6];
-      let id = data[7];
-      if (tipo == "servicio") {
-         serviciosAdicionales.push({
-            "id_servicios": id,
-            "costo": costo,
-            "por_usuario": por_pasajero == 'si',
-            "nuemo_veces": "1"
-         });
-      } else {
-         sistiosTuristicos.push({
-            "id_sitio_turistico": id,
-            "title": title,
-            "costo": costo,
-            "por_usuario": por_pasajero == 'si',
-            "backgroundColor": "#28a745",
-            "borderColor": "#28a745",
-            "textColor": "#fff"
-         });
-      }
-   });
- 
-   let salida = $("input[name='lugar_salida[]']").map(function () { return $(this).val(); }).get();
-   // ELIMINAMOS CAMBOS VACIOS
-   salida = salida.filter(value => value != '');
-
-   let incluye = $("input[name='incluye[]']").map(function () { return $(this).val(); }).get();
-   // ELIMINAMOS CAMBOS VACIOS
-   incluye = incluye.filter(value => value != '');
-
-   let no_incluye = $("input[name='no_incluye[]']").map(function () { return $(this).val(); }).get();
-   // ELIMINAMOS CAMBOS VACIOS
-   no_incluye = no_incluye.filter(value => value != '');
-
-   let requisitos = $("input[name='requisitos[]']").map(function () { return $(this).val(); }).get();
-   // ELIMINAMOS CAMBOS VACIOS
-   requisitos = requisitos.filter(value => value != '');
-
-   let valor = document.getElementById("fecha_salida").value;
-   let fecha = valor.split(" - ");
-   let start = fecha[0]
-   let end = fecha[1]
-
-   form.append("sitios", JSON.stringify(sistiosTuristicos));
-   form.append("servicios", JSON.stringify(serviciosAdicionales));
-   form.append("promociones", JSON.stringify(promocion));
-   form.append("no_incluye", JSON.stringify(no_incluye));
-   form.append("requisitos", JSON.stringify(requisitos));
-   form.append("incluye", JSON.stringify(incluye));
-   form.append("lugar_salida", JSON.stringify(salida));
-   form.append("nombreTours", document.getElementById("nombreTours").value);
-   form.append("precio", document.getElementById("cantidad").value);
-   console.log(document.getElementById("cantidad").value);
-   form.append("descripcion_tur", document.getElementById("descripcion_tur").value);
-   form.append("cupos_disponibles", cantidadByTransporte);
-   form.append("tipo", tipoPaquete);
-   form.append("start", start);
-   form.append("end", end);
-   form.append("estado", 1);
-   form.append("aprobado", 1);
-   return form;
-
-}
 function setDatos() {
    $.ajax({
       url: URL_SERVIDOR + "TurPaquete/showEdit?id_tours=" + ID_PAQUETE,
@@ -806,9 +686,10 @@ function setDatos() {
       document.getElementById("nombreTours").value = response.nombre;
       document.getElementById("descripcion_tur").value = response.descripcion_tur;
       document.getElementById("CostoPasaje").value = response.precio;
+      document.getElementById("cantidad").value = response.cupos_originales;
       cantidadByTransporte = response.cupos_originales;
       inicializarCalendario(response.start, response.end);
-     
+
 
       AgregarItems(response.lugar_salidas, $('#labelLugar'), $("[name='grupo_lugar']"), $grupoLugar);
       AgregarItems(response.incluye, $('#labelIncluye'), $("[name='grupo_incluye']"), $grupo_incluye);
@@ -1018,22 +899,9 @@ function obtenerData() {
    let no_incluye = $("input[name='no_incluye[]']").map(function () { return $(this).val(); }).get();
    let requisitos = $("input[name='requisitos[]']").map(function () { return $(this).val(); }).get();
 
-   let pasajes = $("input[name='pasajes[]']").map(function () { return $(this).val(); }).get();
-   let asientos = $("input[name='asientos[]']").map(function () { return $(this).val(); }).get();
-   let titulos = $("input[name='titulos[]']").map(function () { return $(this).val(); }).get();
-
-   for (let index = 0; index < titulos.length; index++) {
-      if (titulos[index] != "" && asientos[index] != "" && pasajes[index] != "") {
-         promocion.push({ 'titulo': titulos[index], 'asiento': asientos[index], "pasaje": pasajes[index] });
-      }
-
-   }
-   let tipoPaquete = $("input[name='radioTipoPaquete']:checked").val();
-
    form.append("id_tours", ID_PAQUETE);
    form.append("sitios", JSON.stringify(sistiosTuristicos));
    form.append("servicios", JSON.stringify(serviciosAdicionales));
-   form.append("promociones", JSON.stringify(promocion));
    form.append("no_incluye", JSON.stringify(no_incluye));
    form.append("requisitos", JSON.stringify(requisitos));
    form.append("incluye", JSON.stringify(incluye));
@@ -1041,7 +909,9 @@ function obtenerData() {
    form.append("nombreTours", document.getElementById("nombreTours").value);
    form.append("precio", document.getElementById("CostoPasaje").value);
    form.append("descripcion_tur", document.getElementById("descripcion_tur").value);
-   form.append("tipo", tipoPaquete);
+   form.append("cupos_originales", document.getElementById("cantidad").value);
+   form.append("cupos_disponibles", document.getElementById("cantidad").value);
+   form.append("tipo", 'Paquete Privado');
    form.append("estado", 1);
    form.append("aprobado", 1);
 
