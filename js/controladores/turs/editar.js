@@ -21,7 +21,6 @@ const $grupo_promociones = $('#promocione_especiales').clone();
 inicializarValidaciones();
 inicializarComboTuristico();
 inicializarComboServicio();
-inicializarGaleria();
 setDatos();
 
 let tabla = $('#TablaCostos').DataTable({
@@ -36,9 +35,9 @@ let tabla = $('#TablaCostos').DataTable({
 
    columnDefs: [
       { className: "dt-center", targets: "_all" },
-      // { targets: [6], visible: false },
-      // { targets: [7], visible: false },
-      // { targets: [8], visible: false },
+      { targets: [6], visible: false },
+      { targets: [7], visible: false },
+      { targets: [8], visible: false },
    ]
 });
 //CUANDO HAY CAMBIOS EN EL COMBO TUR
@@ -250,6 +249,14 @@ $(document).on('click', '.info_contacto', function () {
 });
 
 
+function inicializarTipo(tipo) {
+   if (tipo = '"Tour Internacional"') {
+      document.getElementById('radioTipoPaqueteInternacional').checked = true;
+   } else {
+      document.getElementById('radioTipoPaqueteNacional').checked = true;
+   }
+}
+
 function inicializarComboTuristico() {
    //COMBO DE TIPOS 
    $('#ComboTur').select2();
@@ -294,15 +301,7 @@ function inicializarComboServicio() {
       if (response.servicio) {
          DATA_SERVICIO = response.servicio;
          for (let index = 0; index < DATA_SERVICIO.length; index++) {
-            if (DATA_SERVICIO[index].tipo_servicio === "Transporte") {
-               if (cantidadByTransporte == 0) {
-                  cantidadByTransporte = parseInt(DATA_SERVICIO[index].asientos_dispobibles);
-               }
-               dataTransporte.push({
-                  id: DATA_SERVICIO[index].id_servicios,
-                  text: `${DATA_SERVICIO[index].nombre_servicio} (${DATA_SERVICIO[index].tipo_servicio}, ${DATA_SERVICIO[index].asientos_dispobibles} Asientos)`
-               });
-            } else {
+            if (DATA_SERVICIO[index].tipo_servicio !== "Transporte") {
                dataOtros.push({
                   id: DATA_SERVICIO[index].id_servicios,
                   text: `${DATA_SERVICIO[index].nombre_servicio} (${DATA_SERVICIO[index].tipo_servicio})`
@@ -311,7 +310,6 @@ function inicializarComboServicio() {
          }
          ///LE CARGAMOS LA DATA 
          $('#ComboServicio').select2({ data: dataOtros });
-         $('#ComboTransporte').select2({ data: dataTransporte });
       } else {
          $('#ComboServicio').select2();
          $('#ComboTransporte').select2();
@@ -633,7 +631,6 @@ function ExisteFila(id, cantidad, costo, tipo, PorPasajero) {
 
 function agregarInformacionContacto() {
    let ComboServicio = document.getElementById("ComboServicio").value;
-   let Combotransporte = document.getElementById("ComboTransporte").value;
    let CombotSitio = document.getElementById("ComboTur").value;
    if (CombotSitio !== '') {
       let data = DATA_SITIO.find(myTur => myTur.id_sitio_turistico === CombotSitio);
@@ -654,31 +651,6 @@ function agregarInformacionContacto() {
       document.getElementById("phoneContactoServicio").innerHTML = data.telefono;
       document.getElementById("imgContactoServicio").src = data.url;
    }
-   if (Combotransporte !== '') {
-      let data = DATA_SERVICIO.find(myServicio => myServicio.id_servicios === Combotransporte);
-      document.getElementById("precio_transporte").value = data.costos_defecto;
-      document.getElementById("nameContactoTransporte").innerHTML = `<b>Nombre de Contacto:</b> ${data.nombre_contacto}`;
-      document.getElementById("namePreviewTransporte").innerHTML = data.nombre_contacto;
-      document.getElementById("mailContactoTransporte").innerHTML = data.correo;
-      document.getElementById("phoneContactoTransporte").innerHTML = data.telefono;
-      document.getElementById("imgContactoTransporte").src = data.url;
-      //CARGAMOS EL PRIMER REGISTRO A LA TABLA 
-      let id = Combotransporte;
-      let cantidad = 1;
-      let precio = $('#precio_transporte').val();
-      let tipo = "servicio";
-      let PorPasajero = "no";
-      let nombre = $("#ComboTransporte option:selected").html();
-      let Crearboton = false;
-
-      if (!ExisteFila(id, cantidad, precio, tipo, PorPasajero)) {
-         agregarFila(nombre, precio, cantidad, PorPasajero, tipo, id, Crearboton);
-      }
-      modificarIngresos();
-      modificarTabla();
-      modificarGanancias();
-   }
-
 }
 
 function modificarRowTransporte(id, cantidad, costo, titulo) {
@@ -881,9 +853,9 @@ function setDatos() {
       document.getElementById("nombreTours").value = response.nombre;
       document.getElementById("descripcion_tur").value = response.descripcion_tur;
       document.getElementById("CostoPasaje").value = response.precio;
-      cantidadByTransporte  = response.cupos;
+      cantidadByTransporte = response.cupos;
       inicializarCalendario(response.start, response.end);
-
+      inicializarTipo(response.tipo);
 
       AgregarItems(response.lugar_salidas, $('#labelLugar'), $("[name='grupo_lugar']"), $grupoLugar);
       AgregarItems(response.incluye, $('#labelIncluye'), $("[name='grupo_incluye']"), $grupo_incluye);
@@ -930,14 +902,15 @@ function AgregarItemPromociones(arreglo, label, $original, $grupo) {
 
    }
 }
-function AgregarFilaServicio(arreglo, cantidad) {
-   arreglo.forEach(element => {
+function AgregarFilaServicio(listServicios, cantidad) {
+   listServicios.forEach(servicio => {
       let porPasajero = 'si';
-      if (element.por_usuario == '0') {
+      let Crearboton = servicio.id_tipo_servicio != '2';
+      if (servicio.por_usuario == '0') {
          porPasajero = 'no';
          cantidad = 1;
       }
-      agregarFila(element.nombre_servicio, element.costo, cantidad, porPasajero, 'servicio', element.id_servicios);
+      agregarFila(servicio.nombre_servicio, servicio.costo, cantidad, porPasajero, 'servicio', servicio.id_servicios, Crearboton);
 
    });
    modificarIngresos();
