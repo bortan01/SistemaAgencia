@@ -186,7 +186,7 @@ $(document).on('click', '#btnguardar', function(evento) {
     form.validate();
     //verificamos que se hallan cumplido las validaciones 
     if (form.valid()) {
-        guardar();
+        editar();
     }else{
         mensajeError("Complete los campos");
     }
@@ -739,7 +739,7 @@ function inicializarCalendario() {
     });
 }
 
-function guardar() {
+function editar() {
     $('#loading').show();
     let form = obtenerData();
 
@@ -888,6 +888,7 @@ function obtenerData() {
     form.append("nombreTours", document.getElementById("nombreTours").value);
     form.append("precio", document.getElementById("CostoPasaje").value);
     form.append("descripcion_tur", document.getElementById("descripcion_tur").value);
+    form.append("cupos_originales", cantidadByTransporte);
     form.append("cupos_disponibles", cantidadByTransporte);
     form.append("tipo", tipoPaquete);
     form.append("start", start);

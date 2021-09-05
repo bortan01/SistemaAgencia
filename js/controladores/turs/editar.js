@@ -195,7 +195,7 @@ $(document).on('click', '#btnguardar', function (evento) {
    form.validate();
    //verificamos que se hallan cumplido las validaciones 
    if (form.valid()) {
-      guardar();
+      editar();
    } else {
       mensajeError("Complete los campos");
    }
@@ -250,7 +250,7 @@ $(document).on('click', '.info_contacto', function () {
 
 
 function inicializarTipo(tipo) {
-   if (tipo = '"Tour Internacional"') {
+   if (tipo == 'Tour Internacional') {
       document.getElementById('radioTipoPaqueteInternacional').checked = true;
    } else {
       document.getElementById('radioTipoPaqueteNacional').checked = true;
@@ -685,14 +685,13 @@ function mensajeError(mensaje = 'erro') {
 
 
 
-function guardar() {
+function editar() {
    $('#loading').show();
    let form = obtenerData();
 
-
    //OCUPAR ESTA CONFIGURACION CUANDO SE ENVIAEN ARCHIVOS(FOTOS-IMAGENES)
    $.ajax({
-      url: URL_SERVIDOR + "TurPaquete/save",
+      url: URL_SERVIDOR + "TurPaquete/update",
       method: "POST",
       mimeType: "multipart/form-data",
       data: form,
@@ -700,22 +699,16 @@ function guardar() {
       processData: false,
       contentType: false,
    }).done(function (response) {
-      guardarBitacora();
       console.log(response);
       let respuestaDecodificada = JSON.parse(response);
       const Toast = Swal.mixin();
       Toast.fire({
          title: 'Exito...',
          icon: 'success',
-         text: "Registro Guardado Exitosamente",
+         text: "Viaje Actualizado Exitosamente",
          showConfirmButton: true,
       }).then((result) => {
-         //TODO BIEN Y RECARGAMOS LA PAGINA 
-         $("#miFormulario").trigger("reset");
-         restaurarContactos();
-         resetMiTable();
-         restOtrasOpciones();
-         resetPromociones();
+         //TODO BIEN Y RECARGAMOS LA PAGINA              
          Toast.fire({
             title: '¿Desea Editar el itinerario ahora?',
             text: "Puedes Editarlo más tarde si quieres",
@@ -728,11 +721,7 @@ function guardar() {
 
          }).then((result) => {
             if (result.value) {
-               let idViaje = respuestaDecodificada.id;
-               let fechaInicioViaje = respuestaDecodificada.turPaquete.start;
-               let fechaFinViaje = respuestaDecodificada.turPaquete.end;
-               let titulo = respuestaDecodificada.turPaquete.nombreTours;
-               window.location = `${URL_SISTEMA}vistas/tours/itinerario.php?viaje=${idViaje}&&fechaInicioViaje=${fechaInicioViaje}&&fechaFinViaje=${fechaFinViaje}&titulo=${titulo}`;
+               window.location = `${URL_SISTEMA}vistas/tours/itinerario.php?tur=${respuestaDecodificada.viaje.id_tours}`;
             }
          });
 
@@ -853,7 +842,7 @@ function setDatos() {
       document.getElementById("nombreTours").value = response.nombre;
       document.getElementById("descripcion_tur").value = response.descripcion_tur;
       document.getElementById("CostoPasaje").value = response.precio;
-      cantidadByTransporte = response.cupos;
+      cantidadByTransporte = response.cupos_originales;
       inicializarCalendario(response.start, response.end);
       inicializarTipo(response.tipo);
 
@@ -862,8 +851,8 @@ function setDatos() {
       AgregarItems(response.no_incluye, $('#labelNoIncluye'), $("[name='grupo_noIncluye']"), $grupo_noIncluye);
       AgregarItems(response.requisitos, $('#labelRequisito'), $("[name='grupo_requisitos']"), $grupo_requisitos);
       AgregarItemPromociones(response.promociones, $('#labelPromociones'), $('#promocione_especiales'), $grupo_promociones);
-      AgregarFilaServicio(response.servicios, response.cupos);
-      AgregarFilaSitios(response.turs, response.cupos);
+      AgregarFilaServicio(response.servicios, response.cupos_originales);
+      AgregarFilaSitios(response.turs, response.cupos_originales);
 
    }).fail(function (response) {
       console.log(response);
@@ -971,7 +960,7 @@ function inicializarCalendario(start, end) {
 }
 ///////////////
 //EN REALIDAD ES EL ACTUALIZAR
-function guardar() {
+function editar() {
    $('#loading').show();
    let form = obtenerData();
 
@@ -1079,6 +1068,7 @@ function obtenerData() {
    let fecha = valor.split(" - ");
    let start = fecha[0]
    let end = fecha[1]
+   let tipoPaquete = $("input[name='radioTipoPaquete']:checked").val();
 
    form.append("id_tours", ID_TUR);
    form.append("sitios", JSON.stringify(sistiosTuristicos));
@@ -1091,12 +1081,11 @@ function obtenerData() {
    form.append("nombreTours", document.getElementById("nombreTours").value);
    form.append("precio", document.getElementById("CostoPasaje").value);
    form.append("descripcion_tur", document.getElementById("descripcion_tur").value);
-   form.append("cupos_disponibles", document.getElementById("cantidad").value);
    form.append("start", start);
    form.append("end", end);
+   form.append("tipo", tipoPaquete);
    form.append("estado", 1);
    form.append("aprobado", 1);
-   form.append("tipo", "TUR");
 
    return form;
 
