@@ -22,7 +22,6 @@ function init() {
       url: URL_SERVIDOR + "TurPaquete/analitica?id_tours=" + ID_TUR,
       method: "GET"
    }).done(function (response) {
-      console.log(response);
       // //CARGAMOS EL COSTO AL INPUT
       document.getElementById("titulo").innerHTML = response.nombre;
       // document.getElementById("fecha").innerHTML = `${moment(response.start).format('l')} - ${moment(response.end).format('l')}`;

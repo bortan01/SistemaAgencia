@@ -530,7 +530,7 @@
                </a>
                <ul class="nav nav-treeview">
                   <li class="nav-item">
-                     <a href="<?= $base_url ?>home.php" class="nav-link">
+                     <a href="<?= $base_url ?>vistas/ingresos/estadisticas.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
                         <p>Estadísticas</p>
                      </a>
