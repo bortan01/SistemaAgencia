@@ -57,7 +57,7 @@ $(document).ready(function () {
         let precio=0;
         let contar=0;
         let COMISION=0;
-        COMISION = ((parseInt($('#precio').val()))*(parseInt($('#asoriasTotales').html())));
+        COMISION = ((parseFloat($('#precio').val()))*(parseInt($('#asoriasTotales').html())));
         $('#totalIngresos').empty();
         $('#totalIngresos').text("$" + parseFloat(COMISION).toFixed(2));
          /*let m1 = document.getElementById("precio");
