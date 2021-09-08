@@ -48,9 +48,29 @@
 
                         <div class="timeline-body">
                            <div class="row">
+                              <div class="col-md-12">
+                                 <canvas id="myChart" style="position: relative; height: 40vh; width: 80vw"></canvas>
+                              </div>
+                           </div>
+                           <div class="row mt-3 mb-3">
+                              <div class="col-md-1 ">
 
-                              <canvas id="myChart" style="position: relative; height: 40vh; width: 80vw"></canvas>
-
+                              </div>
+                              <div class="col-md-2 ">
+                                 <button name="" id="" class="btn btn-outline-primary w-100">Última Semana</button>
+                              </div>
+                              <div class="col-md-2">
+                                 <button name="" id="" class="btn btn-outline-primary w-100">Último Mes</button>
+                              </div>
+                              <div class="col-md-2">
+                                 <button name="" id="" class="btn btn-outline-primary w-100">Último Trimestre</button>
+                              </div>
+                              <div class="col-md-2">
+                                 <button name="" id="" class="btn btn-outline-primary w-100">Último Año</button>
+                              </div>
+                              <div class="col-md-2">
+                                 <button name="" id="" class="btn btn-outline-primary w-100">Desde Siempre</button>
+                              </div>
                            </div>
                         </div>
 
