@@ -63,7 +63,7 @@ function crearColumna(info) {
    let label = document.createElement('label');
    label.innerHTML = info;
    label.style.fontWeight = "normal";
-   label.style.padding ='3px';
+   label.style.padding = '3px';
    td.appendChild(label);
    td.classList.add('textcenter');
    return td;
@@ -80,7 +80,7 @@ function crearColumnaLabel(info, cantidad) {
    let label = document.createElement('label');
    label.innerHTML = txt;
    label.style.fontWeight = "normal";
-   label.style.padding ='3px';
+   label.style.padding = '3px';
    td.appendChild(label);
    td.classList.add('textcenter');
    return td;

@@ -48,28 +48,42 @@
 
                         <div class="timeline-body">
                            <div class="row">
-                              <div class="col-md-12">
+                              <div class="col-md-9">
                                  <canvas id="myChart" style="position: relative; height: 40vh; width: 80vw"></canvas>
                               </div>
+                              <div class="col-md-3 d-flex align-items-center d-flex justify-content-center">
+                                 <div class="form-group">
+                                    <div class="input-group">
+                                       <input class=" form-control" name="fecha_salida" id="fecha_salida">
+                                    </div>
+                                    <button data-periodo="personalizado" name="" id="personalizado"
+                                       class="btn btn-outline-primary w-100 align-bottom mt-2">Personalizado</button>
+                                    <!-- /.input group -->
+                                 </div>
+                              </div>
                            </div>
-                           <div class="row mt-3 mb-3">
-                              <div class="col-md-1 ">
-
-                              </div>
+                           <div id="contenerdorBorones" class="row mt-3 mb-3">
+                              <div class="col-md-1 "></div>
                               <div class="col-md-2 ">
-                                 <button name="" id="" class="btn btn-outline-primary w-100">Última Semana</button>
+                                 <button data-periodo="semana" name="" id=""
+                                    class="btn btn-outline-primary active w-100">Última
+                                    Semana</button>
                               </div>
                               <div class="col-md-2">
-                                 <button name="" id="" class="btn btn-outline-primary w-100">Último Mes</button>
+                                 <button data-periodo="mes" name="" id="" class="btn btn-outline-primary w-100">Último
+                                    Mes</button>
                               </div>
                               <div class="col-md-2">
-                                 <button name="" id="" class="btn btn-outline-primary w-100">Último Trimestre</button>
+                                 <button data-periodo="trimestre" name="" id=""
+                                    class="btn btn-outline-primary w-100">Último Trimestre</button>
                               </div>
                               <div class="col-md-2">
-                                 <button name="" id="" class="btn btn-outline-primary w-100">Último Año</button>
+                                 <button data-periodo="year" name="" id="" class="btn btn-outline-primary w-100">Último
+                                    Año</button>
                               </div>
                               <div class="col-md-2">
-                                 <button name="" id="" class="btn btn-outline-primary w-100">Desde Siempre</button>
+                                 <button data-periodo="siempre" name="" id=""
+                                    class="btn btn-outline-primary w-100">Desde Siempre</button>
                               </div>
                            </div>
                         </div>
