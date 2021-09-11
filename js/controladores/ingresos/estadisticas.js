@@ -57,8 +57,36 @@ $(document).ready(function () {
    $(document).on('click', '.btn', function () {
       clearButton();
       this.classList.add("active");
-      console.log(this.dataset.periodo);
+      let end = moment()
 
+      switch (this.dataset.periodo) {
+         case 'semana':
+            let start = moment().subtract(7, 'days');
+            modificarTitle(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            break;
+         case 'mes':
+            let start1 = moment().subtract(1, 'month');
+            modificarTitle(start1.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            break;
+         case 'trimestre':
+            let start2 = moment().subtract(3, 'month');
+            modificarTitle(start2.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            break;
+         case 'semestre':
+            let start3 = moment().subtract(6, 'month');
+            modificarTitle(start3.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            break;
+         case 'year':
+            let start4 = moment().subtract(1, 'year');
+            modificarTitle(start4.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            break;
+         case 'siempre':
+            let start5 = '2020-01-01';
+            modificarTitle(start5);
+            break;
+         default:
+            break;
+      }
 
       let value = [
          Math.floor(Math.random() * 20) + 1,
@@ -124,5 +152,13 @@ $(document).ready(function () {
          }
       });
    }
+   function modificarTitle(star, end) {
 
+      myChart.options.plugins.title = {
+         display: true,
+         text: `${star} / ${end}`,
+         fullSize: true
+      };
+    
+   }
 });

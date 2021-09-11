@@ -63,7 +63,6 @@
                               </div>
                            </div>
                            <div id="contenerdorBorones" class="row mt-3 mb-3">
-                              <div class="col-md-1 "></div>
                               <div class="col-md-2 ">
                                  <button data-periodo="semana" name="" id=""
                                     class="btn btn-outline-primary active w-100">Última
@@ -76,6 +75,10 @@
                               <div class="col-md-2">
                                  <button data-periodo="trimestre" name="" id=""
                                     class="btn btn-outline-primary w-100">Último Trimestre</button>
+                              </div>
+                              <div class="col-md-2">
+                                 <button data-periodo="semestre" name="" id=""
+                                    class="btn btn-outline-primary w-100">Último Semestres</button>
                               </div>
                               <div class="col-md-2">
                                  <button data-periodo="year" name="" id="" class="btn btn-outline-primary w-100">Último
@@ -96,7 +99,7 @@
                   <div id="formulario">
                      <i class="fas fa-book-reader bg-green"></i>
                      <div class="timeline-item">
-                        <h3 class="timeline-header"><a href="#">Servicios Adquiridos</a></h3>
+                        <h3 class="timeline-header"><a href="#">Detalle Ingresos</a></h3>
 
                         <div class="timeline-body">
                            <div class="col-12 col-sm-12">
@@ -104,14 +107,16 @@
                                  <div class="card-header p-0 border-bottom-0">
                                     <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
                                        <li class="nav-item">
-                                          <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill"
-                                             href="#custom-tabs-four-home" role="tab"
-                                             aria-controls="custom-tabs-four-home"
-                                             aria-selected="true">Tours/Paquetes</a>
+                                          <a class="nav-link active" id="custom-tabs-four-tours-tab" data-toggle="pill"
+                                             href="#custom-tabs-four-tours" role="tab"
+                                             aria-controls="custom-tabs-four-tours" aria-selected="true">Tours</a>
                                        </li>
-
-
-
+                                       <li class="nav-item">
+                                          <a class="nav-link" id="custom-tabs-four-paquetes-tab" data-toggle="pill"
+                                             href="#custom-tabs-four-paquetes" role="tab"
+                                             aria-controls="custom-tabs-four-paquetes"
+                                             aria-selected="false">Paquetes</a>
+                                       </li>
                                        <li class="nav-item">
                                           <a class="nav-link" id="custom-tabs-four-encomiendas-tab" data-toggle="pill"
                                              href="#custom-tabs-four-encomiendas" role="tab"
@@ -130,24 +135,12 @@
                                              aria-controls="custom-tabs-four-vehiculos"
                                              aria-selected="false">Vehículos</a>
                                        </li>
-                                       <li class="nav-item">
-                                          <a class="nav-link" id="custom-tabs-four-cotizarvehiculos-tab"
-                                             data-toggle="pill" href="#custom-tabs-four-cotizarvehiculos" role="tab"
-                                             aria-controls="custom-tabs-four-cotizarvehiculos"
-                                             aria-selected="false">Cotizaciones Vehículos</a>
-                                       </li>
-                                       <li class="nav-item">
-                                          <a class="nav-link" id="custom-tabs-four-cotizarvuelos-tab" data-toggle="pill"
-                                             href="#custom-tabs-four-cotizarvuelos" role="tab"
-                                             aria-controls="custom-tabs-four-cotizarvuelos"
-                                             aria-selected="false">Cotizaciones Vuelos</a>
-                                       </li>
                                     </ul>
                                  </div>
                                  <div class="card-body">
                                     <div class="tab-content" id="custom-tabs-four-tabContent">
-                                       <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel"
-                                          aria-labelledby="custom-tabs-four-home-tab">
+                                       <div class="tab-pane fade show active" id="custom-tabs-four-tours"
+                                          role="tabpanel" aria-labelledby="custom-tabs-four-tours-tab">
                                           <div class="col-sm-12">
                                              <table id="add-tours" class="table table-bordered table-hover">
                                                 <thead>
@@ -218,44 +211,28 @@
                                              </table>
                                           </div>
                                        </div>
-                                       <div class="tab-pane fade" id="custom-tabs-four-cotizarvehiculos" role="tabpanel"
-                                          aria-labelledby="custom-tabs-four-cotizarvehiculos-tab">
+                                       <div class="tab-pane fade" id="custom-tabs-four-paquetes" role="tabpanel"
+                                          aria-labelledby="custom-tabs-four-paquetes-tab">
                                           <div class="col-sm-12">
-                                             <table id="add-tabla" class="table table-bordered table-hover">
+                                             <table id="add-paquetes" class="table table-bordered table-hover">
                                                 <thead>
                                                    <tr style="text-align: center;">
-                                                      <th>Modelo de Vehiculo</th>
-                                                      <th>Año</th>
-                                                      <th>Fecha</th>
-                                                      <th>Caracteristicas</th>
-                                                      <th>Descuentos (%)</th>
-                                                      <th>Sub Total($)</th>
+                                                      <th>Título</th>
+                                                      <th>Fecha de reserva</th>
+                                                      <th>Detalle de reserva </th>
+                                                      <th>Forma de pago utilizada</th>
+                                                      <th>Pago Realizado($)</th>
+                                                      <th>Tipo de Viaje</th>
                                                    </tr>
                                                 </thead>
+                                                <tbody style="text-align: center;">
+                                                </tbody>
                                              </table>
                                              <tbody id="tableBody" style="text-align: center;">
                                              </tbody>
                                           </div>
                                        </div>
-                                       <div class="tab-pane fade" id="custom-tabs-four-cotizarvuelos" role="tabpanel"
-                                          aria-labelledby="custom-tabs-four-cotizarvuelos-tab">
-                                          <div class="col-sm-12">
-                                             <table id="add-vuelos" class="table table-bordered table-hover">
-                                                <thead>
-                                                   <tr style="text-align: center;">
-                                                      <th>Ciudad de Partida</th>
-                                                      <th>Fecha Partida</th>
-                                                      <th>Ciudad de Llegada</th>
-                                                      <th>Fecha Llegada</th>
-                                                      <th>Aerolinea</th>
-                                                      <th>Sub Total($)</th>
-                                                   </tr>
-                                                </thead>
-                                                <tbody id="tableBody" style="text-align: center;">
-                                                </tbody>
-                                             </table>
-                                          </div>
-                                       </div>
+
                                     </div>
                                  </div>
                                  <!-- /.card -->
