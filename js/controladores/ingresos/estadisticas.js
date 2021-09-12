@@ -1,89 +1,15 @@
 $(document).ready(function () {
-   $('#loadingEstadisticas').hide();
+   // variable para la grafica
+   let myChart;
    inicializarCalendario();
-   let end = moment()
-   let start = moment().subtract(7, 'days');
-   let titleInicial = `${start.format('DD/MM/YYYY')} - ${end.format('DD/MM/YYYY')}`;
-
-   let ctx = document.getElementById("myChart");
-   let myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-         labels: ['Red', 'Blue', 'Yellow', 'Purple', 'Orange'],
-         datasets: [{
-            data: [12, 19, 3, 5, 2,],
-            borderWidth: 2,
-            borderRadius: 10,
-            backgroundColor: [
-               // rojo
-               'rgba(255, 99, 132, 0.2)',
-               // azul
-               'rgba(54, 162, 235, 0.2)',
-               // amarillo
-               'rgba(255, 206, 86, 0.2)',
-               // purpura
-               'rgba(153, 102, 255, 0.2)',
-               // anaranjado
-               'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-               // rojo
-               'rgba(255, 99, 132, 1)',
-               // azul
-               'rgba(54, 162, 235, 1)',
-               // amarillo
-               'rgba(255, 206, 86, 1)',
-               // purpura
-               'rgba(153, 102, 255, 1)',
-               // anaranjado
-               'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 2
-         }]
-      },
-      options: {
-         responsive: true,
-         plugins: {
-            legend: {
-               display: false,
-               position: 'top',
-            },
-            // title: {
-            //    display: true,
-            //    text: 'U S D'
-            // }
-         },
-         scales: {
-            x: {
-               display: true,
-               title: {
-                  display: true,
-                  text: titleInicial,
-                  // color: '#911',
-                  font: {
-                     family: 'Comic Sans MS',
-                     size: 25,
-                     weight: 'bold',
-                     lineHeight: 1.2,
-                  },
-
-               }
-            }
-         },
-
-      },
-
-
-   });
+   init();
 
    $(document).on('click', '.btn', function () {
       clearButton();
       this.classList.add("active");
       switch (this.dataset.periodo) {
          case 'semana':
-            let start = moment().subtract(7, 'days');
-            modificarTitle(start.format('DD/MM/YYYY'), end.format('DD/MM/YYYY'));
-            actualizarData(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            betweenWeek();
             break;
          case 'mes':
             betweenMonth(1);
@@ -100,7 +26,7 @@ $(document).ready(function () {
          case 'siempre':
             let start5 = '2020-01-01';
             modificarTitle(start5);
-            actualizarData(start5, moment().format('YYYY-MM-DD'));
+            obtenerData(start5, moment().format('YYYY-MM-DD'));
             break;
          case 'personalizado':
             fromCalendar();
@@ -109,27 +35,108 @@ $(document).ready(function () {
             fromCalendar();
             break;
       }
-      let value = [
-         Math.floor(Math.random() * 20) + 1,
-         Math.floor(Math.random() * 20) + 1,
-         Math.floor(Math.random() * 20) + 1,
-         Math.floor(Math.random() * 20) + 1,
-         Math.floor(Math.random() * 20) + 1,
-         Math.floor(Math.random() * 20) + 1
-      ];
-
-
-      myChart.data.datasets.forEach(dataset => {
-         dataset.data = value;
-      });
-      myChart.update();
    });
-
    //   click en el boton aplicar del calendario
    // es para poner azul el  boton personalizado
    $(document).on('click', '.applyBtn', function () {
       document.getElementById('personalizado').classList.add('active');
    });
+
+   function init() {
+      $('#loadingEstadisticas').show();
+      let end = moment()
+      let start = moment().subtract(7, 'days');
+      let title = `${start.format('DD/MM/YYYY')} - ${end.format('DD/MM/YYYY')}`;
+      let url = `${URL_SERVIDOR}Estadisticas/ingresos?start=${start.format('YYYY-MM-DD')}&end=${end.format('YYYY-MM-DD')}`;
+      console.log(url);
+
+      $.ajax({
+         url: url,
+         method: "GET",
+      }).done(function (response) {
+         inicalizarEstadistica(response, title);
+      }).fail(function (response) {
+         console.log(response);
+      }).always(function (xhr, opts) {
+         $('#loadingEstadisticas').hide();
+
+      });
+   }
+   function inicalizarEstadistica(data, title) {
+      let ctx = document.getElementById("myChart");
+      myChart = new Chart(ctx, {
+         type: 'bar',
+         data: {
+            labels: ['Tours', 'Paquetes', 'Encomiendas', 'Vehículos', 'Asesorias',],
+            datasets: [{
+               data: [
+                  data.ingresosTours,
+                  data.ingresosPaquetes,
+                  data.ingresoEncomiendas,
+                  data.ingresoVehiculos,
+                  data.ingresoAsesorias,
+               ],
+               borderWidth: 2,
+               borderRadius: 10,
+               backgroundColor: [
+                  // rojo
+                  'rgba(255, 99, 132, 0.2)',
+                  // azul
+                  'rgba(54, 162, 235, 0.2)',
+                  // amarillo
+                  'rgba(255, 206, 86, 0.2)',
+                  // purpura
+                  'rgba(153, 102, 255, 0.2)',
+                  // anaranjado
+                  'rgba(255, 159, 64, 0.2)'
+               ],
+               borderColor: [
+                  // rojo
+                  'rgba(255, 99, 132, 1)',
+                  // azul
+                  'rgba(54, 162, 235, 1)',
+                  // amarillo
+                  'rgba(255, 206, 86, 1)',
+                  // purpura
+                  'rgba(153, 102, 255, 1)',
+                  // anaranjado
+                  'rgba(255, 159, 64, 1)'
+               ],
+               borderWidth: 2
+            }]
+         },
+         options: {
+            responsive: true,
+            plugins: {
+               legend: {
+                  display: false,
+                  position: 'top',
+               },
+               // title: {
+               //    display: true,
+               //    text: 'U S D'
+               // }
+            },
+            scales: {
+               x: {
+                  display: true,
+                  title: {
+                     display: true,
+                     text: title,
+                     // color: '#911',
+                     font: {
+                        family: 'Comic Sans MS',
+                        size: 25,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                     },
+                  }
+               }
+            },
+
+         },
+      });
+   }
    function clearButton() {
       document.querySelectorAll('#contenerdorBorones button').forEach((boton) => {
          boton.classList.remove('active');
@@ -186,15 +193,45 @@ $(document).ready(function () {
       let startDate = moment($('#calendario').data('daterangepicker').startDate);
       let endDate = moment($('#calendario').data('daterangepicker').endDate);
       modificarTitle(startDate.format('DD/MM/YYYY'), endDate.format('DD/MM/YYYY'));
-      actualizarData(startDate.format('YYYY-MM-DD'), endDate.format('YYYY-MM-DD'));
+      obtenerData(startDate.format('YYYY-MM-DD'), endDate.format('YYYY-MM-DD'));
    }
    function betweenMonth(cantidad) {
-      let end = moment()
+      let end = moment();
       let start = moment().subtract(cantidad, 'month');
       modificarTitle(start.format('DD/MM/YYYY'), end.format('DD/MM/YYYY'));
-      actualizarData(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+      obtenerData(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
    }
-   function actualizarData(star, end) {
-      console.log(star, end)
+   function betweenWeek() {
+      let end = moment()
+      let start = moment().subtract(7, 'days');
+      modificarTitle(start.format('DD/MM/YYYY'), end.format('DD/MM/YYYY'));
+      obtenerData(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
    }
+   function obtenerData(star, end) {
+      $('#loadingEstadisticas').show();
+      let url = `${URL_SERVIDOR}Estadisticas/ingresos?start=${star}&end=${end}`;
+
+      $.ajax({
+         url: url,
+         method: "GET",
+      }).done(function (response) {
+         let newData = [
+            response.ingresosTours,
+            response.ingresosPaquetes,
+            response.ingresoEncomiendas,
+            response.ingresoVehiculos,
+            response.ingresoAsesorias,
+         ];
+         myChart.data.datasets.forEach(dataset => {
+            dataset.data = newData;
+         });
+         myChart.update();
+      }).fail(function (response) {
+         console.log(response);
+      }).always(function (xhr, opts) {
+         $('#loadingEstadisticas').hide();
+
+      });
+   }
+
 });
