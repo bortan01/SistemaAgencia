@@ -54,7 +54,7 @@
                               <div class="col-md-3 d-flex align-items-center d-flex justify-content-center">
                                  <div class="form-group">
                                     <div class="input-group">
-                                       <input class=" form-control" name="fecha_salida" id="fecha_salida">
+                                       <input class=" form-control" name="calendario" id="calendario">
                                     </div>
                                     <button data-periodo="personalizado" name="" id="personalizado"
                                        class="btn btn-outline-primary w-100 align-bottom mt-2">Personalizado</button>

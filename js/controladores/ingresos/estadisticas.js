@@ -1,6 +1,10 @@
 $(document).ready(function () {
    $('#loadingEstadisticas').hide();
    inicializarCalendario();
+   let end = moment()
+   let start = moment().subtract(7, 'days');
+   let titleInicial = `${start.format('DD/MM/YYYY')} - ${end.format('DD/MM/YYYY')}`;
+
    let ctx = document.getElementById("myChart");
    let myChart = new Chart(ctx, {
       type: 'bar',
@@ -44,11 +48,29 @@ $(document).ready(function () {
                display: false,
                position: 'top',
             },
-            title: {
+            // title: {
+            //    display: true,
+            //    text: 'U S D'
+            // }
+         },
+         scales: {
+            x: {
                display: true,
-               text: 'U S D'
+               title: {
+                  display: true,
+                  text: titleInicial,
+                  // color: '#911',
+                  font: {
+                     family: 'Comic Sans MS',
+                     size: 25,
+                     weight: 'bold',
+                     lineHeight: 1.2,
+                  },
+
+               }
             }
-         }
+         },
+
       },
 
 
@@ -57,37 +79,36 @@ $(document).ready(function () {
    $(document).on('click', '.btn', function () {
       clearButton();
       this.classList.add("active");
-      let end = moment()
-
       switch (this.dataset.periodo) {
          case 'semana':
             let start = moment().subtract(7, 'days');
-            modificarTitle(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            modificarTitle(start.format('DD/MM/YYYY'), end.format('DD/MM/YYYY'));
+            actualizarData(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
             break;
          case 'mes':
-            let start1 = moment().subtract(1, 'month');
-            modificarTitle(start1.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            betweenMonth(1);
             break;
          case 'trimestre':
-            let start2 = moment().subtract(3, 'month');
-            modificarTitle(start2.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            betweenMonth(3);
             break;
          case 'semestre':
-            let start3 = moment().subtract(6, 'month');
-            modificarTitle(start3.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            betweenMonth(6);
             break;
          case 'year':
-            let start4 = moment().subtract(1, 'year');
-            modificarTitle(start4.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+            betweenMonth(12);
             break;
          case 'siempre':
             let start5 = '2020-01-01';
             modificarTitle(start5);
+            actualizarData(start5, moment().format('YYYY-MM-DD'));
+            break;
+         case 'personalizado':
+            fromCalendar();
             break;
          default:
+            fromCalendar();
             break;
       }
-
       let value = [
          Math.floor(Math.random() * 20) + 1,
          Math.floor(Math.random() * 20) + 1,
@@ -116,7 +137,7 @@ $(document).ready(function () {
       document.getElementById('personalizado').classList.remove('active');
    }
    function inicializarCalendario() {
-      $('#fecha_salida').daterangepicker({
+      $('#calendario').daterangepicker({
          locale: {
             format: 'DD/MM/YYYY',
             "separator": " - ",
@@ -153,12 +174,27 @@ $(document).ready(function () {
       });
    }
    function modificarTitle(star, end) {
+      if (end) {
+         myChart.options.scales.x.title.text = `${star} - ${end}`;
 
-      myChart.options.plugins.title = {
-         display: true,
-         text: `${star} / ${end}`,
-         fullSize: true
-      };
-    
+      } else {
+         myChart.options.scales.x.title.text = '∞'
+      }
+   }
+   function fromCalendar() {
+      // cuando de click en el boton de l calendario
+      let startDate = moment($('#calendario').data('daterangepicker').startDate);
+      let endDate = moment($('#calendario').data('daterangepicker').endDate);
+      modificarTitle(startDate.format('DD/MM/YYYY'), endDate.format('DD/MM/YYYY'));
+      actualizarData(startDate.format('YYYY-MM-DD'), endDate.format('YYYY-MM-DD'));
+   }
+   function betweenMonth(cantidad) {
+      let end = moment()
+      let start = moment().subtract(cantidad, 'month');
+      modificarTitle(start.format('DD/MM/YYYY'), end.format('DD/MM/YYYY'));
+      actualizarData(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+   }
+   function actualizarData(star, end) {
+      console.log(star, end)
    }
 });
