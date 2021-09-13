@@ -150,7 +150,7 @@
                                                       <th>Fecha de Reserva</th>
                                                       <th>Forma de pago</th>
                                                       <th>Tipo</th>
-                                                      <th>Total</th>
+                                                      <th>Total ($)</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
@@ -168,7 +168,7 @@
                                                       <th>Cliente</th>
                                                       <th>Código Postal</th>
                                                       <th>Fecha</th>
-                                                      <th>Total</th>
+                                                      <th>Total ($)</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
@@ -185,7 +185,7 @@
                                                       <th>Título</th>
                                                       <th>Fecha de cita</th>
                                                       <th>Hora cita </th>
-                                                      <th>Total</th>
+                                                      <th>Total ($)</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
@@ -203,7 +203,7 @@
                                                       <th>Modelo</th>
                                                       <th>Placa</th>
                                                       <th>Fecha</th>
-                                                      <th>Total</th>
+                                                      <th>Total ($)</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
@@ -222,7 +222,7 @@
                                                       <th>Fecha de Reserva</th>
                                                   <!--<th>Forma de pago</th> -->
                                                       <th>Tipo</th>
-                                                      <th>Total</th>
+                                                      <th>Total ($)</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
