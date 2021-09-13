@@ -73,14 +73,14 @@ $("#botonAyudaContacto").click(function() {
         });
 
 
-/* $("#botonAyudaMostrarContactos").click(function() {
+$("#botonAyudaMostrarContactos").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Mostrar_Contactos.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
 
 /* $("#botonAyudaTour").click(function() {
         document.getElementById("register-ayuda").reset();
@@ -140,14 +140,14 @@ $("#botonAyudaContacto").click(function() {
           $("#modal-ayuda").modal();
         });
   */
-/* $("#botonAyudaEncomienda").click(function() {
+$("#botonAyudaEncomienda").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Registro_Encomienda.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
  /* $("#botonAyudaMostrarEncomiendas").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
@@ -164,14 +164,13 @@ $("#botonAyudaContacto").click(function() {
           $("#modal-ayuda").modal();
         });
   */
-   /* $("#botonAyudaCalculoEncomienda").click(function() {
+$("#botonAyudaCalculoEncomienda").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Calculo_Encomienda.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
    /* $("#botonAyudaActualizacion").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
@@ -180,14 +179,14 @@ $("#botonAyudaContacto").click(function() {
           $("#modal-ayuda").modal();
         });
   */
-  /* $("#botonAyudaActualizacionEnvio").click(function() {
+$("#botonAyudaActualizacionEnvio").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Actualizacion_Envio.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
   /* $("#botonAyudaProductos").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
