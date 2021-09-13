@@ -291,6 +291,10 @@ $(document).ready(function () {
       dui.inputmask("99999999-9");  //static mask
       dui.inputmask({ "mask": "99999999-9" }); //specifying options
       // $("#dui").inputmask("9-a{1, 3}9{1, 3}"); //mask with dynamic syntax
+
+   let telef = $('#telefonoContacto');
+   telef.inputmask("(+123) 1234-5678");
+   telef.inputmask({ "mask": "(+999) 9999-9999" });
    }
    function inicializarFoto() {
       // ESTO ES PARA INICIALIZAR EL ELEMENTO DE SUBIDA DE UNA UNICA FOTO
@@ -366,3 +370,4 @@ $(document).ready(function () {
    }
 
 });
+

@@ -55,23 +55,23 @@ $("#botonAyudaBitacora").click(function() {
           $("#modal-ayuda").modal();
         });
   
-/* $("#botonAyudaMostrarServicios").click(function() {
+ $("#botonAyudaMostrarServicios").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Mostrar_Servicios.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+  
 
-/* $("#botonAyudaContacto").click(function() {
+$("#botonAyudaContacto").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Registro_Contactos.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
 
 /* $("#botonAyudaMostrarContactos").click(function() {
         document.getElementById("register-ayuda").reset();
