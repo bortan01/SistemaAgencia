@@ -199,9 +199,10 @@
                                              <table id="tableVehiculos" class="table table-bordered table-hover">
                                                 <thead>
                                                    <tr style="text-align: center;">
-                                                      <th>Clientte</th>
+                                                      <th>Cliente</th>
                                                       <th>Modelo</th>
                                                       <th>Placa</th>
+                                                      <th>Fecha</th>
                                                       <th>Total</th>
 
                                                    </tr>
@@ -218,7 +219,7 @@
                                                       <th>Cliente</th>
                                                       <th>Paquete</th>
                                                       <th>Fecha de Reserva</th>
-                                                      <th>Forma de pago</th>
+                                                  <!--<th>Forma de pago</th> -->
                                                       <th>Tipo</th>
                                                       <th>Total</th>
                                                    </tr>
