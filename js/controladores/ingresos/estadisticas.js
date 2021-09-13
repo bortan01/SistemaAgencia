@@ -260,7 +260,7 @@ $(document).ready(function () {
             { data: "nombreUsuario" },
             { data: "nombreTours" },
             { data: "fecha_reserva" },
-            { data: "formaPagoUtilizada" },
+            // { data: "formaPagoUtilizada" },
             { data: "tipo" },
             { data: "monto" },
          ]

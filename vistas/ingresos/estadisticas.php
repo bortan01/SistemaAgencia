@@ -220,7 +220,7 @@
                                                       <th>Cliente</th>
                                                       <th>Paquete</th>
                                                       <th>Fecha de Reserva</th>
-                                                      <th>Forma de pago</th>
+                                                  <!--<th>Forma de pago</th> -->
                                                       <th>Tipo</th>
                                                       <th>Total ($)</th>
                                                    </tr>
