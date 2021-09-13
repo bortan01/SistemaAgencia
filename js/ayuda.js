@@ -148,22 +148,22 @@ $("#botonAyudaEncomienda").click(function() {
           $("#modal-ayuda").modal();
         });
 
- /* $("#botonAyudaMostrarEncomiendas").click(function() {
+ $("#botonAyudaMostrarEncomiendas").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Modificar_Encomiendas.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
-  /* $("#botonAyudaModificarEncomienda").click(function() {
+
+$("#botonAyudaModificarEncomienda").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Modificar_Encomiendas.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
 $("#botonAyudaCalculoEncomienda").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
@@ -171,14 +171,14 @@ $("#botonAyudaCalculoEncomienda").click(function() {
         pdfcito.append('<iframe src="../../pdf/Calculo_Encomienda.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-   /* $("#botonAyudaActualizacion").click(function() {
+ $("#botonAyudaActualizacion").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Mostrar_Actualizaciones.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
 $("#botonAyudaActualizacionEnvio").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
