@@ -204,9 +204,10 @@
                                                       <th>Placa</th>
                                                       <th>Fecha</th>
                                                       <th>Total</th>
-
                                                    </tr>
                                                 </thead>
+                                                <tbody style="text-align: center;">
+                                                </tbody>
                                              </table>
                                           </div>
                                        </div>
