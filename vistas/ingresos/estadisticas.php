@@ -142,15 +142,15 @@
                                        <div class="tab-pane fade show active" id="custom-tabs-four-tours"
                                           role="tabpanel" aria-labelledby="custom-tabs-four-tours-tab">
                                           <div class="col-sm-12">
-                                             <table id="add-tours" class="table table-bordered table-hover">
+                                             <table id="tableTours" class="table table-bordered table-hover">
                                                 <thead>
                                                    <tr style="text-align: center;">
-                                                      <th>Título</th>
-                                                      <th>Fecha de reserva</th>
-                                                      <th>Detalle de reserva </th>
-                                                      <th>Forma de pago utilizada</th>
-                                                      <th>Pago Realizado($)</th>
-                                                      <th>Tipo de Viaje</th>
+                                                      <th>Cliente</th>
+                                                      <th>Tour</th>
+                                                      <th>Fecha de Reserva</th>
+                                                      <th>Forma de pago</th>
+                                                      <th>Tipo</th>
+                                                      <th>Total</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
@@ -162,15 +162,13 @@
                                        <div class="tab-pane fade" id="custom-tabs-four-encomiendas" role="tabpanel"
                                           aria-labelledby="custom-tabs-four-encomiendas-tab">
                                           <div class="col-sm-12">
-                                             <table id="add-encomiendas" class="table table-bordered table-hover">
+                                             <table id="tableEncomiendas" class="table table-bordered table-hover">
                                                 <thead>
                                                    <tr style="text-align: center;">
-                                                      <th>Producto</th>
-                                                      <th>Dirección Origen</th>
-                                                      <th>Dirección Destino</th>
+                                                      <th>Cliente</th>
+                                                      <th>Código Postal</th>
                                                       <th>Fecha</th>
-                                                      <th>Cantidad</th>
-                                                      <th>Sub Total($)</th>
+                                                      <th>Total</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
@@ -181,12 +179,13 @@
                                        <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel"
                                           aria-labelledby="custom-tabs-four-settings-tab">
                                           <div class="col-sm-12">
-                                             <table id="add-asesoria" class="table table-bordered table-hover">
+                                             <table id="tableAsesorias" class="table table-bordered table-hover">
                                                 <thead>
                                                    <tr style="text-align: center;">
                                                       <th>Título</th>
                                                       <th>Fecha de cita</th>
                                                       <th>Hora cita </th>
+                                                      <th>Total</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
@@ -197,15 +196,14 @@
                                        <div class="tab-pane fade" id="custom-tabs-four-vehiculos" role="tabpanel"
                                           aria-labelledby="custom-tabs-four-vehiculos-tab">
                                           <div class="col-sm-12">
-                                             <table id="add-vehiculos" class="table table-bordered table-hover">
+                                             <table id="tableVehiculos" class="table table-bordered table-hover">
                                                 <thead>
                                                    <tr style="text-align: center;">
-                                                      <th>ID Detalle</th>
-                                                      <th>Vehiculo</th>
-                                                      <th>Año</th>
+                                                      <th>Clientte</th>
+                                                      <th>Modelo</th>
                                                       <th>Placa</th>
-                                                      <th>Fecha</th>
-                                                      <th>Sub Total($)</th>
+                                                      <th>Total</th>
+
                                                    </tr>
                                                 </thead>
                                              </table>
@@ -214,21 +212,21 @@
                                        <div class="tab-pane fade" id="custom-tabs-four-paquetes" role="tabpanel"
                                           aria-labelledby="custom-tabs-four-paquetes-tab">
                                           <div class="col-sm-12">
-                                             <table id="add-paquetes" class="table table-bordered table-hover">
+                                             <table id="tablePaquetes" class="table table-bordered table-hover">
                                                 <thead>
                                                    <tr style="text-align: center;">
-                                                      <th>Título</th>
-                                                      <th>Fecha de reserva</th>
-                                                      <th>Detalle de reserva </th>
-                                                      <th>Forma de pago utilizada</th>
-                                                      <th>Pago Realizado($)</th>
-                                                      <th>Tipo de Viaje</th>
+                                                      <th>Cliente</th>
+                                                      <th>Paquete</th>
+                                                      <th>Fecha de Reserva</th>
+                                                      <th>Forma de pago</th>
+                                                      <th>Tipo</th>
+                                                      <th>Total</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody style="text-align: center;">
                                                 </tbody>
                                              </table>
-                                             <tbody id="tableBody" style="text-align: center;">
+                                             <tbody id="" style="text-align: center;">
                                              </tbody>
                                           </div>
                                        </div>

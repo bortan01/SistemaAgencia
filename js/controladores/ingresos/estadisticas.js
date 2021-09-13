@@ -1,7 +1,10 @@
 $(document).ready(function () {
    // variable para la grafica
    let myChart;
+   let tableTours, tablePaquetes, tableEncomiendas, tableVehiculos, tableAsesorias;
+
    inicializarCalendario();
+   inicalizarTablas();
    init();
 
    $(document).on('click', '.btn', function () {
@@ -48,13 +51,13 @@ $(document).ready(function () {
       let start = moment().subtract(7, 'days');
       let title = `${start.format('DD/MM/YYYY')} - ${end.format('DD/MM/YYYY')}`;
       let url = `${URL_SERVIDOR}Estadisticas/ingresos?start=${start.format('YYYY-MM-DD')}&end=${end.format('YYYY-MM-DD')}`;
-      console.log(url);
 
       $.ajax({
          url: url,
          method: "GET",
       }).done(function (response) {
          inicalizarEstadistica(response, title);
+         agregarDataTables(response);
       }).fail(function (response) {
          console.log(response);
       }).always(function (xhr, opts) {
@@ -206,6 +209,7 @@ $(document).ready(function () {
       let start = moment().subtract(7, 'days');
       modificarTitle(start.format('DD/MM/YYYY'), end.format('DD/MM/YYYY'));
       obtenerData(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+
    }
    function obtenerData(star, end) {
       $('#loadingEstadisticas').show();
@@ -226,11 +230,132 @@ $(document).ready(function () {
             dataset.data = newData;
          });
          myChart.update();
+         agregarDataTables(response);
       }).fail(function (response) {
          console.log(response);
       }).always(function (xhr, opts) {
          $('#loadingEstadisticas').hide();
 
+      });
+   }
+   function inicalizarTablas() {
+      tableTours = $("#tableTours").DataTable({
+         responsive: true,
+         autoWidth: false,
+         deferRender: true,
+         columns: [
+            { data: "nombreUsuario" },
+            { data: "nombreTours" },
+            { data: "fecha_reserva" },
+            { data: "formaPagoUtilizada" },
+            { data: "tipo" },
+            { data: "monto" },
+         ]
+      });
+      tablePaquetes = $("#tablePaquetes").DataTable({
+         responsive: true,
+         autoWidth: false,
+         deferRender: true,
+         columns: [
+            { data: "nombreUsuario" },
+            { data: "nombreTours" },
+            { data: "fecha_reserva" },
+            // { data: "formaPagoUtilizada" },
+            { data: "tipo" },
+            { data: "monto" },
+         ]
+      });
+      tableEncomiendas = $("#tableEncomiendas").DataTable({
+         responsive: true,
+         autoWidth: false,
+         deferRender: true,
+         columns: [
+            { data: "nombre" },
+            { data: "codigo_postal_origen" },
+            { data: "fecha" },
+            { data: "total_cliente" },
+         ]
+      });
+      tableVehiculos = $("#tableVehiculos").DataTable({
+         responsive: true,
+         autoWidth: false,
+         deferRender: true,
+         columns: [
+            { data: "nombre" },
+            { data: "modelo" },
+            { data: "placa" },
+            { data: "fechaDevolucion" },
+            { data: "totalDevolucion" },
+         ]
+      });
+      tableAsesorias = $("#tableAsesorias").DataTable({
+         responsive: true,
+         autoWidth: false,
+         deferRender: true,
+         columns: [
+            { data: "nombre" },
+            { data: "fecha" },
+            { data: "hora" },
+            { data: "cobros" },
+         ]
+      });
+   }
+
+   function agregarDataTables(data) {
+      tableAsesorias.clear().draw();
+      tableEncomiendas.clear().draw();
+      tablePaquetes.clear().draw();
+      tableTours.clear().draw();
+      tableVehiculos.clear().draw();
+
+      data.tours.forEach(tour => {
+         tableTours.row.add({
+            nombreUsuario: tour.nombreUsuario,
+            nombreTours: tour.nombreTours,
+            fecha_reserva: tour.fecha_reserva,
+            formaPagoUtilizada: tour.formaPagoUtilizada,
+            tipo: tour.tipo,
+            monto: tour.monto,
+         }).draw(false);
+      });
+
+      data.paquetes.forEach(paquete => {
+         tablePaquetes.row.add({
+            nombreUsuario: paquete.nombreUsuario,
+            nombreTours: paquete.nombreTours,
+            fecha_reserva: paquete.fecha_reserva,
+            // formaPagoUtilizada: paquete.formaPagoUtilizada,
+            tipo: paquete.tipo,
+            monto: paquete.monto,
+         }).draw(false);
+      });
+
+      data.encomiendas.forEach(encomineda => {
+         tableEncomiendas.row.add({
+            nombre: encomineda.nombre,
+            codigo_postal_origen: encomineda.codigo_postal_origen,
+            fecha: encomineda.fecha,
+            total_cliente: encomineda.total_cliente,
+         }).draw(false);
+      });
+
+      data.asesorias.forEach(asesoria => {
+         tableAsesorias.row.add({
+            nombre: asesoria.nombre,
+            fecha: asesoria.fecha,
+            hora: asesoria.hora,
+            cobros: asesoria.cobros,
+         }).draw(false);
+      });
+
+      data.vehiculos.forEach(vehiculo => {
+         tableVehiculos.row.add({
+            nombre: vehiculo.nombre,
+            modelo: vehiculo.modelo,
+            placa: vehiculo.placa,
+            fechaDevolucion: vehiculo.fechaDevolucion,
+            totalDevolucion: vehiculo.totalDevolucion,
+         }).draw(false);
       });
    }
 
