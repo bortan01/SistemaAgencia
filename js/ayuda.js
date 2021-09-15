@@ -187,14 +187,14 @@ $("#botonAyudaActualizacionEnvio").click(function() {
           $("#modal-ayuda").modal();
         });
 
-  /* $("#botonAyudaProductos").click(function() {
+$("#botonAyudaProductos").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Registro_Productos.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
   /* $("#botonAyudaMostrarProductos").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
