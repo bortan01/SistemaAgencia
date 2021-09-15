@@ -202,3 +202,11 @@ $("#botonAyudaMostrarProductos").click(function() {
         pdfcito.append('<iframe src="../../pdf/Mostrar_Productos.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
+        
+$("#botonAyudaAgendarCitas").click(function() {
+  document.getElementById("register-ayuda").reset();
+  $('#pdf').empty();
+  pdfcito=$('#pdf');
+  pdfcito.append('<iframe src="../../pdf/Agendar_Citas.pdf"></iframe>');
+    $("#modal-ayuda").modal();
+  });
