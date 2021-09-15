@@ -8,99 +8,12 @@ $(document).ready(function () {
     inicializarTabla();
     //BOTON MOSTRAR EL REPORTE
     $(document).on('click', '.btn-group .btn-secondary', function () {
-
-        id = $(this).attr("name");
-        $('#loadingActualizar').show();
-        $.ajax({
-            url: URL_SERVIDOR + "FormularioMigratorio/formulariosLlenos/" + id,
-            method: "GET"
-        }).done(function (response) {
-            //MANDALOS LOS VALORES AL MODAL
-            $('#crear_tablas').empty();
-            seleccion = $('#crear_tablas');
-            for (let i = 0, ien = response.cliente.length; i < ien; i++) {
-
-                $('#nombreC').text(response.cliente[i].nombre);
-                $('#emailC').text(response.cliente[i].correo);
-                $('#telefonoC').text(response.cliente[i].celular);
-                $('#dui-cliente').text(response.cliente[i].dui);
-            }
-            for (let i = 0, ien = response.ramas.ramas.length; i < ien; i++) {
-                seleccion.append('<span class="h3">' + response.ramas.ramas[i].categoria_rama + '</span>' +
-                    '<table id="factura_detalle">' +
-                    '<thead>' +
-                    '<tr>' +
-                    '<th class="textcenter">Pregunta y Respuestas</th>' +
-                    '</tr>' +
-                    '</thead>' +
-                    '<tbody id="detalle_productos' + response.ramas.ramas[i].num_rama + '"' +
-
-                    '</tbody>' +
-
-                    '</table>');
-                for (let j = 0, jen = response.formulario.length; j < jen; j++) {
-                    tr = $('#detalle_productos' + response.ramas.ramas[i].num_rama);
-                    if (response.formulario[j].num_rama == response.ramas.ramas[i].num_rama) {
-
-                        if (response.formulario[j].pregunta == 'Nombre de las personas') {
-                            tr.append('<tr>' +
-                                '<td class="textcenter">' +
-                                '<label name="nombreVehiculoC" id="nombreVehiculoC"' +
-                                'style="font-weight: normal;"><strong>' + response.formulario[j].pregunta + '</strong></label>' +
-                                '</td>' +
-                                '</tr>');
-                            for (let x = 0, xen = response.pesonas.personas.length; x < xen; x++) {
-                                tr.append(' <tr>' +
-                                    '<td class="textcenter">' +
-                                    '<label name="anioC" id="anioC"' +
-                                    'style="font-weight: normal;">' + response.pesonas.personas[x] + '</label>' +
-                                    '</td>' +
-                                    '</tr>');
-                            }
-                        } else {
-                            if (response.formulario[j].mas_respuestas == 'Si') {
-                                let respu = JSON.parse(response.formulario[j].respuesta);
-                                tr.append('<tr>' +
-                                    '<td class="textcenter">' +
-                                    '<label name="nombreVehiculoC" id="nombreVehiculoC"' +
-                                    'style="font-weight: normal;"><strong>' + response.formulario[j].pregunta + '</strong></label>' +
-                                    '</td>' +
-                                    '</tr>');
-                                for (let v = 0, ven = respu.length; v < ven; v++) {
-                                    tr.append(' <tr>' +
-                                        '<td class="textcenter">' +
-                                        '<label name="anioC" id="anioC"' +
-                                        'style="font-weight: normal;">' + respu[v] + '</label>' +
-                                        '</td>' +
-                                        '</tr>');
-                                }
-
-                            } else {
-                                tr.append(' <tr>' +
-                                    '<td class="textcenter">' +
-                                    '<label name="nombreVehiculoC" id="nombreVehiculoC"' +
-                                    'style="font-weight: normal;"><strong>' + response.formulario[j].pregunta + '</strong></label>' +
-                                    '</td><tr/>' +
-                                    '<tr><td class="textcenter">' +
-                                    '<label name="anioC" id="anioC"' +
-                                    'style="font-weight: normal;">' + response.formulario[j].respuesta + '</label>' +
-                                    '</td>' +
-                                    '</tr>');
-                            }
-                        }//de nombre de las personas
-
-                    }
-
-
-                }
-
-            }//primer for
-        }).fail(function (response) {
-
-        }).always(function (xhr, opts) {
-            $('#modal-cotizacion').modal('show');
-
-        });
+        let fila = $(this).closest("tr");
+        let data = tabla.row(fila).data();
+        let id_cita = data.id_cita;
+        let nombre = data.nombre;
+        let id_cliente = data.id_cliente;
+        window.location = `reporte.php?idCita=${id_cita}&cliente=${nombre}&idCliente=${id_cliente}`;
     });
     //FIN DE MOSTRAMOS EL REPORTE
 

@@ -29,7 +29,7 @@ include_once '../session/isEmpleado.php';
    display: none;
 }
 </style>
-<?php 
+<?php
 include_once  '../../plantillas/navbar.php';
 include_once '../../plantillas/barra_lateral.php';
 ?>
@@ -134,124 +134,13 @@ include_once '../../plantillas/barra_lateral.php';
 </div>
 <!-- End Modal Mostrar-->
 
-<!--CODIGO DEL REPORTE-->
-<form id="miFormulario" name="miFormulario" role="form" onsubmit="return false">
-   <!-- Modal Cotizacion Reporte-->
-   <div class="modal fade" id="modal-cotizacion">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-         <div class="modal-content">
-
-            <div class="overlay-wrapper">
-
-               <div class="modal-header">
-                  <h4 class="modal-title">Formulario Migratorio:</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               <div class="modal-body">
-                  <div class="row">
-                     <section class="content">
-
-                        <div class="container-fluid" id="printDiv">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <div id="page_pdf">
-                                    <table id="factura_head">
-                                       <tr>
-                                          <td class="logo_factura">
-                                             <div>
-                                                <img src="<?= $base_url ?>img/logo-min.jpg" all rel="stylesheet"
-                                                   type="text/css">
-                                             </div>
-                                          </td>
-                                          <td class="info_empresa">
-                                             <div>
-                                                <span class="h2">Agencia de Viajes Martínez Travels &
-                                                   Tours</span>
-                                                <p>Segunda Avenida Sur, Barrio El Centro, #4D a 150mts
-                                                   del Parquecito Infantil<br>Teléfono: +(503) 2319
-                                                   2338<br>info.ventas@martineztraveltours.com</p>
-
-                                             </div>
-                                          </td>
-
-                                       </tr>
-                                    </table>
-                                    <table id="factura_cliente">
-                                       <tr>
-                                          <td class="info_cliente">
-                                             <div class="round">
-                                                <span class="h3">Datos Generales del Cliente</span>
-                                                <table class="datos_cliente">
-                                                   <thead>
-                                                      <tr>
-                                                         <td>
-                                                            <p> </p>
-                                                            <label>Cliente:</label>
-                                                            <p name="nombreC" id="nombreC">
-                                                            </p>
-
-                                                         </td>
-                                                         <td><label>DUI:</label>
-                                                            <p name="dui-cliente" id="dui-cliente">
-                                                            </p>
-                                                         </td>
-                                                      </tr>
-                                                      <tr>
-                                                         <td>
-                                                            <p> </p>
-                                                            <label>Teléfono:</label>
-                                                            <p name="telefonoC" id="telefonoC"></p>
-                                                         </td>
-                                                         <td><label>Email:</label>
-                                                            <p name="emailC" id="emailC"></p>
-                                                         </td>
-                                                      </tr>
-                                                   </thead>
-                                                </table>
-                                             </div>
-                                          </td>
-
-                                       </tr>
-                                    </table>
-
-                                    <div id="crear_tablas">
-
-                                    </div>
-                                    <!--fin de crear tablas-->
-                                 </div>
-                                 <div class="row no-print">
-                                    <div class="col-md-12">
-
-                                       <button target="_blank" id="doPrint" class="btn btn-default"><i
-                                             class="fas fa-print"></i>
-                                          Imprimir</button>
-
-                                       <div id="editor"></div>
-
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </section>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- End Modal EDITAR-->
-</form>
-<!--FIN DE CODIGO DE REPORTE-->
 <?php
-  include_once '../../plantillas/footer.php';
+include_once '../../plantillas/footer.php';
 ?>
 <!-- SCRIPT ADICIONALES -->
-<script type="text/javascript" src="<?= $base_url?>js/controladores/asesorias/formularios-app.js"></script>
-<script type="text/javascript" src="<?= $base_url?>js/controladores/asesorias/ramas.js"></script>
-<script type="text/javascript" src="<?= $base_url?>js/controladores/asesorias/input.js"></script>
+<script type="text/javascript" src="<?= $base_url ?>js/controladores/asesorias/formularios-app.js"></script>
+<script type="text/javascript" src="<?= $base_url ?>js/controladores/asesorias/ramas.js"></script>
+<script type="text/javascript" src="<?= $base_url ?>js/controladores/asesorias/input.js"></script>
 <!--para las fotos-->
 <script src="<?= $base_url ?>plugins/subir-foto/js/plugins/piexif.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/js/plugins/sortable.js" type="text/javascript"></script>
@@ -259,7 +148,6 @@ include_once '../../plantillas/barra_lateral.php';
 <script src="<?= $base_url ?>plugins/subir-foto/js/locales/es.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/themes/fas/theme.js" type="text/javascript"></script>
 <!--para los reportes-->
-<script type="text/javascript" src="<?= $base_url?>js/imprimir.js"></script>
 <!-- jquery-validation -->
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
