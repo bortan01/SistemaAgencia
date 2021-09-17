@@ -7,7 +7,7 @@ include_once '../session/isEmpleado.php';
 
 <link rel="stylesheet" href="<?= $base_url ?>plugins/toastr/toastr.min.css">
 <!--COTINUANDO CON LA INICIALIZACION -->
-s
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"
    type="text/css" />
@@ -17,6 +17,8 @@ s
 <link href="<?= $base_url ?>plugins/subir-foto/css/avatar.css" media="all" rel="stylesheet" type="text/css" />
 <link href="<?= $base_url ?>plugins/subir-foto/themes/explorer-fas/theme.css" media="all" rel="stylesheet"
    type="text/css" />
+<!-- CSS para mostrar modal de AYUDA -->
+<link href="<?= $base_url ?>css/ayuda.css" all rel="stylesheet" type="text/css" />
 
 <?php include_once '../../plantillas/navbar.php'; ?>
 <?php include_once '../../plantillas/barra_lateral.php'; ?>
@@ -32,8 +34,10 @@ s
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                   <li class="breadcrumb-item active">Citas</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaAgendarCitas"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -69,8 +73,10 @@ s
 <!-- /.content-wrapper -->
 
 
-<?php include_once './modal_eventos.php';
-      include_once '../cliente/modalCliente.php';
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once './modal_eventos.php';
+include_once '../cliente/modalCliente.php';
 ?>
 <?php include_once '../../plantillas/footer.php';?>
 <!-- PONER SCRIPT ADICIONALES ACA -->
