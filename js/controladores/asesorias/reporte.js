@@ -61,7 +61,6 @@ function llamarRamas() {
       dataType: "json",
       success: function (data) {
          listRamas = data.ramas;
-         console.log(data);
          llamarPreguntita()
 
       },
@@ -83,8 +82,7 @@ function llamarPreguntita() {
       url: `${URL_SERVIDOR}Asesoria/respuestas?id_cliente=${ID_CLIENTE}`,
       dataType: "json",
       success: function (response) {
-         crearTabla();
-         console.log(response);
+         crearTabla(response.preguntas);
       },
       error: function (err) {
          const Toast = Swal.mixin();
@@ -98,13 +96,34 @@ function llamarPreguntita() {
    });
 
 }
-function crearTabla() {
+function crearTabla(listapreguntas) {
    let tableReporte = document.getElementById('tReserva');
    listRamas.forEach(ramas => {
+      // creamos las categorias por ramas
       let tr = document.createElement('tr');
       tr.appendChild(crearLabelRama(ramas.categoria_rama));
       tableReporte.appendChild(tr);
-      
+      let preguntasByRama = listapreguntas.filter(pregunta => pregunta.id_rama == ramas.id_rama);
+      console.log(preguntasByRama);
+      // se crean las preguntas
+      preguntasByRama.forEach(p => {
+         let tr = document.createElement('tr');
+         tr.appendChild(crearLabelPregunta(p.pregunta));
+         tableReporte.appendChild(tr);
+         // se valida si es una respuesta multiple
+         if (p.mas_respuestas == 'Si') {
+            p.respuesta.forEach(res => {
+               let tr = document.createElement('tr');
+               tr.appendChild(crearLabelRespuesta(res));
+               tableReporte.appendChild(tr);
+            });
+         } else {
+            let tr = document.createElement('tr');
+            tr.appendChild(crearLabelRespuesta(p.respuesta));
+            tableReporte.appendChild(tr);
+         }
+      });
+
 
    });
 
@@ -125,6 +144,16 @@ function crearTabla() {
       let label = document.createElement('label');
       label.innerHTML = nombreRama;
       label.style.fontWeight = "bold";
+      label.style.padding = '3px';
+      td.appendChild(label);
+      td.classList.add('textcenter');
+      return td;
+   }
+   function crearLabelRespuesta(nombreRama) {
+      let td = document.createElement('td');
+      let label = document.createElement('label');
+      label.innerHTML = nombreRama;
+      label.style.fontWeight = "normal";
       label.style.padding = '3px';
       td.appendChild(label);
       td.classList.add('textcenter');
