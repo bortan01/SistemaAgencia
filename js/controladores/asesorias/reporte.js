@@ -21,39 +21,6 @@ function printElement(elem) {
    $printSection.appendChild(domClone);
    window.print();
 }
-function inicializarTabla(preguntas) {
-   let tabla2 = document.getElementById('tReserva');
-   preguntas.forEach(reserva => {
-      // AGREGAMOS LA DATA A LA TABLA QUE SE IMPRIMIRA
-      let tr = document.createElement('tr');
-      tr.appendChild(crearPregunta(reserva.nombre));
-      tabla2.appendChild(tr);
-   });
-}
-function crearPregunta(info) {
-   let td = document.createElement('td');
-   let label = document.createElement('label');
-   label.innerHTML = info;
-   label.style.fontWeight = "bold";
-   label.style.padding = '3px';
-   td.appendChild(label);
-   td.classList.add('textcenter');
-   return td;
-}
-function crearRespuesta(info) {
-   let td = document.createElement('td');
-   let label = document.createElement('label');
-   label.innerHTML = info;
-   label.style.fontWeight = "normal";
-   label.style.padding = '3px';
-   td.appendChild(label);
-   td.classList.add('textcenter');
-   return td;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////
-
-
 function llamarRamas() {
    $.ajax({
       type: "GET",
@@ -75,14 +42,13 @@ function llamarRamas() {
       }
    });
 }
-
 function llamarPreguntita() {
    $.ajax({
       type: "GET",
       url: `${URL_SERVIDOR}Asesoria/respuestas?id_cliente=${ID_CLIENTE}`,
       dataType: "json",
       success: function (response) {
-         crearTabla(response.preguntas);
+         crearRamas(response.preguntas);
       },
       error: function (err) {
          const Toast = Swal.mixin();
@@ -96,7 +62,7 @@ function llamarPreguntita() {
    });
 
 }
-function crearTabla(listapreguntas) {
+function crearRamas(listapreguntas) {
    let tableReporte = document.getElementById('tReserva');
    listRamas.forEach(ramas => {
       // creamos las categorias por ramas
@@ -104,28 +70,34 @@ function crearTabla(listapreguntas) {
       tr.appendChild(crearLabelRama(ramas.categoria_rama));
       tableReporte.appendChild(tr);
       let preguntasByRama = listapreguntas.filter(pregunta => pregunta.id_rama == ramas.id_rama);
-      console.log(preguntasByRama);
+      crearPreguntas(preguntasByRama, tableReporte);
+   });
+
+   function crearPreguntas(listPreguntas, tabla) {
       // se crean las preguntas
-      preguntasByRama.forEach(p => {
+      listPreguntas.forEach(p => {
          let tr = document.createElement('tr');
          tr.appendChild(crearLabelPregunta(p.pregunta));
-         tableReporte.appendChild(tr);
-         // se valida si es una respuesta multiple
-         if (p.mas_respuestas == 'Si') {
-            p.respuesta.forEach(res => {
-               let tr = document.createElement('tr');
-               tr.appendChild(crearLabelRespuesta(res));
-               tableReporte.appendChild(tr);
-            });
-         } else {
-            let tr = document.createElement('tr');
-            tr.appendChild(crearLabelRespuesta(p.respuesta));
-            tableReporte.appendChild(tr);
-         }
+         tabla.appendChild(tr);
+         crearRespuestas(p, tabla);
       });
+   }
 
-
-   });
+   function crearRespuestas(data, tabla) {
+      // se valida si es una respuesta multiple
+      if (data.mas_respuestas == 'Si') {
+         data.respuesta.forEach(res => {
+            let tr = document.createElement('tr');
+            tr.appendChild(crearLabelRespuesta(res));
+            tabla.appendChild(tr);
+         });
+      } else {
+         let tr = document.createElement('tr');
+         tr.appendChild(crearLabelRespuesta(data.respuesta));
+         tabla.appendChild(tr);
+      }
+      $('#loading').hide();
+   }
 
    function crearLabelRama(nombreRama) {
       let td = document.createElement('td');

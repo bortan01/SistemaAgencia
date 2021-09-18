@@ -1,7 +1,7 @@
 <!-- INICIALIZACION -->
 <?php include_once '../../config/parametros.php'; ?>
 <?php include_once '../../plantillas/cabecera.php'; ?>
-<?php include_once '../../vistas/session/isAdmin.php'; ?>
+<?php include_once '../../vistas/session/isEmpleado.php'; ?>
 <!-- COLOCAR ESTILOS ADICIONALES AQUI -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
 <link href="<?= $base_url ?>plugins/subir-foto/themes/explorer-fas/theme.css" media="all" rel="stylesheet"
@@ -220,7 +220,7 @@
                                                       <th>Cliente</th>
                                                       <th>Paquete</th>
                                                       <th>Fecha de Reserva</th>
-                                                  <!--<th>Forma de pago</th> -->
+                                                      <!--<th>Forma de pago</th> -->
                                                       <th>Tipo</th>
                                                       <th>Total ($)</th>
                                                    </tr>
