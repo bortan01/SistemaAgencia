@@ -46,7 +46,7 @@ include_once '../../plantillas/barra_lateral.php';
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Formularios</li>
+                        <li class="breadcrumb-item active">Formularios Migratorios </li>
                         <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
                             id="botonAyudaFormularioMigrarorio"> <i class="fas fa-question"></i></button>
                     </ol>
