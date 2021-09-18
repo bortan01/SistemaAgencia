@@ -47,7 +47,7 @@ $(document).ready(function () {
 
         let form = obtenerInfo();
         $.ajax({
-            url: URL_SERVIDOR + "Cita/citas",
+            url: URL_SERVIDOR + "Cita/Citas",
             method: 'POST',
             mimeType: "multipart/form-data",
             data: form,
@@ -56,6 +56,7 @@ $(document).ready(function () {
             contentType: false,
 
         }).done(function (response) {
+            console.log(response)
 
             $("#modal_registro").modal('toggle');
             $('#calendar').fullCalendar('refetchEvents');
