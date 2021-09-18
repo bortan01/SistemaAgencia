@@ -37,7 +37,7 @@ include_once '../session/isEmpleado.php';
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                   <li class="breadcrumb-item active">Citas</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                            id="botonAyudaAgendarCitas"> <i class="fas fa-question"></i></button>
+                     id="botonAyudaAgendarCitas"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -47,22 +47,28 @@ include_once '../session/isEmpleado.php';
    <!-- Main content -->
    <section class="content">
       <div class="container-fluid">
-         <div class="row">
-            <div class="col-md-1">
-            </div>
-            <!-- /.col -->
-            <div class="col-md-10">
-               <div class="card card-primary">
-                  <div class="card-body p-0">
-                     <!-- THE CALENDAR -->
-                     <div id="calendar"></div>
-                  </div>
-                  <!-- /.card-body -->
+         <div class="overlay-wrapper">
+            <div id="loading" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+               <div class="text-bold pt-2">Cargando...
                </div>
-               <!-- /.card -->
             </div>
-            <!-- /.col -->
-            <div class="col-md-1">
+            <div class="row">
+               <div class="col-md-1">
+               </div>
+               <!-- /.col -->
+               <div class="col-md-10">
+                  <div class="card card-primary">
+                     <div class="card-body p-0">
+                        <!-- THE CALENDAR -->
+                        <div id="calendar"></div>
+                     </div>
+                     <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+               </div>
+               <!-- /.col -->
+               <div class="col-md-1">
+               </div>
             </div>
          </div>
          <!-- /.row -->

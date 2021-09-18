@@ -15,7 +15,6 @@ $(document).ready(function () {
       }
     },
     dayClick: function (date, allDay, jsEvent, view) {
-
       const fechaComoCadena = date.format('YYYY-MM-DD h:mm');
       const dias = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado',
       ];
@@ -57,7 +56,7 @@ $(document).ready(function () {
 
 
     },
-    events: URL_SERVIDOR+'Cita/cita', //aqui pongo la api que e hecho
+    events: URL_SERVIDOR + 'Cita/Cita', //aqui pongo la api que e hecho
     //http://localhost/restful/index.php/Calendario/calendario
     eventClick: function (calEvent, jsEvent, view) {
 
@@ -74,10 +73,11 @@ $(document).ready(function () {
       $('#txtFecha3').val(fechita);
       $('#txtId').val(calEvent.id_cita);
       $('#timepicker2').val(calEvent.hora);
-     
+
       $('#id_cliente').val(calEvent.id_cita);
       $('#modal_eventos').modal();
       //document.getElementById("update-form").reset();
+
     },
     editable: true,
     eventDrop: function (calEvent) {
@@ -119,9 +119,9 @@ $(document).ready(function () {
             $('#txtFecha3').val(fechaHora[0]);
             $('#txtId').val(calEvent.id_cita);
             $('#timepicker2').val(calEvent.hora);
-
+            $('#loading').show();
             $.ajax({
-              url: URL_SERVIDOR+"Cita/moverDias",
+              url: URL_SERVIDOR + "Cita/moverDias",
               method: 'POST',
               data: $("#update-form").serialize()
 
@@ -132,6 +132,7 @@ $(document).ready(function () {
 
               //REST_Controller::HTTP_OK
               //let respuestaDecodificada = JSON.parse(response);
+              $('#loading').hide();
               const Toast = Swal.mixin();
               Toast.fire({
                 title: 'Exito...',
@@ -144,6 +145,7 @@ $(document).ready(function () {
               });
 
             }).fail(function (response) {
+              $('#loading').hide();
               //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
               let respuestaDecodificada = JSON.parse(response.responseText);
               let listaErrores = "";
@@ -191,15 +193,15 @@ $(document).ready(function () {
 //PARA AGREGAR LOS INPUT
 function AgregarItems(arreglo, label, $original, $grupo) {
   for (let index = 0; index < arreglo.length; index++) {
-     if (index == 0) {
-       $original.find('input').val(arreglo[index]);
-       //verificamos si no hay mas elementos 
-     } else {
-       let $copia = $grupo.clone();
-       $copia.find('button').toggleClass('btn-success btn-add btn-danger btn-remove').html('–');
-       $copia.find('input').val(arreglo[index]);
-       $copia.insertAfter(label);
-     }
+    if (index == 0) {
+      $original.find('input').val(arreglo[index]);
+      //verificamos si no hay mas elementos 
+    } else {
+      let $copia = $grupo.clone();
+      $copia.find('button').toggleClass('btn-success btn-add btn-danger btn-remove').html('–');
+      $copia.find('input').val(arreglo[index]);
+      $copia.insertAfter(label);
+    }
 
     document.getElementById("btn-asistiran2").disabled = false;
     document.getElementById("btn-pasaportes2").disabled = false;
@@ -209,3 +211,5 @@ function AgregarItems(arreglo, label, $original, $grupo) {
 }//agregar item
 
 //recept
+
+$('#loading').hide();
