@@ -210,3 +210,46 @@ $("#botonAyudaAgendarCitas").click(function() {
   pdfcito.append('<iframe src="../../pdf/Agendar_Citas.pdf"></iframe>');
     $("#modal-ayuda").modal();
   });
+
+  $("#botonAyudaFormulario").click(function() {
+    document.getElementById("register-ayuda").reset();
+    $('#pdf').empty();
+    pdfcito=$('#pdf');
+    pdfcito.append('<iframe src="../../pdf/Llenar_Formulario.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+    });
+  $("#botonAyudaFormularioMigrarorio").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Formulario_Migratorio.pdf"></iframe>');
+        $("#modal-ayuda").modal();
+      });
+  $("#botonAyudaRegistroPreguntas").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Registro_Preguntas.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+  $("#botonAyudaPreguntasAbiertas").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Preguntas_Abiertas.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+  $("#botonAyudaPreguntasCerradas").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Preguntas_Cerradas.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaIngresoAsesoria").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Ingresos_Asesorias.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });

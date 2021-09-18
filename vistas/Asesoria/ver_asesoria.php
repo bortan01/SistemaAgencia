@@ -18,6 +18,8 @@ include_once '../session/isEmpleado.php';
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                   <li class="breadcrumb-item active">Citas Pendientes</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaFormulario"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -63,7 +65,9 @@ include_once '../session/isEmpleado.php';
    <!-- /.content -->
 </div>
 
-<?php include_once '../../plantillas/footer.php'; ?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php'; ?>
 
 <!-- SCRIPT ADICIONALES AQUI -->
 <script src="<?= $base_url ?>js/controladores/asesorias/ver_asesoria.js"></script>

@@ -32,6 +32,8 @@ include_once '../../plantillas/barra_lateral.php';
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                         <li class="breadcrumb-item active">Preguntas Abiertas</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaPreguntasAbiertas"> <i class="fas fa-question"></i></button>
                     </ol>
                 </div>
             </div>
@@ -172,7 +174,8 @@ include_once '../../plantillas/barra_lateral.php';
 <!-- End Modal Mostrar-->
 
 <?php
-  include_once '../../plantillas/footer.php';
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php';
 ?>
 
 <!-- SCRIPT ADICIONALES -->

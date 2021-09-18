@@ -30,13 +30,14 @@ include_once '../../plantillas/cabecera.php'; ?>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Ingresos</li>
+                        <li class="breadcrumb-item active">Ingresos por Asesoría</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaIngresoAsesoria"> <i class="fas fa-question"></i></button>
                     </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
         <div class="row">
@@ -47,11 +48,9 @@ include_once '../../plantillas/cabecera.php'; ?>
                         <i class="fas fa-calendar-check bg-blue"></i>
                         <div class="timeline-item">
                             <h3 class="timeline-header"><a href="#">Ingrese las fechas a consultar</a></h3>
-
                             <div class="timeline-body">
                                 <form id="datosOrigen-form" name="register-form" onsubmit="return false">
                                     <div class="row">
-
                                         <div class="col-sm-6">
                                             <label>Fecha Inicio</label>
                                             <div class="input-group">
@@ -67,29 +66,20 @@ include_once '../../plantillas/cabecera.php'; ?>
                                                     <input type="date" class="form-control" name="fechaFin"
                                                         id="fechaFin" placeholder="Digite la ciudad de origen">
                                                 </div>
-
                                             </div>
                                         </div>
-
-
-                                        
-                                            <div class="col col-lg-12" style="text-align: right;">
-                                                <div class="timeline-footer">
-                                                    <a class="btn btn-info btn-sm" id="procesar"
-                                                        style="color: white">Procesar</a>
-
-                                                </div>
+                                        <div class="col col-lg-12" style="text-align: right;">
+                                            <div class="timeline-footer">
+                                                <a class="btn btn-info btn-sm" id="procesar"
+                                                    style="color: white">Procesar</a>
                                             </div>
-                                     
-
+                                        </div>
                                     </div>
                                     <div>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
-
                     </div>
                     <!-- END timeline item -->
                     <!-- timeline item -->
@@ -109,7 +99,6 @@ include_once '../../plantillas/cabecera.php'; ?>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <table id="tabla-ingresos" class="table table-bordered table-hover">
                                             <thead>
@@ -120,13 +109,9 @@ include_once '../../plantillas/cabecera.php'; ?>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
                                             </tbody>
-
                                         </table>
                                     </div>
-
-
                                 </div>
                                 <div class="row">
                                     <div class="col-md-1 col-md-offset-1"> </div>
@@ -140,7 +125,7 @@ include_once '../../plantillas/cabecera.php'; ?>
                                 <div class="row">
                                     <div class="col-md-1 col-md-offset-1"> </div>
                                     <div class="col-md-3  ">
-                                        <label class="text-success ">Tortal de ingresos: </label>
+                                        <label class="text-success ">Total de Ingresos: </label>
                                     </div>
                                     <div class="col-md-3  ">
                                         <label id="totalIngresos" class="text-success "> $0</label>
@@ -149,10 +134,8 @@ include_once '../../plantillas/cabecera.php'; ?>
                             </div>
                             <br> <br>
                         </div>
-
                     </div>
                     <!-- END timeline item -->
-
                     <!-- /.timeline-label -->
                 </div>
                 <!-- END timeline item -->
@@ -162,7 +145,9 @@ include_once '../../plantillas/cabecera.php'; ?>
 
 </div>
 <!-- /.content-wrapper -->
-<?php include_once '../../plantillas/footer.php';?>
+<?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php';?>
 <!-- PONER SCRIPT ADICIONALES ACA -->
 <!--alerta del sistema-->
 <script src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
@@ -171,9 +156,7 @@ include_once '../../plantillas/cabecera.php'; ?>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
 <!--para la mascara-->
 <script src="<?= $base_url ?>plugins/inputmask/jquery.inputmask.min.js"></script>
-
 <!--procesos del sistema-->
-
 <script src="<?= $base_url ?>js/controladores/asesorias/ingresos.js"></script>
 
 <!-- CIERRE DE ETIQUETAS -->
