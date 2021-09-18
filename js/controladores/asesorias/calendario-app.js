@@ -126,6 +126,8 @@ $(document).ready(function () {
               data: $("#update-form").serialize()
 
             }).done(function (response) {
+              console.log(response);
+              
               $('#calendar').fullCalendar('refetchEvents');
               //$("#recargar2").load(" #recargar2");//recargar solo un div y no toda la pagina
               // $('#inputs').empty();//vaciar los inputs dinamicos
@@ -147,7 +149,9 @@ $(document).ready(function () {
             }).fail(function (response) {
               $('#loading').hide();
               //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-              let respuestaDecodificada = JSON.parse(response.responseText);
+              console.log(response);
+              return;
+              // let respuestaDecodificada = JSON.parse(response.responseText);
               let listaErrores = "";
 
               if (respuestaDecodificada.errores) {

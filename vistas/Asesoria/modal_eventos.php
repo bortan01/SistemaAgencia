@@ -7,7 +7,7 @@
       <div class="modal-content">
 
          <div class="overlay-wrapper">
-            <div id="loadingActualizar" class="overlay">
+            <div id="loadingGuardar" class="overlay">
                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
                <div class="text-bold pt-2">Cargando...
                </div>
@@ -29,8 +29,19 @@
                      </div>
                      <div class="form-group col-md-6">
                         <label>Hora de la cita</label>
-                        <div class="input-group clockpicker" data-autoclose="true">
-                           <input type="text" id="timepicker" name="start" class="form-control" value="08:00" />
+                        <div class="input-group">
+                           <select name="time" id="time" class="select2 select2-hidden-accessible form-control"
+                              style="width: 100%;" onchange="ShowSelected();">
+                              <option value="08:00">08:00</option>
+                              <option value="09:00">09:00</option>
+                              <option value="10:00">10:00</option>
+                              <option value="11:00">11:00</option>
+                              <option value="13:00">13:00</option>
+                              <option value="14:00">14:00</option>
+                              <option value="15:00">15:00</option>
+                           </select>
+                           <input type="hidden" name="estado" id="estado" value="Enviado">
+
                         </div>
                         <input type="hidden" class="form-control" id="txtTitulo" name="title" value="Asesoria" />
                      </div>
@@ -57,28 +68,27 @@
                         </span>
                      </div>
                      <div class="col-sm-6">
-                              <!-- text input -->
-                              <div class="hidden">
-                                 <label name="detalle" id="detalle">Registró una cita para Asesoria</label>
-                              </div>
-                           </div>
+                        <!-- text input -->
+                        <div class="hidden">
+                           <label name="detalle" id="detalle">Registró una cita para Asesoria</label>
+                        </div>
+                     </div>
                   </div>
-                     
-                  </div>
-                  
-               </div>
-               <div class="modal-footer">
-                  <button type="button" id="btnAgregar" class="btn btn-info btn-sm"
-                     style="color: white">Guardar</button>
-                  <button type="button" class="btn btn-danger btn-sm" style="color: white"
-                     data-dismiss="modal">Cancelar</button>
-               </div>
-            </form>
-         </div>
 
+               </div>
+
+         </div>
+         <div class="modal-footer">
+            <button type="button" id="btnAgregar" class="btn btn-info btn-sm" style="color: white">Guardar</button>
+            <button type="button" class="btn btn-danger btn-sm" style="color: white"
+               data-dismiss="modal">Cancelar</button>
+         </div>
+         </form>
       </div>
+
    </div>
-   <!-- /.modal-content -->
+</div>
+<!-- /.modal-content -->
 </div>
 <!--fin de modal de enventos-->
 
@@ -114,17 +124,27 @@
                      <div class="form-group col-md-6">
                         <label>Hora de la cita</label>
                         <div class="input-group clockpicker" data-autoclose="true">
-                           <input type="text" id="timepicker2" name="start" class="form-control" />
+                           <select name="timeUpdate" id="timeUpdate"
+                              class="select2 select2-hidden-accessible form-control" style="width: 100%;"
+                              onchange="ShowSelected();">
+                              <option value="08:00">08:00</option>
+                              <option value="09:00">09:00</option>
+                              <option value="10:00">10:00</option>
+                              <option value="11:00">11:00</option>
+                              <option value="13:00">13:00</option>
+                              <option value="14:00">14:00</option>
+                              <option value="15:00">15:00</option>
+                           </select>
 
                         </div>
                         <input type="hidden" class="form-control" id="txtTitulo" name="title" value="Asesoria" />
                      </div>
                      <div class="col-sm-6">
-                              <!-- text input -->
-                              <div class="hidden">
-                                 <label name="detalle" id="detalle">Modifico una Asesoria</label>
-                              </div>
-                           </div>
+                        <!-- text input -->
+                        <div class="hidden">
+                           <label name="detalle" id="detalle">Modifico una Asesoria</label>
+                        </div>
+                     </div>
 
                   </div>
 

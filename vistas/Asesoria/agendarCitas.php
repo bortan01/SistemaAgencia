@@ -87,6 +87,9 @@ include_once '../cliente/modalCliente.php';
 <?php include_once '../../plantillas/footer.php';?>
 <!-- PONER SCRIPT ADICIONALES ACA -->
 <script>
+$('#time').select2();
+$('#timeUpdate').select2();
+
 //para la mascara del celular
 $(":input").inputmask();
 $("#pasaporte").inputmask({

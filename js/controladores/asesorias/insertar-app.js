@@ -1,6 +1,7 @@
 
 
 inicializarValidaciones();
+$('#loadingGuardar').hide();
 
 //BOTON PARA AGREGAR
 $(document).on('click', '#btnAgregar', function (evento) {
@@ -44,16 +45,12 @@ function inicializarValidaciones() {
 
 
 function add() {
-    $('#loading').show();
+    $('#loadingGuardar').show();
     let form = obtenerInfo();
     $.ajax({
         url: URL_SERVIDOR + "Cita/Citas",
         method: 'POST',
-        mimeType: "multipart/form-data",
         data: form,
-        timeout: 0,
-        processData: false,
-        contentType: false,
 
     }).done(function (response) {
 
@@ -78,9 +75,9 @@ function add() {
             guardarBitacora();
             //location.reload(); 
         });
-        $('#loading').hide();
+        $('#loadingGuardar').hide();
     }).fail(function (response) {
-        $('#loading').hide();
+        $('#loadingGuardar').hide();
         console.log(response);
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
         let respuestaDecodificada = JSON.parse(response.responseText);
@@ -110,11 +107,10 @@ function add() {
 
 function obtenerInfo() {
     let form = new FormData();
-    console.log(reloj.value)
     form.append("fecha", document.getElementById("txtFecha").value);
     form.append("usuario", document.getElementById("usuario").value);
     form.append("id_cliente", document.getElementById("comboUsuario").value);
-    form.append("start", document.getElementById("timepicker").value);
+    form.append("start", document.getElementById("time").value);
     form.append("title", document.getElementById("txtTitulo").value);
 
 
