@@ -9,7 +9,7 @@ include_once '../session/isEmpleado.php';
 <!--COTINUANDO CON LA INICIALIZACION -->
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
-<link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"
+<link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.css" all rel="stylesheet"
    type="text/css" />
 <link href="<?= $base_url ?>css/miniatura-tabla.css" media="all" rel="stylesheet" type="text/css" />
 <!--para la subida de fotos al sistema-->
@@ -104,7 +104,7 @@ $("#pasaporte_personas").inputmask({
 <script src='<?= $base_url ?>plugins/a/js/locale/es.js'></script>
 
 <script src="<?= $base_url ?>js/mdtimepicker.js"></script>
-<script src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.js"></script>
 <script src="<?= $base_url ?>plugins/toastr/toastr.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
@@ -132,13 +132,9 @@ $("#pasaporte_personas").inputmask({
 <script src="<?= $base_url ?>js/controladores/asesorias/validar-exist.js"></script>
 
 <script>
-$(document).ready(function() {
-   $('#timepicker').mdtimepicker(); //Initializes the time picker
-});
-
-$(document).ready(function() {
-   $('#timepicker2').mdtimepicker(); //Initializes the time picker
-});
+$('#timepicker').mdtimepicker({
+   format: 'hh:mm'
+}); //Initializes the time picker
 
 $('#loadingActualizar').hide();
 $('#loadingActualizarEventos').hide();
