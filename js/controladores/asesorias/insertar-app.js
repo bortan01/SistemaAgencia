@@ -50,7 +50,11 @@ function add() {
     $.ajax({
         url: URL_SERVIDOR + "Cita/Citas",
         method: 'POST',
+        mimeType: "multipart/form-data",
         data: form,
+        timeout: 0,
+        processData: false,
+        contentType: false,
 
     }).done(function (response) {
 

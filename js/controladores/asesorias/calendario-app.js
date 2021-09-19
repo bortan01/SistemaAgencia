@@ -118,7 +118,7 @@ $(document).ready(function () {
             $('#tituloEvento').html(calEvent.title);
             $('#txtFecha3').val(fechaHora[0]);
             $('#txtId').val(calEvent.id_cita);
-            $('#timepicker2').val(calEvent.hora);
+            $('#timeUpdate').val(calEvent.hora);
             $('#loading').show();
             $.ajax({
               url: URL_SERVIDOR + "Cita/moverDias",
@@ -149,9 +149,8 @@ $(document).ready(function () {
             }).fail(function (response) {
               $('#loading').hide();
               //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-              console.log(response);
-              return;
-              // let respuestaDecodificada = JSON.parse(response.responseText);
+            
+              let respuestaDecodificada = JSON.parse(response.responseText);
               let listaErrores = "";
 
               if (respuestaDecodificada.errores) {

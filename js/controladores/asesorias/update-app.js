@@ -1,19 +1,23 @@
-$(document).ready(function () {
+$(document).ready(function (){
 
-    $("#btnActualizar").on('click', function (e) {
-
+    $("#btnActualizar").on('click', function(e) {
+        $('#loadingActualizarEventos').show();
         e.preventDefault();
         // recolectarDatos();
-        let form = obtenerInfo();
-        $.ajax({
-            url: URL_SERVIDOR + "Cita/updateCita",
+         let form = obtenerInfo();
+         $.ajax({
+            url: URL_SERVIDOR+"Cita/updateCita",
             method: 'POST',
+            mimeType: "multipart/form-data",
             data: form,
+            timeout: 0,
+            processData: false,
+            contentType: false,
         }).done(function (response) {
-
-            $("#modal_eventos").modal('toggle');
-            $('#calendar').fullCalendar('refetchEvents');
-
+        $('#loadingActualizarEventos').hide();            
+          $("#modal_eventos").modal('toggle');
+          $('#calendar').fullCalendar('refetchEvents');
+        
             //REST_Controller::HTTP_OK
             //let respuestaDecodificada = JSON.parse(response);
             const Toast = Swal.mixin();
@@ -29,14 +33,17 @@ $(document).ready(function () {
             });
 
         }).fail(function (response) {
+        $('#loadingActualizarEventos').hide();
+
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-
-
+            let respuestaDecodificada = JSON.parse(response.responseText);
+           
+            console.log(response)
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Error',
                 icon: 'error',
-                text: response,
+                text: respuestaDecodificada.mensaje,
                 showConfirmButton: true,
             });
 
@@ -44,12 +51,12 @@ $(document).ready(function () {
 
     });
 
-    function obtenerInfo() {
+     function obtenerInfo(){
         let form = new FormData();
 
-
-        form.append("id_cita", document.getElementById("txtId").value);
-        form.append("fecha", document.getElementById("txtFecha2").value);
+        
+        form.append("id_cita",       document.getElementById("txtId").value);
+        form.append("fecha", document.getElementById("txtFecha2").value); 
         form.append("start", document.getElementById("timeUpdate").value);
 
 

@@ -137,7 +137,6 @@
                            </select>
 
                         </div>
-                        <input type="hidden" class="form-control" id="txtTitulo" name="title" value="Asesoria" />
                      </div>
                      <div class="col-sm-6">
                         <!-- text input -->
