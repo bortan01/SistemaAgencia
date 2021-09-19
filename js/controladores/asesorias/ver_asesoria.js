@@ -9,7 +9,7 @@ $(document).on('click', '.btn-group .btn-primary', function () {
    window.location = `registroMigratoria.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}`;
 });
 
-$(document).on('click', '.btn-group .btn-info', function () {
+$(document).on('click', '.btn-group .btn-secondary', function () {
    //AQUI NO SE A CUAL DIRECCIONARIAS
    let fila = $(this).closest("tr");
    let data = tabla.row(fila).data();
@@ -43,7 +43,7 @@ function inicializarTabla() {
                   html += '            <i class="fas fa-edit" style="color: white"></i>';
                   html += '        </button>';
                   }else{
-                     html += '        <button title="Editar" type="button" name="' + json.citas[i].id_cliente + '" class="btn btn-info" data-toggle="modal"';
+                     html += '        <button title="Editar" type="button" name="' + json.citas[i].id_cliente + '" class="btn btn-secondary" data-toggle="modal"';
                      html += '            data-target="">';
                      html += '            <i class="fas fa-edit" style="color: white"></i>';
                      html += '        </button>';
