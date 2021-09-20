@@ -80,16 +80,13 @@ $("#botonAyudaMostrarContactos").click(function() {
         pdfcito.append('<iframe src="../../pdf/Mostrar_Contactos.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-
-
-/* $("#botonAyudaTour").click(function() {
+$("#botonAyudaTour").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Registro_Tours.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
 /* $("#botonAyudaMostrarTours").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
