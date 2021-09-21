@@ -87,14 +87,13 @@ $("#botonAyudaTour").click(function() {
         pdfcito.append('<iframe src="../../pdf/Registro_Tours.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-/* $("#botonAyudaMostrarTours").click(function() {
+$("#botonAyudaMostrarTours").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Mostrar_Tours.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
  /* $("#botonAyudaPaquetePublico").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();

@@ -85,7 +85,7 @@
                                  <tr>
                                     <th>Cliente</th>
                                     <th>Asientos Reservados</th>
-                                    <th>Detalle Resrva</th>
+                                    <th>Detalle Reserva</th>
                                     <th>Forma de Pago</th>
                                     <th>Total</th>
                                  </tr>
@@ -107,7 +107,7 @@
                            <table id="tGasto">
                               <thead>
                                  <tr style="text-align: center;">
-                                    <th>Sitio Turisto/Servicio dicional</th>
+                                    <th>Sitio Turisto/Servicio Adicional</th>
                                     <th>Costo</th>
                                     <th>Cantidad</th>
                                     <th>Sub Total</th>
