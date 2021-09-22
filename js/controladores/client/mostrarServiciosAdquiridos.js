@@ -10,7 +10,7 @@ $(document).ready(function () {
     mostrarDatos();
     inicializarTablaTours();
     inicializarTabla();
-    // inicializarTablaEncomiendas();
+    inicializarTablaEncomiendas();
     inicializarTablaVehiculos();
     inicializarTablaVuelos();
     inicializarTablaAsesorias();
@@ -38,16 +38,16 @@ $(document).ready(function () {
             "responsive": true,
             "autoWidth": false,
             "deferRender": true,
-            "columnDefs": [
-                { "className": "dt-center", "targets": "_all" },
-
-            ],
+            "columnDefs": [{ "className": "dt-center", "targets": "_all" },],
             "ajax": {
                 "url": URL_SERVIDOR + "Cita/citaWeb?id_cliente=" + ID_CLIENTE,
                 "method": "GET",
                 "dataSrc": function (json) {
                     if (json) {
-                        
+                        for (let index = 0; index < json.length; index++) {
+                            // json.servicios[index].fecha = moment(json.servicios[index].fecha).format('DD/MM/YYYY');
+                            json[index].fecha = moment(json[index].fecha).format('DD/MM/YYYY');
+                        }
                         $('#loading').hide();
                         return json;
                     } else {
@@ -58,7 +58,7 @@ $(document).ready(function () {
             },
             columns: [
                 { data: "title" },
-                { data: "fechaConver" },
+                { data: "fecha" },
                 { data: "hora" },
             ]
         });
@@ -91,6 +91,7 @@ $(document).ready(function () {
                             html += '    </div>';
                             html += '</td>';
                             json.servicios[i]["botones"] = html;
+
                         }
                         $('#loading').hide();
                         return json.servicios;
@@ -114,7 +115,7 @@ $(document).ready(function () {
     }
 
     function inicializarTablaEncomiendas() {
-        tabla = $("#add-encomiendas").DataTable({
+        $("#add-encomiendas").DataTable({
             "responsive": true,
             "autoWidth": false,
             "deferRender": true,
@@ -127,20 +128,11 @@ $(document).ready(function () {
                 "method": "GET",
                 "dataSrc": function (json) {
                     if (json.servicios) {
-                        for (let i = 0, ien = json.servicios.length; i < ien; i++) {
-                            //CREAMOS UNA NUEVA PROPIEDAD LLAMADA BOTONES
-                            html = "";
-                            html += '<td>';
-                            html += '    <div class="btn-group">';
-                            html += '        <button type="button" name="' + json.servicios[i].id_cliente + '" class="btn btn-danger" data-toggle="modal"';
-                            html += '            data-target="#modal-mostrar">';
-                            html += '            <i class="fas fa-trash" style="color: white"></i>';
-                            html += '        </button>';
-                            html += '    </div>';
-                            html += '</td>';
-                            json.servicios[i]["botones"] = html;
-                        }
                         $('#loading').hide();
+                        for (let index = 0; index < json.servicios.length; index++) {
+                            json.servicios[index].fecha = moment(json.servicios[index].fecha).format('DD/MM/YYYY');
+
+                        }
                         return json.servicios;
                     } else {
                         $('#loading').hide();
@@ -149,12 +141,14 @@ $(document).ready(function () {
                 }
             },
             columns: [
-                { data: "nombre_producto" },
                 { data: "ciudad_origen" },
                 { data: "direccion_destino" },
                 { data: "fecha" },
-                { data: "cantidad" },
-                { data: "sub_total" },
+                { data: "total_encomienda" },
+                { data: "total_comision" },
+                { data: "total_cliente" },
+                { data: "estado" },
+
 
             ]
         });
@@ -222,7 +216,6 @@ $(document).ready(function () {
                 "url": URL_SERVIDOR + "TurPaquete/showInfoReserva?id_cliente=" + ID_CLIENTE,
                 "method": "GET",
                 "dataSrc": function (json) {
-                    console.log(json);
                     if (json.reservas.length > 0) {
                         json.reservas.forEach(viaje => {
                             let ver = "";

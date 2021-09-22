@@ -150,12 +150,13 @@ include_once '../../plantillas/barra_lateral.php';
                                           <table id="add-encomiendas" class="table table-bordered table-hover">
                                              <thead>
                                                 <tr style="text-align: center;">
-                                                   <th>Producto</th>
-                                                   <th>Dirección Origen</th>
-                                                   <th>Dirección Destino</th>
+                                                   <th>Ciudad de Origen</th>
+                                                   <th>Direccion de Destino</th>
                                                    <th>Fecha</th>
-                                                   <th>Cantidad</th>
-                                                   <th>Sub Total($)</th>
+                                                   <th>Total Encomienda ($)</th>
+                                                   <th>Total Comision ($)</th>
+                                                   <th>Total Cliente ($)</th>
+                                                   <th>Estado</th>
                                                 </tr>
                                              </thead>
                                              <tbody style="text-align: center;">
@@ -182,7 +183,8 @@ include_once '../../plantillas/barra_lateral.php';
                                     <div class="tab-pane fade" id="custom-tabs-four-vehiculos" role="tabpanel"
                                        aria-labelledby="custom-tabs-four-vehiculos-tab">
                                        <div class="col-sm-12">
-                                          <table id="add-vehiculos" class="table table-bordered table-hover">
+                                          <table style="text-align: center;" id="add-vehiculos"
+                                             class="table table-bordered table-hover">
                                              <thead>
                                                 <tr style="text-align: center;">
                                                    <th>ID Detalle</th>
@@ -199,7 +201,8 @@ include_once '../../plantillas/barra_lateral.php';
                                     <div class="tab-pane fade" id="custom-tabs-four-cotizarvehiculos" role="tabpanel"
                                        aria-labelledby="custom-tabs-four-cotizarvehiculos-tab">
                                        <div class="col-sm-12">
-                                          <table id="add-tabla" class="table table-bordered table-hover">
+                                          <table style="text-align: center;" id="add-tabla"
+                                             class="table table-bordered table-hover">
                                              <thead>
                                                 <tr style="text-align: center;">
                                                    <th>Modelo de Vehiculo</th>
