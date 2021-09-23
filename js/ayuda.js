@@ -94,6 +94,20 @@ $("#botonAyudaMostrarTours").click(function() {
         pdfcito.append('<iframe src="../../pdf/Mostrar_Tours.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
+$("#botonAyudaDisponibilidadTour").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Disponibilidad_Tours.pdf"></iframe>');
+        $("#modal-ayuda").modal();
+        });
+$("#botonAyudaReservaTours").click(function() {
+        document.getElementById("register-ayuda").reset();
+        $('#pdf').empty();
+        pdfcito=$('#pdf');
+        pdfcito.append('<iframe src="../../pdf/Reserva_Tours.pdf"></iframe>');
+        $("#modal-ayuda").modal();
+        });
  /* $("#botonAyudaPaquetePublico").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();

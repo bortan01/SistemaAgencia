@@ -107,7 +107,7 @@
                            <table id="tGasto">
                               <thead>
                                  <tr style="text-align: center;">
-                                    <th>Sitio Turisto/Servicio Adicional</th>
+                                    <th>Sitio Turístico/Servicio Adicional</th>
                                     <th>Costo</th>
                                     <th>Cantidad</th>
                                     <th>Sub Total</th>
