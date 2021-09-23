@@ -157,7 +157,7 @@
                                           <th>Tipo de Asiento</th>
                                           <th>Costo ($)</th>
                                           <th>Cantidad</th>
-                                          <th>SubTotal</th>
+                                          <th>SubTotal ($)</th>
                                           <th>Eliminar</th>
 
                                        </tr>
