@@ -45,7 +45,7 @@ include_once '../../plantillas/cabecera.php';
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                   <li class="breadcrumb-item active">Cotización de Vuelo</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                            id="botonAyudaCotizarVuelo"> <i class="fas fa-question"></i></button>
+                     id="botonAyudaCotizarVuelo"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -138,29 +138,25 @@ include_once '../../plantillas/cabecera.php';
                                  <div class="col-sm-3">
                                     <div class="form-group">
                                        <label>Adultos (+12 años)</label>
-                                       <input type="number" class="form-control" min="0" max="100" name="adultos"
-                                          id="adultos">
+                                       <input type="number" class="form-control" name="adultos" id="adultos">
                                     </div>
                                  </div>
                                  <div class="col-sm-3">
                                     <div class="form-group">
                                        <label>Niños (5 a 11 años)</label>
-                                       <input type="number" class="form-control" min="0" max="10" name="ninos"
-                                          id="ninos">
+                                       <input type="number" class="form-control" name="ninos" id="ninos">
                                     </div>
                                  </div>
                                  <div class="col-sm-3">
                                     <div class="form-group">
                                        <label>Bebés (0 a 4 años)</label>
-                                       <input type="number" class="form-control" min="0" max="3" name="bebes"
-                                          id="bebes">
+                                       <input type="number" class="form-control" name="bebes" id="bebes">
                                     </div>
                                  </div>
                                  <div class="col-sm-3">
                                     <div class="form-group">
                                        <label>Cantidad de Maletas</label>
-                                       <input type="number" class="form-control" min="0" max="3" name="maletas"
-                                          id="maletas">
+                                       <input type="number" class="form-control" name="maletas" id="maletas">
                                     </div>
                                  </div>
                                  <div class="col-sm-12">

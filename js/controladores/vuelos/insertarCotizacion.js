@@ -9,7 +9,6 @@ $(document).ready(function () {
 
     $("#btnGuardarCotizacion").on('click', function (e) {
         e.preventDefault();
-        $('#loadingCotizarVehiculo').show();
         let form = $("#register-cotizarv");
         form.validate();
         if (form.valid()) {
@@ -65,31 +64,50 @@ $(document).ready(function () {
                     location.reload();
                 });
             }).fail(function (response) {
-                $('#loadingTipoViaje').hide();
-                //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-                let respuestaDecodificada = JSON.parse(response.responseText);
-                let listaErrores = "";
+                $('#loadingCotizarVehiculo').hide();
+                try {
+                    //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
+                    let respuestaDecodificada = JSON.parse(response.responseText);
+                    let listaErrores = "";
 
-                if (respuestaDecodificada.errores) {
-                    ///ARREGLO DE ERRORES 
-                    let erroresEnvioDatos = respuestaDecodificada.errores;
-                    for (mensaje in erroresEnvioDatos) {
-                        listaErrores += erroresEnvioDatos[mensaje] + "\n";
-                        //toastr.error(erroresEnvioDatos[mensaje]);
-                    };
-                } else {
-                    listaErrores = respuestaDecodificada.mensaje
+                    if (respuestaDecodificada.errores) {
+                        ///ARREGLO DE ERRORES 
+                        let erroresEnvioDatos = respuestaDecodificada.errores;
+                        for (mensaje in erroresEnvioDatos) {
+                            listaErrores += erroresEnvioDatos[mensaje] + "\n";
+                            //toastr.error(erroresEnvioDatos[mensaje]);
+                        };
+                    } else {
+                        listaErrores = respuestaDecodificada.mensaje
+                    }
+                    const Toast = Swal.mixin();
+                    Toast.fire({
+                        title: 'Oops...',
+                        icon: 'error',
+                        text: listaErrores,
+                        showConfirmButton: true,
+                    });
+                } catch (error) {
+                    const Toast = Swal.mixin();
+                    Toast.fire({
+                        title: 'Oops...',
+                        icon: 'error',
+                        text: 'Intente más tarde',
+                        showConfirmButton: true,
+                    });
                 }
-                const Toast = Swal.mixin();
-                Toast.fire({
-                    title: 'Oops...',
-                    icon: 'error',
-                    text: listaErrores,
-                    showConfirmButton: true,
-                });
+
 
             })
 
+        } else {
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Oops...',
+                icon: 'error',
+                text: "Rellene todos los campos",
+                showConfirmButton: true,
+            });
         }
 
     });
@@ -316,10 +334,11 @@ $(document).ready(function () {
                 },
                 ciudad_partida: {
                     required: "Debe de proporcionar la ciudad de partida",
+                    minlength: "Longitud minima 10"
                 },
                 ciudad_llegada: {
                     required: "Debe de proporcionar la ciudad de llegada",
-
+                    minlength: "Longitud minima 10"
                 },
                 fechaPartida: {
                     required: "Seleccione Fecha de Partida",
