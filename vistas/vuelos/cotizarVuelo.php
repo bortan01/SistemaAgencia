@@ -44,6 +44,8 @@ include_once '../../plantillas/cabecera.php';
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                   <li class="breadcrumb-item active">Cotización de Vuelo</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaCotizarVuelo"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -317,11 +319,12 @@ include_once '../../plantillas/cabecera.php';
 <!-- END timeline item -->
 
 <?php
+include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once '../cliente/modalCliente.php';
- include_once './modal-aerolinea.php';
- include_once './modal-tipoClase.php';
- include_once './modal-tipoViaje.php';
-  include_once '../../plantillas/footer.php';
+include_once './modal-aerolinea.php';
+include_once './modal-tipoClase.php';
+include_once './modal-tipoViaje.php';
+include_once '../../plantillas/footer.php';
 ?>
 
 <script>

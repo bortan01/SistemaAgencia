@@ -263,3 +263,24 @@ $("#botonAyudaAgendarCitas").click(function() {
       pdfcito.append('<iframe src="../../pdf/Ingresos_Asesorias.pdf"></iframe>');
       $("#modal-ayuda").modal();
       });
+    $("#botonAyudaDisponibilidadVuelos").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Disponibilidad_Vuelos.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaRegistroPromocion").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Registro_Promocion.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaCotizarVuelo").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Registro_Cotizacion.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });

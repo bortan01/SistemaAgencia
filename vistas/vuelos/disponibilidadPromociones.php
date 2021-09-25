@@ -37,6 +37,8 @@ h6 {
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                         <li class="breadcrumb-item active">Disponibilidad de Promociones</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaDisponibilidadVuelos"> <i class="fas fa-question"></i></button>
                     </ol>
                 </div>
             </div>
@@ -200,6 +202,7 @@ h6 {
 
 
 <?php
+include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once '../../plantillas/footer.php';
 ?>
 
@@ -211,28 +214,27 @@ $("label").on("change", function() {
 }).trigger("change")
 </script>
 <script>
-
-window.onload = function(){
-  let fecha = new Date(); //Fecha actual
-  let mes     = fecha.getMonth()+1; //obteniendo mes
-  let dia     = fecha.getDate(); //obteniendo dia
-  let ano     = fecha.getFullYear(); //obteniendo año
-  let hora    = fecha.getHours();
-  let minutos = fecha.getMinutes();
-  if(dia<10)
-    dia='0'+dia; //agrega cero si el menor de 10
-  if(mes<10)
-    mes='0'+mes //agrega cero si el menor de 10
-  document.getElementById('fecha').value=ano+"-"+mes+"-"+dia;
+window.onload = function() {
+    let fecha = new Date(); //Fecha actual
+    let mes = fecha.getMonth() + 1; //obteniendo mes
+    let dia = fecha.getDate(); //obteniendo dia
+    let ano = fecha.getFullYear(); //obteniendo año
+    let hora = fecha.getHours();
+    let minutos = fecha.getMinutes();
+    if (dia < 10)
+        dia = '0' + dia; //agrega cero si el menor de 10
+    if (mes < 10)
+        mes = '0' + mes //agrega cero si el menor de 10
+    document.getElementById('fecha').value = ano + "-" + mes + "-" + dia;
 
 }
 </script>
-    <!-- SCRIPT ADICIONALES -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- SCRIPT ADICIONALES -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-    <script type="text/javascript" src="<?= $base_url ?>js/controladores/vuelos/disponibilidad-app.js"></script>
-    <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
-    <!--fecha actual-->
+<script type="text/javascript" src="<?= $base_url ?>js/controladores/vuelos/disponibilidad-app.js"></script>
+<script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
+<!--fecha actual-->
 
 
-    <?php include_once '../../plantillas/cierre.php'; ?>
+<?php include_once '../../plantillas/cierre.php'; ?>
