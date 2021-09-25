@@ -367,12 +367,6 @@
                         <p>Preguntas Cerradas</p>
                      </a>
                   </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/Asesoria/Ingresos.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Ingresos Asesoría</p>
-                     </a>
-                  </li>
                </ul>
             </li>
             <!--TERMINA ASESORIA MIGRATORIA MENU-->
