@@ -49,7 +49,7 @@ $(document).ready(function () {
                 contentType: false,
 
             }).done(function (response) {
-                $('#loadingTipoViaje').hide();
+                $('#loadingCotizarVehiculo').hide();
                 guardarBitacora();
                 document.getElementById("register-cotizarv").reset();
 
