@@ -78,7 +78,7 @@ function inicializarValidaciones() {
 
 }
     function add_cerrada() {
-
+        
          $.ajax({
             url: URL_SERVIDOR+"Asesoria/preguntita",
             method: 'POST',

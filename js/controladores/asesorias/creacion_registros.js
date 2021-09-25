@@ -64,6 +64,9 @@
 
              $('#script').html('<script type="text/javascript" src="../../js/controladores/asesorias/insertar-pregunta-app.js">');
              $('#script').html('<script type="text/javascript" src="../../js/controladores/asesorias/combobox-ramas.js">');
+             $('#script').html('<script type="text/javascript" src="../../js/controladores/bitacora/bitacora.js">');
+            
+
          }
          if (selected == 'Cerradas') {
              $('#combo_rama').empty();
@@ -111,7 +114,9 @@
              $('.select2').select2();
              $('#script').html('<script type="text/javascript" src="../../js/controladores/asesorias/insertar-cerrada-app.js">');
              $('#script').html('<script type="text/javascript" src="../../js/controladores/asesorias/combobox-ramas.js">');
-         }
+             $('#script').html('<script type="text/javascript" src="../../js/controladores/bitacora/bitacora.js">');
+            
+            }
          $('#script').html('<script type="text/javascript" src="../../js/controladores/asesorias/agregar-opciones.js">');
 
          if (selected == 'Rama') {
