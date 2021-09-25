@@ -31,6 +31,8 @@ include_once '../../plantillas/cabecera.php';
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                         <li class="breadcrumb-item active">Tipos de Viaje Registrados</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaMostrarTipoViajes"> <i class="fas fa-question"></i></button>
                     </ol>
                 </div>
             </div>
@@ -149,12 +151,10 @@ include_once '../../plantillas/cabecera.php';
 </form>
 
 <?php 
- include_once './modal-tipoViaje.php';
- include_once '../../plantillas/footer.php';?>
-
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once './modal-tipoViaje.php';
+include_once '../../plantillas/footer.php';?>
 <!-- SCRIPT ADICIONALES -->
-
-
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
 <script src="<?= $base_url ?>js/controladores/vuelos/insertarTipoViaje.js"></script>

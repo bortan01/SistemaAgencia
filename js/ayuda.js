@@ -284,3 +284,39 @@ $("#botonAyudaAgendarCitas").click(function() {
       pdfcito.append('<iframe src="../../pdf/Registro_Cotizacion.pdf"></iframe>');
       $("#modal-ayuda").modal();
       });
+    $("#botonAyudaMostrarCotizacion").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Cotizacion.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaMostrarPromociones").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Promociones.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaMostrarAerolineas").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Aerolineas.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaMostrarClases").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Clases.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaMostrarTipoViajes").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Viajes.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+        

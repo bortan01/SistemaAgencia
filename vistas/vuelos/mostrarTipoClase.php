@@ -31,6 +31,8 @@ include_once '../../plantillas/cabecera.php';
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                         <li class="breadcrumb-item active">Tipos de Clases Registradas</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaMostrarClases"> <i class="fas fa-question"></i></button>
                     </ol>
                 </div>
             </div>
@@ -153,6 +155,7 @@ include_once '../../plantillas/cabecera.php';
 </form>
 
 <?php 
+include_once '../../vistas/ayuda/modal-ayuda.php';
  include_once './modal-tipoClase.php';
  include_once '../../plantillas/footer.php';?>
 
