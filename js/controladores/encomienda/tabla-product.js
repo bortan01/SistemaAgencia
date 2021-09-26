@@ -8,68 +8,19 @@ $(document).ready(function() {
 
     //BOTON MOSTRAR EL REPORTE
     $(document).on('click', '#btnRepoteActivo', function() {
+        window.location = `${URL_SISTEMA}vistas/encomiendas/ReporteActivo.php`;
 
-        $.ajax({
-            url: URL_SERVIDOR + "Producto/productosActivos",
-            method: "GET"
-        }).done(function(response) {
-            //para la tabla
-            $('#titulo').text(response.mensaje);
-            let tablaReporte = document.getElementById('factura_detalle');
-            response.product.forEach(event => {
-                let tr = crearFila(event);
-                tablaReporte.appendChild(tr);
-            });
-        }).fail(function(response) {
-
-        }).always(function(xhr, opts) {
-            $('#modal-cotizacion').modal('show');
-
-        });
 
     }); //fin de activos
 
     $(document).on('click', '#btnRepoteInactivo', function() {
 
-        $.ajax({
-            url: URL_SERVIDOR + "Producto/productosInactivos",
-            method: "GET"
-        }).done(function(response) {
-            //para la tabla
-            $('#titulo').text(response.mensaje);
-            let tablaReporte = document.getElementById('factura_detalle');
-            response.product.forEach(event => {
-                let tr = crearFila(event);
-                tablaReporte.appendChild(tr);
-            });
-        }).fail(function(response) {
+        window.location = `${URL_SISTEMA}vistas/encomiendas/ReporteInactivo.php`;
 
-        }).always(function(xhr, opts) {
-            $('#modal-cotizacion').modal('show');
-
-        });
 
     });
 
-    //*para crear la tabla
-    function crearFila(event) {
-        let tr = document.createElement('tr');
-        tr.appendChild(crearColumna(event.nombre_producto));
-        tr.appendChild(crearColumna(event.tarifa));
-        tr.appendChild(crearColumna(event.unidad_medida));
-        return tr;
-    }
-
-    function crearColumna(info) {
-        let td = document.createElement('td');
-        let label = document.createElement('label');
-        label.innerHTML = info;
-        label.style.fontWeight = "normal";
-        td.appendChild(label);
-        td.classList.add('textcenter');
-        return td;
-    }
-    //**********funciones para crear las tablas fin
+   
     //FIN DE MOSTRAMOS EL REPORTE
     //BOTON DE EDITAR
     $(document).on('click', '.btn-group .btn-primary', function() {

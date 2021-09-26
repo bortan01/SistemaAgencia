@@ -137,6 +137,8 @@
 <?php include_once '../../plantillas/footer.php'; ?>
 <!-- PONER SCRIPT ADICIONALES ACA -->
 <script type="text/javascript" src="<?= $base_url ?>js/controladores/asesorias/reporte.js"></script>
+<!--para los reportes-->
+<script type="text/javascript" src="<?= $base_url?>js/imprimir.js"></script>
 
 <!-- CIERRE DE ETIQUETAS -->
 <?php include_once '../../plantillas/cierre.php'; ?>
