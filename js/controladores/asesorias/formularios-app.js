@@ -13,7 +13,9 @@ $(document).ready(function () {
         let id_cita = data.id_cita;
         let nombre = data.nombre;
         let id_cliente = data.id_cliente;
-        window.location = `reporte.php?idCita=${id_cita}&cliente=${nombre}&idCliente=${id_cliente}`;
+        let correo = data.correo;
+        console.log(data)
+        window.location = `reporte.php?idCita=${id_cita}&cliente=${nombre}&idCliente=${id_cliente}&correo=${correo}`;
     });
     //FIN DE MOSTRAMOS EL REPORTE
 

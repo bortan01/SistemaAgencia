@@ -71,19 +71,19 @@
                                     <tr>
                                        <td class="info_cliente">
                                           <div class="round">
-                                             <span class="h3">Datos Generales</span>
+                                             <span class="h3">Datos de Cliente</span>
                                              <table class="datos_cliente">
                                                 <thead>
                                                    <tr>
                                                       <td>
                                                          <label style="width: 100%; padding-left: 10px;">
-                                                            Titulo del viaje:</label>
-                                                         <p name="titulo" id="titulo">
+                                                            Nombre de Cliente:</label>
+                                                         <p name="nombreCliente" id="nombreCliente">
                                                       </td>
                                                       <td>
                                                          <label style="width: 100%; padding-left: 10px;">
-                                                            Fecha del viaje:</label>
-                                                         <p name="fecha" id="fecha">
+                                                            Correo Electronico:</label>
+                                                         <p name="correoCliente" id="correoCliente">
                                                       </td>
                                                    </tr>
 

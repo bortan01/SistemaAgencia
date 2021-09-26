@@ -3,7 +3,12 @@ const urlParams = new URLSearchParams(valores);
 let ID_CITA = urlParams.get('idCita');
 let ID_CLIENTE = urlParams.get('idCliente');
 let cliente = urlParams.get('cliente');
+let correo = urlParams.get('correo');
 let listRamas = [];
+
+
+$('#nombreCliente').html(cliente);
+$('#correoCliente').html(correo)
 
 llamarRamas();
 
@@ -85,15 +90,16 @@ function crearRamas(listapreguntas) {
 
    function crearRespuestas(data, tabla) {
       // se valida si es una respuesta multiple
+      let tipo = data.tipo;
       if (data.mas_respuestas == 'Si') {
          data.respuesta.forEach(res => {
             let tr = document.createElement('tr');
-            tr.appendChild(crearLabelRespuesta(res));
+            tr.appendChild(crearLabelRespuesta(res, tipo));
             tabla.appendChild(tr);
          });
       } else {
          let tr = document.createElement('tr');
-         tr.appendChild(crearLabelRespuesta(data.respuesta));
+         tr.appendChild(crearLabelRespuesta(data.respuesta, tipo));
          tabla.appendChild(tr);
       }
       $('#loading').hide();
@@ -121,10 +127,15 @@ function crearRamas(listapreguntas) {
       td.classList.add('textcenter');
       return td;
    }
-   function crearLabelRespuesta(nombreRama) {
+   function crearLabelRespuesta(respuesta, tipo) {
+      if (tipo == 'date') {
+         respuesta = moment(respuesta).format('DD/MM/YYYY');
+      }
+
+
       let td = document.createElement('td');
       let label = document.createElement('label');
-      label.innerHTML = nombreRama;
+      label.innerHTML = respuesta;
       label.style.fontWeight = "normal";
       label.style.padding = '3px';
       td.appendChild(label);

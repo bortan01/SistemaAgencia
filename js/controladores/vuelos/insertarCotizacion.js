@@ -40,6 +40,7 @@ $(document).ready(function () {
             form.append("detallePasajero", document.getElementById("detalleBebe").value);
             form.append("opc_avanzadas", arregloOpciones);
 
+            $('#loadingCotizarVehiculo').show();
             $.ajax({
                 url: URL_SERVIDOR + "cotizarVuelo/cotizacionv",
                 method: 'POST',
