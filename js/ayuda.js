@@ -347,3 +347,10 @@ $("#botonAyudaAgendarCitas").click(function() {
       pdfcito.append('<iframe src="../../pdf/Registro_Vehiculo.pdf"></iframe>');
       $("#modal-ayuda").modal();
       });
+    $("#botonAyudaRegistroMantenimiento").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Registro_Mantenimiento.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });

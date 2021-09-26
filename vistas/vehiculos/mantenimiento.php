@@ -21,12 +21,14 @@ include_once '../../plantillas/cabecera.php';
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Mantenimiento de Vehiculos</h1>
+               <h1>Mantenimiento de Vehículo</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Mantenimiento</li>
+                  <li class="breadcrumb-item active">Mantenimiento de Vehículo</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                        id="botonAyudaRegistroMantenimiento"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -56,7 +58,7 @@ include_once '../../plantillas/cabecera.php';
                               <div class="row">
                                  <div class="col-sm-8">
                                     <div class="form-group multiple-form-group input-group">
-                                       <label>Vehiculo</label>
+                                       <label>Vehículo</label>
                                        <div class="input-group">
                                           <select name="id_placa" id="id_placa"
                                              class="select2 select2-hidden-accessible form-control"
@@ -122,7 +124,7 @@ include_once '../../plantillas/cabecera.php';
                                           autocomplete="off">
                                     </div>
                                  </div>
-                                 <div class="col-sm-1">
+                                 <div class="col-sm-0.8">
                                     <br>
                                     <span class="input-group-btn">
                                        <button type="button" class="btn btn-success btn-add" name="agregarServicio"
@@ -152,7 +154,7 @@ include_once '../../plantillas/cabecera.php';
                                           placeholder="Insertar Nuevo Pieza" autocomplete="off">
                                     </div>
                                  </div>
-                                 <div class="col-sm-1">
+                                 <div class="col-sm-0.8">
                                     <br>
                                     <span class="input-group-btn">
                                        <button type="button" class="btn btn-success btn-add" name="agregarPieza"
@@ -206,7 +208,8 @@ include_once '../../plantillas/cabecera.php';
 </div>
 
 <?php
-  include_once '../../plantillas/footer.php';
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../../plantillas/footer.php';
 ?>
 
 <script>
