@@ -303,6 +303,7 @@ $(document).ready(function() {
                 //en esa funcion se va ha validar sengun el estado de la encomienda
                 $('#btn-informacion').prop('disabled', true);
                 $('#entregar-div').empty();
+                location.reload();
             });
 
         }).fail(function(response) {
