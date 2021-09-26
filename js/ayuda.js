@@ -319,4 +319,31 @@ $("#botonAyudaAgendarCitas").click(function() {
       pdfcito.append('<iframe src="../../pdf/Mostrar_Viajes.pdf"></iframe>');
       $("#modal-ayuda").modal();
       });
-        
+    $("#botonAyudaMostrarFlota").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Flota.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaReservaVehiculo").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Reserva_Vehiculo.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaCotizarVehiculo").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Registro_CotizacionVehiculo.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaRegistroVehiculo").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Registro_Vehiculo.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });

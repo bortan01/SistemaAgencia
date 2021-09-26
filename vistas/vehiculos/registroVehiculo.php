@@ -29,12 +29,14 @@ include_once '../../plantillas/cabecera.php';
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Registro de Vehículos</h1>
+               <h1>Registro de Vehículo</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Registro</li>
+                  <li class="breadcrumb-item active">Registro de Vehículo</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                        id="botonAyudaRegistroVehiculo"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -294,8 +296,9 @@ include_once '../../plantillas/cabecera.php';
 <!-- END timeline item -->
 
 <?php
-  include_once './modal-transmision.php';
-  include_once '../../plantillas/footer.php';
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once './modal-transmision.php';
+include_once '../../plantillas/footer.php';
 ?>
 
 <script>

@@ -38,12 +38,14 @@ include_once '../../plantillas/cabecera.php';
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Cotización de Vehiculo</h1>
+               <h1>Cotización de Vehículo</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Cotización de Vehiculo</li>
+                  <li class="breadcrumb-item active">Cotización de Vehículo</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                        id="botonAyudaCotizarVehiculo"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -116,9 +118,9 @@ include_once '../../plantillas/cabecera.php';
 
                               <div class="col-sm-12">
                                  <div class="form-group">
-                                    <label>Caracteristicas</label>
+                                    <label>Características</label>
                                     <textarea class="textarea" name="caracteristicas" id="caracteristicas"
-                                       placeholder="Digite caracteristicas del Vehiculo"
+                                       placeholder="Digite características del Vehículo"
                                        style="width: 100%; height: 50px; font-size: 16px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
                                  </div>
@@ -198,9 +200,10 @@ include_once '../../plantillas/cabecera.php';
 </div>
 
 <?php
-  include_once '../cliente/modalCliente.php';
-  include_once './modal-modelo.php';
-  include_once '../../plantillas/footer.php';
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once '../cliente/modalCliente.php';
+include_once './modal-modelo.php';
+include_once '../../plantillas/footer.php';
 ?>
 
 <script>

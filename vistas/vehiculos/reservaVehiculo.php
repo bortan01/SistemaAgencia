@@ -15,12 +15,14 @@ include_once '../../plantillas/barra_lateral.php';
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Reserva de Vehiculo</h1>
+               <h1>Reserva de Vehículo</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Reservar</li>
+                  <li class="breadcrumb-item active">Reserva de Vehículo</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                        id="botonAyudaReservaVehiculo"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -219,6 +221,7 @@ include_once '../../plantillas/barra_lateral.php';
 </div>
 
 <?php
+include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once '../cliente/modalCliente.php';
 include_once '../../plantillas/footer.php';
 ?>
