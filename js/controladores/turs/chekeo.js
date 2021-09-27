@@ -5,6 +5,8 @@ $(document).ready(function () {
    let ID_TOUR = urlParams.get('viaje');
    let ID_DETALLE;
    inicializarTabla();
+   $('#loadingModal').hide();
+
 
    //BOTON EDITAR LA CHEQUEO
    $(document).on('click', '.btn-group .btn-success, .btn-group .btn-secondary', function () {
@@ -83,6 +85,7 @@ $(document).ready(function () {
                if (json) {
                   $('#loading').hide();
                   json.reservas.forEach(reserva => {
+                     console.log(reserva)
                      reserva.boton = crearBoton(reserva.chequeo);
                      reserva.label_asiento = crearLabel(reserva.label_asiento, reserva.cantidad_asientos);
                   });
@@ -109,6 +112,7 @@ $(document).ready(function () {
       form.append("id_detalle", ID_DETALLE);
       form.append("chequeo", JSON.stringify(chequeo));
       //OCUPAR ESTA CONFIGURACION CUANDO SE ENVIAEN ARCHIVOS(FOTOS-IMAGENES)
+      $('#loadingModal').show();
       $.ajax({
          url: URL_SERVIDOR + "DetalleTour/updateChequeo",
          method: "POST",
@@ -120,6 +124,7 @@ $(document).ready(function () {
       }).done(function (response) {
          let respuestaDecodificada = JSON.parse(response);
          $('#modal-chekeo').modal('hide');
+         $('#loadingModal').hide();
          const Toast = Swal.mixin();
          Toast.fire({
             title: 'Exito...',
@@ -131,6 +136,7 @@ $(document).ready(function () {
       }).fail(function (response) {
          //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
          console.log(response);
+         $('#loadingModal').hide();
          const Toast = Swal.mixin();
          Toast.fire({
             title: 'Oops...',

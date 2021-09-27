@@ -78,7 +78,11 @@
          <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
 
-               <div class="">
+               <div class="overlay-wrapper">
+                  <div id="loadingModal" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                     <div class="text-bold pt-2">Cargando...
+                     </div>
+                  </div>
                   <div class="modal-header">
                      <h4 class="modal-title">Pre-Chequeo</h4>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">

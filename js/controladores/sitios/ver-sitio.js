@@ -10,31 +10,25 @@ $(document).ready(function () {
 
     //BOTON DE EDITAR
     $(document).on('click', '.btn-group .btn-primary', function () {
-        $('#loadingActualizar').show();
-        idSeleccionado = $(this).attr("name");
+        $('#loadingActualizar').hide();
+        let fila = $(this).closest("tr");
+        let data = tabla.row(fila).data();
+        console.log(data);
+        idSeleccionado = data.id_sitio_turistico;
 
-        $.ajax({
-            url: `${URL_SERVIDOR}SitioTuristico/show?id_sitio_turistico=${idSeleccionado}&sitio_turistico.estado=1`,
-            method: "GET"
-        }).done(function (response) {
-            let lista = response.sitios;
-            if (lista) {
-                console.log(lista);
-                //MANDALOS LOS VALORES AL MODAL
-                document.getElementById("nombre").value = lista[0].nombre_sitio;
-                document.getElementById("precio_sitio").value = lista[0].precio_sitio;
-                document.getElementById("descripcion").value = lista[0].descripcion_sitio;
-                document.getElementById("ComboTipo").value = response.sitios[0].id_tipo_sitio;
-                $('#ComboTipo').trigger('change');
-                document.getElementById("contacto_servicio").value = response.sitios[0].id_contacto;
-                $('#contacto_servicio').trigger('change');
-            }
-        }).fail(function (response) {
-            console.log(response);
-        }).always(function (xhr, opts) {
-            $('#modal-editar').modal('show');
-            $('#loadingActualizar').hide();
-        });;
+
+        document.getElementById("nombre").value = data.nombre_sitio;
+        document.getElementById("precio_sitio").value = data.precio_sitio;
+        document.getElementById("descripcion").value = data.descripcion_sitio;
+        document.getElementById("ComboTipo").value = data.id_tipo_sitio;
+        document.getElementById("contacto_servicio").value = data.id_contacto;
+        $('#ComboTipo').trigger('change');
+        $('#contacto_servicio').trigger('change');
+        $('#modal-editar').modal('show');
+
+
+
+
     });
     //BOTON EDITAR LA FOTO
     $(document).on('click', '.btn-group .btn-warning', function () {
@@ -287,12 +281,13 @@ $(document).ready(function () {
             "nombre_sitio": document.getElementById("nombre").value,
             // "longitud": myCoordnada[1],
             // "latitud": myCoordnada[0],
-            "descripcion": document.getElementById("descripcion").value,
+            "descripcion_sitio": document.getElementById("descripcion").value,
             "tipo": document.getElementById("ComboTipo").value,
             "informacion_contacto": document.getElementById("contacto_servicio").value,
             "precio_sitio": document.getElementById("precio_sitio").value,
 
         };
+        console.log(data);
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO
         $.ajax({
             url: URL_SERVIDOR + "SitioTuristico/update",

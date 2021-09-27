@@ -55,7 +55,7 @@
                                              <tr style="vertical-align: top;">
                                                 <td style="text-align: center;">
                                                    <label style="width: 100%; padding-left: 10px;">Nombre del
-                                                      Tour/Paquete:</label>
+                                                      Tour:</label>
                                                    <p name="nombre" id="nombre"></p>
                                                 </td>
                                              </tr>
