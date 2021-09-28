@@ -18,7 +18,7 @@
                   </div>
                </div>
                <div class="modal-header">
-                  <h4 class="modal-title">Registrar Cliente</h4>
+                  <h4 class="modal-title">Registrar Usuario</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                   </button>
@@ -27,7 +27,7 @@
                   <div class="row">
                      <div class="col-sm-6">
                         <div class="form-group">
-                           <label>Nombre de Cliente</label>
+                           <label>Nombre de Usuario</label>
                            <div class="input-group">
                               <input type="text" class="form-control" name="nombreCliente" id="nombreCliente">
                            </div>

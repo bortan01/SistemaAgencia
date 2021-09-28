@@ -37,16 +37,18 @@
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/registroCliente.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Registro de Cliente</p>
+                        <p>Registro de Usuario</p>
                      </a>
                   </li>
                   <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/catalogoCliente.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Catálogo de Clientes</p>
+                        <p>Catálogo de Usuarios</p>
                      </a>
                   </li>
+                  <?php endif; ?>
+                  <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR') : ?>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/bitacoraUsuarios.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
@@ -514,6 +516,7 @@
             <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-header">CONTROL</li>
 
+            <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR') : ?>
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-hand-holding-usd"></i>
@@ -530,9 +533,8 @@
                      </a>
                   </li>
                </ul>
-
             </li>
-
+            <?php endif; ?>
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-address-card"></i>
