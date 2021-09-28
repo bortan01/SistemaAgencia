@@ -534,7 +534,7 @@
                   </li>
                </ul>
             </li>
-            <?php endif; ?>
+           
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-address-card"></i>
@@ -551,8 +551,8 @@
                      </a>
                   </li>
                </ul>
-
             </li>
+            <?php endif; ?>
             <?php endif; ?>
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
