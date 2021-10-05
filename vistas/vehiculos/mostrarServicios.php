@@ -30,6 +30,8 @@ include_once '../../plantillas/cabecera.php'; ?>
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                   <li class="breadcrumb-item active">Servicios Adicionales</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                        id="botonAyudaMostrarServicios"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -160,21 +162,12 @@ include_once '../../plantillas/cabecera.php'; ?>
    <!-- End Modal EDITAR-->
 </form>
 
-
-
-
-<!-- /.MODALES DE BOTONES PARA INSERTAR -->
-
-<!-- /.Cierre de MODAL  -->
-
-
 <?php 
- include_once './modal-servicio.php';
- include_once '../../plantillas/footer.php';?>
+include_once '../../vistas/ayuda/modal-ayuda.php';
+include_once './modal-servicio.php';
+include_once '../../plantillas/footer.php';?>
 
 <!-- SCRIPT ADICIONALES -->
-
-
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
 

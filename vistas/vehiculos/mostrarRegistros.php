@@ -43,6 +43,8 @@ include_once '../../plantillas/cabecera.php';
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                         <li class="breadcrumb-item active">Vehículos Registrados</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                        id="botonAyudaModificarFlota"> <i class="fas fa-question"></i></button>
                     </ol>
                 </div>
             </div>
@@ -84,9 +86,8 @@ include_once '../../plantillas/cabecera.php';
                                                 <th>Modelo</th>
                                                 <th>Placa</th>
                                                 <th>Año</th>
-                                                <th>Precio</th>
+                                                <th>Precio ($)</th>
                                                 <th>Combustible</th>
-
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -316,6 +317,7 @@ include_once '../../plantillas/cabecera.php';
 
 
 <?php  
+include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once './modal-marca.php';
 include_once './modal-modelo.php';
 include_once './modal-categoria.php';

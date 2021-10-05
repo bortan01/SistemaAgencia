@@ -354,3 +354,31 @@ $("#botonAyudaAgendarCitas").click(function() {
       pdfcito.append('<iframe src="../../pdf/Registro_Mantenimiento.pdf"></iframe>');
       $("#modal-ayuda").modal();
       });
+    $("#botonAyudaModificarFlota").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Modificar_Flota.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+        });
+    $("#botonAyudaVerMantenimientos").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Mantenimientos.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaVerCotizaciones").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_Cotizaciones.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
+    $("#botonAyudaMostrarServicios").click(function() {
+      document.getElementById("register-ayuda").reset();
+      $('#pdf').empty();
+      pdfcito=$('#pdf');
+      pdfcito.append('<iframe src="../../pdf/Mostrar_ServiciosA.pdf"></iframe>');
+      $("#modal-ayuda").modal();
+      });
