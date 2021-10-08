@@ -22,8 +22,13 @@ $(document).ready(function () {
     //BOTON EDITAR LA FOTO
     $(document).on('click', '.btn-group .btn-warning', function () {
         $('#modal-imagenesEncomienda').modal('show');
-        let identificador = $(this).attr("name");
+        let fila = $(this).closest("tr");
+        let data = tabla.row(fila).data();
+
+        let identificador = data.id_cliente;
         let nombreTabla = 'pasaportes';
+
+
         let informacionAdicional = { tipo: nombreTabla, identificador: identificador };
         let urlFotos = [];
         let infoFotos = [];
@@ -34,7 +39,6 @@ $(document).ready(function () {
 
         }).done(function (response) {
             //REST_Controller::HTTP_OK
-            console.log(URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador);
             response.forEach(element => {
                 let informacion = {
                     url: URL_SERVIDOR + "Imagen/delete",
