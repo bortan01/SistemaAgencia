@@ -40,7 +40,7 @@
                               <option value="14:00">14:00</option>
                               <option value="15:00">15:00</option>
                            </select>
-                           <input type="hidden" name="estado" id="estado" value="Enviado">
+                           <input type="hidden" name="dia" id="dia">
 
                         </div>
                         <input type="hidden" class="form-control" id="txtTitulo" name="title" value="Asesoria" />

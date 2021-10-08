@@ -116,6 +116,7 @@ function obtenerInfo() {
     form.append("id_cliente", document.getElementById("comboUsuario").value);
     form.append("start", document.getElementById("time").value);
     form.append("title", document.getElementById("txtTitulo").value);
+    form.append("dia", document.getElementById("dia").value);
 
 
     return form;

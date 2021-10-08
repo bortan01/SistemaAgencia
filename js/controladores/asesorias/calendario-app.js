@@ -32,11 +32,11 @@ $(document).ready(function () {
           showConfirmButton: true,
         });
       } else {
-
         if (select >= hoy) {
 
           $('#modal_registro').modal();
           $('#txtFecha').val(date.format("DD-MM-YYYY"));
+          $('#dia').val(nombreDia);
         } else {
 
           const Toast = Swal.mixin();
@@ -56,8 +56,10 @@ $(document).ready(function () {
 
 
     },
-    events: URL_SERVIDOR + 'Cita/Cita', //aqui pongo la api que e hecho
+    events: URL_SERVIDOR + 'Cita/Cita',
+     //aqui pongo la api que e hecho
     //http://localhost/restful/index.php/Calendario/calendario
+   
     eventClick: function (calEvent, jsEvent, view) {
 
       if (calEvent.estado_cita == 0) {
@@ -112,6 +114,7 @@ $(document).ready(function () {
           });
           $('#calendar').fullCalendar('refetchEvents');//refrescar el calendario
         } else {
+
           if (select >= hoy) {
 
             //***********codigo de procedimientos
