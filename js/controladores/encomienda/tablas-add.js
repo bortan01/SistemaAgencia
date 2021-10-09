@@ -134,22 +134,24 @@ $(document).ready(function () {
     //BOTON DE GUARDAR 
     $(document).on('click', '#btnguardar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
-       // let form = $("#datosOrigen-form");
+        let form = $("#encomiendass-form");
      
-        //if (form.valid()) {
-           
+        if (form.valid()) {
                 guardar();
-            
-
-      //  }
+       }
     });
 
     function inicializarValidacionesGuardar() {
-        $('#datosOrigen-form').validate({
+        $('#encomiendass-form').validate({
 
             rules: {
-                id_usuario: {
+                comboUsuario: {
                     required: true
+                },
+                telefono:{
+                    required: true,
+                    number: true,
+                    
                 },
                 ciudad: {
                     required: true,
@@ -158,45 +160,12 @@ $(document).ready(function () {
                 codigo: {
                     required: true,
                     minlength: 2
-                }
-            },
-            messages: {
-                id_usuario: {
-                    required: "Seleccione el cliente"
-                },
-                ciudad: {
-                    required: "Digite la ciudad",
-                    minlength: "La ciudad debe de tener una longitud minima de 7"
-                },
-                codigo: {
-                    required: "Digite el Código postal",
-                    minlength: "El Código debe de tener una longitud minima de 2"
-                }
-            },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight: function (element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-
-            }
-        });
-
-        $('#datosDestino-form').validate({
-
-            rules: {
-                cliente_des: {
+                },    cliente_des: {
                     required: true,
                     minlength: 10
                 },
                 telefono_des: {
-                    required: true,
-                    minlength: 9
+                    required: true
                 },
                 ciudad_des: {
                     required: true,
@@ -213,17 +182,29 @@ $(document).ready(function () {
                 direccion_alterna: {
                     required: true,
                     minlength: 10
+                },
+                fotos: {
+                    required: true
                 }
             },
             messages: {
-                cliente_des: {
+                id_usuario: {
+                    required: "Seleccione el cliente"
+                },
+                ciudad: {
+                    required: "Digite la ciudad",
+                    minlength: "La ciudad debe de tener una longitud minima de 7"
+                },
+                codigo: {
+                    required: "Digite el Código postal",
+                    minlength: "El Código debe de tener una longitud minima de 2"
+                },
+                 cliente_des: {
                     required: "Digite el nombre del cliente destino",
                     minlength: "El nombre del cliente debe de tener una longitud minima de 10"
                 },
                 telefono_des: {
-                    required: "Digite el Teléfono",
-                    minlength: "El Teléfono debe de tener una longitud minima de 9"
-
+                    required: "Digite el Teléfono"
                 },
                 ciudad_des: {
                     required: "Digite la ciudad",
@@ -240,6 +221,9 @@ $(document).ready(function () {
                 direccion_alterna: {
                     required: "Digite la dirección alterna",
                     minlength: "La dirección alterna debe de tener una longitud minima de 10"
+                },
+                fotos: {
+                    required: "Introduzca la imagen de la factura!"
                 }
             },
             errorElement: 'span',
@@ -255,7 +239,6 @@ $(document).ready(function () {
 
             }
         });
-
     }
 
     function guardar() {
@@ -281,6 +264,7 @@ $(document).ready(function () {
             //console.log(response);
             $("#encomiendass-form").trigger("reset");
             $('#comboUsuario').val('').trigger('change');
+            $('#id_producto').val('').trigger('change');
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
@@ -292,7 +276,8 @@ $(document).ready(function () {
                 guardarBitacora();
                // location.reload();
                // $("#encomienda-form").trigger("reset");
-               // resetMiTable();
+                resetMiTable();
+                comisionCargada();
                 
             });
 
@@ -363,6 +348,27 @@ $(document).ready(function () {
         return form;
 
     }
+//ME BORRA LA COMISIÓN CUANDO LE DOY RESET AL FORMULARIO VAMOS A VER SI FUNCIONA CON ESTO SOLVERTAR EL PROBLEMA
+        function comisionCargada(){
+            $.ajax({
+                type: "GET",
+                url: URL_SERVIDOR+"Producto/productos",
+                dataType: "json",
+                success: function(data) {
+                ///vamos a cargar la comision de la agencia
+                $.each(data.comision, function(i,index) {
+                $("#porcenaje").val(index.porcentaje);  
+    
+                  });
+                },
+                error: function(err) {
+                    
+                }
+            });
+        //**************************vamos a cargar el costo
+        }
+
+//FIN DE COLOCAR DE NUEVO LA COMISIÓN    
 
     function resetMiTable() {
         contadorTabla = 0;
