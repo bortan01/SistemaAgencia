@@ -290,7 +290,7 @@ $(document).ready(function () {
             Toast.fire({
                 title: 'Exito...',
                 icon: 'success',
-                text: "Registro Guardado",
+                text: "Registro insertado con exito",
                 showConfirmButton: true,
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA 
