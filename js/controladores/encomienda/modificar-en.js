@@ -42,6 +42,7 @@ $(document).ready(function () {
 
 
     function mostrarDatos() {
+        let redondiar=0;
         $.ajax({
             url: URL_SERVIDOR + 'Encomienda/encomiendaModificar?id_encomienda=' + ID_ENCOMIENDA,
             method: "GET"
@@ -53,8 +54,9 @@ $(document).ready(function () {
                 $('#ciudad').val(index.ciudad_origen);
                 $('#codigo').val(index.codigo_postal_origen);
                 $('#fecha').val(index.fecha);
+                redondiar=(parseFloat(index.total_comision).toFixed(2));
                 $('#total').text(index.total_encomienda);
-                $('#comision').text(index.total_comision);
+                $('#comision').text(redondiar);
                 $('#totalCliente').text(index.total_cliente);
                 $('#id_encomienda').val(ID_ENCOMIENDA);
                 TOTAL= index.total_encomienda;
