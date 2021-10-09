@@ -632,8 +632,9 @@ $(document).ready(function () {
             $.ajax({
                 url: URL_SERVIDOR + "Cita/updateCobro",
                 method: "POST",
-                data :{"id_cita": ID_CITA, "cobros":cobros}
+                data: { "id_cita": ID_CITA, "cobros": cobros }
             }).done(function (response) {
+                cobros = document.getElementById("cobroAsesoria").value = "";
                 //MANDALOS LOS VALORES AL MODAL
                 Toast.fire({
                     title: 'Exito...',
