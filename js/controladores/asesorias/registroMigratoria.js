@@ -95,9 +95,13 @@ $(document).ready(function () {
             if (tabSeleccionado == 'custom-tabs-one-galeria') {
                 // si es el tab de la galeria 
                 guardarPasaportes();
+            } else if (tabSeleccionado == undefined) {
+                // si se ha seleccionada el tab de cobros 
+                guardarCostoAsesoria();
             } else {
-                // si es un tab de preguntas
+                // los tab generados dinamicamente
                 guardar();
+
             }
         } else {
             toastr.error('Verifique los campos de selección');
@@ -133,6 +137,7 @@ $(document).ready(function () {
 
                 });
                 crearTabGaleria($select, $nuevo);
+                crearTabCobros($select, $nuevo);
                 llamarPreguntita();
                 $('#loading').hide();
             },
@@ -595,6 +600,57 @@ $(document).ready(function () {
             uploadAsync: false,
             showClose: false,
         });
+
+    }
+    function crearTabCobros($select, $nuevo) {
+        $select.append(`
+        <li class="nav-item">
+            <a class="nav-link" id="custom-tabs-one-home-money " data-toggle="pill" 
+                href="#custom-tabs-one-money" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">
+                Cobro
+            </a>
+        </li>       
+        `);
+
+        $nuevo.append(`
+        <div class="tab-pane fade" id="custom-tabs-one-money" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+            <label>Cobros de asesoria</label>
+            <input type="number" min="1" name="cobroAsesoria" id="cobroAsesoria" placeholder="Ingrese el cobro de la asesoria" class="form-control input-simple" style="text-align: center; width: 100%; margin-top: 20px;">
+        </div>`);
+    }
+    function guardarCostoAsesoria() {
+        const Toast = Swal.mixin();
+        let cobros = document.getElementById("cobroAsesoria").value;
+        if (cobros == "") {
+            Toast.fire({
+                title: 'Error',
+                icon: 'error',
+                text: 'No ha ingresado el costo del cobro',
+                showConfirmButton: true,
+            });
+        } else {
+            $.ajax({
+                url: URL_SERVIDOR + "Cita/updateCobro",
+                method: "POST",
+                data :{"id_cita": ID_CITA, "cobros":cobros}
+            }).done(function (response) {
+                //MANDALOS LOS VALORES AL MODAL
+                Toast.fire({
+                    title: 'Exito...',
+                    icon: 'success',
+                    text: 'Cobro Guardado Exitosamente',
+                    showConfirmButton: true,
+                })
+
+            }).fail(function (response) {
+                Toast.fire({
+                    title: 'Error',
+                    icon: 'error',
+                    text: 'Intente más tarde por favor',
+                    showConfirmButton: true,
+                });
+            });
+        }
 
     }
 });
