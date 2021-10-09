@@ -37,6 +37,7 @@ include_once '../session/isEmpleado.php';
 
     <!-- Main content -->
     <section class="content">
+    <form id="encomiendass-form" name="register-form" onsubmit="return false">
         <div class="row">
             <div class="col-md-12">
 
@@ -52,7 +53,6 @@ include_once '../session/isEmpleado.php';
                             <div class="timeline-item">
                                 <h3 class="timeline-header"><a href="#">Datos de Origen</a></h3>
                                 <div class="timeline-body">
-                                    <form id="datosOrigen-form" name="register-form" onsubmit="return false">
                                         <div class="row">
                                             <div class="col-sm-5">
                                                 <div class="form-group multiple-form-group input-group">
@@ -107,19 +107,18 @@ include_once '../session/isEmpleado.php';
                                         </div>
                                         <div>
                                         </div>
-                                    </form>
+                                   
                                 </div>
                             </div>
                         </div>
                         <!-- END timeline item -->
                         <!-- timeline item -->
-                        <div id="formulario">
+                        <div>
                             <i class="fas fa-people-carry bg-red"></i>
                             <div class="timeline-item">
                                 <h3 class="timeline-header"><a href="#">Datos de Destino</a></h3>
                                 <div class="timeline-body">
-                                    <form id="datosDestino-form" name="register-form" onsubmit="return false">
-                                        <div class="row">
+                                     <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group multiple-form-group input-group">
                                                     <label>Nombre Completo</label>
@@ -170,7 +169,7 @@ include_once '../session/isEmpleado.php';
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                
                                 </div>
                             </div>
                         </div>
@@ -333,6 +332,7 @@ include_once '../session/isEmpleado.php';
                 <!-- END timeline item -->
             </div>
         </div>
+    </form>
     </section>
     <!-- Modal mostrar-->
     <div class="modal fade" id="add-producto">

@@ -41,7 +41,7 @@ $(document).ready(function () {
         //alert(cantidad);
         if (!cantidad) {
             errors = { cantidad: "Digite la cantidad" };
-            $("#encomienda-form").validate().showErrors(errors);
+            $("#encomiendass-form").validate().showErrors(errors);
         } else {
 
             let id = document.getElementById("id_producto").value;
@@ -134,16 +134,14 @@ $(document).ready(function () {
     //BOTON DE GUARDAR 
     $(document).on('click', '#btnguardar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
-        let form = $("#datosOrigen-form");
-        let form1 = $("#datosDestino-form");
-        form1.validate();
-        form.validate();
-        if (form.valid()) {
-            if (form1.valid()) {
+       // let form = $("#datosOrigen-form");
+     
+        //if (form.valid()) {
+           
                 guardar();
-            }
+            
 
-        }
+      //  }
     });
 
     function inicializarValidacionesGuardar() {
@@ -281,11 +279,8 @@ $(document).ready(function () {
             contentType: false,
         }).done(function (response) {
             //console.log(response);
-            document.getElementById("datosOrigen-form").reset();
-            document.getElementById("datosDestino-form").reset();
+            $("#encomiendass-form").trigger("reset");
             $('#comboUsuario').val('').trigger('change');
-            $('#id_producto').val('').trigger('change');
-
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
@@ -295,7 +290,7 @@ $(document).ready(function () {
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA 
                 guardarBitacora();
-                location.reload();
+               // location.reload();
                // $("#encomienda-form").trigger("reset");
                // resetMiTable();
                 
