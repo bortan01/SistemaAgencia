@@ -34,6 +34,7 @@
                      <i class="fas fa-angle-left right"></i>
                   </p>
                </a>
+               <!--  -->
                <ul class="nav nav-treeview">
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/registroCliente.php" class="nav-link">
@@ -47,7 +48,6 @@
                         <p>Catálogo de Usuarios</p>
                      </a>
                   </li>
-                  <?php endif; ?>
                   <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR') : ?>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/bitacoraUsuarios.php" class="nav-link">
@@ -55,7 +55,9 @@
                         <p>Bitácora de Usuarios</p>
                      </a>
                   </li>
+                  <?php endif; ?>
                </ul>
+               <!--  -->
             </li>
             <?php endif; ?>
             <li class="nav-header">SERVICIOS</li>
