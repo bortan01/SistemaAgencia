@@ -81,7 +81,7 @@ function login() {
     }).done(function (resp) {
       //NUESTRO SERVICIO RETORNARA UN TOKEN QUE ES EL
       // QUE OCUPAREMOS PARA MANEJAR LA SESION DEL USUARIO
-          if (!resp.err) {
+      if (!resp.err) {
         if (resp.nivel == 'EMPLEADO' || resp.nivel == 'ADMINISTRADOR' || resp.nivel == 'RENTA CARS') {
           //aqui estamos guardando la foto de perfil del usuario          
           let token = resp.token;
@@ -90,7 +90,7 @@ function login() {
             .signInWithCustomToken(token)
             .then(function (data) {
               initPreferencias(resp);
-           
+
               if (data.user.uid != "") {
                 console.log(resp);
                 $.post("vistas/session/start.php", { action: "start", nivel: resp.nivel },
@@ -141,6 +141,21 @@ function login() {
             title: 'Oops...',
             icon: 'error',
             text: 'Correo electrónico no valido',
+            showConfirmButton: true,
+          });
+        }
+        else if (resp.responseJSON.mensaje == 'INVALID_PASSWORD') {
+          Toast.fire({
+            title: 'Oops...',
+            icon: 'error',
+            text: 'Contraseña Incorrecta',
+            showConfirmButton: true,
+          });
+        } else {
+          Toast.fire({
+            title: 'Oops...',
+            icon: 'error',
+            text: 'Credenciales no validas',
             showConfirmButton: true,
           });
         }

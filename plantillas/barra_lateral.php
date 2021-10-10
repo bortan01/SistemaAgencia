@@ -25,6 +25,7 @@
          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
+            <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-users"></i>
@@ -40,7 +41,6 @@
                         <p>Registro de Usuario</p>
                      </a>
                   </li>
-                  <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/catalogoCliente.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
@@ -55,9 +55,9 @@
                         <p>Bitácora de Usuarios</p>
                      </a>
                   </li>
-                  <?php endif; ?>
                </ul>
             </li>
+            <?php endif; ?>
             <li class="nav-header">SERVICIOS</li>
             <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR' || $_SESSION["nivelA"] == 'EMPLEADO') : ?>
             <li class="nav-item has-treeview">
@@ -534,7 +534,7 @@
                   </li>
                </ul>
             </li>
-           
+
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-address-card"></i>
