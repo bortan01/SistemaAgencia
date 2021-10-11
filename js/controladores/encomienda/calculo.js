@@ -195,7 +195,7 @@ $(document).ready(function () {
         let porcentaje = (parseInt($('#porcenaje').val())) / 100;
         COMISION = porcentaje * TOTAL;
         $('#comision').empty();
-        $('#comision').text("$" + COMISION);
+        $('#comision').text("$" + (COMISION).toFixed(2));
     }
     function modificarTotalCliente() {
 

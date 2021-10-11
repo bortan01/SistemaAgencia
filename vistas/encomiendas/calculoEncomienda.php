@@ -77,7 +77,7 @@ include_once '../session/isEmpleado.php';
                                                 <div class="input-group">
                                                     <input disabled="true" type="text" name="telefono" id="telefono"
                                                         class="form-control" autocomplete="off"
-                                                        placeholder="(503)7232-2345">
+                                                        placeholder="(+503)7232-2345">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
@@ -234,7 +234,7 @@ include_once '../session/isEmpleado.php';
                                                         <label>Comision de Agencia (%)</label>
                                                         <div class="input-group">
                                                             <input id="porcenaje" type="number" min="1" value="1"
-                                                                class="form-control" id="porcenaje">
+                                                                class="form-control" id="porcenaje" disabled>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -612,7 +612,7 @@ $(document).on('click', '#producto-add', function() {
 //para la mascara del celular
 $(":input").inputmask();
 $("#telefono_des").inputmask({
-    "mask": "(999) 9999-9999"
+    "mask": "(+999) 9999-9999"
 });
 </script>
 
