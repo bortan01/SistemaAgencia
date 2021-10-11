@@ -441,7 +441,13 @@ $(document).on('click', '#comision-add', function() {
    $('#loadingActualizar1').hide();
 });
 </script>
-
+<script>
+    //para la mascara del celular
+    $(":input").inputmask();
+    $("#telefono_des").inputmask({
+        "mask": "(+999) 9999-9999"
+    });
+</script>
 
 <!--alerta del sistema-->
 <script src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
