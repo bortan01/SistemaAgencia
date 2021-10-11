@@ -239,11 +239,6 @@ $(document).ready(function () {
         $('#encomiendass-form').validate({
 
             rules: {
-                telefono:{
-                    required: true,
-                    number: true,
-                    
-                },
                 ciudad: {
                     required: true,
                     minlength: 7
@@ -309,9 +304,6 @@ $(document).ready(function () {
                 direccion_alterna: {
                     required: "Digite la dirección alterna",
                     minlength: "La dirección alterna debe de tener una longitud minima de 10"
-                },
-                fotos: {
-                    required: "Introduzca la imagen de la factura!"
                 }
             },
             errorElement: 'span',

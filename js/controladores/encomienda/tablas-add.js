@@ -148,11 +148,6 @@ $(document).ready(function () {
                 comboUsuario: {
                     required: true
                 },
-                telefono:{
-                    required: true,
-                    number: true,
-                    
-                },
                 ciudad: {
                     required: true,
                     minlength: 7
@@ -182,13 +177,10 @@ $(document).ready(function () {
                 direccion_alterna: {
                     required: true,
                     minlength: 10
-                },
-                fotos: {
-                    required: true
                 }
             },
             messages: {
-                id_usuario: {
+                comboUsuario: {
                     required: "Seleccione el cliente"
                 },
                 ciudad: {
@@ -221,9 +213,6 @@ $(document).ready(function () {
                 direccion_alterna: {
                     required: "Digite la dirección alterna",
                     minlength: "La dirección alterna debe de tener una longitud minima de 10"
-                },
-                fotos: {
-                    required: "Introduzca la imagen de la factura!"
                 }
             },
             errorElement: 'span',
@@ -269,7 +258,7 @@ $(document).ready(function () {
             Toast.fire({
                 title: 'Exito...',
                 icon: 'success',
-                text: "Registro insertado con exito",
+                text: "Registro insertado con éxito",
                 showConfirmButton: true,
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA 
