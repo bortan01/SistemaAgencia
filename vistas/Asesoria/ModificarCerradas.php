@@ -183,7 +183,7 @@ include_once '../../plantillas/barra_lateral.php';
                             <div class="form-group">
                                 <label>Opciones de respuestas</label>
                                 <div class="input-group">
-                                    <input id="opcion" name="opcion" type="text" class="form-control" autocomplete="off"
+                                    <input id="opcion_combo" name="opcion_combo" type="text" class="form-control" autocomplete="off"
                                         placeholder="Digite la opción">
                                 </div>
                                 <!-- /.input group -->

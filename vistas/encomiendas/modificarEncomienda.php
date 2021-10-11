@@ -37,6 +37,7 @@ include_once '../../plantillas/barra_lateral.php';
 
    <!-- Main content -->
    <section class="content">
+   <form id="encomiendass-form" name="register-form" onsubmit="return false">
       <div class="row">
          <div class="col-md-12">
 
@@ -110,8 +111,7 @@ include_once '../../plantillas/barra_lateral.php';
                      <div class="timeline-item">
                         <h3 class="timeline-header"><a href="#">Datos de Destino</a></h3>
                         <div class="timeline-body">
-                           <form id="datosDestino-form" name="register-form" onsubmit="return false">
-                              <div class="row">
+                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="form-group multiple-form-group input-group">
                                        <label>Nombre Completo</label>
@@ -166,7 +166,6 @@ include_once '../../plantillas/barra_lateral.php';
                                     <label name="detalle" id="detalle">Modifico una encomienda</label>
                                  </div>
                               </div>
-                           </form>
                         </div>
                      </div>
                   </div>
@@ -177,7 +176,7 @@ include_once '../../plantillas/barra_lateral.php';
                      <div class="timeline-item">
                         <h3 class="timeline-header"><a href="#">Productos</a></h3>
                         <div class="timeline-body">
-                           <form id="encomienda-form" name="register-form" onsubmit="return false">
+                          
                               <div class="row">
                                  <div class="col-sm-5">
                                     <div class="form-group multiple-form-group input-group">
@@ -212,7 +211,6 @@ include_once '../../plantillas/barra_lateral.php';
                               <div class="timeline-footer" style="text-align: right;">
                                  <a class="btn btn-info btn-sm" id="agregarTabla" style="color: white">Agregar</a>
                               </div>
-                           </form>
                         </div>
                      </div>
                   </div>
@@ -234,13 +232,6 @@ include_once '../../plantillas/barra_lateral.php';
                                              <input id="porcenaje" type="text" class="form-control" disabled="true">
                                           </div>
                                        </div>
-                                    </div>
-                                    <div class="col-sm-1">
-                                       <br>
-                                       <span class="input-group-btn">
-                                          <button type="button" class="btn btn-success btn-add" id="comision-add"
-                                             name="" style="margin-top: 10px; width: 100%;">+</button>
-                                       </span>
                                     </div>
                                  </div>
                                  <table id="add-tabla" class="table table-bordered table-hover">
@@ -303,6 +294,7 @@ include_once '../../plantillas/barra_lateral.php';
             <!-- END timeline item -->
          </div>
       </div>
+   </form>
    </section>
    <!-- Modal mostrar-->
    <div class="modal fade" id="add-producto">

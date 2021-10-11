@@ -28,7 +28,7 @@ $(document).ready(function () {
         //alert(cantidad);
         if (!cantidad) {
                errors = { cantidad: "Digite la cantidad" };
-            $("#encomienda-form").validate().showErrors(errors);
+            $("#encomiendass-form").validate().showErrors(errors);
         } else {
 
             let id = document.getElementById("id_producto").value;
@@ -228,49 +228,90 @@ $(document).ready(function () {
     //BOTON DE ACTUALIZAR 
     $(document).on('click', '#btnActualizar', function (evento) {
         evento.preventDefault();//para evitar que la pagina se recargue
-       // let form = $("#miFormulario");
+        let form = $("#encomiendass-form");
        // form.validate();
-        //if (form.valid()) {
+        if (form.valid()) {
             modificar();
-       /* } else {
-            const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Exito...',
-                icon: 'error',
-                text: "Complete los campos",
-                showConfirmButton: true,
-            });
-        }*/
+        } 
     });
 
      function inicializarValidaciones() {
-
-        $('#encomienda-form').validate({
+        $('#encomiendass-form').validate({
 
             rules: {
+                telefono:{
+                    required: true,
+                    number: true,
+                    
+                },
+                ciudad: {
+                    required: true,
+                    minlength: 7
+                },
+                codigo: {
+                    required: true,
+                    minlength: 2
+                },    cliente_des: {
+                    required: true,
+                    minlength: 10
+                },
+                telefono_des: {
+                    required: true
+                },
+                ciudad_des: {
+                    required: true,
+                    minlength: 7
+                },
+                codigo_des: {
+                    required: true,
+                    minlength: 2
+                },
                 direccion: {
-                    required:true,
+                    required: true,
                     minlength: 10
                 },
-                punto_referencia: {
-                    required:true,
+                direccion_alterna: {
+                    required: true,
                     minlength: 10
                 },
-                fecha: {
-                   required: true
+                fotos: {
+                    required: true
                 }
             },
             messages: {
-                direccion:{
-                    required:"Digite la dirección",
+                ciudad: {
+                    required: "Digite la ciudad",
+                    minlength: "La ciudad debe de tener una longitud minima de 7"
+                },
+                codigo: {
+                    required: "Digite el Código postal",
+                    minlength: "El Código debe de tener una longitud minima de 2"
+                },
+                 cliente_des: {
+                    required: "Digite el nombre del cliente destino",
+                    minlength: "El nombre del cliente debe de tener una longitud minima de 10"
+                },
+                telefono_des: {
+                    required: "Digite el Teléfono"
+                },
+                ciudad_des: {
+                    required: "Digite la ciudad",
+                    minlength: "La ciudad debe de tener una longitud minima de 7"
+                },
+                codigo_des: {
+                    required: "Digite el Código postal",
+                    minlength: "El Código debe de tener una longitud minima de 2"
+                },
+                direccion: {
+                    required: "Digite la dirección",
                     minlength: "La dirección debe de tener una longitud minima de 10"
                 },
-                punto_referencia:{
-                    required:"Digite el punto de referencia",
-                    minlength: "El punto referencia debe de tener una longitud minima de 10"
+                direccion_alterna: {
+                    required: "Digite la dirección alterna",
+                    minlength: "La dirección alterna debe de tener una longitud minima de 10"
                 },
-                fecha: {
-                    required: "Digite la fecha"
+                fotos: {
+                    required: "Introduzca la imagen de la factura!"
                 }
             },
             errorElement: 'span',
@@ -286,7 +327,6 @@ $(document).ready(function () {
 
             }
         });
-
     }
 
     function modificar() {
