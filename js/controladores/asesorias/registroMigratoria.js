@@ -104,7 +104,14 @@ $(document).ready(function () {
 
             }
         } else {
-            toastr.error('Verifique los campos de selección');
+            const Toast = Swal.mixin();
+            Toast.fire({
+                title: 'Error',
+                icon: 'warning',
+                text: 'Error en el envio de información',
+                showConfirmButton: true,
+            }).then((result) => {
+            });
         }
     });
     function llamarRamas() {
