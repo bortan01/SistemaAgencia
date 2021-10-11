@@ -124,14 +124,14 @@ $("#botonAyudaPaquetePrivado").click(function() {
           $("#modal-ayuda").modal();
         });
 
- /* $("#botonAyudaSeleccionarPaquete").click(function() {
+$("#botonAyudaMostrarPaquetes").click(function() {
         document.getElementById("register-ayuda").reset();
         $('#pdf').empty();
         pdfcito=$('#pdf');
-        pdfcito.append('<iframe src="../../pdf/Registro-usuarios.pdf"></iframe>');
+        pdfcito.append('<iframe src="../../pdf/Mostrar_Paquetes.pdf"></iframe>');
           $("#modal-ayuda").modal();
         });
-  */
+
 
 /* $("#botonAyudaMostrarPaquetes").click(function() {
         document.getElementById("register-ayuda").reset();
