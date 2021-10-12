@@ -465,7 +465,7 @@
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/vehiculos/cotizarVehiculo.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Cotización de Vehiculo</p>
+                        <p>Cotización de Vehículo</p>
                      </a>
                   </li>
                   <li class="nav-item">
@@ -568,7 +568,7 @@
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/cliente/actualizarMisDatos.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Informacion Personal</p>
+                        <p>Información Personal</p>
                      </a>
                   </li>
                   <li class="nav-item">
