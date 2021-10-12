@@ -32,12 +32,12 @@ include_once '../../plantillas/cabecera.php'; ?>
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Vehiculos Alquilados</h1>
+               <h1>Vehículos Alquilados</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Vehiculos Alquilados</li>
+                  <li class="breadcrumb-item active">Vehículos Alquilados</li>
                </ol>
             </div>
          </div>
@@ -64,7 +64,7 @@ include_once '../../plantillas/cabecera.php'; ?>
                                  <tr>
                                     <th>ID Alquiler</th>
                                     <th>Cliente</th>
-                                    <th>Vehiculo</th>
+                                    <th>Vehículo</th>
                                     <th>Precio</th>
                                     <th>Fecha - Hora</th>
                                     <th>Acciones</th>
@@ -113,7 +113,7 @@ include_once '../../plantillas/cabecera.php'; ?>
                   </div>
                </div>
                <div class="modal-header">
-                  <h4 class="modal-title">Regresar Vehiculo</h4>
+                  <h4 class="modal-title">Regresar Vehículo</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                   </button>
@@ -362,7 +362,7 @@ include_once '../../plantillas/cabecera.php'; ?>
                                        <thead>
                                           <tr>
                                              <th class="textcenter">Placa</th>
-                                             <th class="textcenter">Vehiculo</th>
+                                             <th class="textcenter">Vehículo</th>
                                              <th class="textcenter">Año</th>
                                              <th class="textcenter">Kilometraje Actual</th>
 
@@ -457,7 +457,7 @@ include_once '../../plantillas/cabecera.php'; ?>
                                     </table>
 
                                     <div>
-                                       <p class="nota">En caso de que la devolución del vehiculo sea uno o
+                                       <p class="nota">En caso de que la devolución del vehículo sea uno o
                                           más dias despues de la fecha
                                           <br>establecida, se le aplicará un porcentaje de pago extra
                                           sobre el monto total.
