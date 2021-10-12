@@ -285,6 +285,7 @@ $(document).ready(function () {
             "tipo": document.getElementById("ComboTipo").value,
             "informacion_contacto": document.getElementById("contacto_servicio").value,
             "precio_sitio": document.getElementById("precio_sitio").value,
+            "id_tipo_sitio" : document.getElementById("ComboTipo").value,
 
         };
         console.log(data);

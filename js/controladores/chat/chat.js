@@ -3,7 +3,7 @@
 let chat_data = {};
 let uid_administrador;
 let uid_cliente;
-let chat_uuid ;
+let chat_uuid;
 let fotoReceptor;
 let chatViejo;
 let chatHTML = "";
@@ -42,7 +42,7 @@ $(document.body).on("click", ".user", function () {
 
   //OBTEGO LOS DATOS PARTICULARES DE ESE CHAT
   $.ajax({
-    url: URL_SERVIDOR+"Usuario/obtenerChat",
+    url: URL_SERVIDOR + "Usuario/obtenerChat",
     method: "POST",
     data: { user_1: uid_administrador, user_2: uid_cliente },
     success: function (infoChat) {
@@ -128,7 +128,7 @@ $(".send-btn").on("click", function () {
 
 function getUsers() {
   $.ajax({
-    url: URL_SERVIDOR+"/Usuario/obtenerUsuarioByChat",
+    url: URL_SERVIDOR + "/Usuario/obtenerUsuarioByChat",
     method: "GET",
     success: function (response) {
       if (!response.error) {
@@ -140,6 +140,11 @@ function getUsers() {
           //SE RECORREN TODOS LOS USUARIOS Y SE PONEN EN LA LISTA
           //DE CHATS CON ECEPCCION DEL MISMO LA FOTO DEL USUARIO ACTUAL
           if (uid_administrador != value.uuid) {
+            let mensajePendiente = "";
+            if (value.mensajePendiente != null) {
+              mensajePendiente = value.mensajePendiente;
+            }
+
             usersHTML +=
               '<div class="user" uuid="' +
               value.uuid +
@@ -149,7 +154,7 @@ function getUsers() {
               '<div class="user-details">' +
               "<span><strong>" +
               value.nombre +
-              '<span class="count"></span></strong></span>' +
+              '<span   style="font-weight: 500; color: gray; font-size: 0.88rem;"class="count">' + mensajePendiente + '</span></strong></span>' +
               "<span></span>" +
               "</div>" +
               "</div>";
@@ -229,7 +234,7 @@ function enviarMensaje() {
         user_1_uuid: uid_administrador,
         user_2_uuid: uid_cliente,
         chat_uuid: chat_uuid,
-        user_1_isView: 0,
+        user_1_isView: 1,
         user_2_isView: 0,
         time: new Date(),
       })
@@ -245,9 +250,9 @@ function enviarMensaje() {
 }
 function actualizarFecha(uuid) {
   $.ajax({
-    url: URL_SERVIDOR+"/Usuario/updateFecha",
+    url: URL_SERVIDOR + "/Usuario/updateFecha",
     method: "PUT",
-    data: { uuid },
+    data: { uuid: uuid, "mensajePendiente": "" },
     success: function (resp) {
       // console.log(resp);
     },

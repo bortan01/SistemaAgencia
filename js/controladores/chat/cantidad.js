@@ -10,6 +10,7 @@ function obenerChats() {
       let lastConnection  =new Date (response.ultimaConexion);
       db.collection("chat")
          .where("time", ">",lastConnection)
+         .where("user_1_isView", "==", 0)
          .get()
          .then((chats) => {
             chats.forEach(chat => {
