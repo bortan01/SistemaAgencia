@@ -241,6 +241,7 @@ $(document).ready(function () {
         $('#loadingActualizarAlquiler').show();
         let data = {
             "id_detalle": idAlquiler,
+            "activo_detalle": 1,
             "kilometraje": document.getElementById("kilometraje").value,
             "fechaDevolucion": document.getElementById("fechaDe").value,
             "horaDevolucion": document.getElementById("timepicker").value,
