@@ -316,10 +316,6 @@ $(document).ready(function () {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Sí, Eliminar!',
             cancelButtonText: "Cancelar",
-            backdrop: `rgba(0,0,123,0.4)
-                       url("https://sweetalert2.github.io/images/nyan-cat.gif")
-                       left top
-                       no-repeat`
         }).then((result) => {
             if (result.value) {
                 eliminar(info);
