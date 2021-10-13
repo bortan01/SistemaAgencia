@@ -292,7 +292,7 @@ $(document).ready(function () {
         let TotalSinInteres = parseFloat(document.getElementById('total').value);
         let calculo = parseFloat(interes * TotalSinInteres) / ciento;
         let TotalconInteres = TotalSinInteres + calculo;
-        document.getElementById('pagar').value = TotalconInteres;
+        document.getElementById('pagar').value = ((TotalconInteres).toFixed(2));
 
     });
 });
