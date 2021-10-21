@@ -20,6 +20,7 @@ $(document).ready(function() {
             for (let i = 0, ien = response.informacion.length; i < ien; i++) {
 
                 document.getElementById("nombre").value = response.informacion[i].nombre;
+                document.getElementById("correo_id").value = response.informacion[i].id_cliente;
                 document.getElementById("celular").value = response.informacion[i].celular;
                 document.getElementById("correo").value = response.informacion[i].correo;
                 document.getElementById("ciudad_partida").value = response.informacion[i].ciudad_partida;
@@ -242,9 +243,11 @@ $(document).ready(function() {
         let data = {
             "id_cotizacion": idCotizar,
             "descuentos": document.getElementById("descuentos").value,
-            "total": document.getElementById("total").value
-
-
+            "total": document.getElementById("total").value,
+            "ciudad_partida": document.getElementById("ciudad_partida").value,
+            "ciudad_llegada": document.getElementById("ciudad_llegada").value,
+            "id_cliente": document.getElementById("correo_id").value,
+            "usuario": document.getElementById("nombre").value
         };
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO
         $.ajax({

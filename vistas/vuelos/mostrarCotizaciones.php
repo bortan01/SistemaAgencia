@@ -124,6 +124,7 @@ include_once '../../plantillas/cabecera.php';
                                     <label>Cliente</label>
                                     <div class="input-group">
                                         <input id="nombre" name="nombre" type="text" class="form-control" disabled>
+                                        <input id="correo_id" name="correo_id" type="hidden" class="form-control" disabled>
                                     </div>
                                     <!-- /.input group -->
                                 </div>

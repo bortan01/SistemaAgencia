@@ -33,22 +33,6 @@ $(document).ready(function() {
         form.append("fechaDisponible_promocion", document.getElementById("fechaDisponible").value);
         form.append("descripcion_promocion", document.getElementById("desPromocion").value);
 
-         /*******PARA RECOGER LA DATA PARA EL CORREO */
-         $a    = document.getElementById("nombrePromocion").value;
-         $pais = document.getElementById("nombrePais").value;
-         $lugar= document.getElementById("salida").value;
-         $precio = document.getElementById("precioPromocion").value;
-         $fecha = document.getElementById("fechaDisponible").value;
-         $decrip= document.getElementById("desPromocion").value;
-
-         $cuerpo="<h2>Promociòn :"+$a+"</h2><br><h4>Para el pais de:"+$pais+" con salida de "+$lugar+" con precio de: "+$precio+", valido hasta: "+$fecha+"</h4><br><h4>Descripcion de Promociòn: "+$decrip+"</h4><br>Visita nuestra pagina web: https://tesistours.com/<br>Tambien puedes descargar nuestra aplicación móvil<br>Att:<br>Martìnez T&T";
-         let data = {
-             "asunto":"Promociones de vuelos",
-             "titulo": document.getElementById("nombrePromocion").value,
-             "body":  $cuerpo
-           };
-         /*****FIN DE RECOGER LA DATA PARA EL CORREO */
-
         //OCUPAR ESTA CONFIGURACION CUANDO SE ENVIAEN ARCHIVOS(FOTOS-IMAGENES)
         $.ajax({
             url: URL_SERVIDOR + "promocionVuelo/promocion",
@@ -70,35 +54,8 @@ $(document).ready(function() {
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA 
                 guardarBitacora();
-               // $("#miFormulario").trigger("reset");
+                $("#miFormulario").trigger("reset");
             });
-        }).fail(function(response) {
-            //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-            console.log(response);
-
-            const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Oops...',
-                icon: 'error',
-                text: "ERROR EN EL ENVIO DE INFORMACIÓN",
-                showConfirmButton: true,
-            });
-
-        }).always(function(xhr, opts) {
-           // $('#loadingPromocion').hide();
-        });
-
-        //VAMOS A COMENSAR A PROBAR LOS CORREOS
-        //COMO ES UNA PROMOCIÓN QUE LE CAIGA EL CORREO A TODOS LOS CLIENTES
-       
-        $.ajax({
-            url: URL_SERVIDOR + "Mail/send",
-            method: "POST",
-            data: data,
-           
-        }).done(function(response) {
-            //REST_Controller::HTTP_OK
-            $("#miFormulario").trigger("reset");
         }).fail(function(response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             console.log(response);
