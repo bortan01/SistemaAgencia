@@ -125,13 +125,11 @@ $(document).ready(function() {
                     minlength: 3,
                     maxlength: 40
                 },
-                descripcion: {
+                descripcionSitio: {
                     required: true,
                     minlength: 10,
                 },
-                fotosSitios: {
-                    required: true
-                },
+            
                 precioSitio: {
                     required: true,
                     min: 0
@@ -143,14 +141,12 @@ $(document).ready(function() {
                     minlength: "Logitud del nombre debe ser mayor a 3",
                     maxlength: "Logitud del nombre no debe exceder a 40",
                 },
-                descripcion: {
+                descripcionSitio: {
                     required: "La descripcion es necesaria",
                     minlength: "Debe de tener una longitud minima de 10",
                 },
-                fotosSitios: {
-                    required: "Suba por lo menos 1 foto"
-                },
-                nombreSitio: {
+         
+                precioSitio: {
                     required: "El precio es necesario",
                     min: "Debe de ser mayor que 0"
                 }

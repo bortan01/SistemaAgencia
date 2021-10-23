@@ -89,7 +89,7 @@ $(document).ready(function () {
                 let tr = crearFila(event);
                 tablaReporte.appendChild(tr);
             });
-           
+
         }).fail(function (response) {
 
         }).always(function (xhr, opts) {
@@ -98,13 +98,13 @@ $(document).ready(function () {
         });
     });
 
-     //*para crear la tabla
-     function crearFila(event) {
+    //*para crear la tabla
+    function crearFila(event) {
         let tr = document.createElement('tr');
-        tr.appendChild(crearColumna(event.cantidad_servicio)); 
+        tr.appendChild(crearColumna(event.cantidad_servicio));
         tr.appendChild(crearColumna(event.servicio_adicional));
         tr.appendChild(crearColumna(event.costo_servicio));
-       
+
         return tr;
     }
     function crearColumna(info) {
@@ -116,7 +116,7 @@ $(document).ready(function () {
         td.classList.add('textcenter');
         return td;
     }
-        //*funciones para crear las tablas fin
+    //*funciones para crear las tablas fin
 
     //BOTON PARA ELIMINAR
     $(document).on('click', '.btn-group .btn-danger', function (evento) {
@@ -215,8 +215,8 @@ $(document).ready(function () {
             },
             messages: {
                 kilometraje: {
-                    required: "Ingrese un numero",
-                    number: "Ingrese un numero",
+                    required: "Ingrese un número",
+                    number: "Ingrese un número",
                     min: "Debe de ser mayor que 0"
                 }
 

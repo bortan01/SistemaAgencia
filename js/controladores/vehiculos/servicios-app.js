@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     let idServicio;
     let tabla;
@@ -9,15 +9,15 @@ $(document).ready(function() {
 
 
     //BOTON MOSTRAR 
-    $(document).on('click', '.btn-group .btn-primary', function() {
+    $(document).on('click', '.btn-group .btn-primary', function () {
 
         idServicio = $(this).attr("name");
 
         $('#loadingActualizar').show();
         $.ajax({
-            url: URL_SERVIDOR+"serviciosVehiculo/mostrarServicios?idservicios_opc=" + idServicio,
+            url: URL_SERVIDOR + "serviciosVehiculo/mostrarServicios?idservicios_opc=" + idServicio,
             method: "GET"
-        }).done(function(response) {
+        }).done(function (response) {
             //MANDALOS LOS VALORES AL MODAL
             for (let i = 0, ien = response.Servicios.length; i < ien; i++) {
 
@@ -26,9 +26,9 @@ $(document).ready(function() {
                 document.getElementById("precio").value = response.Servicios[i].precio;
             }
 
-        }).fail(function(response) {
+        }).fail(function (response) {
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#modal-editar').modal('show');
             $('#loadingActualizar').hide();
         });
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 
     //Boton Eliminar
-    $(document).on('click', '.btn-group .btn-danger', function(evento) {
+    $(document).on('click', '.btn-group .btn-danger', function (evento) {
         idServicio = $(this).attr("name");
         fila = $(this).closest("tr");
 
@@ -58,7 +58,7 @@ $(document).ready(function() {
         })
     });
     //BOTON PARA ACTUALIZAR
-    $(document).on('click', '#btnActualizar', function(evento) {
+    $(document).on('click', '#btnActualizar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#miFormulario");
         form.validate();
@@ -76,7 +76,7 @@ $(document).ready(function() {
             "ajax": {
                 "url": URL_SERVIDOR + "serviciosVehiculo/mostrarServicios",
                 "method": "GET",
-                "dataSrc": function(json) {
+                "dataSrc": function (json) {
                     console.log(json.Servicios);
 
                     if (json.Servicios) {
@@ -147,21 +147,21 @@ $(document).ready(function() {
                     maxlength: "Logitud del nombre no debe exceder a 200",
                 },
                 precio: {
-                    required: "Ingrese un numero",
-                    number: "Ingrese un numero",
+                    required: "Ingrese un número",
+                    number: "Ingrese un número",
                     min: "Debe de ser mayor que 0"
                 }
 
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }
@@ -184,7 +184,7 @@ $(document).ready(function() {
             method: "PUT",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
             Toast.fire({
@@ -196,7 +196,7 @@ $(document).ready(function() {
                 $('#modal-editar').modal('hide');;
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log(response);
 
             const Toast = Swal.mixin();
@@ -207,7 +207,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizarServicio').hide();
         });
     }
@@ -223,7 +223,7 @@ $(document).ready(function() {
             method: "DELETE",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
             Toast.fire({
@@ -234,7 +234,7 @@ $(document).ready(function() {
             }).then((result) => {
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
 
             console.log(response);
             const Toast = Swal.mixin();
@@ -245,7 +245,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizar').hide();
         });
     }

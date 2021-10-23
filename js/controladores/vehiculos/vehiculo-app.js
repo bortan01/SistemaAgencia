@@ -214,8 +214,8 @@ $(document).ready(function () {
                     maxlength: "Logitud del nombre no debe exceder a 40",
                 },
                 anio: {
-                    required: "Ingrese un numero",
-                    number: "Ingrese un numero",
+                    required: "Ingrese un número",
+                    number: "Ingrese un número",
                     min: "Debe de ser mayor que 0"
                 },
                 tipoCombustible: {
@@ -223,8 +223,8 @@ $(document).ready(function () {
                     minlength: "Debe de tener una longitud minima de 10",
                 },
                 precio_diario: {
-                    required: "Ingrese un numero",
-                    number: "Ingrese un numero",
+                    required: "Ingrese un número",
+                    number: "Ingrese un número",
                     min: "Debe de ser mayor que 0"
                 }
 

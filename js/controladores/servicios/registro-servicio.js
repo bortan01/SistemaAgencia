@@ -286,6 +286,21 @@ $(document).ready(function () {
                 },
                 fotosServicio: {
                     required: true
+                },
+                numero_filas: {
+                    required: true,
+                    number: true,
+                    min: 1
+                },
+                asientos_izquierdo: {
+                    required: true,
+                    number: true,
+                    min: 1
+                },
+                asientos_derecho: {
+                    required: true,
+                    number: true,
+                    min: 1
                 }
             },
             messages: {
@@ -295,13 +310,28 @@ $(document).ready(function () {
                     maxlength: "Logitud del nombre no debe exceder a 40",
                 },
                 costos_defectoServicio: {
-                    required: "Ingrese un numero",
-                    number: "Ingrese un numero",
+                    required: "Ingrese un número",
+                    number: "Ingrese un número",
                     min: "Debe de ser mayor que 0"
                 },
                 descripcion_servicioServicio: {
                     required: "La descripcion del servico es necesaria",
                     minlength: "Debe de tener una longitud minima de 10",
+                },
+                numero_filas: {
+                    required: "Ingrese un número",
+                    number: "Solo números",
+                    min: "Debe  de ser mayor que 0"
+                },
+                asientos_izquierdo: {
+                    required: "Ingrese un número",
+                    number: "Solo números",
+                    min: "Debe  de ser mayor que 0"
+                },
+                asientos_derecho: {
+                    required: "Ingrese un número",
+                    number: "Solo números",
+                    min: "Debe  de ser mayor que 0"
                 }
 
             },

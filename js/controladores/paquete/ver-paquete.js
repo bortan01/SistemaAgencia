@@ -237,8 +237,8 @@ $(document).ready(function () {
                maxlength: "Logitud del nombre no debe exceder a 40",
             },
             costos_defecto: {
-               required: "Ingrese un numero",
-               number: "Ingrese un numero",
+               required: "Ingrese un número",
+               number: "Ingrese un número",
                min: "Debe de ser mayor que 0"
             },
             informacion_contacto: {

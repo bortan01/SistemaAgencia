@@ -242,8 +242,8 @@ $(document).ready(function () {
                     maxlength: "Logitud del nombre no debe exceder a 40",
                 },
                 costos_defecto: {
-                    required: "Ingrese un numero",
-                    number: "Ingrese un numero",
+                    required: "Ingrese un número",
+                    number: "Ingrese un número",
                     min: "Debe de ser mayor que 0"
                 },
                 informacion_contacto: {
@@ -285,7 +285,7 @@ $(document).ready(function () {
             "tipo": document.getElementById("ComboTipo").value,
             "informacion_contacto": document.getElementById("contacto_servicio").value,
             "precio_sitio": document.getElementById("precio_sitio").value,
-            "id_tipo_sitio" : document.getElementById("ComboTipo").value,
+            "id_tipo_sitio": document.getElementById("ComboTipo").value,
 
         };
         console.log(data);
