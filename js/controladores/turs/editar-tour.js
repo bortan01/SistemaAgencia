@@ -213,8 +213,8 @@ $(document).ready(function () {
             ],
             "firstDay": 0
          },
-         startDate :  moment (start),
-         endDate : moment (end)
+         startDate: moment(start),
+         endDate: moment(end)
       });
 
    }
@@ -364,9 +364,9 @@ $(document).ready(function () {
          //uploadUrl: '#',
          showUpload: false,
          //showCaption: false,
-         maxFileSize: 2000,
+         maxFileSize: 200000,
          maxFilesNum: 10,
-         allowedFileExtensions: ['jpg', 'png', 'gif'],
+         allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif'],
          required: true,
          uploadAsync: false,
          showClose: false,
@@ -666,7 +666,7 @@ $(document).ready(function () {
          document.getElementById("CostoPasaje").value = response.precio;
          document.getElementById("cantidad").value = response.cupos;
          inicializarCalendario(response.start, response.end);
-      
+
 
          AgregarItems(response.lugar_salidas, $('#labelLugar'), $("[name='grupo_lugar']"), $grupoLugar);
          AgregarItems(response.incluye, $('#labelIncluye'), $("[name='grupo_incluye']"), $grupo_incluye);

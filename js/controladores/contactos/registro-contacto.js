@@ -4,7 +4,7 @@ inicializarFotoContactoSitio();
 inicializarMascara();
 
 //BOTON PARA AGREGAR UN NUEVO   CONTACTO 
-$(document).on('click', '#btnAgregarContactoSitio', function(evento) {
+$(document).on('click', '#btnAgregarContactoSitio', function (evento) {
     evento.preventDefault(); //para evitar que la pagina se recargue
     let form = $("#formularioAgregarContacto");
     form.validate();
@@ -19,7 +19,7 @@ function inicializarFotoContactoSitio() {
         theme: 'fas',
         language: 'es',
         // required: true,
-        maxFileSize: 20000,
+        maxFileSize: 2000000,
         maxFilesNum: 10,
         showUpload: false,
         showClose: false,
@@ -65,14 +65,14 @@ function inicializarValidacionesSitios() {
 
         },
         errorElement: 'span',
-        errorPlacement: function(error, element) {
+        errorPlacement: function (error, element) {
             error.addClass('invalid-feedback');
             element.closest('.form-group').append(error);
         },
-        highlight: function(element, errorClass, validClass) {
+        highlight: function (element, errorClass, validClass) {
             $(element).addClass('is-invalid');
         },
-        unhighlight: function(element, errorClass, validClass) {
+        unhighlight: function (element, errorClass, validClass) {
             $(element).removeClass('is-invalid');
 
         }
@@ -93,14 +93,14 @@ function inicializarValidacionesSitios() {
 
         },
         errorElement: 'span',
-        errorPlacement: function(error, element) {
+        errorPlacement: function (error, element) {
             error.addClass('invalid-feedback');
             element.closest('.form-group').append(error);
         },
-        highlight: function(element, errorClass, validClass) {
+        highlight: function (element, errorClass, validClass) {
             $(element).addClass('is-invalid');
         },
-        unhighlight: function(element, errorClass, validClass) {
+        unhighlight: function (element, errorClass, validClass) {
             $(element).removeClass('is-invalid');
 
         }
@@ -127,7 +127,7 @@ function guardarContactoSitios() {
         timeout: 0,
         processData: false,
         contentType: false,
-    }).done(function(response) {
+    }).done(function (response) {
         //REST_Controller::HTTP_OK
         // console.log(response);
         let respuestaDecodificada = JSON.parse(response);
@@ -152,7 +152,7 @@ function guardarContactoSitios() {
             //TODO BIEN Y RECARGAMOS LA PAGINA 
             $("#formularioAgregarContacto").trigger("reset");
         });
-    }).fail(function(response) {
+    }).fail(function (response) {
         //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
         console.log(response);
         let listaErrores = "ERROR EN EL ENVIO DE INFORMACION";
@@ -164,7 +164,7 @@ function guardarContactoSitios() {
             showConfirmButton: true,
         });
 
-    }).always(function(xhr, opts) {
+    }).always(function (xhr, opts) {
         $("#formularioAgregarContacto").trigger("reset");
         $('#loadingModalContacto').hide();
     });

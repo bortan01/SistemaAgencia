@@ -27,7 +27,7 @@ $(document).ready(function () {
         let cantidad = $('#cantidad').val();
         //alert(cantidad);
         if (!cantidad) {
-               errors = { cantidad: "Digite la cantidad" };
+            errors = { cantidad: "Digite la cantidad" };
             $("#encomiendass-form").validate().showErrors(errors);
         } else {
 
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 
     function mostrarDatos() {
-        let redondiar=0;
+        let redondiar = 0;
         $.ajax({
             url: URL_SERVIDOR + 'Encomienda/encomiendaModificar?id_encomienda=' + ID_ENCOMIENDA,
             method: "GET"
@@ -54,19 +54,19 @@ $(document).ready(function () {
                 $('#ciudad').val(index.ciudad_origen);
                 $('#codigo').val(index.codigo_postal_origen);
                 $('#fecha').val(index.fecha);
-                redondiar=(parseFloat(index.total_comision).toFixed(2));
+                redondiar = (parseFloat(index.total_comision).toFixed(2));
                 $('#total').text(index.total_encomienda);
                 $('#comision').text(redondiar);
                 $('#totalCliente').text(index.total_cliente);
                 $('#id_encomienda').val(ID_ENCOMIENDA);
-                TOTAL= index.total_encomienda;
+                TOTAL = index.total_encomienda;
                 COMISION = index.total_comision;
                 TOTALCLIENTE = index.total_cliente;
             });
 
             //.each para los datos destino
 
-            $.each(response.Detalles_destino, function (i,pivote) {
+            $.each(response.Detalles_destino, function (i, pivote) {
                 $('#cliente_des').val(pivote.nombre_cliente_destini);
                 $('#telefono_des').val(pivote.telefono);
                 $('#ciudad_des').val(pivote.ciudad_destino);
@@ -88,10 +88,10 @@ $(document).ready(function () {
             "responsive": true,
             "autoWidth": false,
             "deferRender": true,
-            "columnDefs":[
-            {"className":"dt-center","targets":"_all"},
-            {"targets":[5], "visible":false},
-            {"targets":[6], "visible":false},
+            "columnDefs": [
+                { "className": "dt-center", "targets": "_all" },
+                { "targets": [5], "visible": false },
+                { "targets": [6], "visible": false },
             ],
             "ajax": {
                 "url": URL_SERVIDOR + "Detalle_Encomienda/detalles?id_encomienda=" + ID_ENCOMIENDA,
@@ -114,7 +114,7 @@ $(document).ready(function () {
                             json.detalles[i]["botones"] = html;
 
                             json.detalles[i]["contador"] = contadorTabla;
-                            contadorTabla ++;
+                            contadorTabla++;
 
 
 
@@ -175,7 +175,7 @@ $(document).ready(function () {
         let encontrado = false;
         tabla.rows().every(function (value, index) {
             let data = this.data();
-         
+
             if (id == data.id_producto) {
                 let subTotoal = (costo * cantidad).toFixed(2);
                 data.cantidad = cantidad;
@@ -184,7 +184,7 @@ $(document).ready(function () {
                 this.data(data).draw(false);
             }
         });
-       
+
         return encontrado;
 
 
@@ -229,13 +229,13 @@ $(document).ready(function () {
     $(document).on('click', '#btnActualizar', function (evento) {
         evento.preventDefault();//para evitar que la pagina se recargue
         let form = $("#encomiendass-form");
-       // form.validate();
+        // form.validate();
         if (form.valid()) {
             modificar();
-        } 
+        }
     });
 
-     function inicializarValidaciones() {
+    function inicializarValidaciones() {
         $('#encomiendass-form').validate({
 
             rules: {
@@ -246,7 +246,7 @@ $(document).ready(function () {
                 codigo: {
                     required: true,
                     minlength: 2
-                },    cliente_des: {
+                }, cliente_des: {
                     required: true,
                     minlength: 10
                 },
@@ -282,7 +282,7 @@ $(document).ready(function () {
                     required: "Digite el Código postal",
                     minlength: "El Código debe de tener una longitud minima de 2"
                 },
-                 cliente_des: {
+                cliente_des: {
                     required: "Digite el nombre del cliente destino",
                     minlength: "El nombre del cliente debe de tener una longitud minima de 10"
                 },
@@ -336,8 +336,8 @@ $(document).ready(function () {
             contentType: false,
         }).done(function (response) {
             console.log(response);
-            
-           const Toast = Swal.mixin();
+
+            const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
                 icon: 'success',
@@ -346,10 +346,10 @@ $(document).ready(function () {
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA
                 guardarBitacora();
-                 window.location = `${URL_SISTEMA}vistas/encomiendas/verEncomienda.php`;
-               
+                window.location = `${URL_SISTEMA}vistas/encomiendas/verEncomienda.php`;
+
             });
-            
+
         }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             console.log(response);
@@ -367,59 +367,59 @@ $(document).ready(function () {
         });
     }
 
-     function obtenerData() {
+    function obtenerData() {
         let form = new FormData();
         let detalle_encomienda = [];
-        let detalle_destino=[];
-        let nombre_cliente_destino  = document.getElementById("cliente_des").value;
-        let telefono                = document.getElementById("telefono_des").value;
-        let ciudad_destino          = document.getElementById("ciudad_des").value;
-        let codigo_postal_destino   = document.getElementById("codigo_des").value;
-        let direccion_destino       = document.getElementById("direccion").value;
-        let alterna_destino         = document.getElementById("direccion_alterna").value;
-        
+        let detalle_destino = [];
+        let nombre_cliente_destino = document.getElementById("cliente_des").value;
+        let telefono = document.getElementById("telefono_des").value;
+        let ciudad_destino = document.getElementById("ciudad_des").value;
+        let codigo_postal_destino = document.getElementById("codigo_des").value;
+        let direccion_destino = document.getElementById("direccion").value;
+        let alterna_destino = document.getElementById("direccion_alterna").value;
+
         tabla.rows().every(function (value, index) {
             let data = this.data();
-           
+
             let id_producto = data.id_producto;
             let cantidad = data.cantidad;
             let sub_total = data.sub_total;
-           
-                 
-                detalle_encomienda.push({
-                    "id_producto": id_producto,
-                    "cantidad": cantidad,
-                    "sub_total": sub_total
-                });
-            
+
+
+            detalle_encomienda.push({
+                "id_producto": id_producto,
+                "cantidad": cantidad,
+                "sub_total": sub_total
+            });
+
         });
 
         detalle_destino.push({
-                    "nombre_cliente_destini":nombre_cliente_destino,
-                    "telefono": telefono,
-                    "ciudad_destino": ciudad_destino,
-                    "codigo_postal_destino": codigo_postal_destino,
-                    "direccion_destino": direccion_destino,
-                    "alterna_destino": alterna_destino
+            "nombre_cliente_destini": nombre_cliente_destino,
+            "telefono": telefono,
+            "ciudad_destino": ciudad_destino,
+            "codigo_postal_destino": codigo_postal_destino,
+            "direccion_destino": direccion_destino,
+            "alterna_destino": alterna_destino
         });
 
-        form.append("ciudad_origen",          document.getElementById("ciudad").value);
-        form.append("codigo_postal_origen",   document.getElementById("codigo").value);
-        form.append("fecha",                  document.getElementById("fecha").value);
-         form.append("id_encomienda",         ID_ENCOMIENDA);
-        form.append("total_encomienda",       TOTAL);
-        form.append("total_comision",         COMISION);
-        form.append("total_cliente",          (TOTAL+COMISION));
-        form.append("id_usuario",             document.getElementById("cliente").value);
-        form.append("detalle_encomienda",     JSON.stringify(detalle_encomienda));
-        form.append("detalle_destino",        JSON.stringify(detalle_destino));
-       
+        form.append("ciudad_origen", document.getElementById("ciudad").value);
+        form.append("codigo_postal_origen", document.getElementById("codigo").value);
+        form.append("fecha", document.getElementById("fecha").value);
+        form.append("id_encomienda", ID_ENCOMIENDA);
+        form.append("total_encomienda", TOTAL);
+        form.append("total_comision", COMISION);
+        form.append("total_cliente", (TOTAL + COMISION));
+        form.append("id_usuario", document.getElementById("cliente").value);
+        form.append("detalle_encomienda", JSON.stringify(detalle_encomienda));
+        form.append("detalle_destino", JSON.stringify(detalle_destino));
+
 
         return form;
 
     }
 
-        function inicializarGaleria() {
+    function inicializarGaleria() {
         // ESTO ES PARA INICIALIZAR EL ELEMENTO DE SUBIDA DE FOTOS (EN ESTE CASO UNA GALERIA )
         $('#fotos').fileinput({
             theme: 'fas',
@@ -427,9 +427,9 @@ $(document).ready(function () {
             //uploadUrl: '#',
             showUpload: false,
             //showCaption: false,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
-            allowedFileExtensions: ['jpg', 'png', 'gif'],
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif'],
             required: true,
             uploadAsync: false,
             showClose: false,
@@ -442,7 +442,7 @@ $(document).ready(function () {
             theme: 'fas',
             language: 'es',
             required: true,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
             showUpload: false,
             showClose: false,
@@ -455,7 +455,7 @@ $(document).ready(function () {
             msgErrorClass: 'alert alert-block alert-danger',
             defaultPreviewContent: '<img src="../../img/avatar.png" alt="Your Avatar">',
             layoutTemplates: { main2: '{preview} {remove} {browse}' },
-            allowedFileExtensions: ["jpg", "png", "gif"]
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
         });
     }
 

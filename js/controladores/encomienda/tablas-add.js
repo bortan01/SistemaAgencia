@@ -135,10 +135,10 @@ $(document).ready(function () {
     $(document).on('click', '#btnguardar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#encomiendass-form");
-     
+
         if (form.valid()) {
-                guardar();
-       }
+            guardar();
+        }
     });
 
     function inicializarValidacionesGuardar() {
@@ -155,7 +155,7 @@ $(document).ready(function () {
                 codigo: {
                     required: true,
                     minlength: 2
-                },    cliente_des: {
+                }, cliente_des: {
                     required: true,
                     minlength: 10
                 },
@@ -191,7 +191,7 @@ $(document).ready(function () {
                     required: "Digite el Código postal",
                     minlength: "El Código debe de tener una longitud minima de 2"
                 },
-                 cliente_des: {
+                cliente_des: {
                     required: "Digite el nombre del cliente destino",
                     minlength: "El nombre del cliente debe de tener una longitud minima de 10"
                 },
@@ -263,11 +263,11 @@ $(document).ready(function () {
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA 
                 guardarBitacora();
-               // location.reload();
-               // $("#encomienda-form").trigger("reset");
+                // location.reload();
+                // $("#encomienda-form").trigger("reset");
                 resetMiTable();
                 comisionCargada();
-                
+
             });
 
         }).fail(function (response) {
@@ -337,27 +337,27 @@ $(document).ready(function () {
         return form;
 
     }
-//ME BORRA LA COMISIÓN CUANDO LE DOY RESET AL FORMULARIO VAMOS A VER SI FUNCIONA CON ESTO SOLVERTAR EL PROBLEMA
-        function comisionCargada(){
-            $.ajax({
-                type: "GET",
-                url: URL_SERVIDOR+"Producto/productos",
-                dataType: "json",
-                success: function(data) {
+    //ME BORRA LA COMISIÓN CUANDO LE DOY RESET AL FORMULARIO VAMOS A VER SI FUNCIONA CON ESTO SOLVERTAR EL PROBLEMA
+    function comisionCargada() {
+        $.ajax({
+            type: "GET",
+            url: URL_SERVIDOR + "Producto/productos",
+            dataType: "json",
+            success: function (data) {
                 ///vamos a cargar la comision de la agencia
-                $.each(data.comision, function(i,index) {
-                $("#porcenaje").val(index.porcentaje);  
-    
-                  });
-                },
-                error: function(err) {
-                    
-                }
-            });
-        //**************************vamos a cargar el costo
-        }
+                $.each(data.comision, function (i, index) {
+                    $("#porcenaje").val(index.porcentaje);
 
-//FIN DE COLOCAR DE NUEVO LA COMISIÓN    
+                });
+            },
+            error: function (err) {
+
+            }
+        });
+        //**************************vamos a cargar el costo
+    }
+
+    //FIN DE COLOCAR DE NUEVO LA COMISIÓN    
 
     function resetMiTable() {
         contadorTabla = 0;
@@ -379,9 +379,9 @@ $(document).ready(function () {
             //uploadUrl: '#',
             showUpload: false,
             //showCaption: false,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
-            allowedFileExtensions: ['jpg', 'png', 'gif'],
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif'],
             required: true,
             uploadAsync: false,
             showClose: false,

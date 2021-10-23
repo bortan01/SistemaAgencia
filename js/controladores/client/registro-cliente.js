@@ -1,5 +1,5 @@
 // CUANDO LA PAGINA YA ESTA LISTA
-$(document).ready(function() {
+$(document).ready(function () {
     let dataTipo;
     inicializarValidaciones();
     inicializarGaleria();
@@ -10,7 +10,7 @@ $(document).ready(function() {
     $('#tipo_usuario').select2();
 
     //BOTON DE GUARDAR
-    $(document).on('click', '#btnguardarCliente', function(evento) {
+    $(document).on('click', '#btnguardarCliente', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#miFormularioCliente");
         form.validate();
@@ -35,9 +35,9 @@ $(document).ready(function() {
             //uploadUrl: '#',
             showUpload: false,
             //showCaption: false,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
-            allowedFileExtensions: ['jpg', 'png', 'gif'],
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif'],
             required: true,
             uploadAsync: false,
             showClose: false,
@@ -50,7 +50,7 @@ $(document).ready(function() {
             theme: 'fas',
             language: 'es',
             required: true,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
             showUpload: false,
             showClose: false,
@@ -63,7 +63,7 @@ $(document).ready(function() {
             msgErrorClass: 'alert alert-block alert-danger',
             defaultPreviewContent: '<img src="../../img/avatar.png" alt="Your Avatar">',
             layoutTemplates: { main2: '{preview} {remove} {browse}' },
-            allowedFileExtensions: ["jpg", "png", "gif"]
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
         });
     }
 
@@ -107,14 +107,14 @@ $(document).ready(function() {
                 }
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }
@@ -149,7 +149,7 @@ $(document).ready(function() {
             timeout: 0,
             processData: false,
             contentType: false,
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             let respuestaDecodificada = JSON.parse(response);
             const Toast = Swal.mixin();
@@ -166,14 +166,14 @@ $(document).ready(function() {
                 //************prueba*************
                 let DATA_USUARIO;
 
-                $(document).ready(function() {
+                $(document).ready(function () {
 
                     $.ajax({
                         type: "GET",
                         url: URL_SERVIDOR + "usuario/obtenerUsuario?nivel=CLIENTE",
                         async: false,
                         dataType: "json",
-                        success: function(data) {
+                        success: function (data) {
                             let $select = $('#comboUsuario');
                             $select.append('<option value="">Seleccione</option>');
                             let myData = [];
@@ -189,7 +189,7 @@ $(document).ready(function() {
                             $('#comboUsuario').select2({ data: myData });
                         },
 
-                        error: function(err) {
+                        error: function (err) {
                             //si da un error ya que quede la alerta
                             $('#comboUsuario').select2({});
                             const Toast = Swal.mixin();
@@ -204,7 +204,7 @@ $(document).ready(function() {
                 });
                 //**************fin prueba*********
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             console.log(response);
 
@@ -216,7 +216,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingCliente').hide();
         });
     }

@@ -57,9 +57,9 @@ $(document).ready(function () {
                 initialPreview: urlFotos,
                 initialPreviewConfig: infoFotos,
                 required: true,
-                maxFileSize: 2000,
+                maxFileSize: 200000,
                 maxFilesNum: 10,
-                allowedFileExtensions: ["jpg", "png", "gif"]
+                allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
 
             });
         });

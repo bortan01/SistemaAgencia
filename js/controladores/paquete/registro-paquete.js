@@ -189,7 +189,7 @@ $(document).on('click', '#btnguardar', function (evento) {
     //verificamos que se hallan cumplido las validaciones 
     if (form.valid()) {
         guardar();
-    }else{
+    } else {
         mensajeError("Complete los campos");
     }
 });
@@ -375,9 +375,9 @@ function inicializarGaleria() {
         //uploadUrl: '#',
         showUpload: false,
         //showCaption: false,
-        maxFileSize: 2000,
+        maxFileSize: 200000,
         maxFilesNum: 10,
-        allowedFileExtensions: ['jpg', 'png', 'gif'],
+        allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif'],
         required: true,
         uploadAsync: false,
         showClose: false,

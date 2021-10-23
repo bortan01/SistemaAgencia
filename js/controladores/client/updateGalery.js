@@ -33,9 +33,9 @@ $(document).ready(function () {
             initialPreviewAsData: true,
             initialPreview: urlFotos,
             initialPreviewConfig: infoFotos,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
-            allowedFileExtensions: ["jpg", "png", "gif"]
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
          });
       });
 

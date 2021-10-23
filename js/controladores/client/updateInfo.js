@@ -165,7 +165,7 @@ $(document).ready(function () {
             theme: 'fas',
             language: 'es',
             required: true,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
             showUpload: false,
             showClose: false,
@@ -178,7 +178,7 @@ $(document).ready(function () {
             msgErrorClass: 'alert alert-block alert-danger',
             defaultPreviewContent: `<img style="width: 186px;" src="${localStorage.getItem('fotoA')}" alt="Your Avatar">`,
             layoutTemplates: { main2: '{preview} {remove} {browse}' },
-            allowedFileExtensions: ["jpg", "png", "gif"]
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
         });
     }
     function ActualizarFotoPerfil() {

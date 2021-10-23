@@ -87,9 +87,9 @@ $(document).ready(function () {
                 initialPreviewAsData: true,
                 initialPreview: urlFotos,
                 initialPreviewConfig: infoFotos,
-                maxFileSize: 2000,
+                maxFileSize: 200000,
                 maxFilesNum: 10,
-                allowedFileExtensions: ["jpg", "png", "gif"]
+                allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
 
             });
         });
@@ -230,7 +230,7 @@ $(document).ready(function () {
                                 html += '            data-target="#modal-eliminar">';
                                 html += '            <i class="fas fa-trash" style="color: white"></i>';
                                 html += '        </button>';
-                         
+
                             } else {
                                 html += '        <button title="Restaurar" type="button" name="' + json.usuarios[i].id_cliente + '" class="btn btn-success restaurarUsuario" data-toggle="modal"';
                                 html += '            data-target="">';
@@ -491,7 +491,7 @@ $(document).ready(function () {
             theme: 'fas',
             language: 'es',
             required: true,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
             showUpload: false,
             showClose: false,
@@ -504,7 +504,7 @@ $(document).ready(function () {
             msgErrorClass: 'alert alert-block alert-danger',
             defaultPreviewContent: '<img src="../../img/avatar.png" alt="Your Avatar">',
             layoutTemplates: { main2: '{preview} {remove} {browse}' },
-            allowedFileExtensions: ["jpg", "png", "gif"]
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
         });
     }
 

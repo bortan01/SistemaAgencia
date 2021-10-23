@@ -24,7 +24,7 @@ $(document).ready(function () {
    //BOTON EDITAR FOTO PERFIL 
    $(document).on('click', 'a[name ="camara"]', function () {
       $('#loadingFotoPerfil').hide();
-            //inicializamos nuevamente el input de foto
+      //inicializamos nuevamente el input de foto
       inicializarFoto();
       ///abrimos el modal
       $('#modal-perfil').modal('show');
@@ -63,7 +63,7 @@ $(document).ready(function () {
       let form = $("#formularioEditar");
       form.validate();
       if (form.valid()) {
-          actualizar();
+         actualizar();
       }
    });
    //BOTON DEL MODAL PARA ACTUALIZA LA FOTO DE PERFIL
@@ -222,7 +222,7 @@ $(document).ready(function () {
          data: data
       }).done(function (response) {
          //REST_Controller::HTTP_OK
-   
+
          $("#formularioEditar").trigger("reset");
          tabla.ajax.reload(null, false);
          const Toast = Swal.mixin();
@@ -246,7 +246,7 @@ $(document).ready(function () {
          });
 
       }).always(function (xhr, opts) {
-        $('#loadingActualizarContacto').hide();
+         $('#loadingActualizarContacto').hide();
       });
    }
    function eliminar() {
@@ -292,9 +292,9 @@ $(document).ready(function () {
       dui.inputmask({ "mask": "99999999-9" }); //specifying options
       // $("#dui").inputmask("9-a{1, 3}9{1, 3}"); //mask with dynamic syntax
 
-   let telef = $('#telefonoContacto');
-   telef.inputmask("(+123) 1234-5678");
-   telef.inputmask({ "mask": "(+999) 9999-9999" });
+      let telef = $('#telefonoContacto');
+      telef.inputmask("(+123) 1234-5678");
+      telef.inputmask({ "mask": "(+999) 9999-9999" });
    }
    function inicializarFoto() {
       // ESTO ES PARA INICIALIZAR EL ELEMENTO DE SUBIDA DE UNA UNICA FOTO
@@ -302,7 +302,7 @@ $(document).ready(function () {
          theme: 'fas',
          language: 'es',
          required: true,
-         maxFileSize: 2000,
+         maxFileSize: 200000,
          maxFilesNum: 10,
          showUpload: false,
          showClose: false,
@@ -315,7 +315,7 @@ $(document).ready(function () {
          msgErrorClass: 'alert alert-block alert-danger',
          defaultPreviewContent: '<img src="../../img/avatar.png" alt="Your Avatar">',
          layoutTemplates: { main2: '{preview} {remove} {browse}' },
-         allowedFileExtensions: ["jpg", "png", "gif"]
+         allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
       });
    }
    function ActualizarFotoPerfil() {
@@ -338,7 +338,7 @@ $(document).ready(function () {
          contentType: false,
       }).done(function (response) {
          //REST_Controller::HTTP_OK
-         
+
          tabla.ajax.reload(null, false);
          const Toast = Swal.mixin();
          Toast.fire({

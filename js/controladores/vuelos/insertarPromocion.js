@@ -1,10 +1,10 @@
 // CUANDO LA PAGINA YA ESTA LISTA
-$(document).ready(function() {
+$(document).ready(function () {
     inicializarGaleria();
     inicializarValidaciones();
     $('#loadingPromocion').hide();
     //BOTON DE GUARDAR
-    $(document).on('click', '#btnguardar', function(evento) {
+    $(document).on('click', '#btnguardar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#miFormulario");
         form.validate();
@@ -42,7 +42,7 @@ $(document).ready(function() {
             timeout: 0,
             processData: false,
             contentType: false,
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             let respuestaDecodificada = JSON.parse(response);
             const Toast = Swal.mixin();
@@ -56,7 +56,7 @@ $(document).ready(function() {
                 guardarBitacora();
                 $("#miFormulario").trigger("reset");
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             console.log(response);
 
@@ -68,7 +68,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingPromocion').hide();
         });
 
@@ -83,9 +83,9 @@ $(document).ready(function() {
             //uploadUrl: '#',
             showUpload: false,
             //showCaption: false,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 1,
-            allowedFileExtensions: ['jpg', 'png', 'gif'],
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif'],
             required: true,
             uploadAsync: false,
             showClose: false,
@@ -142,14 +142,14 @@ $(document).ready(function() {
                 }
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }

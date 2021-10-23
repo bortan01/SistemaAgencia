@@ -1,11 +1,11 @@
 // CUANDO LA PAGINA YA ESTA LISTA
-$(document).ready(function() {
+$(document).ready(function () {
     inicializarGaleriaAutos();
     inicializarGaleriaDocumentos();
     $('#loadingRegistroVehiculo').hide();
 
     //BOTON DE GUARDAR
-    $(document).on('click', '#btnguardar', function(evento) {
+    $(document).on('click', '#btnguardar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#miFormulario");
         form.validate();
@@ -63,7 +63,7 @@ $(document).ready(function() {
             timeout: 0,
             processData: false,
             contentType: false,
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
 
             let respuestaDecodificada = JSON.parse(response);
@@ -82,7 +82,7 @@ $(document).ready(function() {
 
 
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             console.log(response);
 
@@ -94,7 +94,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingRegistroVehiculo').hide();
         });
     }
@@ -111,7 +111,7 @@ $(document).ready(function() {
             //uploadUrl: '#',
             showUpload: false,
             //showCaption: false,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 1,
             initialPreviewAsData: true,
             initialPreviewFileType: 'pdf',
@@ -130,9 +130,9 @@ $(document).ready(function() {
             //uploadUrl: '#',
             showUpload: false,
             //showCaption: false,
-            maxFileSize: 2000,
+            maxFileSize: 200000,
             maxFilesNum: 10,
-            allowedFileExtensions: ['jpg', 'png', 'gif'],
+            allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif'],
             required: true,
             uploadAsync: false,
             showClose: false,

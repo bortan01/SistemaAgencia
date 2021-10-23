@@ -1,21 +1,21 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let explorer = $("#kv-explorer");
     let idPromocion;
     let tabla;
 
-   inicializarValidaciones();
+    inicializarValidaciones();
     inicializarTabla();
     $('#loadingActualizarPromociones').hide();
     //BOTON Modificar
-    $(document).on('click', '.btn-group .btn-primary', function() {
+    $(document).on('click', '.btn-group .btn-primary', function () {
 
         idPromocion = $(this).attr("name");
 
         $('#loadingActualizar').show();
         $.ajax({
-            url: URL_SERVIDOR+"promocionVuelo/promocion?idpromocion_vuelo=" + idPromocion,
+            url: URL_SERVIDOR + "promocionVuelo/promocion?idpromocion_vuelo=" + idPromocion,
             method: "GET"
-        }).done(function(response) {
+        }).done(function (response) {
             //MANDALOS LOS VALORES AL MODAL
             for (let i = 0, ien = response.promociones.length; i < ien; i++) {
 
@@ -27,61 +27,61 @@ $(document).ready(function() {
                 document.getElementById("descripcion").value = response.promociones[i].descripcion_promocion;
                 document.getElementById("aerolineaPromocion").value = response.promociones[i].nombre_aerolinea;
                 document.getElementById("clase").value = response.promociones[i].nombre_clase;
-             
+
             }
 
-        }).fail(function(response) {
+        }).fail(function (response) {
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#modal-editar').modal('show');
             $('#loadingActualizar').hide();
         });
     });
 
-    
-//BOTON EDITAR LA FOTO
-$(document).on('click', '.btn-group .btn-warning', function () {
-    $('#modal-imagenes').modal('show');
-    let identificador = $(this).attr("name");
-    let nombreTabla = 'promocion_vuelo';
-    let informacionAdicional = { tipo: nombreTabla, identificador: identificador };
-    let urlFotos = [];
-    let infoFotos = [];
 
-    $.ajax({
-        url: URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador,
-        method: "GET",
+    //BOTON EDITAR LA FOTO
+    $(document).on('click', '.btn-group .btn-warning', function () {
+        $('#modal-imagenes').modal('show');
+        let identificador = $(this).attr("name");
+        let nombreTabla = 'promocion_vuelo';
+        let informacionAdicional = { tipo: nombreTabla, identificador: identificador };
+        let urlFotos = [];
+        let infoFotos = [];
 
-    }).done(function (response) {
-        //REST_Controller::HTTP_OK
-        console.log(URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador);
-        response.forEach(element => {
-            let informacion = {
-                url: URL_SERVIDOR + "Imagen/delete",
-                key: element.id_foto
-            };
-            infoFotos.push(informacion);
-            urlFotos.push(element.foto_path);
-        });
-        explorer.fileinput({
-            theme: 'fas',
-            language: 'es',
-            uploadUrl: URL_SERVIDOR + 'Imagen/save',
-            uploadExtraData: informacionAdicional,
-            overwriteInitial: false,
-            initialPreviewAsData: true,
-            initialPreview: urlFotos,
-            initialPreviewConfig: infoFotos,
-            required: true,
-            maxFileSize: 2000,
-            maxFilesNum: 10,
-            allowedFileExtensions: ["jpg", "png", "gif"]
+        $.ajax({
+            url: URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador,
+            method: "GET",
 
+        }).done(function (response) {
+            //REST_Controller::HTTP_OK
+            console.log(URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador);
+            response.forEach(element => {
+                let informacion = {
+                    url: URL_SERVIDOR + "Imagen/delete",
+                    key: element.id_foto
+                };
+                infoFotos.push(informacion);
+                urlFotos.push(element.foto_path);
+            });
+            explorer.fileinput({
+                theme: 'fas',
+                language: 'es',
+                uploadUrl: URL_SERVIDOR + 'Imagen/save',
+                uploadExtraData: informacionAdicional,
+                overwriteInitial: false,
+                initialPreviewAsData: true,
+                initialPreview: urlFotos,
+                initialPreviewConfig: infoFotos,
+                required: true,
+                maxFileSize: 200000,
+                maxFilesNum: 10,
+                allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
+
+            });
         });
     });
-});
     //Boton Eliminar
-    $(document).on('click', '.btn-group .btn-danger', function(evento) {
+    $(document).on('click', '.btn-group .btn-danger', function (evento) {
         idCotizar = $(this).attr("name");
         fila = $(this).closest("tr");
 
@@ -103,7 +103,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
         })
     });
     //BOTON PARA ACTUALIZAR
-    $(document).on('click', '#btnActualizar', function(evento) {
+    $(document).on('click', '#btnActualizar', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#promocionesEditar");
         form.validate();
@@ -113,11 +113,11 @@ $(document).on('click', '.btn-group .btn-warning', function () {
     });
 
 
-  //CUANDO EL MODAL SE CIERRA
-  $('#modal-imagenes').on('hidden.bs.modal', function (e) {
-    console.log("cerrando modal")
-    explorer.fileinput('destroy');
-})
+    //CUANDO EL MODAL SE CIERRA
+    $('#modal-imagenes').on('hidden.bs.modal', function (e) {
+        console.log("cerrando modal")
+        explorer.fileinput('destroy');
+    })
 
 
     function inicializarTabla() {
@@ -128,7 +128,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
             "ajax": {
                 "url": URL_SERVIDOR + "promocionVuelo/promocion",
                 "method": "GET",
-                "dataSrc": function(json) {
+                "dataSrc": function (json) {
                     console.log(json.promociones);
 
                     if (json.promociones) {
@@ -199,14 +199,14 @@ $(document).on('click', '.btn-group .btn-warning', function () {
 
             },
             errorElement: 'span',
-            errorPlacement: function(error, element) {
+            errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass) {
+            highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
 
             }
@@ -230,7 +230,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
             method: "PUT",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
             Toast.fire({
@@ -242,7 +242,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
                 $('#modal-editar').modal('hide');;
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log(response);
 
             const Toast = Swal.mixin();
@@ -253,7 +253,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizarPromociones').hide();
 
         });
@@ -270,7 +270,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
             method: "DELETE",
             timeout: 0,
             data: data
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
             Toast.fire({
@@ -281,7 +281,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
             }).then((result) => {
                 tabla.ajax.reload(null, false);
             });
-        }).fail(function(response) {
+        }).fail(function (response) {
 
             console.log(response);
             const Toast = Swal.mixin();
@@ -292,7 +292,7 @@ $(document).on('click', '.btn-group .btn-warning', function () {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingActualizar').hide();
         });
     }
