@@ -9,6 +9,7 @@ $(document).ready(function () {
     let TOTAL = 0.0;
     let COMISION = 0.0;
     let TOTALCLIENTE = 0.0;
+    let COSTO_ENVIO = 0;
     // let cantidad = document.getElementById("cantidad");
     let tabla = $('#add-tabla').DataTable({
         "paging": true,
@@ -73,6 +74,7 @@ $(document).ready(function () {
             tabla.order([6, 'desc']).draw();
             contadorTabla++;
         }
+        modificarCostoEnvio();
         modificarTotal();
         modificarComision();
         modificarTotalCliente();
@@ -115,7 +117,18 @@ $(document).ready(function () {
     function modificarTotalCliente() {
 
         $('#totalCliente').empty();
-        $('#totalCliente').text("$" + (TOTAL + COMISION));
+        $('#totalCliente').text("$" + (TOTAL + COMISION + COSTO_ENVIO));
+    }
+
+    function modificarCostoEnvio() {
+        // DATA_MUNICIPIOS esta difinida en el js encominda/producto.js
+        let id = document.getElementById('municipio_envio').value;
+        let municipio_envio = DATA_MUNICIPIOS.find(municipio_envio => municipio_envio.id_municipio === id);
+        COSTO_ENVIO = parseInt(municipio_envio.costo_agregado);
+        $('#envio').empty();
+        $('#envio').text("$" + (municipio_envio.costo_agregado));
+
+
     }
     //BOTON DE ELIMINAR
     $(document).on('click', '.btn-group .btn-danger', function (evento) {
@@ -250,7 +263,6 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
         }).done(function (response) {
-            //console.log(response);
             $("#encomiendass-form").trigger("reset");
             $('#comboUsuario').val('').trigger('change');
             $('#id_producto').val('').trigger('change');
@@ -293,10 +305,9 @@ $(document).ready(function () {
         let detalle_destino = [];
         let nombre_cliente_destino = document.getElementById("cliente_des").value;
         let telefono = document.getElementById("telefono_des").value;
-        let ciudad_destino = document.getElementById("ciudad_des").value;
-        let codigo_postal_destino = document.getElementById("codigo_des").value;
         let direccion_destino = document.getElementById("direccion").value;
         let alterna_destino = document.getElementById("direccion_alterna").value;
+        let id_municipio = document.getElementById('municipio_envio').value;
 
         tabla.rows().every(function (value, index) {
             let data = this.data();
@@ -316,22 +327,22 @@ $(document).ready(function () {
         detalle_destino.push({
             "nombre_cliente_destini": nombre_cliente_destino,
             "telefono": telefono,
-            "ciudad_destino": ciudad_destino,
-            "codigo_postal_destino": codigo_postal_destino,
             "direccion_destino": direccion_destino,
             "alterna_destino": alterna_destino
         });
 
-        form.append("ciudad_origen", document.getElementById("ciudad").value);
-        form.append("codigo_postal_origen", document.getElementById("codigo").value);
+
         form.append("fecha", document.getElementById("fecha").value);
         form.append("estado", document.getElementById("estado").value);
         form.append("total_encomienda", TOTAL);
         form.append("total_comision", COMISION);
-        form.append("total_cliente", (TOTAL + COMISION));
+        form.append("total_cliente", (TOTAL + COMISION + COSTO_ENVIO));
         form.append("id_usuario", document.getElementById("comboUsuario").value);
+        form.append("id_municipio", id_municipio);
+        form.append("ciudad_origen", "San Vicente");
         form.append("detalle_encomienda", JSON.stringify(detalle_encomienda));
         form.append("detalle_destino", JSON.stringify(detalle_destino));
+
 
 
         return form;
