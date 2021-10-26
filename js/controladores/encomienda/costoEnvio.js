@@ -1,27 +1,24 @@
 $(document).ready(function () {
     let explorer = $("#kv-explorer");
-    let ListaDatos;
     let idSeleccionado;
     let tabla;
     inicializarValidaciones();
     inicializarTabla();
     inicializarComboTipo();
-    inicializarComboContacto();
 
     //BOTON DE EDITAR
     $(document).on('click', '.btn-group .btn-primary', function () {
         $('#loadingActualizar').hide();
         let fila = $(this).closest("tr");
         let data = tabla.row(fila).data();
-        console.log(data);
-        idSeleccionado = data.id_sitio_turistico;
+        idSeleccionado = data.id_municipio;
 
 
-        document.getElementById("nombre").value = data.nombre_sitio;
-        document.getElementById("precio_sitio").value = data.precio_sitio;
-        document.getElementById("descripcion").value = data.descripcion_sitio;
-        document.getElementById("ComboTipo").value = data.id_tipo_sitio;
-        document.getElementById("contacto_servicio").value = data.id_contacto;
+        document.getElementById("nombre").value = `${data.nombre_municipio} (${data.departamento})`;
+        document.getElementById("costo_agregado").value = data.costo_agregado;
+        // document.getElementById("descripcion").value = data.descripcion_sitio;
+        // document.getElementById("ComboTipo").value = data.id_tipo_sitio;
+        // document.getElementById("contacto_servicio").value = data.id_contacto;
         $('#ComboTipo').trigger('change');
         $('#contacto_servicio').trigger('change');
         $('#modal-editar').modal('show');
@@ -105,22 +102,6 @@ $(document).ready(function () {
         console.log("cerrando modal")
         explorer.fileinput('destroy');
     })
-    //BOTON DE COORDENADAS
-    $(document).on('click', '#btn-mapa', function (evento) {
-        $('#coordenadas').val("13.645382, -88.870769");
-        $("#coordenadas-error").hide();
-        $("#coordenadas").removeClass("is-invalid");
-    });
-    //CLICK EN EL LINK DEL CONTACTO
-    $(document).on('click', '.info_contacto', function () {
-        $('#modal_ver_contacto').modal('show');
-        let fila = $(this).closest("tr");
-        let data = tabla.row(fila).data();
-        $("#spanCorreo").html(data.correo);
-        $("#spanTelefono").html(data.telefono);
-        $("#spanNombre").html(data.nombreContacto);
-        $("#imgContacto").attr("src", data.url);
-    });
 
     function inicializarTabla() {
         tabla = $("#tabla_servicios").DataTable({
@@ -128,75 +109,26 @@ $(document).ready(function () {
             "autoWidth": false,
             "deferRender": true,
             "ajax": {
-                "url": URL_SERVIDOR + "SitioTuristico/show",
+                "url": URL_SERVIDOR + "Encomienda/municipioEnvio",
                 "method": "GET",
                 "dataSrc": function (json) {
                     //PARA CONPROVAR QUE EL SERVICIO EXISTE
-                    if (json.sitios) {
-                        for (let i = 0, ien = json.sitios.length; i < ien; i++) {
+                    if (json.municipio_envio) {
+                        for (let i = 0, ien = json.municipio_envio.length; i < ien; i++) {
                             //CREAMOS UNA NUEVA PROPIEDAD LLAMADA BOTONES
                             let html = "";
                             html += '<td>';
                             html += '    <div class="btn-group">';
-                            html += '        <button title="Editar" type="button" name="' + json.sitios[i].id_sitio_turistico + '" class="btn btn-primary" data-toggle="modal"';
+                            html += '        <button title="Editar" type="button" name="" class="btn btn-primary" data-toggle="modal"';
                             html += '            data-target="">';
                             html += '            <i class="fas fa-edit" style="color: white"></i>';
                             html += '        </button>';
-                            html += '        <button title="Galería" type="button" name="' + json.sitios[i].id_sitio_turistico + '" class="btn btn-warning" data-toggle="modal"';
-                            html += '            data-target="#modal-galeria">';
-                            html += '            <i class="fas fa-image" style="color: white"></i>';
-                            html += '        </button>';
-                            html += '        <button title="Eliminar" type="button" name="' + json.sitios[i].id_sitio_turistico + '" class="btn btn-danger" data-toggle="modal"';
-                            html += '            data-target="#modal-eliminar">';
-                            html += '            <i class="fas fa-trash" style="color: white"></i>';
-                            html += '        </button>';
                             html += '    </div>';
                             html += '</td>';
-                            json.sitios[i]["botones"] = html;
-
-                            let html2 = "";
-                            html2 += '<a class="info_contacto" href="#">' + json.sitios[i].contactoN + '';
-                            html2 += '    <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">';
-                            html2 += '        <div class="ocultar card bg-light">';
-                            html2 += '            <div class="card-body">';
-                            html2 += '                <div class="row">';
-                            html2 += '                    <div class="col-7">';
-                            html2 += '                        <p class="text-muted text-sm">';
-                            html2 += '                            <b>Nombre de Contacto</b>';
-                            html2 += '                            ' + json.sitios[i].contactoN + '';
-                            html2 += '                        </p>';
-                            html2 += '                        <ul class="ml-4 mb-0 fa-ul text-muted">';
-                            html2 += '                            <li class="small">';
-                            html2 += '                                <span class="fa-li">';
-                            html2 += '                                    <i class="fas fa-lg fa-mail-bulk"> </i>';
-                            html2 += '                                </span> ' + json.sitios[i].correo + '';
-                            html2 += '                            </li>';
-                            html2 += '                            <li class="small">';
-                            html2 += '                                <span class="fa-li">';
-                            html2 += '                                    <i class="fas fa-lg fa-phone"></i>';
-                            html2 += '                                </span> Teléfono #: ' + json.sitios[i].telefono + '';
-                            html2 += '                            </li>';
-                            html2 += '                        </ul>';
-                            html2 += '                    </div>';
-                            html2 += '                    <div class="col-5 text-center">';
-                            html2 += '                        <img src="' + json.sitios[i].url + '" alt=""';
-                            html2 += '                            class="img-fluid">';
-                            html2 += '                    </div>';
-                            html2 += '                </div>';
-                            html2 += '            </div>';
-                            html2 += '            <div class="card-footer"></div>';
-                            html2 += '        </div>';
-                            html2 += '    </div>';
-                            html2 += '</a>';
-                            json.sitios[i]["nombreContacto"] = json.sitios[i].contactoN;
-                            json.sitios[i]["contactoN"] = html2;
-
-
+                            json.municipio_envio[i]["botones"] = html;
                         }
                         $('#loading').hide();
-                        return json.sitios;
-
-
+                        return json.municipio_envio;
                     } else {
                         $('#loading').hide();
                         return [];
@@ -204,11 +136,11 @@ $(document).ready(function () {
                 }
             },
             columns: [
-                { data: "nombre_sitio" },
-                { data: "precio_sitio" },
-                { data: "contactoN" },
-                { data: "descripcion_sitio" },
+                { data: "departamento" },
+                { data: "nombre_municipio" },
+                { data: "costo_agregado" },
                 { data: "botones" },
+
             ]
         });
 
@@ -216,45 +148,18 @@ $(document).ready(function () {
     function inicializarValidaciones() {
         $('#formularioEditar').validate({
             rules: {
-                nombre: {
-                    required: true,
-                    minlength: 3,
-                    maxlength: 40
-                },
-                precio_sitio: {
+                costo_agregado: {
                     required: true,
                     number: true,
                     min: 0
-                },
-                informacion_contacto: {
-                    required: true,
-                    minlength: 10,
-                },
-                descripcion: {
-                    required: true,
-                    minlength: 10,
                 }
             },
             messages: {
-                nombre: {
-                    required: "Ingrese un nombre",
-                    minlength: "Logitud del nombre debe ser mayor a 3",
-                    maxlength: "Logitud del nombre no debe exceder a 40",
-                },
-                precio_sitio: {
+                costo_agregado: {
                     required: "Ingrese un número",
                     number: "Ingrese un número",
                     min: "Debe de ser mayor que 0"
-                },
-                informacion_contacto: {
-                    required: "La informacion de contacto es necesaria",
-                    minlength: "Debe de tener una longitud minima de 10",
-                },
-                descripcion: {
-                    required: "La descripcion del servico es necesaria",
-                    minlength: "Debe de tener una longitud minima de 10",
                 }
-
             },
             errorElement: 'span',
             errorPlacement: function (error, element) {
@@ -277,35 +182,27 @@ $(document).ready(function () {
         // myCoordnada = myCoordnada.split(', ');
 
         let data = {
-            "id_sitio_turistico": idSeleccionado,
-            "nombre_sitio": document.getElementById("nombre").value,
-            // "longitud": myCoordnada[1],
-            // "latitud": myCoordnada[0],
-            "descripcion_sitio": document.getElementById("descripcion").value,
-            "tipo": document.getElementById("ComboTipo").value,
-            "informacion_contacto": document.getElementById("contacto_servicio").value,
-            "precio_sitio": document.getElementById("precio_sitio").value,
-            "id_tipo_sitio": document.getElementById("ComboTipo").value,
-
+            "id_municipio": idSeleccionado,
+            "costo_agregado": document.getElementById("costo_agregado").value,
         };
-        console.log(data);
+        
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO
         $.ajax({
-            url: URL_SERVIDOR + "SitioTuristico/update",
+            url: URL_SERVIDOR + "Encomienda/municipioEnvio",
             method: "PUT",
             timeout: 0,
             data: data
         }).done(function (response) {
             //REST_Controller::HTTP_OK
+            $('#modal-editar').modal('hide');;
+            tabla.ajax.reload(null, false);
+
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
                 icon: 'success',
                 text: response.mensaje,
                 showConfirmButton: true,
-            }).then((result) => {
-                $('#modal-editar').modal('hide');;
-                tabla.ajax.reload(null, false);
             });
         }).fail(function (response) {
             console.log(response);
@@ -387,33 +284,5 @@ $(document).ready(function () {
         });
 
     }
-    function inicializarComboContacto() {
-        //COMBO DE CONTACTOS
-        $.ajax({
-            url: URL_SERVIDOR + "Contacto/show",
-            method: "GET"
-        }).done(function (response) {
-            //REST_Controller::HTTP_OK
-            let myData = [];
-            if (response.contactos) {
-                let lista = response.contactos;
-                for (let index = 0; index < lista.length; index++) {
-                    myData.push({
-                        id: lista[index].id_contacto,
-                        text: lista[index].nombre_contacto
-                    });
-                }
-                $('#contacto_servicio').select2(
-                    { data: myData }
-                );
-            } else {
-                $('#contacto_servicio').select2();
-            }
-        }).fail(function (response) {
-            $('#contacto_servicio').select2();
 
-        }).always(function (xhr, opts) {
-            $('#loading').hide();
-        });
-    }
 });

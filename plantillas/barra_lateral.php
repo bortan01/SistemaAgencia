@@ -313,6 +313,12 @@
                      </a>
                   </li>
                   <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/encomiendas/costoEnvio.js.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Costo de envio</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/encomiendas/verProducto.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
                         <p>Ver productos</p>
