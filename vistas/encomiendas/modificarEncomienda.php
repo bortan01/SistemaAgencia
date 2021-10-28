@@ -238,9 +238,9 @@ include_once '../../plantillas/barra_lateral.php';
                                     <thead>
                                        <tr style="text-align: center;">
                                           <th>Producto</th>
-                                          <th>Costo</th>
+                                          <th>Costo ($)</th>
                                           <th>Cantidad</th>
-                                          <th>Sub Total</th>
+                                          <th>Sub Total ($)</th>
                                           <th>Acción</th>
                                           <th>id</th>
                                           <th>contador</th>
@@ -272,7 +272,7 @@ include_once '../../plantillas/barra_lateral.php';
                            <div class="row">
                               <div class="col-md-1 col-md-offset-1"> </div>
                               <div class="col-md-3  ">
-                                 <label class="text-danger "> Total de cliente: </label>
+                                 <label class="text-danger "> Total de Cliente: </label>
                               </div>
                               <div class="col-md-3  ">
                                  <label id="totalCliente" class="text-danger "> $0</label>
