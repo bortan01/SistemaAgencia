@@ -137,7 +137,7 @@ include_once '../session/isEmpleado.php';
                                  </div>
                                  <div class="col-sm-12">
                                     <div class="form-group multiple-form-group input-group">
-                                       <label>Municipio de envio</label>
+                                       <label>Municipio de envío</label>
                                        <div class="input-group">
                                           <select name="municipio_envio" id="municipio_envio"
                                              class="select2 select2-hidden-accessible form-control"
@@ -226,9 +226,9 @@ include_once '../session/isEmpleado.php';
                                        <thead>
                                           <tr style="text-align: center;">
                                              <th>Producto</th>
-                                             <th>Costo</th>
+                                             <th>Costo ($)</th>
                                              <th>Cantidad</th>
-                                             <th>Sub Total</th>
+                                             <th>Sub Total ($)</th>
                                              <th>Acción</th>
                                              <th>id</th>
                                              <th>contador</th>
@@ -260,7 +260,7 @@ include_once '../session/isEmpleado.php';
                               <div class="row">
                                  <div class="col-md-1 col-md-offset-1"> </div>
                                  <div class="col-md-3  ">
-                                    <label class="text-primary "> Costo de envio: </label>
+                                    <label class="text-primary "> Costo de envío: </label>
                                  </div>
                                  <div class="col-md-3  ">
                                     <label id="envio" class="text-primary "> $0</label>
