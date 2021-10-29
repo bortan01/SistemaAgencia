@@ -77,6 +77,8 @@ $(document).ready(function() {
         tr.appendChild(crearColumna(event.tarifa));
         tr.appendChild(crearColumna(event.cantidad));
         tr.appendChild(crearColumna(event.sub_total));
+        tr.classList.add('textcenter');
+
         return tr;
     }
 
@@ -157,7 +159,7 @@ $(document).ready(function() {
             "autoWidth": false,
             "deferRender": true,
             "columnDefs": [
-                { "className": "dt-center", "targets": "_all" },
+                { "className": "text-center", "targets": "_all" },
                 { "targets": [4], "visible": false },
                 { "targets": [5], "visible": false },
                 { "targets": [6], "visible": false },
