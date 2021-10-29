@@ -146,7 +146,9 @@ $(document).ready(function() {
                     minlength: "Debe de tener una longitud minima de 10",
                 },
          
-                precioSitio: {
+                precioSitio
+                
+                : {
                     required: "El precio es necesario",
                     min: "Debe de ser mayor que 0"
                 }

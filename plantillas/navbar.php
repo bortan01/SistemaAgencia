@@ -3,7 +3,6 @@
 <body class="hold-transition sidebar-mini layout-fixed">
    <!-- Site wrapper -->
    <div class="wrapper">
-
       <!-- Main Sidebar Container -->
       <!-- Navbar -->
       <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -13,7 +12,6 @@
                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
          </ul>
-
          <!-- Right navbar links -->
          <ul class="navbar-nav ml-auto">
             <!-- Messages Dropdown Menu -->
@@ -26,44 +24,40 @@
             </li>
             <?php endif; ?>
             <!-- Notifications Dropdown Menu -->
-            <!-- <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
                <a class="nav-link" data-toggle="dropdown" href="#">
                   <i class="far fa-bell"></i>
-                  <span class="badge badge-warning navbar-badge">15</span>
+                  <span id="headerNotificatinos" class="badge badge-warning navbar-badge">0</span>
                </a>
                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                  <span class="dropdown-item dropdown-header">15 Notifications</span>
+                  <span id="currentNotifications" class="dropdown-item dropdown-header">0 Notificacion(es)</span>
                   <div class="dropdown-divider"></div>
                   <a href="#" class="dropdown-item">
-                     <i class="fas fa-envelope mr-2"></i> 4 new messages
-                     <span class="float-right text-muted text-sm">3 mins</span>
+                     <i class="fas fa-map-marked-alt mr-2">
+                     </i> <span id="notificationPaquete" name="notificationPaquete">0 Cotizacion(es) de
+                        paquete(s)</span>
                   </a>
                   <div class="dropdown-divider"></div>
                   <a href="#" class="dropdown-item">
-                     <i class="fas fa-users mr-2"></i> 8 friend requests
-                     <span class="float-right text-muted text-sm">12 hours</span>
+                     <i class="fas fa-car mr-2"></i><span id="notificationVehiculo" name="notificationVehiculo">0
+                        Cotizacion(es) de vehículo(s)</span>
                   </a>
                   <div class="dropdown-divider"></div>
                   <a href="#" class="dropdown-item">
-                     <i class="fas fa-file mr-2"></i> 3 new reports
-                     <span class="float-right text-muted text-sm">2 days</span>
+                     <i class="fas fa-plane mr-2"></i> <span id="notificationVuelo" name="notificationVuelo">0
+                        Cotizacion(es) de vuelo(s)</span>
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                  <a href="#" class="dropdown-item">
+                     <i class="fa fa-umbrella-beach mr-2"></i><span id="notificationTours" name="notificationTours">0
+                        reserva(s) de tour(s)</span>
+                  </a>
                </div>
-            </li> -->
-
-
+            </li>
             <li>
                <a id="logout" style="cursor: pointer;" class="nav-link">
                   Cerrar Sesion <i class="fas fa-sign-out-alt"></i>
                </a>
             </li>
-
-
-
-
-
          </ul>
       </nav>
       <!-- /.navbar -->
