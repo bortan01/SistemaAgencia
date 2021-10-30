@@ -50,6 +50,18 @@
    </section>
 </div>
 
+
+
 <?php include_once '../../plantillas/footer.php'; ?>
 <script src="../../js/controladores/chat/chat.js"></script>
+<style>
+footer {
+   display: none;
+}
+
+/* 
+.wrapper {
+   height: 100%;
+} */
+</style>
 <?php include_once '../../plantillas/cierre.php'; ?>

@@ -47,6 +47,7 @@
                      <i class="fas fa-plane mr-2"></i> <span id="notificationVuelo" name="notificationVuelo">0
                         Cotizacion(es) de vuelo(s)</span>
                   </a>
+                  <div class="dropdown-divider"></div>
                   <a href="#" class="dropdown-item">
                      <i class="fa fa-umbrella-beach mr-2"></i><span id="notificationTours" name="notificationTours">0
                         reserva(s) de tour(s)</span>

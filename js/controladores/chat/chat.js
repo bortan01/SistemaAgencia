@@ -13,10 +13,7 @@ let activarSonido = false;
 let proximaConsulta;
 let fotoEmisor;
 
-
 getUsers();
-
-
 
 $(document.body).on("click", ".user", function () {
   //ESTA PARTE ES PARA EL EFECTO CSS DE CAMBIO
@@ -33,7 +30,7 @@ $(document.body).on("click", ".user", function () {
   }
 
   let name = $(this).find("strong").text();
-  fotoReceptor = $(this).find('img').attr("src");
+   fotoReceptor = $(this).find('img').attr("src");
   uid_cliente = $(this).attr("uuid");
   $(".message-container").html("Cargando Mensajes...");
   $(".name").text(name);
@@ -122,13 +119,14 @@ $('#message-input').on('keypress', function (e) {
     return false;
   }
 });
+
 $(".send-btn").on("click", function () {
   enviarMensaje();
 });
 
 function getUsers() {
   $.ajax({
-    url: URL_SERVIDOR + "/Usuario/obtenerUsuarioByChat",
+    url: URL_SERVIDOR + "Usuario/obtenerUsuarioByChat",
     method: "GET",
     success: function (response) {
       if (!response.error) {
@@ -154,8 +152,8 @@ function getUsers() {
               '<div class="user-details">' +
               "<span><strong>" +
               value.nombre +
-              '<span   style="font-weight: 500; color: gray; font-size: 0.88rem;"class="count">' + mensajePendiente + '</span></strong></span>' +
-              "<span></span>" +
+              '</strong></span>' +
+              '<span   style="font-weight: 500; color: gray; font-size: 0.88rem;"class="count">' + mensajePendiente + '</span>' +
               "</div>" +
               "</div>";
           }
@@ -250,7 +248,7 @@ function enviarMensaje() {
 }
 function actualizarFecha(uuid) {
   $.ajax({
-    url: URL_SERVIDOR + "/Usuario/updateFecha",
+    url: URL_SERVIDOR + "Usuario/updateFecha",
     method: "PUT",
     data: { uuid: uuid, "mensajePendiente": "" },
     success: function (resp) {
