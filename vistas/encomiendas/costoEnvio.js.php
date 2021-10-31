@@ -18,12 +18,12 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Actualizar Costo de Envio</h1>
+               <h1>Actualizar Costo de Envío</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
-                  <li class="breadcrumb-item active">Actualizar Costo de Envio</li>
+                  <li class="breadcrumb-item active">Actualizar Costo de Envío</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
                      id="botonAyudaMostrarSitios"> <i class="fas fa-question"></i></button>
                </ol>
@@ -40,7 +40,7 @@
 
             <div class="card">
                <div class="card-header">
-                  <h3 class="card-title">Actualizar Costo de Envio</h3>
+                  <h3 class="card-title">Actualizar Costo de Envío</h3>
                </div>
                <!-- /.card-header -->
                <div class="card-body">
@@ -49,7 +49,7 @@
                         <tr>
                            <th>Departamento</th>
                            <th>Municipio</th>
-                           <th>Costo de Envio ($)</th>
+                           <th>Costo de Envío ($)</th>
                            <th>Acciones</th>
                         </tr>
                      </thead>
@@ -86,7 +86,7 @@
                      </div>
                   </div>
                   <div class="modal-header">
-                     <h4 class="modal-title">Modificar Costo de Envio</h4>
+                     <h4 class="modal-title">Modificar Costo de Envío</h4>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                      </button>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-sm-6">
                            <div class="form-group">
-                              <label>Costo de Envio ($)</label>
+                              <label>Costo de Envío ($)</label>
                               <div class="input-group">
                                  <input type="number" min="0" class=" form-control" name="costo_agregado"
                                     id="costo_agregado">
@@ -127,11 +127,7 @@
       </form>
    </div>
    <!-- End Modal EDITAR-->
-
-
    <?php include_once '../contactos/modal-verContacto.php'; ?>
-
-
 </div>
 
 <?php
