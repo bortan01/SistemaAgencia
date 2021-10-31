@@ -83,7 +83,7 @@ $('#chats').scroll(function () {
               let newMessage =
                 '<div class="message-block ">' +
                 '<div class="user-icon"><img  src="' + fotoReceptor + '" class="user-icon"/></div>' +
-                '<div class="message">' +
+                '<div class="message-grey">' +
                 doc.data().message +
                 "</div>" +
                 "</div>";
@@ -205,7 +205,7 @@ function realTime() {
             newMessage +=
               '<div class="message-block ">' +
               '<div class="user-icon"><img  src="' + fotoReceptor + '" class="user-icon"/></div>' +
-              '<div class="message">' +
+              '<div class="message-grey">' +
               change.doc.data().message +
               "</div>" +
               "</div>";

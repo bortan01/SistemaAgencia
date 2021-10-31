@@ -176,6 +176,14 @@ html, body{
 	display: inline-block;
 	margin: 10px 5px;
 }
+.message-block .message-grey{
+	background: grey;
+	color: #fff;
+	border-radius: 10px;
+	padding:5px;
+	display: inline-block;
+	margin: 0px 1% 0px 2%;
+}
 .received-message{
 	display: flex;
 	flex: 1;

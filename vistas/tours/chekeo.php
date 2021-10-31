@@ -45,6 +45,8 @@
                         <tr>
                            <th>Chequeo</th>
                            <th>Cliente</th>
+                           <th>Teléfono</th>
+                           <th>Correo</th>
                            <th>Asiento(s) Reservados</th>
                            <th>Descripción</th>
                            <th>Tipo de Viaje</th>

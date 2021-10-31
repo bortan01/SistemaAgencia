@@ -74,7 +74,7 @@ $(document).ready(function () {
          columnDefs: [
             // { "className": "dt-center", "targets": "_all" },
             // { "targets": [5], "visible": false },
-            { "targets": [3], width: "30%" },
+            { "targets": [5], width: "30%" },
 
          ],
          ajax: {
@@ -99,6 +99,8 @@ $(document).ready(function () {
          columns: [
             { data: "boton" },
             { data: "nombre" },
+            { data: "celular" },
+            { data: "correo" },
             { data: "label_asiento" },
             { data: "descripcionProducto" },
             { data: "tipo" },
