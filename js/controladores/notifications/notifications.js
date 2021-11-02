@@ -31,7 +31,7 @@ $(document).on('click', '#notificationVuelo', function(evento) {
 });
 
 $(document).on('click', '#notificationTours', function(evento) {
-   // window.location = `${URL_SISTEMA}vistas/paquetes/solicitudesCotizacion.php`;
+   window.location = `${URL_SISTEMA}vistas/tours/ultimas_reservas.php`;
 });
 
 obtenerNotificaciones();
