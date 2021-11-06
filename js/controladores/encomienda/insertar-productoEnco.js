@@ -2,10 +2,6 @@ $(document).ready(function (){
 
     inicializarValidaciones();
     inicializarValidacionesComision();
-  //guardar la comision
- /* $('.decimales').on('input', function () {
-  this.value = this.value.replace(/[^0-9,.]/g, '').replace(/,/g, '.');
-  });*/
    $('#btn-guardaComision').click(function(evento){
        
          let form = $("#comision-form");
@@ -27,9 +23,7 @@ $(document).ready(function (){
         if (form.valid()) {
             if (form1.valid()) {
                add_producto(); 
-            }
-                 
-            
+            }    
         }  
         
     });
@@ -149,13 +143,6 @@ function llenarCombo(){
             error: function(err) {
                 $select.append('<option value="">Seleccione</option>');
                 var $select = $('#id_producto');
-              /* const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Oops...',
-                icon: 'error',
-                text:'No hay Ramas para mostrar',
-                showConfirmButton: true,
-            });*/
             }
         });
 
@@ -175,15 +162,6 @@ function add_comision() {
         $('#id_producto').empty();
         llenarCombo();
          $('#add-comision').modal('hide');
-        
-        //$('#id_producto').load('#id_producto');
-         //$('#formulario').empty();//VACIO LOS DIV PARA QUE NO ME LOS MONTE UNO SOBRE OTRO
-          //$('#botones').empty();
-          
-
-          //$("#recargar").load(" #recargar");//recargar solo un div y no toda la pagina
-            //REST_Controller::HTTP_OK
-            //let respuestaDecodificada = JSON.parse(response);
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
@@ -191,8 +169,6 @@ function add_comision() {
                 text: response.mensaje,
                 showConfirmButton: true,
             }).then((result) => {
-                //TODO BIEN Y RECARGAMOS LA PAGINA 
-                //location.reload(); NO QUIERO QUE RECARGUE ME ACTUALIZA SOLA
             });
         }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
@@ -242,15 +218,6 @@ function add_producto() {
         $('#id_producto').empty();
         llenarCombo();
          $('#add-producto').modal('hide');
-        
-        //$('#id_producto').load('#id_producto');
-         //$('#formulario').empty();//VACIO LOS DIV PARA QUE NO ME LOS MONTE UNO SOBRE OTRO
-          //$('#botones').empty();
-          
-
-          //$("#recargar").load(" #recargar");//recargar solo un div y no toda la pagina
-            //REST_Controller::HTTP_OK
-            //let respuestaDecodificada = JSON.parse(response);
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
@@ -259,7 +226,6 @@ function add_producto() {
                 showConfirmButton: true,
             }).then((result) => {
                 guardarBitacora();
-                //location.reload(); NO QUIERO QUE RECARGUE ME ACTUALIZA SOLA
             });
         }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST

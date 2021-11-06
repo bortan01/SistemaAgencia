@@ -3,10 +3,6 @@ $(document).ready(function () {
     let id_pregunta;
     let tabla;
     let tabla_reporte;
-
-    //inicializarValidaciones();
-    // inicializarCombo()
-    // inicializarComboRama();
     inicializarTabla();
 
     //BOTON MOSTRAR EL REPORTE
@@ -185,10 +181,6 @@ $(document).ready(function () {
             actualizar();
         }
     });
-
-    // vamos a inicializar la tabla
-
-    //*********************fin*****
 
     //CUANDO HAY CAMBIO EN EL RADIO BUTTON
     $(document).on('change', 'input[type=radio][name="radioEncomienda"]', function () {

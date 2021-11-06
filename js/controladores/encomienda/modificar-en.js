@@ -352,16 +352,6 @@ $(document).ready(function () {
 
         }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-            console.log(response);
-
-            /*const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Error',
-                icon: 'error',
-                text: "ERROR EN EL ENVIO DE INFORMACIÓN",
-                showConfirmButton: true,
-            });*/
-
         }).always(function (xhr, opts) {
             $('#loadingModificarEncomienda').hide();
         });

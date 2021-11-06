@@ -24,8 +24,7 @@ $(document).ready(function () {
             });
 
         }).fail(function (response) {
-          //  console.log(response);
-
+       
         });
 
     }
@@ -39,8 +38,7 @@ $(document).ready(function () {
                 "url": URL_SERVIDOR + "Detalle_envio/detalleEnvio?id_encomienda=" + ID,
                 "method": "GET",
                 "dataSrc": function (json) {
-                    //console.log(json.preguntas);
-
+                   
                     if (json.detalles) {
                         $('#loading').hide();
                         return json.detalles;

@@ -22,13 +22,6 @@ $(document).ready(function() {
             },
             error: function(err) {
                 var $select = $('#depto');
-              /* const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Oops...',
-                icon: 'error',
-                text:'No hay Ramas para mostrar',
-                showConfirmButton: true,
-            });*/
             }
         });
 
@@ -58,13 +51,6 @@ $(document).ready(function() {
             error: function(err) {
                 var $select = $('#id_municipios');
                  $select.append('<option value="">Seleccione</option>');
-              /* const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Oops...',
-                icon: 'error',
-                text:'No hay Ramas para mostrar',
-                showConfirmButton: true,
-            });*/
             }
              });
 

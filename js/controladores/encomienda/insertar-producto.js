@@ -67,14 +67,6 @@ function add_producto() {
         $('#loadingRegistroProducto').hide();
         document.getElementById("register-form").reset();
       $('#id_unidad').val('').trigger('change');
-        //$('#id_producto').load('#id_producto');
-         //$('#formulario').empty();//VACIO LOS DIV PARA QUE NO ME LOS MONTE UNO SOBRE OTRO
-          //$('#botones').empty();
-          
-
-          //$("#recargar").load(" #recargar");//recargar solo un div y no toda la pagina
-            //REST_Controller::HTTP_OK
-            //let respuestaDecodificada = JSON.parse(response);
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',

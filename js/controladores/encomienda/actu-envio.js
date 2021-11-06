@@ -1,9 +1,5 @@
 $(document).ready(function() {
     let tabla;
-
-    //inicializarValidaciones();
-    // inicializarCombo()
-    // inicializarComboRama();
     inicializarTabla();
 
     //BOTON DE EDITAR

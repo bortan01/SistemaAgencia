@@ -28,9 +28,6 @@ $(document).ready(function () {
 
     });
 
-    //PARA LAS ENCOMIENDAS
-
-    //AGREGANDO LA INFORMACION DE UN TUR A LA TABLA
     $(document).on('click', '#agregarTabla', function (evento) {
 
 
@@ -283,17 +280,7 @@ $(document).ready(function () {
             });
 
         }).fail(function (response) {
-            //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-            console.log(response);
-
-            /*const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Error',
-                icon: 'error',
-                text: "ERROR EN EL ENVIO DE INFORMACIÓN",
-                showConfirmButton: true,
-            });*/
-
+           
         }).always(function (xhr, opts) {
             $('#loadingRegistroEncomienda').hide();
         });
@@ -365,7 +352,6 @@ $(document).ready(function () {
 
             }
         });
-        //**************************vamos a cargar el costo
     }
 
     //FIN DE COLOCAR DE NUEVO LA COMISIÓN    

@@ -1,43 +1,39 @@
 $(document).ready(function () {
     let id_pregunta;
     let tabla;
-
-    //inicializarValidaciones();
-   // inicializarCombo()
-   // inicializarComboRama();
     inicializarTabla();
-  
+
     //BOTON DE EDITAR
     $(document).on('click', '.btn-group .btn-success', function () {
         $('#loadingActualizar').hide();
         id_encomienda = $(this).attr("name");
-        cliente = $(this).attr("id");  
+        cliente = $(this).attr("id");
         $('#id_encomienda').val(id_encomienda);
         $('#cliente').val(cliente);
-       $('#registro-actualizacion').modal('show');
-       $('#loadingActualizar').hide();
+        $('#registro-actualizacion').modal('show');
+        $('#loadingActualizar').hide();
     });
-   
+
     //BOTON VER ACTUALIZACIONES
     $(document).on('click', '.btn-group .btn-primary', function () {
         $('#loadingActualizar').hide();
         id_encomienda = $(this).attr("name");
 
-    window.location = `${URL_SISTEMA}vistas/encomiendas/verActualizacion.php?ac=`+id_encomienda;
-                    
-    
+        window.location = `${URL_SISTEMA}vistas/encomiendas/verActualizacion.php?ac=` + id_encomienda;
+
+
     });
-   
+
     //BOTON PARA ACTUALIZAR
     $(document).on('click', '#btnEnvio', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         let form = $("#register-form");
         //form.validate();
-         // if (form.valid()) {
-            guardar();
+        // if (form.valid()) {
+        guardar();
         //}
     });
-   
+
 
     function inicializarTabla() {
         tabla = $("#tabla_actualizacion").DataTable({
@@ -56,11 +52,11 @@ $(document).ready(function () {
                             html = "";
                             html += '<td>';
                             html += '    <div class="btn-group">';
-                            html += '        <button type="button" name="' + json.Encomiendas[i].id_encomienda+'" id="'+json.Encomiendas[i].nombre+'" class="btn btn-success" data-toggle="modal"';
+                            html += '        <button type="button" name="' + json.Encomiendas[i].id_encomienda + '" id="' + json.Encomiendas[i].nombre + '" class="btn btn-success" data-toggle="modal"';
                             html += '         data-target="#registro-actualizacion">';
                             html += '            <i class="fas fa-car" style="color: white"></i>';
                             html += '        </button>';
-                            html += '        <button title="Reporte" type="button" name="' + json.Encomiendas[i].id_encomienda+ '" class="btn btn-primary" data-toggle="modal"';
+                            html += '        <button title="Reporte" type="button" name="' + json.Encomiendas[i].id_encomienda + '" class="btn btn-primary" data-toggle="modal"';
                             html += '            data-target="#modal-eliminar">';
                             html += '            <i class="fas fa-eye" style="color: white"></i>';
                             html += '        </button>';
@@ -88,13 +84,13 @@ $(document).ready(function () {
 
     }
 
-     function guardar() {
-       let form = new FormData();
-       form.append("id_encomienda",          document.getElementById("id_encomienda").value);
-       form.append("fecha",                  document.getElementById("fecha").value);
-       form.append("lugar",                  document.getElementById("coordenadas").value);
-        form.append("descripcion",           document.getElementById("descripcion").value);
-        
+    function guardar() {
+        let form = new FormData();
+        form.append("id_encomienda", document.getElementById("id_encomienda").value);
+        form.append("fecha", document.getElementById("fecha").value);
+        form.append("lugar", document.getElementById("coordenadas").value);
+        form.append("descripcion", document.getElementById("descripcion").value);
+
         $.ajax({
             url: URL_SERVIDOR + "Detalle_envio/detalleEnvios",
             method: "POST",
@@ -110,8 +106,8 @@ $(document).ready(function () {
             $('#fecha').val('');
             $('#coordenadas').val('');
             $('#descripcion').val('');
-            
-           const Toast = Swal.mixin();
+
+            const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
                 icon: 'success',
@@ -120,19 +116,9 @@ $(document).ready(function () {
             }).then((result) => {
                 //TODO BIEN Y RECARGAMOS LA PAGINA 
             });
-            
+
         }).fail(function (response) {
-            //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
-            console.log(response);
-
-            /*const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Error',
-                icon: 'error',
-                text: "ERROR EN EL ENVIO DE INFORMACIÓN",
-                showConfirmButton: true,
-            });*/
-
+            
         }).always(function (xhr, opts) {
             $('#loading').hide();
         });
@@ -142,21 +128,21 @@ $(document).ready(function () {
         $('#register-form').validate({
 
             rules: {
-                id_rama:{
+                id_rama: {
                     required: true
                 },
                 pregunta: {
                     minlength: 10
                 },
                 "opcion_respuesta[]": {
-                   required: true
+                    required: true
                 }
             },
             messages: {
-                id_rama:{
-                    required:"Seleccione una rama"
+                id_rama: {
+                    required: "Seleccione una rama"
                 },
-                 pregunta:{
+                pregunta: {
                     minlength: "Lapregunta debe de tener una longitud minima de 10"
                 },
                 "opcion_respuesta[]": {
@@ -184,7 +170,7 @@ $(document).ready(function () {
             url: URL_SERVIDOR + "Asesoria/updateCerrada",
             method: "POST",
             timeout: 0,
-            data:$('#register-form').serialize()
+            data: $('#register-form').serialize()
         }).done(function (response) {
             //REST_Controller::HTTP_OK
             const Toast = Swal.mixin();
@@ -249,7 +235,6 @@ $(document).ready(function () {
             $('#loadingActualizar').hide();
         });
     }
- 
+
 });
 
-   

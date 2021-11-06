@@ -135,7 +135,6 @@ $(document).ready(function() {
             });
 
             //.each para los datos destino
-
             $.each(response.Detalles_destino, function(i, pivote) {
                 $('#cliente_des').text(pivote.nombre_cliente_destini);
                 $('#telefono_des').text(pivote.telefono);
@@ -217,7 +216,6 @@ $(document).ready(function() {
             type: "GET",
             url: URL_SERVIDOR + "Detalle_envio/detalleEnvio?id_encomienda=" + ID_ENCOMIENDA,
             success: function(data) {
-                //alert('estoy aqui');
                 if (data.detalles.length > 0) {
                     //crear el boton cuando ya ayan registros
                     let entregarDiv = $('#entregar-div');
@@ -225,7 +223,6 @@ $(document).ready(function() {
                     entregarDiv.append('<button name="btn-entregar" id="btn-entregar" class="btn btn-warning btn-sm"' +
                         'style="color: white">Entregar</button>');
 
-                    //alert('entre');
                     for (let i = 0, ien = data.detalles.length; i < ien; i++) {
                         // alert('paso');
                         var $select = $('#historias');
@@ -244,8 +241,6 @@ $(document).ready(function() {
 
                     }
                 } else {
-                    //vamos a poner un mensaje
-
                     var $select = $('#historias');
                     $select.append('<div class="row">' +
                         '<div class="col-sm-12">' +
@@ -351,7 +346,6 @@ $(document).ready(function() {
             data: data
 
         }).done(function(response) {
-            //document.getElementById("informacion-form").reset();
             $('#titulo_actu').val('');
 
             const Toast = Swal.mixin();

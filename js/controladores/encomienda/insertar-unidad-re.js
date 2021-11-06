@@ -1,7 +1,5 @@
 $(document).ready(function (){
 
-    //inicializarValidaciones();
-  
     //BOTON PARA AGREGAR
     $(document).on('click', '#btn-unidad', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
@@ -107,7 +105,6 @@ function add_unidad() {
         }
     });
 });
-                ////////********************
 
                 $('#add-unidad').modal('hide');//CERRAMOS EL MODAL
             });

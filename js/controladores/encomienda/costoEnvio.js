@@ -16,16 +16,9 @@ $(document).ready(function () {
 
         document.getElementById("nombre").value = `${data.nombre_municipio} (${data.departamento})`;
         document.getElementById("costo_agregado").value = data.costo_agregado;
-        // document.getElementById("descripcion").value = data.descripcion_sitio;
-        // document.getElementById("ComboTipo").value = data.id_tipo_sitio;
-        // document.getElementById("contacto_servicio").value = data.id_contacto;
         $('#ComboTipo').trigger('change');
         $('#contacto_servicio').trigger('change');
         $('#modal-editar').modal('show');
-
-
-
-
     });
     //BOTON EDITAR LA FOTO
     $(document).on('click', '.btn-group .btn-warning', function () {
@@ -178,9 +171,6 @@ $(document).ready(function () {
     }
     function actualizar() {
         $('#loadingActualizar').show();
-        // let myCoordnada = document.getElementById("coordenadas").value;
-        // myCoordnada = myCoordnada.split(', ');
-
         let data = {
             "id_municipio": idSeleccionado,
             "costo_agregado": document.getElementById("costo_agregado").value,
@@ -216,7 +206,6 @@ $(document).ready(function () {
             });
 
         }).always(function (xhr, opts) {
-            //  $('#loadingActualizar').hide();
         });
     }
     function eliminar() {

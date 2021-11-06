@@ -11,8 +11,6 @@ $(document).ready(function() {
             $('#titulo').text(response.mensaje);
            
             let tablaReporte = document.getElementById('factura_detalle');
-            //$("#factura_detalle tbody").empty()
-            //$('#detalle_productos').html("");
             response.product.forEach(event => {
                 let tr = crearFila(event);
                 tablaReporte.appendChild(tr);

@@ -40,13 +40,6 @@ $(document).ready(function () {
         error: function (err) {
             let $ok = $('#id_producto');
             $ok.append('<option value="">Seleccione</option>');
-            /* const Toast = Swal.mixin();
-          Toast.fire({
-              title: 'Oops...',
-              icon: 'error',
-              text:'No hay Ramas para mostrar',
-              showConfirmButton: true,
-          });*/
         }
     });
     //**************************vamos a cargar el costo
@@ -73,13 +66,6 @@ $(document).ready(function () {
                     });
                 },
                 error: function (err) {
-                    /* const Toast = Swal.mixin();
-                  Toast.fire({
-                      title: 'Error',
-                      icon: 'error',
-                      text:'No hay Ramas para mostrar',
-                      showConfirmButton: true,
-                  });*/
                 }
             });
 
