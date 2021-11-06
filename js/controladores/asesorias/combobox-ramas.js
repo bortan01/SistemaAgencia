@@ -16,13 +16,6 @@ $(document).ready(function() {
             error: function(err) {
                 var $select = $('#combo_rama');
                 $select.append('<option disabled="" selected>Seleccione</option>');
-              /* const Toast = Swal.mixin();
-            Toast.fire({
-                title: 'Error',
-                icon: 'error',
-                text:'No hay Ramas para mostrar',
-                showConfirmButton: true,
-            });*/
             }
         });
 

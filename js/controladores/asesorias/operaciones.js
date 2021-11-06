@@ -1,7 +1,4 @@
 
-
-/*operaciones dinamicas para que funcione mejor*/
-
     $(function () {
         $("#asistencia").change(function () {
             // alert($(this).val());
@@ -53,11 +50,6 @@
     });
 function ShowSelected()
 {
-/* Para obtener el valor */
-//var cod = document.getElementById("cliente").value;
-//alert(cod);
- 
-/* Para obtener el texto */
 var combo = document.getElementById("comboUsuario");
 var selected = combo.options[combo.selectedIndex].text;
 $('#usuario').val(selected);

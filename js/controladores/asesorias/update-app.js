@@ -17,9 +17,6 @@ $(document).ready(function (){
         $('#loadingActualizarEventos').hide();            
           $("#modal_eventos").modal('toggle');
           $('#calendar').fullCalendar('refetchEvents');
-        
-            //REST_Controller::HTTP_OK
-            //let respuestaDecodificada = JSON.parse(response);
             const Toast = Swal.mixin();
             Toast.fire({
                 title: 'Exito...',
@@ -27,9 +24,6 @@ $(document).ready(function (){
                 text: 'Registro actualizado con exito',
                 showConfirmButton: true,
             }).then((result) => {
-                //TODO BIEN Y RECARGAMOS LA PAGINA 
-                //guardarBitacora();
-                //location.reload(); //NO QUIERO QUE RECARGUE ME ACTUALIZA SOLA
             });
 
         }).fail(function (response) {
@@ -53,13 +47,9 @@ $(document).ready(function (){
 
      function obtenerInfo(){
         let form = new FormData();
-
-        
         form.append("id_cita",       document.getElementById("txtId").value);
         form.append("fecha", document.getElementById("txtFecha2").value); 
         form.append("start", document.getElementById("timeUpdate").value);
-
-
         return form;
     }
 

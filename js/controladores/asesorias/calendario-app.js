@@ -51,15 +51,9 @@ $(document).ready(function () {
 
 
       }//fin else domingo
-
-      // limpiar();
-
-
     },
     events: URL_SERVIDOR + 'Cita/Cita',
-     //aqui pongo la api que e hecho
-    //http://localhost/restful/index.php/Calendario/calendario
-   
+       
     eventClick: function (calEvent, jsEvent, view) {
 
       if (calEvent.estado_cita == 0) {
@@ -78,8 +72,7 @@ $(document).ready(function () {
 
       $('#id_cliente').val(calEvent.id_cita);
       $('#modal_eventos').modal();
-      //document.getElementById("update-form").reset();
-
+     
     },
     editable: true,
     eventDrop: function (calEvent) {
@@ -132,11 +125,7 @@ $(document).ready(function () {
               console.log(response);
               
               $('#calendar').fullCalendar('refetchEvents');
-              //$("#recargar2").load(" #recargar2");//recargar solo un div y no toda la pagina
-              // $('#inputs').empty();//vaciar los inputs dinamicos
-
-              //REST_Controller::HTTP_OK
-              //let respuestaDecodificada = JSON.parse(response);
+             
               $('#loading').hide();
               const Toast = Swal.mixin();
               Toast.fire({
@@ -145,8 +134,7 @@ $(document).ready(function () {
                 text: response.mensaje,
                 showConfirmButton: true,
               }).then((result) => {
-                //TODO BIEN Y RECARGAMOS LA PAGINA 
-                //location.reload(); NO QUIERO QUE RECARGUE ME ACTUALIZA SOLA
+               
               });
 
             }).fail(function (response) {

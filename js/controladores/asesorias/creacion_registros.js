@@ -1,9 +1,7 @@
  $(function() {
      $("#id_pregunta").change(function() {
-         // alert($(this).val());
          var combo = document.getElementById("id_pregunta");
          var selected = combo.options[combo.selectedIndex].text;
-         // alert(selected);
          var $mostrar = $('#mostrar');
          var $botones = $('#botones');
 
@@ -160,11 +158,5 @@
  function ShowRama() {
      /* Para obtener el valor */
      var cod = document.getElementById("combo_rama").value;
-     //alert(cod);
      $('#rama').val(cod);
-
-
-     /* Para obtener el texto */
-     //var combo = document.getElementById("combo_rama");
-     //var selected = combo.options[combo.selectedIndex].text;
  }

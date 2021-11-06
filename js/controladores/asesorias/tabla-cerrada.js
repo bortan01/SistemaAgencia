@@ -44,8 +44,6 @@ $(document).ready(function () {
             $('#combo_cerrada').select2();
 
         });
-        //************************
-
         //MANDALOS LOS VALORES AL MODAL
         document.getElementById("pregunta").value =pregunta;
         document.getElementById("id_rama").value=id_ramas;

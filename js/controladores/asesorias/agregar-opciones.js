@@ -24,11 +24,5 @@ $(document).ready(function () {
   }
   };
 
-  /*const mostrar = () => {
-    const valor = $("#miSelect :selected").val(),
-      texto = $("#miSelect :selected").text();
-    alert(`Texto: ${texto}. Valor: ${valor}`);
-  };*/
-
   $("#agregar").click(agregar);
 });

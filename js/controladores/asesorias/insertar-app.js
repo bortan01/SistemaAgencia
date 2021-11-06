@@ -62,12 +62,7 @@ function add() {
         $('#calendar').fullCalendar('refetchEvents');
         $("#register-form").trigger("reset");
         $('#comboUsuario').val('').trigger('change');//limpia el combo
-        // toastr.success(response.mensaje)//me gusta
-        //console.log(response);
-        // document.getElementById("register-form").reset();
-        // $("#recargar").load("#recargar");//recargar solo un div y no toda la pagina
-        //REST_Controller::HTTP_OK
-        //let respuestaDecodificada = JSON.parse(response);
+       
         const Toast = Swal.mixin();
         Toast.fire({
             title: 'Exito...',
