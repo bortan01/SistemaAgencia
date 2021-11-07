@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>Martínez Travels & Tours</title>
    <!-- Tell the browser to be responsive to screen width -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
-
    <!-- Font Awesome -->
-
    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
    <!-- Ionicons -->
    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -49,27 +46,21 @@
                      </div>
                   </div>
                </div>
-
             </form>
             <div class="social-auth-links text-center mb-3">
-
                <button id="login-btn" href="home" class="btn btn-block btn-primary">
                   <i class="fab fa-dot-circle-o mr-2"></i> Enviar
                </button>
-
             </div>
             <!-- /.social-auth-links -->
-
             <p class="mb-1" style="text-align: center;">
                <a href="./index.php">Iniciar Sesión</a>
             </p>
-
          </div>
          <!-- /.login-card-body -->
       </div>
    </div>
    <!-- /.login-box -->
-
    <!-- jQuery -->
    <script src="plugins/jquery/jquery.min.js"></script>
    <!-- Bootstrap 4 -->
@@ -82,5 +73,4 @@
    <script src="./js/controladores/firebase/firestore-config.js"></script>
    <script src="./js/controladores/firebase/reset_password.js"></script>
 </body>
-
 </html>

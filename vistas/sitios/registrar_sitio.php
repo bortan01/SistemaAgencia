@@ -190,9 +190,6 @@
     <?php include_once '../contactos/modal-contacto.php' ?>
 
 </div>
-
-
-
 <?php 
 include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once '../../plantillas/footer.php'; ?>

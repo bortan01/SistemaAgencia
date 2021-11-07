@@ -5,7 +5,6 @@
 <link rel="stylesheet" type="text/css" href="../../css/messenger.css">
 <?php include_once '../../plantillas/navbar.php'; ?>
 <?php include_once '../../plantillas/barra_lateral.php'; ?>
-
 <div class="content-wrapper">
     <section class="content">
         <div class="main-wrapper">
@@ -46,9 +45,6 @@
         </div>
     </section>
 </div>
-
-
-
 <?php include_once '../../plantillas/footer.php'; ?>
 <script src="../../js/controladores/chat/chat.js"></script>
 

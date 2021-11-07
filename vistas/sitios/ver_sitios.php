@@ -36,8 +36,6 @@
    <section class="content">
       <div class="row">
          <div class="col-12">
-
-
             <div class="card">
                <div class="card-header">
                   <h3 class="card-title">Sitios Turísticos</h3>
@@ -56,14 +54,12 @@
                      </thead>
                      <div class="overlay-wrapper">
                         <div id="loading" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
-
                            <div class="text-bold pt-2">Cargando...
                            </div>
                         </div>
                         <tbody id="tableBody" style="text-align: center;">
                         </tbody>
                      </div>
-
                   </table>
                </div>
                <!-- /.card-body -->
@@ -79,7 +75,6 @@
       <div class="modal fade" id="modal-editar">
          <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
-
                <div class="overlay-wrapper">
                   <div id="loadingActualizar" class="overlay">
                      <i class="fas fa-3x fa-sync-alt fa-spin"></i>
@@ -113,8 +108,6 @@
                               <!-- /.input group -->
                            </div>
                         </div>
-
-
                      </div>
                      <div class="row">
                         <div class="col-sm-6">
@@ -126,11 +119,9 @@
                               </select>
                            </div>
                         </div>
-
                         <div class="col-sm-6">
                            <div class="form-group multiple-form-group input-group">
                               <label>Contacto</label>
-
                               <div class="input-group">
                                  <select name="contacto_servicio" id="contacto_servicio"
                                     class="select2 select2-hidden-accessible form-control"
@@ -139,8 +130,6 @@
                               </div>
                            </div>
                         </div>
-
-
                      </div>
                      <div class="row">
                         <div class="col-sm-12">
@@ -165,7 +154,6 @@
       </div>
       <!-- End Modal EDITAR-->
    </form>
-
    <form id="formularioImagenes" name="formularioImagenes" enctype="multipart/form-data">
       <!-- Modal EDITAR-->
       <div class="modal fade" id="modal-imagenes">
@@ -182,8 +170,6 @@
                      <input id="kv-explorer" name="foto" type="file" multiple>
                   </div>
                </div>
-
-
             </div>
             <!-- /.modal-content -->
          </div>
@@ -203,19 +189,14 @@
                </button>
             </div>
             <div class="modal-body">
-
                <div class="row">
                   <div class="col-md-12">
                      <div id="mapa" style="width: 100%; height: 500px">
-
                      </div>
                   </div>
-
                </div>
-
             </div>
             <div class="modal-footer justify-content-end">
-
                <button data-dismiss="modal" class="btn btn-info btn-sm" style="color: white">Guardar</button>
             </div>
          </div>
@@ -223,12 +204,8 @@
       </div>
       <!-- /.modal-dialog -->
    </div>
-
    <?php include_once '../contactos/modal-verContacto.php'; ?>
-
-
 </div>
-
 <?php 
 include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once '../../plantillas/footer.php'; ?>
