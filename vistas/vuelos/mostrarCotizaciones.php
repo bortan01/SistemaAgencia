@@ -66,7 +66,7 @@ include_once '../../plantillas/cabecera.php';
                                             <tr>
                                                 <th>Cliente</th>
                                                 <th>Ciudad de Partida</th>
-                                                <th>Ciudad de Llegada</th>
+                                                <th>Ciudad de Retorno</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>

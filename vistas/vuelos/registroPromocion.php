@@ -218,6 +218,9 @@ $(function() {
 
 })
 </script>
+<script>
+fechaDisponible.min = new Date().toISOString().split("T")[0];
+</script>
 <!-- jquery-validation -->
 
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
