@@ -301,16 +301,11 @@ $(document).ready(function () {
                     required: true,
                     minlength: 10
                 },
-                ciudad_llegada: {
-                    required: true,
-                    minlength: 10
-                },
+               
                 fechaPartida: {
                     required: true
                 },
-                fechaLlegada: {
-                    required: true
-                },
+               
                 idaerolinea: {
                     required: true
                 },
@@ -342,16 +337,11 @@ $(document).ready(function () {
                     required: "Debe de proporcionar la ciudad de partida",
                     minlength: "Longitud minima 10"
                 },
-                ciudad_llegada: {
-                    required: "Debe de proporcionar la ciudad de llegada",
-                    minlength: "Longitud minima 10"
-                },
+               
                 fechaPartida: {
                     required: "Seleccione Fecha de Partida",
                 },
-                fechaLlegada: {
-                    required: "Seleccione Fecha de Llegada",
-                },
+               
                 idaerolinea: {
                     required: "Seleccione Aerolinea",
                 },
