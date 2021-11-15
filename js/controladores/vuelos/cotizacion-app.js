@@ -39,6 +39,8 @@ $(document).ready(function() {
                 document.getElementById("opc_avanzadas").value = response.informacion[i].opc_avanzadas;
                 document.getElementById("descuentos").value = response.informacion[i].descuentos;
                 document.getElementById("total").value = response.informacion[i].total;
+                document.getElementById("respuestaV").value = response.informacion[i].respuesta;
+                document.getElementById("ciudad_destino").value = response.informacion[i].ciudad_destino;
             }
 
         }).fail(function(response) {
@@ -67,7 +69,9 @@ $(document).ready(function() {
                 $('#telefono').text(response.informacion[i].celular);
                 $('#docIdentidad').text(response.informacion[i].dui);
 
-
+                $('#ciudadD').text(response.informacion[i].ciudad_destino);
+               
+               
                 $('#ciudadP').text(response.informacion[i].ciudad_partida);
                 $('#fechaP').text(response.informacion[i].fechaPartida);
                 
@@ -143,7 +147,7 @@ $(document).ready(function() {
             columns: [
                 { data: "nombre" },
                 { data: "ciudad_partida" },
-                { data: "ciudad_llegada" },
+                { data: "ciudad_destino" },
                 { data: "botones" }
             ],
             columnDefs: [
@@ -185,7 +189,7 @@ $(document).ready(function() {
                     let nuevoDetalle = {
                         nombre: response.informacion[i].nombre,
                         ciudad_partida: response.informacion[i].ciudad_partida,
-                        ciudad_llegada: response.informacion[i].ciudad_llegada,
+                        ciudad_destino: response.informacion[i].ciudad_destino,
                         botones: html,
                     };
                     tablaCotizaciones.row.add(nuevoDetalle).draw(false);
@@ -247,7 +251,9 @@ $(document).ready(function() {
             "ciudad_partida": document.getElementById("ciudad_partida").value,
             "ciudad_llegada": document.getElementById("ciudad_llegada").value,
             "id_cliente": document.getElementById("correo_id").value,
-            "usuario": document.getElementById("nombre").value
+            "usuario": document.getElementById("nombre").value,
+            "respuesta": document.getElementById("respuestaV").value,
+            "ciudad_destino": document.getElementById("ciudad_destino").value
         };
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO
         $.ajax({

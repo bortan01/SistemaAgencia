@@ -66,7 +66,7 @@ include_once '../../plantillas/cabecera.php';
                                             <tr>
                                                 <th>Cliente</th>
                                                 <th>Ciudad de Partida</th>
-                                                <th>Ciudad de Retorno</th>
+                                                <th>Ciudad de Destino</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -173,6 +173,16 @@ include_once '../../plantillas/cabecera.php';
                                     <div class="input-group">
                                         <input id="HoraPartida" name="HoraPartida" type="text" class="form-control"
                                             disabled>
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Ciudad de Destino</label>
+                                    <div class="input-group">
+                                        <input id="ciudad_destino" name="ciudad_destino" type="text"
+                                            class="form-control" disabled>
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -285,7 +295,7 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Descuentos</label>
+                                    <label>Descuentos (%)</label>
                                     <div class="input-group">
                                         <input id="descuentos" name="descuentos" type="number" min=0
                                             class="form-control">
@@ -295,14 +305,20 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Total</label>
+                                    <label>Total ($)</label>
                                     <div class="input-group">
                                         <input id="total" name="total" type="number" min=0 class="form-control">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
                             </div>
-
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Respuesta</label>
+                                    <textarea class="textarea" name="respuestaV" id="respuestaV"
+                                        style="width: 100%; height: 50px; font-size: 16px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -434,7 +450,22 @@ include_once '../../plantillas/cabecera.php';
                                                     </tbody>
 
                                                 </table>
+                                                <table id="factura_detalle">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="textcenter">Ciudad de Destino</th>
+                                                            
 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="detalle_productos">
+
+                                                        <tr>
+                                                            <td class="textcenter"><label name="ciudadD" id="ciudadD"
+                                                                    style="font-weight: normal;"></label></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                                 <table id="factura_detalle">
                                                     <thead>
                                                         <tr>
