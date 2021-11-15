@@ -218,10 +218,25 @@ $(function() {
 
 })
 </script>
+
 <script>
-fechaDisponible.min = new Date().toISOString().split("T")[0];
+$(function() {
+    var hoy = new Date();
+    var dd = hoy.getDate();
+    var mm = hoy.getMonth() + 1;
+    var yyyy = hoy.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    hoy = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("fechaDisponible").setAttribute("min", hoy);
+    
+});
 </script>
-<!-- jquery-validation -->
 
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>

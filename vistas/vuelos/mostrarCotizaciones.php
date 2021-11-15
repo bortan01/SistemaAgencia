@@ -179,7 +179,7 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Ciudad de Llegada</label>
+                                    <label>Ciudad de Retorno</label>
                                     <div class="input-group">
                                         <input id="ciudad_llegada" name="ciudad_llegada" type="text"
                                             class="form-control" disabled>
@@ -189,7 +189,7 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label>Fecha</label>
+                                    <label>Fecha </label>
                                     <div class="input-group">
                                         <input id="fechaLlegada" type="text" name="fechaLlegada" class="form-control"
                                             disabled>
@@ -438,7 +438,7 @@ include_once '../../plantillas/cabecera.php';
                                                 <table id="factura_detalle">
                                                     <thead>
                                                         <tr>
-                                                            <th class="textcenter">Ciudad de Llegada</th>
+                                                            <th class="textcenter">Ciudad de Retorno</th>
                                                             <th class="textcenter">Fecha</th>
                                                             <th class="textcenter">Hora</th>
 

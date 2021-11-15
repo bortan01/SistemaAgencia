@@ -417,9 +417,24 @@ function comprobar(obj) {
 </script>
 
 <script>
-fechaPartida.min = new Date().toISOString().split("T")[0];
-fechaLlegada.min = new Date().toISOString().split("T")[0];
+$(function() {
+    var hoy = new Date();
+    var dd = hoy.getDate();
+    var mm = hoy.getMonth() + 1;
+    var yyyy = hoy.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    hoy = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("fechaPartida").setAttribute("min", hoy);
+    document.getElementById("fechaLlegada").setAttribute("min", hoy);
+});
 </script>
+
 <!-- jquery-validation -->
 <script src="<?= $base_url ?>js/mdtimepicker.js"></script> <!-- reloj -->
 

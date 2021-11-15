@@ -7,7 +7,7 @@ include_once '../../plantillas/cabecera.php';
 
 <!-- ESTILOS ADICIONALES-->
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"
-   type="text/css" />
+    type="text/css" />
 <link rel="stylesheet" href="<?= $base_url ?>plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
 
@@ -17,185 +17,190 @@ include_once '../../plantillas/cabecera.php';
 <link href="<?= $base_url ?>plugins/subir-foto/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
 <link href="<?= $base_url ?>plugins/subir-foto/css/avatar.css" media="all" rel="stylesheet" type="text/css" />
 <link href="<?= $base_url ?>plugins/subir-foto/themes/explorer-fas/theme.css" media="all" rel="stylesheet"
-   type="text/css" />
+    type="text/css" />
 
 <!-- CONTINUAMOS CON LA INICIALIZACION -->
 <?php include_once  '../../plantillas/navbar.php'; ?> <?php include_once '../../plantillas/barra_lateral.php'; ?>
 
 <style>
 #desborde {
-   width: 100%;
-   overflow: hidden;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   word-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 </style>
 
 <div class="content-wrapper" style="min-height: 1185.73px;">
-   <!-- Content Header (Page header) -->
-   <section class="content-header">
-      <div class="container-fluid">
-         <div class="row mb-2">
-            <div class="col-sm-6">
-               <h1>Cotización de Vehículo</h1>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Cotización de Vehículo</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                        <li class="breadcrumb-item active">Cotización de Vehículo</li>
+                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                            id="botonAyudaCotizarVehiculo"> <i class="fas fa-question"></i></button>
+                    </ol>
+                </div>
             </div>
-            <div class="col-sm-6">
-               <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Cotización de Vehículo</li>
-                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                        id="botonAyudaCotizarVehiculo"> <i class="fas fa-question"></i></button>
-               </ol>
-            </div>
-         </div>
-      </div><!-- /.container-fluid -->
-   </section>
+        </div><!-- /.container-fluid -->
+    </section>
 
-   <!-- Main content -->
-   <section class="content">
-      <form id="register-cotizarVehiculo" name="register-form" onsubmit="return false">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="timeline">
+    <!-- Main content -->
+    <section class="content">
+        <form id="register-cotizarVehiculo" name="register-form" onsubmit="return false">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="timeline">
 
-                  <div>
-                     <i class="fas fa-car bg-blue"></i>
-                     <div class="timeline-item">
+                        <div>
+                            <i class="fas fa-car bg-blue"></i>
+                            <div class="timeline-item">
 
-                        <h3 class="timeline-header"><a href="#">Datos Generales</a></h3>
+                                <h3 class="timeline-header"><a href="#">Datos Generales</a></h3>
 
-                        <div class="timeline-body">
-                           <div class="row">
+                                <div class="timeline-body">
+                                    <div class="row">
 
-                              <div class="col-sm-6">
-                                 <!-- text input -->
-                                 <div class="form-group multiple-form-group input-group">
-                                    <label>Cliente</label>
-                                    <div class="input-group">
-                                       <select name="id_usuario" id="comboUsuario"
-                                          class="select2 select2-hidden-accessible form-control"
-                                          data-placeholder="Seleccione" style="width: 100%;">
-                                       </select>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group multiple-form-group input-group">
+                                                <label>Cliente</label>
+                                                <div class="input-group">
+                                                    <select name="id_usuario" id="comboUsuario"
+                                                        class="select2 select2-hidden-accessible form-control"
+                                                        data-placeholder="Seleccione" style="width: 100%;">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <br>
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-success btn-add"
+                                                    data-toggle="modal" data-target="#modalAgregarCliente"
+                                                    style="margin-top: 10px; width: 100%;">+</button>
+                                            </span>
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <!-- text input -->
+                                            <div class="form-group multiple-form-group input-group">
+                                                <label>Modelo</label>
+                                                <div class="input-group">
+                                                    <select name="id_modelo" id="id_modelo"
+                                                        class="select2 select2-hidden-accessible form-control"
+                                                        data-placeholder="Seleccione" style="width: 100%;">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <br>
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-success btn-add"
+                                                    data-toggle="modal" data-target="#modal-modelo"
+                                                    style="margin-top: 10px; width: 100%;">+</button>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label>Año</label>
+                                                <input type="number" class="form-control" min=2010
+                                                    max=<?php echo date("Y"); ?> name="anio" id="anio"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>Características</label>
+                                                <textarea class="textarea" name="caracteristicas" id="caracteristicas"
+                                                    placeholder="Digite características del Vehículo"
+                                                    style="width: 100%; height: 50px; font-size: 16px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Dirección de Recogida</label>
+                                                <input type="text" class="form-control" name="direccion_recogida"
+                                                    id="direccion_recogida" placeholder="Digite dirección de recogida"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Fecha de Recogida</label>
+                                                <input type="date" class="form-control" name="fechaRecogida"
+                                                    id="fechaRecogida">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>Hora de Recogida</label>
+                                            <div class="input-group clockpicker" data-autoclose="true">
+                                                <input type="text" id="timepicker" name="start" class="form-control"
+                                                    value="08:00" />
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Dirección de Devolución</label>
+                                                <input type="text" class="form-control" name="direccion_devolucion"
+                                                    id="direccion_devolucion"
+                                                    placeholder="Digite dirección de devolución" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Fecha de Devolución</label>
+                                                <input type="date" class="form-control" name="fechaDevolucion"
+                                                    id="fechaDevolucion">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>Hora de Devolución</label>
+                                            <div class="input-group clockpicker" data-autoclose="true">
+                                                <input type="text" id="timepicker2" name="start" class="form-control"
+                                                    value="08:00" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="hidden">
+                                                <label name="detalle" id="detalle">Realizó Cotización de
+                                                    Vehículo</label>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                 </div>
-                              </div>
-                              <div class="col-sm-1">
-                                 <br>
-                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-add" data-toggle="modal"
-                                       data-target="#modalAgregarCliente"
-                                       style="margin-top: 10px; width: 100%;">+</button>
-                                 </span>
-                              </div>
-
-                              <div class="col-sm-2">
-                                 <!-- text input -->
-                                 <div class="form-group multiple-form-group input-group">
-                                    <label>Modelo</label>
-                                    <div class="input-group">
-                                       <select name="id_modelo" id="id_modelo"
-                                          class="select2 select2-hidden-accessible form-control"
-                                          data-placeholder="Seleccione" style="width: 100%;">
-                                       </select>
+                                    <div class="timeline-footer" style="text-align: right;">
+                                        <button name="btnGuardarCotizacionV" id="btnGuardarCotizacionV"
+                                            class="btn btn-info btn-sm" style="color: white">Guardar</button>
+                                        <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
                                     </div>
-                                 </div>
-                              </div>
-                              <div class="col-sm-1">
-                                 <br>
-                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-add" data-toggle="modal"
-                                       data-target="#modal-modelo" style="margin-top: 10px; width: 100%;">+</button>
-                                 </span>
-                              </div>
-                              <div class="col-sm-2">
-                                 <div class="form-group">
-                                    <label>Año</label>
-                                    <input type="number" class="form-control" min=2010 max=<?php echo date("Y"); ?>
-                                       name="anio" id="anio" autocomplete="off">
-                                 </div>
-                              </div>
-
-                              <div class="col-sm-12">
-                                 <div class="form-group">
-                                    <label>Características</label>
-                                    <textarea class="textarea" name="caracteristicas" id="caracteristicas"
-                                       placeholder="Digite características del Vehículo"
-                                       style="width: 100%; height: 50px; font-size: 16px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-
-                                 </div>
-                              </div>
-
-                              <div class="col-sm-6">
-                                 <!-- text input -->
-                                 <div class="form-group">
-                                    <label>Dirección de Recogida</label>
-                                    <input type="text" class="form-control" name="direccion_recogida"
-                                       id="direccion_recogida" placeholder="Digite dirección de recogida"
-                                       autocomplete="off">
-                                 </div>
-                              </div>
-                              <div class="col-sm-3">
-                                 <!-- text input -->
-                                 <div class="form-group">
-                                    <label>Fecha de Recogida</label>
-                                    <input type="date" class="form-control" name="fechaRecogida" id="fechaRecogida">
-                                 </div>
-                              </div>
-                              <div class="col-sm-3">
-                                 <label>Hora de Recogida</label>
-                                 <div class="input-group clockpicker" data-autoclose="true">
-                                    <input type="text" id="timepicker" name="start" class="form-control"
-                                       value="08:00" />
-
-                                 </div>
-
-                              </div>
-
-                              <div class="col-sm-6">
-                                 <!-- text input -->
-                                 <div class="form-group">
-                                    <label>Dirección de Devolución</label>
-                                    <input type="text" class="form-control" name="direccion_devolucion"
-                                       id="direccion_devolucion" placeholder="Digite dirección de devolución"
-                                       autocomplete="off">
-                                 </div>
-                              </div>
-                              <div class="col-sm-3">
-                                 <!-- text input -->
-                                 <div class="form-group">
-                                    <label>Fecha de Devolución</label>
-                                    <input type="date" class="form-control" name="fechaDevolucion" id="fechaDevolucion">
-                                 </div>
-                              </div>
-                              <div class="col-sm-3">
-                                 <label>Hora de Devolución</label>
-                                 <div class="input-group clockpicker" data-autoclose="true">
-                                    <input type="text" id="timepicker2" name="start" class="form-control"
-                                       value="08:00" />
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 <!-- text input -->
-                                 <div class="hidden">
-                                    <label name="detalle" id="detalle">Realizó Cotización de Vehículo</label>
-                                 </div>
-                              </div>
-
-                           </div>
-                           <div class="timeline-footer" style="text-align: right;">
-                              <button name="btnGuardarCotizacionV" id="btnGuardarCotizacionV"
-                                 class="btn btn-info btn-sm" style="color: white">Guardar</button>
-                              <a class="btn btn-danger btn-sm" style="color: white">Cancelar</a>
-                           </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </form>
-   </section>
+        </form>
+    </section>
 
 </div>
 
@@ -208,32 +213,49 @@ include_once '../../plantillas/footer.php';
 
 <script>
 $(function() {
-   $('.select2').select2()
+    $('.select2').select2()
 
-   //Initialize Select2 Elements
-   $('.select2bs4').select2({
-      theme: 'bootstrap4'
-   })
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+        theme: 'bootstrap4'
+    })
 
-   $('.my-colorpicker1').colorpicker()
-   //color picker with addon
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
 
-   $("input[data-bootstrap-switch]").each(function() {
-      $(this).bootstrapSwitch('state', $(this).prop('checked'));
-   });
+    $("input[data-bootstrap-switch]").each(function() {
+        $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
 
-   $(document).ready(function() {
-      $('#timepicker').mdtimepicker(); //Initializes the time picker
-   });
+    $(document).ready(function() {
+        $('#timepicker').mdtimepicker(); //Initializes the time picker
+    });
 
-   $(document).ready(function() {
-      $('#timepicker2').mdtimepicker(); //Initializes the time picker
-   });
+    $(document).ready(function() {
+        $('#timepicker2').mdtimepicker(); //Initializes the time picker
+    });
 
 })
 </script>
+<script>
+$(function() {
+    var hoy = new Date();
+    var dd = hoy.getDate();
+    var mm = hoy.getMonth() + 1;
+    var yyyy = hoy.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
 
-<!-- jquery-validation -->
+    hoy = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("fechaRecogida").setAttribute("min", hoy);
+    document.getElementById("fechaDevolucion").setAttribute("min", hoy);
+});
+</script>
+
 
 <!-- INICIO DE SCRIPT PARA REGISTRO DE USUARIO -->
 <script src="<?= $base_url ?>plugins/subir-foto/js/plugins/piexif.js" type="text/javascript"></script>
