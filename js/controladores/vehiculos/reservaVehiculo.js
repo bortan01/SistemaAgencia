@@ -188,10 +188,14 @@ $(document).ready(function () {
 
 
     function inicializarCalendario() {
+        var fecha = new Date();
+        var hoy = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
+
         $('#fecha_salida').daterangepicker({
             timePicker: true,
             startDate: moment().startOf('hour'),
             endDate: moment().startOf('hour').add(24, 'hour'),
+            minDate: hoy,
             locale: {
                 format: 'DD/MM/YYYY hh:mm A',
                 separator: " - ",
@@ -200,6 +204,7 @@ $(document).ready(function () {
                 fromLabel: "De",
                 toLabel: "A",
                 customRangeLabel: "Custom",
+                
                 daysOfWeek: [
                     "Dom",
                     "Lun",
@@ -226,6 +231,7 @@ $(document).ready(function () {
                 "firstDay": 0
             }
         });
+       
 
     }
     $("#btnGuardar").on('click', function (e) {
