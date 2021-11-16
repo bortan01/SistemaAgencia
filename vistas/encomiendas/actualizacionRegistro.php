@@ -162,21 +162,11 @@ include_once '../../plantillas/barra_lateral.php';
                                                 <label id="telefono"></label>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label class="text-success">Ciudad</label>
                                                 <div class="input-group">
                                                     <label id="ciudad"></label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label class="text-success">Código postal</label>
-                                                <div class="input-group">
-                                                    <label id="codigo"></label>
                                                 </div>
 
                                             </div>
@@ -213,25 +203,6 @@ include_once '../../plantillas/barra_lateral.php';
                                             <label class="text-success">Teléfono</label>
                                             <div class="input-group">
                                                 <label id="telefono_des"></label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label class="text-success">Ciudad</label>
-                                                <div class="input-group">
-                                                    <label id="ciudad_des"></label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label class="text-success">Código postal</label>
-                                                <div class="input-group">
-                                                    <label id="codigo_des"></label>
-                                                </div>
-
                                             </div>
                                         </div>
 

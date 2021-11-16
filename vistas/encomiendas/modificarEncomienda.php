@@ -75,7 +75,7 @@ include_once '../../plantillas/barra_lateral.php';
                                           class="form-control" autocomplete="off" placeholder="(503)7232-2345">
                                     </div>
                                  </div>
-                                 <div class="col-sm-6">
+                                 <div class="col-sm-12">
                                     <div class="form-group">
                                        <label>Ciudad</label>
                                        <div class="input-group">
@@ -84,13 +84,7 @@ include_once '../../plantillas/barra_lateral.php';
                                        </div>
                                     </div>
                                  </div>
-                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                       <label>Código</label>
-                                       <input name="codigo" id="codigo" type="text" class="form-control"
-                                          placeholder="Introduzca el Código postal de origen">
-                                    </div>
-                                 </div>
+                                
                                  <div class="col-sm-6">
                                     <div class="form-group">
                                        <input name="fecha" id="fecha" type="hidden" class="form-control"
