@@ -427,16 +427,7 @@ include_once '../../plantillas/barra_lateral.php';
                                                                                     </p>
                                                                                 </td>
                                                                             </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <p> </p>
-                                                                                    <label>Ciudad:</label>
-                                                                                    <p name="ciudadD" id="ciudadD"></p>
-                                                                                </td>
-                                                                                <td><label>Código:</label>
-                                                                                    <p name="codigoD" id="codigoD"></p>
-                                                                                </td>
-                                                                            </tr>
+                                                                          
                                                                             <tr>
                                                                                 <td>
                                                                                     <p> </p>

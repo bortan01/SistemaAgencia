@@ -128,22 +128,7 @@ include_once '../../plantillas/barra_lateral.php';
                                           autocomplete="off">
                                     </div>
                                  </div>
-                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                       <label>Ciudad</label>
-                                       <div class="input-group">
-                                          <input type="text" class="form-control" name="ciudad_des" id="ciudad_des"
-                                             placeholder="Digite la ciudad de destino">
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                       <label>Código</label>
-                                       <input name="codigo_des" id="codigo_des" type="text" class="form-control"
-                                          placeholder="Introduzca el Código postal de destino">
-                                    </div>
-                                 </div>
+
                                  <div class="col-sm-6">
                                     <div class="form-group">
                                        <label>Dirección</label>
