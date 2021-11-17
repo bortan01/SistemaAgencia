@@ -55,6 +55,12 @@
                         <p>Bitácora de Usuarios</p>
                      </a>
                   </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/cliente/backup_restore.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Backup / Restaurar</p>
+                     </a>
+                  </li>
                   <?php endif; ?>
                </ul>
                <!--  -->
