@@ -9,18 +9,18 @@
 <!--COTINUANDO CON LA INICIALIZACION -->
 <?php include_once '../../plantillas/navbar.php'; ?>
 <?php include_once '../../plantillas/barra_lateral.php'; ?>
-<div class="content-wrapper" style="min-height: 1185.73px;">
+<div class="content-wrapper">
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Registrar Usuario</h1>
+               <h1>Backup / Restaurar</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
-                  <li class="breadcrumb-item active">Registrar Usuario </li>
+                  <li class="breadcrumb-item active">Backup / Restaurar </li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
                      id="botonAyudaRegistroUsuarios"> <i class="fas fa-question"></i></button>
                </ol>
@@ -39,29 +39,30 @@
                <div class="timeline">
                   <!-- timeline item -->
                   <div>
-                     <i class="fas fa-users bg-blue"></i>
+                     <i class="fas fa-save bg-blue"></i>
                      <div class="timeline-item">
-                        <h3 class="timeline-header"><a href="#">Datos Personales</a></h3>
+                        <h3 class="timeline-header"><a href="#">Descargar Backup</a></h3>
                         <div class="timeline-body">
-                           <button type="button" class="btn btn-primary btn-lg btn-block">Descargar Backup</button>
+                           <button id="btn-backup" type="button" class="btn btn-primary btn-lg btn-block">Descargar
+                              Backup</button>
                         </div>
                      </div>
                   </div>
                   <!-- END timeline item -->
                   <!-- timeline item -->
                   <div>
-                     <i class="fas fa-image bg-green"></i>
+                     <i class="fas fa-sync bg-red"></i>
                      <div class="timeline-item">
 
                         <h3 class="timeline-header no-border">
-                           <a href="#">Documentos Personales(opcional)</a>
+                           <a href="#">Restaurar Backup</a>
                         </h3>
                         <div class="timeline-body">
                            <div class="row">
                               <div class="col-sm-12">
                                  <div class="card-body">
                                     <div class="file-loading">
-                                       <input id="kv-explorer" name="foto" type="file" multiple>
+                                       <input id="kv-explorer" name="foto" type="file">
                                     </div>
                                  </div>
                               </div>

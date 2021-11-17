@@ -1,43 +1,30 @@
 $(document).ready(function () {
     inicializarGaleria();
+
     //BOTON EDITAR DOCUMENTOS
+    $(document).on('click', '#btn-backup', function (evento) {
+        location.href = `${URL_SERVIDOR}Empresa/backup`
+    });
+
     function inicializarGaleria() {
- 
- 
-       let identificador = localStorage.getItem('id_clienteA');
-       let nombreTabla = 'usuario_documentos';
-       let informacionAdicional = { tipo: nombreTabla, identificador: identificador };
-       let urlFotos = [];
-       let infoFotos = [];
-       $.ajax({
-          url: URL_SERVIDOR + "Imagen/show?tipo=" + nombreTabla + "&identificador=" + identificador,
-          method: "GET",
- 
-       }).done(function (response) {
-          $('#loading').hide();
-          //REST_Controller::HTTP_OK
-          response.forEach(element => {
-             let informacion = {
-                url: URL_SERVIDOR + "Imagen/delete",
-                key: element.id_foto
-             };
-             infoFotos.push(informacion);
-             urlFotos.push(element.foto_path);
-          });
-          $('#kv-explorer').fileinput({
-             theme: 'fas',
-             language: 'es',
-             uploadUrl: URL_SERVIDOR + 'Imagen/save',
-             uploadExtraData: informacionAdicional,
-             overwriteInitial: false,
-             initialPreviewAsData: true,
-             initialPreview: urlFotos,
-             initialPreviewConfig: infoFotos,
+        $('#kv-explorer').fileinput({
+            theme: 'fas',
+            language: 'es',
+            // uploadUrl: URL_SERVIDOR + 'Imagen/save',
+            overwriteInitial: false,
              maxFileSize: 200000,
-             maxFilesNum: 10,
-             allowedFileExtensions: ['jpg', 'png', 'jpeg', 'jfif']
-          });
-       });
- 
+            maxFilesNum: 1,
+            allowedFileExtensions: ['sql'],
+            preferIconicPreview : true,
+            previewFileIconSettings: { // configure your icon file extensions
+                'sql': '<i class="fas fa-database text-red"></i>',        
+            },
+            previewFileExtSettings: { 
+                'sql': function(ext) {
+                    return ext.match(/(sql)$/i);
+                }
+            }
+        });
+
     }
- });
+});
