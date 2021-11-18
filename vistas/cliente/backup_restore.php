@@ -62,7 +62,7 @@
                               <div class="col-sm-12">
                                  <div class="card-body">
                                     <div class="file-loading">
-                                       <input id="kv-explorer" name="foto" type="file">
+                                       <input id="sqlFile" name="sqlFile" type="file">
                                     </div>
                                  </div>
                               </div>
