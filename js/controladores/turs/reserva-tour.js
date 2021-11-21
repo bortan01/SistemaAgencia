@@ -188,9 +188,10 @@ $(document).ready(function() {
                     let izquierdo = response.transporte.asiento_izquierdo;
                     let numero_filas = response.transporte.filas;
                     let deshabilitados = response.transporte.asientos_deshabilitados;
+                    let conFilaTrasera = response.transporte.fila_trasera;
 
                     let strFila = crearStrFila(derecho, izquierdo);
-                    let mapa = crearFilas(strFila, derecho, izquierdo, numero_filas, true);
+                    let mapa = crearFilas(strFila, derecho, izquierdo, numero_filas, conFilaTrasera);
                     dibujarAsientos(mapa);
                     bloquearAsientosInavilitados(deshabilitados);
                     bloquearAsientosOcupados(response.transporte.ocupados);
