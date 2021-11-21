@@ -173,12 +173,15 @@ include_once '../../plantillas/barra_lateral.php';
                                                         </td>
                                                         <td class="info_empresa">
                                                             <div>
-                                                                <span class="h2">Agencia de Viajes Martínez Travels &
-                                                                    Tours</span>
-                                                                <p>Segunda Avenida Sur, Barrio El Centro, #4D a 150mts
-                                                                    del Parquecito Infantil<br>Teléfono: +(503) 2319
-                                                                    2338<br>info.ventas@martineztraveltours.com</p>
-
+                                                                <span class="h2" name="nombre_a" id="nombre_a"></span>
+                                                                <p>
+                                                                <p style="margin: 1px;display:inline;"
+                                                                    name="direccion_a" id="direccion_a"></p>
+                                                                <p style="margin: 1px;display:inline:float:right"
+                                                                    name="telefono_a" id="telefono_a">
+                                                                </p>
+                                                                <p name="email_a" id="email_a"></p>
+                                                                </p>
                                                             </div>
                                                         </td>
 
@@ -255,11 +258,13 @@ include_once '../../plantillas/barra_lateral.php';
                                                                             <td>
                                                                                 <p> </p>
                                                                                 <label>Dirección:</label>
+                                                                                
                                                                                 <p name="direccionD" id="direccionD">
                                                                                 </p>
                                                                             </td>
                                                                             <td><label>Dirección Alterna:</label>
-                                                                                <p name="alternaD" id="alternaD"></p>
+                                                                               
+                                                                            <p name="alternaD" id="alternaD"></p>
                                                                             </td>
                                                                         </tr>
                                                                     </thead>
@@ -273,7 +278,7 @@ include_once '../../plantillas/barra_lateral.php';
                                                     <thead>
                                                         <tr>
                                                             <th class="textcenter">Producto</th>
-                                                            <th class="textcenter">Costo</th>
+                                                            <th class="textcenter">Costo($)</th>
                                                             <th class="textcenter">Cantidad</th>
                                                             <th class="textcenter">Sub Total</th>
                                                         </tr>
@@ -351,6 +356,8 @@ include_once '../../plantillas/barra_lateral.php';
 <script src="<?= $base_url ?>plugins/subir-foto/js/locales/es.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/themes/fas/theme.js" type="text/javascript"></script>
 <!--Para los reportes-->
+<script type="text/javascript" src="<?= $base_url?>js/controladores/agencia/mostrarInfo.js"></script>
+
 <script type="text/javascript" src="<?= $base_url?>js/imprimir.js"></script>
 
 <script type="text/javascript" src="<?= $base_url?>js/controladores/encomienda/tabla-modificar.js"></script>

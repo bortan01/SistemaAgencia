@@ -56,9 +56,9 @@ include_once '../../plantillas/barra_lateral.php';
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
-                                                    <label>Tarifa</label>
+                                                    <label>Tarifa ($)</label>
                                                     <input name="tarifa" type="text" class="form-control"
-                                                        placeholder="Introduzca la tarifa" autocomplete="off">
+                                                        placeholder="Ejemplo: 5.75" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">

@@ -326,14 +326,16 @@ include_once '../../plantillas/barra_lateral.php';
                                                             </td>
                                                             <td class="info_empresa">
                                                                 <div>
-                                                                    <span class="h2">Agencia de Viajes Martínez Travels
-                                                                        &
-                                                                        Tours</span>
-                                                                    <p>Segunda Avenida Sur, Barrio El Centro, #4D a
-                                                                        150mts
-                                                                        del Parquecito Infantil<br>Teléfono: +(503) 2319
-                                                                        2338<br>info.ventas@martineztraveltours.com</p>
-
+                                                                    <span class="h2" name="nombre_a"
+                                                                        id="nombre_a"></span>
+                                                                    <p>
+                                                                    <p style="margin: 1px;display:inline;"
+                                                                        name="direccion_a" id="direccion_a"></p>
+                                                                    <p style="margin: 1px;display:inline:float:right"
+                                                                        name="telefono_a" id="telefono_a">
+                                                                    </p>
+                                                                    <p name="email_a" id="email_a"></p>
+                                                                    </p>
                                                                 </div>
                                                             </td>
 
@@ -398,7 +400,7 @@ include_once '../../plantillas/barra_lateral.php';
                                                                                     </p>
                                                                                 </td>
                                                                             </tr>
-                                                                          
+
                                                                             <tr>
                                                                                 <td>
                                                                                     <p> </p>
@@ -418,7 +420,7 @@ include_once '../../plantillas/barra_lateral.php';
 
                                                         </tr>
                                                     </table>
-                                                    <span class="h3">Información de envió</span>
+                                                    <span class="h3">Información de envío</span>
                                                     <table id="historial_envio">
                                                         <thead>
                                                             <tr>
@@ -437,9 +439,9 @@ include_once '../../plantillas/barra_lateral.php';
                                                         <thead>
                                                             <tr>
                                                                 <th class="textcenter">Producto</th>
-                                                                <th class="textcenter">Costo</th>
+                                                                <th class="textcenter">Costo ($)</th>
                                                                 <th class="textcenter">Cantidad</th>
-                                                                <th class="textcenter">Sub Total</th>
+                                                                <th class="textcenter">Sub Total ($)</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody id="detalle_productos">
@@ -551,5 +553,6 @@ document.getElementById('hora_actu').value = horaActu + ":" + minutosActu
 <script src="<?= $base_url ?>js/controladores/encomienda/insertar-unidad.js"></script>
 <script src="<?= $base_url ?>js/controladores/encomienda/insertar-productoEnco.js"></script>
 <!--Para los reportes-->
+<script type="text/javascript" src="<?= $base_url?>js/controladores/agencia/mostrarInfo.js"></script>
 <script type="text/javascript" src="<?= $base_url ?>js/imprimir.js"></script>
 <?php include_once '../../plantillas/cierre.php'; ?>
