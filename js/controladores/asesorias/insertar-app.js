@@ -20,11 +20,17 @@ function inicializarValidaciones() {
         rules: {
             id_cliente: {
                 required: true
+            },
+            time:{
+                required: true
             }
         },
         messages: {
             id_cliente: {
                 required: "Seleccione el Cliente"
+            },
+            time:{
+                required: "Seleccione la hora"
             }
 
         },

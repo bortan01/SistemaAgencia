@@ -32,6 +32,7 @@
                         <div class="input-group">
                            <select name="time" id="time" class="select2 select2-hidden-accessible form-control"
                               style="width: 100%;" onchange="ShowSelected();">
+                              <option value="">Seleccione</option>
                               <option value="08:00">08:00</option>
                               <option value="09:00">09:00</option>
                               <option value="10:00">10:00</option>
