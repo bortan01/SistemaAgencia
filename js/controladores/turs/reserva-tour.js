@@ -523,7 +523,7 @@ $(document).ready(function() {
         for (let index = 0; index < numero_filas; index++) {
             miMapa.push(strFila);
         }
-        if (filaTrasera) {
+        if (filaTrasera == "1") {
             asientos_traseros = parseInt(asientos_derecho) + parseInt(asientos_izquierdo) + 1;
             for (let index = 0; index < asientos_traseros; index++) {
                 strEspacio += "_";
