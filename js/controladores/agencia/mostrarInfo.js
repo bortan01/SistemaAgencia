@@ -15,6 +15,11 @@ $(document).ready(function() {
                 $('#telefono_a').text(data.datos_generales[i].telefono_agencia);
                 $('#email_a').text(data.datos_generales[i].email_agencia);
 
+                $('#semana_a').text(data.datos_generales[i].semana_agencia);
+                $('#fin_a').text(data.datos_generales[i].finDe_agencia);
+                $('#horaS_a').text(data.datos_generales[i].horaS_agencia);
+                $('#horaF_a').text(data.datos_generales[i].horasF_agencia);
+
             }
 
         },

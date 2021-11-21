@@ -3,7 +3,6 @@ $(document).ready(function() {
     let idInfoGeneral;
     let tabla;
     inicializarMascara();
-
     inicializarValidaciones();
     inicializarTabla();
 
@@ -24,6 +23,11 @@ $(document).ready(function() {
                 document.getElementById("direccion_a").value = response.datos_generales[i].direccion_agencia;
                 document.getElementById("telefono_a").value = response.datos_generales[i].telefono_agencia;
                 document.getElementById("email_a").value = response.datos_generales[i].email_agencia;
+
+                document.getElementById("semana_a").value = response.datos_generales[i].semana_agencia;
+                document.getElementById("fin_a").value = response.datos_generales[i].finDe_agencia;
+                document.getElementById("horaS_a").value = response.datos_generales[i].horaS_agencia;
+                document.getElementById("horaF_a").value = response.datos_generales[i].horasF_agencia;
 
             }
 
@@ -113,6 +117,26 @@ $(document).ready(function() {
                     required: true,
                     minlength: 3,
                     maxlength: 100
+                },
+                semana_agencia: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 500
+                },
+                finDe_agencia: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 500
+                },
+                horaS_agencia: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 500
+                },
+                horasF_agencia: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 500
                 }
             },
             messages: {
@@ -128,7 +152,18 @@ $(document).ready(function() {
                 email_agencia: {
                     required: "Ingrese email de la agencia",
                 },
-
+                semana_agencia: {
+                    required: "Digite los dias de semana que atienden",
+                },
+                finDe_agencia: {
+                    required: "Digite los dias de fin de semana que atienden",
+                },
+                horaS_agencia: {
+                    required: "Digite los horarios que atienden durante la semana",
+                },
+                horasF_agencia: {
+                    required: "Digite los horarios que atienden durante los fines de semana",
+                },
 
             },
             errorElement: 'span',
@@ -154,7 +189,12 @@ $(document).ready(function() {
             "nombre_agencia": document.getElementById("nombre_a").value,
             "direccion_agencia": document.getElementById("direccion_a").value,
             "telefono_agencia": document.getElementById("telefono_a").value,
-            "email_agencia": document.getElementById("email_a").value
+            "email_agencia": document.getElementById("email_a").value,
+
+            "semana_agencia": document.getElementById("semana_a").value,
+            "finDe_agencia": document.getElementById("fin_a").value,
+            "horaS_agencia": document.getElementById("horaS_a").value,
+            "horasF_agencia": document.getElementById("horaF_a").value
 
         };
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO

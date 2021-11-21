@@ -132,8 +132,8 @@
                                 <div class="form-group">
                                     <label>Teléfono</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="telefono_a"
-                                            name="telefono_a" data-inputmask="'mask': '(+999)9999 9999'" autocomplete="off">
+                                        <input type="text" class="form-control" id="telefono_a" name="telefono_a"
+                                            data-inputmask="'mask': '(+999)9999 9999'" autocomplete="off">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -142,16 +142,55 @@
                                 <div class="form-group">
                                     <label>Correo Eléctronico</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="email_a"
-                                            name="email_a" autocomplete="off">
+                                        <input type="text" class="form-control" id="email_a" name="email_a"
+                                            autocomplete="off">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Días de Atención durante la Semana </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="semana_a" name="semana_a"
+                                            autocomplete="off" placeholder="Ejemplo: Lunes a Viernes">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Horario</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="horaS_a" name="horaS_a"
+                                            autocomplete="off" placeholder="Ejemplo: 8:00 AM a 5:00 PM">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Días de Atención durante fin de Semana </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="fin_a" name="fin_a"
+                                            autocomplete="off" placeholder="Ejemplo: Sábados">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Horario</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="horaF_a" name="horaF_a"
+                                            autocomplete="off"  placeholder="Ejemplo: 8:00 AM a 12:00 MD">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
+
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                         <button name="btnActualizar" id="btnActualizar" class="btn btn-info btn-sm"
