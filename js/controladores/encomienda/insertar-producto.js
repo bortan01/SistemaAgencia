@@ -22,7 +22,8 @@ $(document).ready(function (){
                     minlength: 7
                 },
                 tarifa: {
-                    required: true
+                    required: true,
+                    number:true
                 },
                 unidades_medidas: {
                    required: true
@@ -34,7 +35,8 @@ $(document).ready(function (){
                     minlength:"El nombre producto debe tener una longitud minima de 7"
                 },
                  tarifa:{
-                    required:"Digite la tarifa del producto"
+                    required:"Digite la tarifa del producto",
+                    number:"solo números"
                 },
                 unidades_medidas: {
                     required: "Seleccione una unidad de medida"
