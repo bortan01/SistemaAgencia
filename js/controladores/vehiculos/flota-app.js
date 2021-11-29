@@ -89,7 +89,7 @@ $(document).ready(function() {
                     html += '        <div class="mask">';
                     html += '            <h2 id="">' + FLOTA[index].modelo + '</h2>';
                     html += '            <br>';
-                    html += '            <div> Categoria: ' + FLOTA[index].nombre_categoria + '</div>';
+                    html += '            <div> Categoría: ' + FLOTA[index].nombre_categoria + '</div>';
                     html += '            <div> Año: ' + FLOTA[index].anio + '</div>';
                     html += '            <p> Precio Diario: $' + FLOTA[index].precio_diario + '</p>';
                     html += '           <button type="button" name="' + FLOTA[index].idvehiculo + '" class="btn btn-primary" data-toggle="modal"';
