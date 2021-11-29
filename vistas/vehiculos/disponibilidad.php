@@ -107,7 +107,7 @@ h6 {
                                     <h3 class="my-3" name="mode1" id="mode1"></h3>
                                     <h3 name="anio" id="anio"></h3>
                                     <br>
-                                    <h6>Categoria del Vehiculo: </h6>
+                                    <h6>Categoría del Vehiculo: </h6>
                                     <h6 name="categoria" id="categoria"></h6>
                                     <hr>
                                     <button class="btn btn-primary btn-block mb-3">
