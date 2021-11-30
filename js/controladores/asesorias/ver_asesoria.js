@@ -6,7 +6,8 @@ $(document).on('click', '.btn-group .btn-primary', function () {
    let fila = $(this).closest("tr");
    let data = tabla.row(fila).data();
    let id_cita = data.id_cita;
-   window.location = `registroMigratoria.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}`;
+   let cobros = data.cobros;
+   window.location = `registroMigratoria.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}&cobros=${cobros}`;
 });
 
 $(document).on('click', '.btn-group .btn-secondary', function () {
@@ -14,7 +15,8 @@ $(document).on('click', '.btn-group .btn-secondary', function () {
    let fila = $(this).closest("tr");
    let data = tabla.row(fila).data();
    let id_cita = data.id_cita;
-   window.location = `editarInformacion.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}`;
+   let cobros = data.cobros;
+   window.location = `editarInformacion.php?idCliente=${data.id_cliente}&cliente=${data.nombre}&id_cita=${id_cita}&cobros=${cobros}`;
 });
 
 function inicializarTabla() {
@@ -62,6 +64,8 @@ function inicializarTabla() {
       },
       columns: [
          { data: "nombre" },
+         { data: "fechaConver" },
+         // { data: "cobros" },
          { data: "botones" },
 
       ]

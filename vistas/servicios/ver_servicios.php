@@ -26,7 +26,7 @@
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                   <li class="breadcrumb-item active">Servicios disponibles</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                                id="botonAyudaMostrarServicios"> <i class="fas fa-question"></i></button>
+                     id="botonAyudaMostrarServicios"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -153,8 +153,8 @@
                            <div class="form-group">
                               <label>Número de filas </label>
                               <div class="input-group">
-                                 <input id="numero_filas" name="numero_filas" type="number" min="2" value="2" step="1"
-                                    max="30" class="form-control">
+                                 <input id="numero_filas" name="numero_filas" disabled="true" type="number" min="2"
+                                    value="2" step="1" max="30" class="form-control">
                               </div>
                            </div>
                         </div>
@@ -162,8 +162,8 @@
                            <div class="form-group">
                               <label>Asientos lado derecho</label>
                               <div class="input-group">
-                                 <input id="asientos_derecho" name="asientos_derecho" type="number" min="2" max="7"
-                                    value="2" step="1" class="form-control">
+                                 <input id="asientos_derecho" name="asientos_derecho" disabled="true" type="number"
+                                    min="2" max="7" value="2" step="1" class="form-control">
                               </div>
                            </div>
                         </div>
@@ -171,8 +171,8 @@
                            <div class="form-group">
                               <label>Asientos lado izquierdo</label>
                               <div class="input-group">
-                                 <input id="asientos_izquierdo" name="asientos_izquierdo" type="number" min="2" max="7"
-                                    value="2" step="1" class="form-control">
+                                 <input id="asientos_izquierdo" name="asientos_izquierdo" disabled="true" type="number"
+                                    min="2" max="7" value="2" step="1" class="form-control">
                               </div>
                            </div>
                         </div>
@@ -181,7 +181,7 @@
                            <label>Agregar fila trasera</label>
                            <div class="form-group clearfix">
                               <div class="icheck-success d-inline" style="margin-left: 70px;">
-                                 <input type="checkbox" value="si" id="checkTrasero">
+                                 <input type="checkbox" value="si" id="checkTrasero" disabled="true">
                                  <label for="checkTrasero">
                                  </label>
                               </div>

@@ -19,7 +19,7 @@ include_once '../session/isEmpleado.php';
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                   <li class="breadcrumb-item active">Citas Pendientes</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                            id="botonAyudaFormulario"> <i class="fas fa-question"></i></button>
+                     id="botonAyudaFormulario"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -40,6 +40,8 @@ include_once '../session/isEmpleado.php';
                      <thead style="text-align: center;">
                         <tr>
                            <th>Cliente</th>
+                           <th>Fecha de cita</th>
+                           <!-- <th>Cobros</th> -->
                            <th>Llenar formulario</th>
                         </tr>
                      </thead>

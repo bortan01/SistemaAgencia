@@ -2,9 +2,10 @@ $(document).ready(function () {
 
    const valores = window.location.search;
    const urlParams = new URLSearchParams(valores);
-   let ID_CITA = urlParams.get('idCita');
+   let ID_CITA = urlParams.get('id_cita');
    let ID_CLIENTE = urlParams.get('idCliente');
    let cliente = urlParams.get('cliente');
+   let COBROS = urlParams.get('cobros');
    $('#titulo').html(`Registro de Información Migratoria - ${cliente}`);
 
 
@@ -93,11 +94,13 @@ $(document).ready(function () {
       form.validate();
       if (form.valid()) {
 
-
          let tabSeleccionado = $('.tab-pane .active').attr('id');
          if (tabSeleccionado == 'custom-tabs-one-galeria') {
             // si es el tab de la galeria 
             guardarPasaportes();
+         } else if (tabSeleccionado == undefined) {
+            // si se ha seleccionada el tab de cobros 
+            guardarCostoAsesoria();
          } else {
             // si es un tab de preguntas
             actualizar();
@@ -135,6 +138,7 @@ $(document).ready(function () {
                }
 
             });
+
             llamarPreguntita($select, $nuevo);
          },
          error: function (err) {
@@ -324,6 +328,7 @@ $(document).ready(function () {
                }
             }
             crearTabGaleria($selectTop, $nuevoTop, data.pasaportes);
+            crearTabCobros($selectTop, $nuevoTop);
             $('#loading').hide();
          },
          error: function (err) {
@@ -676,4 +681,54 @@ $(document).ready(function () {
       });
 
    }
+   function crearTabCobros($select, $nuevo) {
+      $select.append(`
+      <li class="nav-item">
+          <a class="nav-link" id="custom-tabs-one-home-money " data-toggle="pill" 
+              href="#custom-tabs-one-money" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">
+              Cobro
+          </a>
+      </li>       
+      `);
+
+      $nuevo.append(`
+      <div class="tab-pane fade" id="custom-tabs-one-money" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+          <label>Cobros de asesoria</label>
+          <input type="number" value="${COBROS}" min="1" name="cobroAsesoria" id="cobroAsesoria" placeholder="Ingrese el cobro de la asesoria" class="form-control input-simple" style="text-align: center; width: 100%; margin-top: 20px;">
+      </div>`);
+   }
+   function guardarCostoAsesoria() {
+      const Toast = Swal.mixin();
+      let cobros = document.getElementById("cobroAsesoria").value;
+      if (cobros == "") {
+          Toast.fire({
+              title: 'Error',
+              icon: 'error',
+              text: 'No ha ingresado el costo del cobro',
+              showConfirmButton: true,
+          });
+      } else {
+          $.ajax({
+              url: URL_SERVIDOR + "Cita/updateCobro",
+              method: "POST",
+              data: { "id_cita": ID_CITA, "cobros": cobros }
+          }).done(function (response) {
+              Toast.fire({
+                  title: 'Exito...',
+                  icon: 'success',
+                  text: 'Cobro Guardado Exitosamente',
+                  showConfirmButton: true,
+              })
+
+          }).fail(function (response) {
+              Toast.fire({
+                  title: 'Error',
+                  icon: 'error',
+                  text: 'Intente más tarde por favor',
+                  showConfirmButton: true,
+              });
+          });
+      }
+
+  }
 });
