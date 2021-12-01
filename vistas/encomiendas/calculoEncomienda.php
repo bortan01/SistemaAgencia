@@ -82,22 +82,6 @@ include_once '../session/isEmpleado.php';
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Ciudad</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" name="ciudad"
-                                                            id="ciudad" placeholder="Digite la ciudad de origen">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Código</label>
-                                                    <input name="codigo" id="codigo" type="text" class="form-control"
-                                                        placeholder="Introduzca el Código postal de origen">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
                                                     <input name="fecha" id="fecha" type="hidden" class="form-control"
                                                         placeholder="Introduzca el punto de referencia">
                                                 </div>
@@ -135,23 +119,7 @@ include_once '../session/isEmpleado.php';
                                                         placeholder="(503)7232-2345">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Ciudad</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" name="ciudad_des"
-                                                            id="ciudad_des" placeholder="Digite la ciudad de destino">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Código</label>
-                                                    <input name="codigo_des" id="codigo_des" type="text"
-                                                        class="form-control"
-                                                        placeholder="Introduzca el Código postal de destino">
-                                                </div>
-                                            </div>
+                                           
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Dirección</label>
@@ -167,6 +135,17 @@ include_once '../session/isEmpleado.php';
                                                         placeholder="Ej: Correos El Salvador Sucursal San Vicente, Segunda Avenida Sur, Barrio Centro">
                                                 </div>
                                             </div>
+                                            <div class="col-sm-12">
+                                    <div class="form-group multiple-form-group input-group">
+                                       <label>Municipio de envío</label>
+                                       <div class="input-group">
+                                          <select name="municipio_envio" id="municipio_envio"
+                                             class="select2 select2-hidden-accessible form-control"
+                                             data-placeholder="Seleccione el municipio" style="width: 100%;">
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
                                         </div>
                                     </form>
                                 </div>
@@ -257,33 +236,42 @@ include_once '../session/isEmpleado.php';
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1 col-md-offset-1"> </div>
-                                        <div class="col-md-3  ">
-                                            <label class="text-primary "> Total de Encomienda: </label>
-                                        </div>
-                                        <div class="col-md-3  ">
-                                            <label id="total" class="text-primary "> $0</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-1 col-md-offset-1"> </div>
-                                        <div class="col-md-3  ">
-                                            <label class="text-success "> Comisión de Agencia: </label>
-                                        </div>
-                                        <div class="col-md-3  ">
-                                            <label id="comision" class="text-success "> $0</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-1 col-md-offset-1"> </div>
-                                        <div class="col-md-3  ">
-                                            <label class="text-danger "> Total de cliente: </label>
-                                        </div>
-                                        <div class="col-md-3  ">
-                                            <label id="totalCliente" class="text-danger "> $0</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-primary "> Total de Encomienda: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="total" class="text-primary "> $0</label>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-primary "> Comisión de Agencia: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="comision" class="text-primary "> $0</label>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-primary "> Costo de envío: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="envio" class="text-primary "> $0</label>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-danger "> Total de cliente: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="totalCliente" class="text-danger "> $0</label>
+                                 </div>
+                              </div>
+                           </div>
                                 <br> <br>
                                 <!--****************botones***********-->
                                 <div class="timeline-footer" style="text-align: right;">
@@ -455,16 +443,7 @@ include_once '../session/isEmpleado.php';
                                                                                     </p>
                                                                                 </td>
                                                                             </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <p> </p>
-                                                                                    <label>Ciudad:</label>
-                                                                                    <p name="ciudadC" id="ciudadC"></p>
-                                                                                </td>
-                                                                                <td><label>Código:</label>
-                                                                                    <p name="codigoC" id="codigoC"></p>
-                                                                                </td>
-                                                                            </tr>
+                                                                           
                                                                         </thead>
                                                                     </table>
                                                                 </div>
@@ -496,16 +475,6 @@ include_once '../session/isEmpleado.php';
                                                                             <tr>
                                                                                 <td>
                                                                                     <p> </p>
-                                                                                    <label>Ciudad:</label>
-                                                                                    <p name="ciudadD" id="ciudadD"></p>
-                                                                                </td>
-                                                                                <td><label>Código:</label>
-                                                                                    <p name="codigoD" id="codigoD"></p>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <p> </p>
                                                                                     <label>Dirección:</label>
                                                                                     <p name="direccionD"
                                                                                         id="direccionD"></p>
@@ -513,6 +482,14 @@ include_once '../session/isEmpleado.php';
                                                                                 <td><label>Dirección Alterna:</label>
                                                                                     <p name="alternaD" id="alternaD">
                                                                                     </p>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <p> </p>
+                                                                                    <label>Municipio:</label>
+                                                                                    <p name="municipioR"
+                                                                                        id="municipioR"></p>
                                                                                 </td>
                                                                             </tr>
                                                                         </thead>

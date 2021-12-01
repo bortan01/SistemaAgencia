@@ -192,9 +192,9 @@ $(document).ready(function () {
             let opcionSeleccionada = $("input[name='radioEncomienda']:checked").val();
             switch (opcionSeleccionada) {
                 case 'activo':
-                    return (data[5] == 'Enviado');
+                    return (data[4] == 'Enviado');
                 case 'inactivo':
-                    return (data[5] == 'Inactivo');
+                    return (data[4] == 'Inactivo');
                 default:
                     return true;
             }
@@ -257,7 +257,6 @@ $(document).ready(function () {
             columns: [
                 { data: "nombre" },
                 { data: "ciudad_origen" },
-                { data: "codigo_postal_origen" },
                 { data: "fecha" },
                 { data: "botones" },
                 { data: "estado" },
@@ -265,7 +264,7 @@ $(document).ready(function () {
             columnDefs: [
                 { "className": "dt-center", "targets": "_all" },
 
-                { targets: [5], visible: false },
+                { targets: [4], visible: false },
             ]
         });
 

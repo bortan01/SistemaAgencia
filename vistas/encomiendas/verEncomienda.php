@@ -83,7 +83,6 @@ include_once '../../plantillas/barra_lateral.php';
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Ciudad de origen</th>
-                                                <th>Código postal</th>
                                                 <th>Fecha</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -213,9 +212,7 @@ include_once '../../plantillas/barra_lateral.php';
                                                                                 <label>Ciudad:</label>
                                                                                 <p name="ciudadC" id="ciudadC"></p>
                                                                             </td>
-                                                                            <td><label>Código:</label>
-                                                                                <p name="codigoC" id="codigoC"></p>
-                                                                            </td>
+                                                                          
                                                                         </tr>
                                                                     </thead>
                                                                 </table>
@@ -242,16 +239,6 @@ include_once '../../plantillas/barra_lateral.php';
                                                                             </td>
                                                                             <td><label>Télefono:</label>
                                                                                 <p name="telefonoD" id="telefonoD"></p>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <p> </p>
-                                                                                <label>Ciudad:</label>
-                                                                                <p name="ciudadD" id="ciudadD"></p>
-                                                                            </td>
-                                                                            <td><label>Código:</label>
-                                                                                <p name="codigoD" id="codigoD"></p>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>

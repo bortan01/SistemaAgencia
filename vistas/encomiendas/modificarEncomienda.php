@@ -138,6 +138,17 @@ include_once '../../plantillas/barra_lateral.php';
                                           placeholder="Ej: Correo El Salvador ó 2da, av sur, numero 34, barrio centro">
                                     </div>
                                  </div>
+                                 <div class="col-sm-12">
+                                    <div class="form-group multiple-form-group input-group">
+                                       <label>Municipio de envío</label>
+                                       <div class="input-group">
+                                          <select name="municipio_envio" id="municipio_envio"
+                                             class="select2 select2-hidden-accessible form-control"
+                                             data-placeholder="Seleccione el municipio" style="width: 100%;">
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
                               </div>
                               <div class="col-sm-6">
                                  <!-- text input -->
@@ -231,38 +242,42 @@ include_once '../../plantillas/barra_lateral.php';
                               </div>
                            </div>
                            <div class="row">
-                              <div class="col-md-1 col-md-offset-1"> </div>
-                              <div class="col-md-3  ">
-                                 <label class="text-primary "> Total de Encomienda: </label>
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-primary "> Total de Encomienda: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="total" class="text-primary "> $0</label>
+                                 </div>
                               </div>
-                              <div class="col-md-3  ">
-                                 <label id="total" class="text-primary "> $0</label>
+                              <div class="row">
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-primary "> Comisión de Agencia: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="comision" class="text-primary "> $0</label>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-primary "> Costo de envío: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="envio" class="text-primary "> $0</label>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-1 col-md-offset-1"> </div>
+                                 <div class="col-md-3  ">
+                                    <label class="text-danger "> Total de cliente: </label>
+                                 </div>
+                                 <div class="col-md-3  ">
+                                    <label id="totalCliente" class="text-danger "> $0</label>
+                                 </div>
                               </div>
                            </div>
-                           <div class="row">
-                              <div class="col-md-1 col-md-offset-1"> </div>
-                              <div class="col-md-3  ">
-                                 <label class="text-success "> Comisión de Agencia: </label>
-                              </div>
-                              <div class="col-md-3  ">
-                                 <label id="comision" class="text-success "> $0</label>
-                              </div>
-                           </div>
-                           <div class="row">
-                              <div class="col-md-1 col-md-offset-1"> </div>
-                              <div class="col-md-3  ">
-                                 <label class="text-danger "> Total de Cliente: </label>
-                              </div>
-                              <div class="col-md-3  ">
-                                 <label id="totalCliente" class="text-danger "> $0</label>
-                              </div>
-                           </div>
-                           <div class="timeline-footer" style="text-align: right;">
-                              <button name="btnguardar" id="btnActualizar" class="btn btn-info btn-sm"
-                                 style="color: white">Actualizar</button>
-                              <button class="btn btn-danger btn-sm" style="color: white">Cancelar</button>
-                           </div>
-                        </div>
                         <br>
                      </div>
                   </div>
@@ -442,13 +457,13 @@ $(document).on('click', '#comision-add', function() {
 <script src="<?= $base_url ?>plugins/subir-foto/js/locales/es.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/themes/fas/theme.js" type="text/javascript"></script>
 <!--Script de los procedimientos del sistema-->
-
+<script src="<?= $base_url ?>js/controladores/encomienda/producto.js"></script>
 <script src="<?= $base_url ?>js/controladores/encomienda/modificar-en.js"></script>
 <script src="<?= $base_url ?>js/controladores/encomienda/insertar-productoEnco.js"></script>
 
 <script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
 <script type="text/javascript" src="<?= $base_url?>js/controladores/encomienda/combo-unidad.js"></script>
-<script src="<?= $base_url ?>js/controladores/encomienda/producto.js"></script>
+
 <script src="<?= $base_url ?>js/controladores/encomienda/insertar-unidad.js"></script>
 
 

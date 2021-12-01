@@ -16,6 +16,7 @@ $(document).ready(function () {
     inicializarValidaciones();
     mostrarDatos();
     inicializarTabla();
+    
     $('#loadingModificarEncomienda').hide();
 
     //AGREGANDO LA INFORMACION DE UN TUR A LA TABLA
@@ -58,10 +59,14 @@ $(document).ready(function () {
                 $('#total').text(index.total_encomienda);
                 $('#comision').text(redondiar);
                 $('#totalCliente').text(index.total_cliente);
+                $('#municipio_envio').val(index.id_municipio);
+                $('#municipio_envio').trigger('change');
+               
                 $('#id_encomienda').val(ID_ENCOMIENDA);
                 TOTAL = index.total_encomienda;
                 COMISION = index.total_comision;
                 TOTALCLIENTE = index.total_cliente;
+                modificarCostoEnvio();
             });
 
             //.each para los datos destino
@@ -170,6 +175,7 @@ $(document).ready(function () {
         modificarTotal();
         modificarComision();
         modificarTotalCliente();
+        modificarCostoEnvio();
     }
     function ExisteFila(id, cantidad, costo) {
         let encontrado = false;
@@ -210,6 +216,16 @@ $(document).ready(function () {
 
         $('#totalCliente').empty();
         $('#totalCliente').text("$" + (TOTAL + COMISION));
+    }
+    function modificarCostoEnvio() {
+        // DATA_MUNICIPIOS esta difinida en el js encominda/producto.js
+        let id = document.getElementById('municipio_envio').value;
+        let municipio_envio = DATA_MUNICIPIOS.find(municipio_envio => municipio_envio.id_municipio === id);
+        COSTO_ENVIO = parseInt(municipio_envio.costo_agregado);
+        $('#envio').empty();
+        $('#envio').text("$" + (municipio_envio.costo_agregado));
+
+
     }
     //BOTON DE ELIMINAR
     $(document).on('click', '.btn-group .btn-danger', function (evento) {
@@ -363,8 +379,7 @@ $(document).ready(function () {
         let detalle_destino = [];
         let nombre_cliente_destino = document.getElementById("cliente_des").value;
         let telefono = document.getElementById("telefono_des").value;
-        let ciudad_destino = document.getElementById("ciudad_des").value;
-        let codigo_postal_destino = document.getElementById("codigo_des").value;
+       
         let direccion_destino = document.getElementById("direccion").value;
         let alterna_destino = document.getElementById("direccion_alterna").value;
 
@@ -387,20 +402,19 @@ $(document).ready(function () {
         detalle_destino.push({
             "nombre_cliente_destini": nombre_cliente_destino,
             "telefono": telefono,
-            "ciudad_destino": ciudad_destino,
-            "codigo_postal_destino": codigo_postal_destino,
             "direccion_destino": direccion_destino,
             "alterna_destino": alterna_destino
         });
 
         form.append("ciudad_origen", document.getElementById("ciudad").value);
-        form.append("codigo_postal_origen", document.getElementById("codigo").value);
+        
         form.append("fecha", document.getElementById("fecha").value);
         form.append("id_encomienda", ID_ENCOMIENDA);
         form.append("total_encomienda", TOTAL);
         form.append("total_comision", COMISION);
         form.append("total_cliente", (TOTAL + COMISION));
         form.append("id_usuario", document.getElementById("cliente").value);
+        form.append("id_municipio", document.getElementById("municipio_envio").value);
         form.append("detalle_encomienda", JSON.stringify(detalle_encomienda));
         form.append("detalle_destino", JSON.stringify(detalle_destino));
 

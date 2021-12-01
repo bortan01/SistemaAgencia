@@ -53,6 +53,7 @@ $(document).ready(function () {
             //PARA ORDENAR LA TABLA
             tabla.order([4, 'desc']).draw();
          }
+         modificarCostoEnvio();
         modificarTotal();
         modificarComision();
         modificarTotalCliente();
@@ -65,24 +66,22 @@ $(document).ready(function () {
            let combo = document.getElementById("comboUsuario");
            let selected = combo.options[combo.selectedIndex].text;
            let cel = $("#telefono").val();
-           let ciudad = $("#ciudad").val();
-           let codigo = $("#codigo").val();
+         
            
                 $('#nombreC').text(selected);
                 $('#telefonoC').text(cel);
-                $('#ciudadC').text(ciudad);
-                $('#codigoC').text(codigo);
+               
         //cliente destino datos
          let cliente_des = $("#cliente_des").val();
          let cel_des = $("#telefono_des").val();
-         let ciudad_des = $("#ciudad_des").val();
-         let codigo_des = $("#codigo_des").val();
+        
          let direccion = $("#direccion").val();
          let alterna = $("#direccion_alterna").val();
+         let muni = document.getElementById("municipio_envio");
+        let selected2 = muni.options[combo.selectedIndex].text;
                 $('#nombreD').text(cliente_des);
                 $('#telefonoD').text(cel_des);
-                $('#ciudadD').text(ciudad_des);
-                $('#codigoD').text(codigo_des);
+                $('#municipioR').text(selected2);
                 $('#direccionD').text(direccion);
                 $('#alternaD').text(alterna);
                
@@ -137,6 +136,7 @@ $(document).ready(function () {
             tabla.order([6, 'desc']).draw();
             contadorTabla++;
         }
+        modificarCostoEnvio();
         modificarTotal();
         modificarComision();
         modificarTotalCliente();
@@ -204,6 +204,16 @@ $(document).ready(function () {
         //para el reporte
         $('#tot').empty();
         $('#tot').text("$" + (TOTAL + COMISION));
+    }
+    function modificarCostoEnvio() {
+        // DATA_MUNICIPIOS esta difinida en el js encominda/producto.js
+        let id = document.getElementById('municipio_envio').value;
+        let municipio_envio = DATA_MUNICIPIOS.find(municipio_envio => municipio_envio.id_municipio === id);
+        COSTO_ENVIO = parseInt(municipio_envio.costo_agregado);
+        $('#envio').empty();
+        $('#envio').text("$" + (municipio_envio.costo_agregado));
+
+
     }
 
     //BOTON DE IMPRIMIR
