@@ -278,6 +278,11 @@ include_once '../../plantillas/barra_lateral.php';
                                  </div>
                               </div>
                            </div>
+                           <div class="timeline-footer" style="text-align: right;">
+                              <button name="btnguardar" id="btnActualizar" class="btn btn-info btn-sm"
+                                 style="color: white">Actualizar</button>
+                              <button class="btn btn-danger btn-sm" style="color: white">Cancelar</button>
+                           </div>
                         <br>
                      </div>
                   </div>
