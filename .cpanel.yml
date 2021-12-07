@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/a147409/admin/
+    - export DEPLOYPATH=/home/d170647/admin/
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH
     - /bin/cp home.php $DEPLOYPATH
