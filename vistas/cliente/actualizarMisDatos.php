@@ -1,4 +1,3 @@
-<!-- INICIALIZACION -->
 <?php
 include_once '../../config/parametros.php';
 include_once '../session/isRentaCard.php';

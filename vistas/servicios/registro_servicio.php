@@ -1,4 +1,3 @@
-<!-- INICIALIZACION -->
 <?php include_once '../../config/parametros.php'; ?>
 <?php include_once '../../plantillas/cabecera.php'; ?>
 <?php include_once '../../vistas/session/isEmpleado.php'; ?>
