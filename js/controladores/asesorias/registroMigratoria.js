@@ -397,7 +397,7 @@ $(document).ready(function () {
         select.style.width = '100%';
         select.style.width = '100%';
         select.style.textAlign = 'center';
-        select.style.paddingLeft = '50%';
+        // select.style.paddingLeft = '50%';
         select.classList.add('form-control');
         select.classList.add('respuesta');
 
