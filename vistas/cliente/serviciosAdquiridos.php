@@ -1,7 +1,7 @@
 <?php
 include_once '../../config/parametros.php';
-include_once '../../plantillas/cabecera.php';
 include_once '../../vistas/session/isEmpleado.php';
+include_once '../../plantillas/cabecera.php';
 include_once  '../../plantillas/navbar.php'; ?>
 <!--para el reloj-->
 <link rel="stylesheet" type="text/css" href="<?= $base_url ?>css/bootstrap-clockpicker.css">

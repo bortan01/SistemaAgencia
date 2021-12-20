@@ -1,7 +1,7 @@
 <?php
 include_once '../../config/parametros.php';
-include_once '../../plantillas/cabecera.php';
 include_once '../session/isEmpleado.php';
+include_once '../../plantillas/cabecera.php';
 include_once  '../../plantillas/navbar.php'; ?>
 <!--para la subida de fotos al sistema-->
 <link href="<?= $base_url ?>plugins/subir-foto/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
@@ -28,7 +28,7 @@ include_once '../../plantillas/barra_lateral.php';
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                   <li class="breadcrumb-item active">Modificación</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                                id="botonAyudaModificarEncomienda"> <i class="fas fa-question"></i></button>
+                     id="botonAyudaModificarEncomienda"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>
@@ -37,75 +37,75 @@ include_once '../../plantillas/barra_lateral.php';
 
    <!-- Main content -->
    <section class="content">
-   <form id="encomiendass-form" name="register-form" onsubmit="return false">
-      <div class="row">
-         <div class="col-md-12">
+      <form id="encomiendass-form" name="register-form" onsubmit="return false">
+         <div class="row">
+            <div class="col-md-12">
 
-            <div class="overlay-wrapper">
-               <div id="loadingModificarEncomienda" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
-                  <div class="text-bold pt-2">Cargando...
-                  </div>
-               </div>
-               <div class="timeline">
-                  <!-- timeline item -->
-                  <div id="formulario">
-                     <i class="fas fa-address-card bg-blue"></i>
-                     <div class="timeline-item">
-                        <h3 class="timeline-header"><a href="#">Datos de Origen</a></h3>
-                        <div class="timeline-body">
-                           <form id="datosOrigen-form" name="register-form" onsubmit="return false">
-                              <div class="row">
-                                 <div class="col-sm-6">
-                                    <div class="form-group multiple-form-group input-group">
-                                       <label>Cliente</label>
-                                       <div class="input-group">
-                                          <input type="text" class="form-control" name="nombre_cliente"
-                                             id="nombre_cliente" disabled="true">
-                                       </div>
-                                       <div class="input-group">
-                                          <input type="hidden" class="form-control" name="cliente" id="cliente"
-                                             disabled="true">
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-sm-6">
-                                    <label>Teléfono</label>
-                                    <div class="input-group">
-                                       <input disabled="true" type="text" name="telefono" id="telefono"
-                                          class="form-control" autocomplete="off" placeholder="(503)7232-2345">
-                                    </div>
-                                 </div>
-                                 <div class="col-sm-12">
-                                    <div class="form-group">
-                                       <label>Ciudad</label>
-                                       <div class="input-group">
-                                          <input type="text" class="form-control" name="ciudad" id="ciudad"
-                                             placeholder="Digite la ciudad de origen">
-                                       </div>
-                                    </div>
-                                 </div>
-                                
-                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                       <input name="fecha" id="fecha" type="hidden" class="form-control"
-                                          placeholder="Introduzca el punto de referencia">
-                                    </div>
-                                 </div>
-                              </div>
-                              <div>
-                              </div>
-                           </form>
-                        </div>
+               <div class="overlay-wrapper">
+                  <div id="loadingModificarEncomienda" class="overlay"><i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                     <div class="text-bold pt-2">Cargando...
                      </div>
                   </div>
-                  <!-- END timeline item -->
-                  <!-- timeline item -->
-                  <div id="formulario">
-                     <i class="fas fas fa-people-carry bg-red"></i>
-                     <div class="timeline-item">
-                        <h3 class="timeline-header"><a href="#">Datos de Destino</a></h3>
-                        <div class="timeline-body">
-                               <div class="row">
+                  <div class="timeline">
+                     <!-- timeline item -->
+                     <div id="formulario">
+                        <i class="fas fa-address-card bg-blue"></i>
+                        <div class="timeline-item">
+                           <h3 class="timeline-header"><a href="#">Datos de Origen</a></h3>
+                           <div class="timeline-body">
+                              <form id="datosOrigen-form" name="register-form" onsubmit="return false">
+                                 <div class="row">
+                                    <div class="col-sm-6">
+                                       <div class="form-group multiple-form-group input-group">
+                                          <label>Cliente</label>
+                                          <div class="input-group">
+                                             <input type="text" class="form-control" name="nombre_cliente"
+                                                id="nombre_cliente" disabled="true">
+                                          </div>
+                                          <div class="input-group">
+                                             <input type="hidden" class="form-control" name="cliente" id="cliente"
+                                                disabled="true">
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                       <label>Teléfono</label>
+                                       <div class="input-group">
+                                          <input disabled="true" type="text" name="telefono" id="telefono"
+                                             class="form-control" autocomplete="off" placeholder="(503)7232-2345">
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                       <div class="form-group">
+                                          <label>Ciudad</label>
+                                          <div class="input-group">
+                                             <input type="text" class="form-control" name="ciudad" id="ciudad"
+                                                placeholder="Digite la ciudad de origen">
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                       <div class="form-group">
+                                          <input name="fecha" id="fecha" type="hidden" class="form-control"
+                                             placeholder="Introduzca el punto de referencia">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- END timeline item -->
+                     <!-- timeline item -->
+                     <div id="formulario">
+                        <i class="fas fas fa-people-carry bg-red"></i>
+                        <div class="timeline-item">
+                           <h3 class="timeline-header"><a href="#">Datos de Destino</a></h3>
+                           <div class="timeline-body">
+                              <div class="row">
                                  <div class="col-sm-6">
                                     <div class="form-group multiple-form-group input-group">
                                        <label>Nombre Completo</label>
@@ -156,17 +156,17 @@ include_once '../../plantillas/barra_lateral.php';
                                     <label name="detalle" id="detalle">Modifico una encomienda</label>
                                  </div>
                               </div>
+                           </div>
                         </div>
                      </div>
-                  </div>
-                  <!-- END timeline item -->
-                  <!--timeline item-->
-                  <div>
-                     <i class="fas fa-box-open bg-green"></i>
-                     <div class="timeline-item">
-                        <h3 class="timeline-header"><a href="#">Productos</a></h3>
-                        <div class="timeline-body">
-                          
+                     <!-- END timeline item -->
+                     <!--timeline item-->
+                     <div>
+                        <i class="fas fa-box-open bg-green"></i>
+                        <div class="timeline-item">
+                           <h3 class="timeline-header"><a href="#">Productos</a></h3>
+                           <div class="timeline-body">
+
                               <div class="row">
                                  <div class="col-sm-5">
                                     <div class="form-group multiple-form-group input-group">
@@ -201,47 +201,47 @@ include_once '../../plantillas/barra_lateral.php';
                               <div class="timeline-footer" style="text-align: right;">
                                  <a class="btn btn-info btn-sm" id="agregarTabla" style="color: white">Agregar</a>
                               </div>
+                           </div>
                         </div>
                      </div>
-                  </div>
-                  <!-- END timeline item -->
-                  <!--END timeline item-->
-                  <!-- timeline item -->
-                  <div id="tabla">
-                     <i class="fas fa-hand-holding-usd bg-yellow"></i>
-                     <div class="timeline-item">
-                        <h3 class="timeline-header no-border"><a href="#">Agregando Información</a></h3>
-                        <div class="timeline-body">
-                           <div class="row">
-                              <div class="col-sm-12">
-                                 <div class="row">
-                                    <div class="col-sm-3">
-                                       <div class="form-group">
-                                          <label>Comisión</label>
-                                          <div class="input-group">
-                                             <input id="porcenaje" type="text" class="form-control" disabled="true">
+                     <!-- END timeline item -->
+                     <!--END timeline item-->
+                     <!-- timeline item -->
+                     <div id="tabla">
+                        <i class="fas fa-hand-holding-usd bg-yellow"></i>
+                        <div class="timeline-item">
+                           <h3 class="timeline-header no-border"><a href="#">Agregando Información</a></h3>
+                           <div class="timeline-body">
+                              <div class="row">
+                                 <div class="col-sm-12">
+                                    <div class="row">
+                                       <div class="col-sm-3">
+                                          <div class="form-group">
+                                             <label>Comisión</label>
+                                             <div class="input-group">
+                                                <input id="porcenaje" type="text" class="form-control" disabled="true">
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
+                                    <table id="add-tabla" class="table table-bordered table-hover">
+                                       <thead>
+                                          <tr style="text-align: center;">
+                                             <th>Producto</th>
+                                             <th>Costo ($)</th>
+                                             <th>Cantidad</th>
+                                             <th>Sub Total ($)</th>
+                                             <th>Acción</th>
+                                             <th>id</th>
+                                             <th>contador</th>
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                       </tbody>
+                                    </table>
                                  </div>
-                                 <table id="add-tabla" class="table table-bordered table-hover">
-                                    <thead>
-                                       <tr style="text-align: center;">
-                                          <th>Producto</th>
-                                          <th>Costo ($)</th>
-                                          <th>Cantidad</th>
-                                          <th>Sub Total ($)</th>
-                                          <th>Acción</th>
-                                          <th>id</th>
-                                          <th>contador</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                 </table>
                               </div>
-                           </div>
-                           <div class="row">
+                              <div class="row">
                                  <div class="col-md-1 col-md-offset-1"> </div>
                                  <div class="col-md-3  ">
                                     <label class="text-primary "> Total de Encomienda: </label>
@@ -283,17 +283,17 @@ include_once '../../plantillas/barra_lateral.php';
                                  style="color: white">Actualizar</button>
                               <button class="btn btn-danger btn-sm" style="color: white">Cancelar</button>
                            </div>
-                        <br>
+                           <br>
+                        </div>
                      </div>
+                     <!-- END timeline item -->
+                     <!-- /.timeline-label -->
                   </div>
-                  <!-- END timeline item -->
-                  <!-- /.timeline-label -->
                </div>
+               <!-- END timeline item -->
             </div>
-            <!-- END timeline item -->
          </div>
-      </div>
-   </form>
+      </form>
    </section>
    <!-- Modal mostrar-->
    <div class="modal fade" id="add-producto">
@@ -441,11 +441,11 @@ $(document).on('click', '#comision-add', function() {
 });
 </script>
 <script>
-    //para la mascara del celular
-    $(":input").inputmask();
-    $("#telefono_des").inputmask({
-        "mask": "(+999) 9999-9999"
-    });
+//para la mascara del celular
+$(":input").inputmask();
+$("#telefono_des").inputmask({
+   "mask": "(+999) 9999-9999"
+});
 </script>
 
 <!--alerta del sistema-->

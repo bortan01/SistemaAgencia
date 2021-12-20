@@ -1,6 +1,6 @@
 <?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../../plantillas/cabecera.php'; ?>
 <?php include_once '../../vistas/session/isEmpleado.php'; ?>
+<?php include_once '../../plantillas/cabecera.php'; ?>
 <!-- COLORAR ESTILOS ADICIONALES AQUI -->
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" rel="stylesheet">
 <link href="<?= $base_url ?>plugins/subir-foto/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
@@ -23,13 +23,13 @@
                <h1>Catálogo de Usuarios</h1>
             </div>
             <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Catálogo de Usuarios</li>
-                        <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                                id="botonAyudaCatalogo"> <i class="fas fa-question"></i></button>
-                    </ol>
-                </div>
+               <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                  <li class="breadcrumb-item active">Catálogo de Usuarios</li>
+                  <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
+                     id="botonAyudaCatalogo"> <i class="fas fa-question"></i></button>
+               </ol>
+            </div>
          </div>
       </div><!-- /.container-fluid -->
    </section>

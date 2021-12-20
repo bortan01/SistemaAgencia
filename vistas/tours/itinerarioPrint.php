@@ -1,6 +1,6 @@
 <?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../../plantillas/cabecera.php'; ?>
 <?php include_once '../../vistas/session/isEmpleado.php'; ?>
+<?php include_once '../../plantillas/cabecera.php'; ?>
 <!-- COLOCAR ESTILOS ADICIONALES AQUI -->
 <!--para los reportes-->
 <link href="<?= $base_url ?>css/imprimir.css" all rel="stylesheet" type="text/css" />

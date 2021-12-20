@@ -1,7 +1,7 @@
 <?php
 include_once '../../config/parametros.php';
-include_once '../../plantillas/cabecera.php';
 include_once '../session/isEmpleado.php';
+include_once '../../plantillas/cabecera.php';
 ?>
 <!-- COLOCAR ESTILOS ADICIONALES AQUI -->
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"
@@ -25,7 +25,7 @@ include_once '../../plantillas/barra_lateral.php';
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                   <li class="breadcrumb-item active">Actualización de Envío</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                                id="botonAyudaActualizacion"> <i class="fas fa-question"></i></button>
+                     id="botonAyudaActualizacion"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>

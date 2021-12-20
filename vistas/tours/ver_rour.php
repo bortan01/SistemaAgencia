@@ -1,6 +1,6 @@
 <?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../../plantillas/cabecera.php'; ?>
 <?php include_once '../../vistas/session/isEmpleado.php'; ?>
+<?php include_once '../../plantillas/cabecera.php'; ?>
 <!-- COLORAR ESTILOS ADICIONALES AQUI -->
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" rel="stylesheet">
 <link href="<?= $base_url ?>plugins/subir-foto/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
                   <li class="breadcrumb-item active">Tours Registrados</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
-                                id="botonAyudaMostrarTours"> <i class="fas fa-question"></i></button>
+                     id="botonAyudaMostrarTours"> <i class="fas fa-question"></i></button>
                </ol>
             </div>
          </div>

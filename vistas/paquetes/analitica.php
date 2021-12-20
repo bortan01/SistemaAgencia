@@ -1,6 +1,6 @@
 <?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../../plantillas/cabecera.php'; ?>
 <?php include_once '../../vistas/session/isEmpleado.php'; ?>
+<?php include_once '../../plantillas/cabecera.php'; ?>
 <!-- COLOCAR ESTILOS ADICIONALES AQUI -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
 <link href="<?= $base_url ?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" all rel="stylesheet"

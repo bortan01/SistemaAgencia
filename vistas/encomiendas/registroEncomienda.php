@@ -1,7 +1,7 @@
 <?php
 include_once '../../config/parametros.php';
-include_once '../../plantillas/cabecera.php';
 include_once '../session/isEmpleado.php';
+include_once '../../plantillas/cabecera.php';
 ?>
 <!--para la subida de fotos al sistema-->
 <link href="<?= $base_url ?>plugins/subir-foto/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />

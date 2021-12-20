@@ -1,6 +1,7 @@
 <?php include_once '../../config/parametros.php'; ?>
-<?php include_once '../../plantillas/cabecera.php'; 
+<?php
 include_once '../session/isEmpleado.php';
+include_once '../../plantillas/cabecera.php'; 
 ?>
 
 <!-- COLORAR ESTILOS ADICIONALES AQUI -->
