@@ -40,6 +40,8 @@ $(document).ready(function () {
             form.append("idtipo_viaje", document.getElementById("idtipo_viaje").value);
             form.append("detallePasajero", document.getElementById("detalleBebe").value);
             form.append("opc_avanzadas", arregloOpciones);
+            form.append("maletaMano", document.getElementById("maletaMa").value);
+            form.append("maletaBodega", document.getElementById("maletaBo").value);
 
             let combo = document.getElementById("comboUsuario");
             let selected = combo.options[combo.selectedIndex].text

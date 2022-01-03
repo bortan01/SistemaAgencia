@@ -195,28 +195,44 @@ include_once '../../plantillas/cabecera.php';
                                     <h3 class="timeline-header no-border"><a href="#">Opciones Avanzadas</a></h3>
                                     <div class="timeline-body">
                                         <div class="row">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>Adultos (+12 años)</label>
                                                     <input type="number" class="form-control" name="adultos"
                                                         id="adultos">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>Niños (5 a 11 años)</label>
                                                     <input type="number" class="form-control" name="ninos" id="ninos">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>Bebés (0 a 4 años)</label>
                                                     <input type="number" class="form-control" name="bebes" id="bebes">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3">
+                                            
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
-                                                    <label>Cantidad de Maletas</label>
+                                                    <label>Equipaje de Mano (Máx 10kg)</label>
+                                                    <input type="number" class="form-control" name="maletaMa"
+                                                        id="maletaMa">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Equipaje de Bodega (Máx 23kg)</label>
+                                                    <input type="number" class="form-control" name="maletaBo"
+                                                        id="maletaBo">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Equipaje Adicional (Máx 23kg)</label>
                                                     <input type="number" class="form-control" name="maletas"
                                                         id="maletas">
                                                 </div>
@@ -234,7 +250,7 @@ include_once '../../plantillas/cabecera.php';
                                             <div class="col-sm-3">
                                                 <!-- select -->
                                                 <div class="form-group multiple-form-group input-group">
-                                                    <label>Aerolinea</label>
+                                                    <label>Aerolínea</label>
                                                     <div class="input-group">
                                                         <select name="idaerolinea" id="idaerolinea"
                                                             class="select2 select2-hidden-accessible form-control"
