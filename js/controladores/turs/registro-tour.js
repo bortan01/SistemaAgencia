@@ -845,7 +845,7 @@ function obtenerData() {
             });
         }
     });
-    let tipoPaquete =  "terrestre";
+    let tipoPaquete = "terrestres";
 
     let salida = $("input[name='lugar_salida[]']").map(function () { return $(this).val(); }).get();
     // ELIMINAMOS CAMBOS VACIOS

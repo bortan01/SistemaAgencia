@@ -789,7 +789,7 @@ function obtenerData() {
             });
         }
     });
-    let tipoPaquete = "aereo";
+    let tipoPaquete = "aereos";
 
     let salida = $("input[name='lugar_salida[]']").map(function () { return $(this).val(); }).get();
     // ELIMINAMOS CAMBOS VACIOS
