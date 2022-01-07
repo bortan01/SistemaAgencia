@@ -845,7 +845,7 @@ function obtenerData() {
             });
         }
     });
-    let tipoPaquete = $("input[name='radioTipoPaquete']:checked").val();
+    let tipoPaquete =  "terrestre";
 
     let salida = $("input[name='lugar_salida[]']").map(function () { return $(this).val(); }).get();
     // ELIMINAMOS CAMBOS VACIOS

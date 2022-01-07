@@ -67,16 +67,15 @@
                                  </div>
                                  <div class="col-sm-6">
                                     <div class="form-group">
-                                       <label>Fecha del viaje</label>
-                                       <!-- placeholder="dd-mm-yyyy"  type="date"  -->
+                                       <label>Costo del Pasaje($)</label>
                                        <div class="input-group">
-                                          <input class=" form-control" name="fecha_salida" id="fecha_salida">
+                                          <input id="CostoPasaje" type="number" min="1" value="1" class="form-control"
+                                             id="precio">
                                        </div>
-                                       <!-- /.input group -->
                                     </div>
                                  </div>
                               </div>
-                              <!-- <div class="row">
+                              <div class="row">
                                  <div class="ml-2"><label for="">Tipo de Tour</label></div>
                                  <div class="form-check mx-auto icheck-success">
 
@@ -93,7 +92,7 @@
                                        Tour Internacional
                                     </label>
                                  </div>
-                              </div> -->
+                              </div>
                               <div class="row">
                                  <div class="col-sm-12">
                                     <!-- text input -->
@@ -366,15 +365,6 @@
                            </h3>
                            <div class="timeline-body">
                               <div class="row">
-                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                       <label>Costo del Pasaje($)</label>
-                                       <div class="input-group">
-                                          <input id="CostoPasaje" type="number" min="1" value="1" class="form-control"
-                                             id="precio">
-                                       </div>
-                                    </div>
-                                 </div>
                                  <div class="col-sm-12">
                                     <table id="TablaCostos" class="table table-bordered table-hover">
                                        <thead>

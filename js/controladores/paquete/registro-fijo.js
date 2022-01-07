@@ -789,7 +789,7 @@ function obtenerData() {
             });
         }
     });
-    let tipoPaquete = "aereo";
+    let tipoPaquete = $("input[name='radioTipoPaquete']:checked").val();
 
     let salida = $("input[name='lugar_salida[]']").map(function () { return $(this).val(); }).get();
     // ELIMINAMOS CAMBOS VACIOS
@@ -816,13 +816,6 @@ function obtenerData() {
             promocion.push({ 'titulo': titulos[index], 'asiento': asientos[index], "pasaje": pasajes[index] });
         }
     }
-
-
-    let valor = document.getElementById("fecha_salida").value;
-    let fecha = valor.split(" - ");
-    let start = fecha[0]
-    let end   = fecha[1]
-
     form.append("sitios", JSON.stringify(sistiosTuristicos));
     form.append("servicios", JSON.stringify(serviciosAdicionales));
     form.append("promociones", JSON.stringify(promocion));
@@ -835,8 +828,6 @@ function obtenerData() {
     form.append("descripcion_tur", document.getElementById("descripcion_tur").value);
     form.append("cupos_disponibles", cantidadByTransporte);
     form.append("tipo", tipoPaquete);
-    form.append("start", start);
-    form.append("end", end);
     form.append("estado", 1);
     form.append("aprobado", 1);
     return form;

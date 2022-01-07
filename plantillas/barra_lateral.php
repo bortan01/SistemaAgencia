@@ -55,12 +55,6 @@
                         <p>Bitácora de Usuarios</p>
                      </a>
                   </li>
-                  <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/cliente/backup_restore.php" class="nav-link">
-                        <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Backup / Restaurar</p>
-                     </a>
-                  </li>
                   <?php endif; ?>
                </ul>
                <!--  -->
@@ -72,7 +66,7 @@
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-umbrella-beach"></i>
                   <p>
-                     Tours
+                     Tours Terrestres
                      <i class="fas fa-angle-left right"></i>
                   </p>
                </a>
@@ -149,14 +143,14 @@
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/tours/registro-tour.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Publicar Tour</p>
+                        <p>Publicar Tour Terrestre</p>
                      </a>
                   </li>
 
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/tours/ver_rour.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Ver Tours</p>
+                        <p>Ver Tours Terrestres</p>
                      </a>
                   </li>
                   <li class="nav-item">
@@ -171,7 +165,7 @@
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-map-marked-alt"></i>
                   <p>
-                     Paquetes
+                     Tours Aéreos
                      <i class="right fas fa-angle-left"></i>
                   </p>
                </a>
@@ -248,13 +242,13 @@
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/paquetes/registro-paquete.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Paquete Público</p>
+                        <p>Publicar Tour Aéreo</p>
                      </a>
                   </li>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/paquetes/registroPaquetePrivado.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Paquete Privado</p>
+                        <p>Registrar Tour Privado</p>
                      </a>
                   </li>
                   <li class="nav-item">
@@ -266,7 +260,7 @@
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/paquetes/ver_paquete.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Ver Paquetes</p>
+                        <p>Ver Tours Aéreos</p>
                      </a>
                   </li>
                   <li class="nav-item">
@@ -537,7 +531,7 @@
             <li class="nav-header">CONTROL</li>
 
             <?php if ($_SESSION["nivelA"] == 'ADMINISTRADOR') : ?>
-            <li class="nav-item has-treeview">
+            <!-- <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-hand-holding-usd"></i>
                   <p>
@@ -547,13 +541,13 @@
                </a>
                <ul class="nav nav-treeview">
                   <li class="nav-item">
-                     <a href="<?= $base_url ?>vistas/ingresos/estadisticas.php" class="nav-link">
+                     <a href="vistas/ingresos/estadisticas.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
                         <p>Estadísticas</p>
                      </a>
                   </li>
                </ul>
-            </li>
+            </li> -->
 
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">

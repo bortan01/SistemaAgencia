@@ -21,7 +21,7 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1 id="titulo">Publicar Tour</h1>
+               <h1 id="titulo">Publicar Tour Terrestre</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
@@ -76,7 +76,7 @@
                                     </div>
                                  </div>
                               </div>
-                              <div class="row">
+                              <!-- <div class="row">
                                  <div class="ml-2"><label for="">Tipo de Tour</label></div>
                                  <div class="form-check mx-auto icheck-success">
 
@@ -93,7 +93,7 @@
                                        Tour Internacional
                                     </label>
                                  </div>
-                              </div>
+                              </div> -->
                               <div class="row">
                                  <div class="col-sm-12">
                                     <!-- text input -->
