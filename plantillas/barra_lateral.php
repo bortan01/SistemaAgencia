@@ -409,15 +409,27 @@
                      </a>
                   </li>
                   <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vuelos/registroHotel.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Registrar Hotel</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/vuelos/cotizarVuelo.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Registrar Cotización</p>
+                        <p>Registrar Cotización Vuelo</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="<?= $base_url ?>vistas/vuelos/cotizarHotel.php" class="nav-link">
+                        <i class="fas fa-ellipsis-v nav-icon"></i>
+                        <p>Registrar Cotización Hotel</p>
                      </a>
                   </li>
                   <li class="nav-item">
                      <a href="<?= $base_url ?>vistas/vuelos/mostrarCotizaciones.php" class="nav-link">
                         <i class="fas fa-ellipsis-v nav-icon"></i>
-                        <p>Mostrar Cotizaciones</p>
+                        <p>Mostrar Cotizaciones Vuelos</p>
                      </a>
                   </li>
                   <li class="nav-item">

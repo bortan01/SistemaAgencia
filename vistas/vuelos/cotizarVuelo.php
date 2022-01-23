@@ -214,7 +214,7 @@ include_once '../../plantillas/cabecera.php';
                                                     <input type="number" class="form-control" name="bebes" id="bebes">
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>Equipaje de Mano (Máx 10kg)</label>
@@ -222,7 +222,7 @@ include_once '../../plantillas/cabecera.php';
                                                         id="maletaMa">
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>Equipaje de Bodega (Máx 23kg)</label>
