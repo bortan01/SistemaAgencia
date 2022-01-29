@@ -109,7 +109,7 @@ $(document).ready(function () {
             url: `${URL_SERVIDOR}TurPaquete/showReserva?id_tours=${idTour}`,
             method: "GET"
         }).done(function (response) {
-            $('#titulo').html(`Reservar Paquete (${response.nombre})`);
+            $('#titulo').html(`Reservar Tour Aéreo (${response.nombre})`);
             nombre_producto = response.nombre;
             descripcionProducto = response.descripcion_tur;
             requisitos = response.requisitos;

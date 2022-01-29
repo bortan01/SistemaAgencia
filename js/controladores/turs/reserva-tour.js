@@ -1,5 +1,5 @@
 // CUANDO LA PAGINA YA ESTA LISTA
-$(document).ready(function() {
+$(document).ready(function () {
 
     const valores = window.location.search;
     const urlParams = new URLSearchParams(valores);
@@ -25,17 +25,17 @@ $(document).ready(function() {
     inicializarTabla();
 
     //CUANDO HAY CAMBIOS EN EL COMBO DE ASIENTOS
-    $('#comboAsiento').on('select2:select', function(e) {
+    $('#comboAsiento').on('select2:select', function (e) {
         let id = e.params.data.id;
         let asiento = buscar(id);
         costoPasaje.val(asiento.pasaje);
     });
     //BOTON DE NUEVO CLIENTE
-    $(document).on('click', '#btnNuevoCliente', function(evento) {
+    $(document).on('click', '#btnNuevoCliente', function (evento) {
         $('#modalAgregarCliente').modal('show');
     });
     //BOTON DE GUARDAR
-    $(document).on('click', '#btnguardarReserva', function(evento) {
+    $(document).on('click', '#btnguardarReserva', function (evento) {
         evento.preventDefault(); //para evitar que la pagina se recargue
         if (transporte) {
             let seleccionados = seat_charts.find('e.selected').seatIds.length; //este es un arreglo
@@ -60,6 +60,7 @@ $(document).ready(function() {
                         text: `No se ha seleccionado ningun tipo de asiento`,
                         showConfirmButton: true,
                     });
+
                 } else {
                     if (porElegir != seleccionados) {
                         Toast.fire({
@@ -101,7 +102,7 @@ $(document).ready(function() {
         }
     });
     //AGREGAR A LA TABLA
-    $(document).on('click', '#btnAgregarAsiento', function() {
+    $(document).on('click', '#btnAgregarAsiento', function () {
         let cantidad = $('#cantidadAsientos').val();
         if (cantidad) {
             let id = $('#comboAsiento').val();
@@ -113,8 +114,25 @@ $(document).ready(function() {
         }
 
     });
+    //AGREGAR A LA TABLA
+    $(document).on('click', '#btnAgregarAcomodamiento', function () {
+        console.log("adfadf");
+        let cantidad = $('#cantidadAcomodamiento').val();
+        let costo = $('#costoAcomodamiento').val();
+        let descripcion = $('#descripcionAcomodamiento').val();
+
+        if (cantidad) {
+            agregarFilaAcomodamiento(descripcion, cantidad, costo);
+            modificarTotalForAcomodamiento();
+
+        }
+
+    });
+
+
+
     //BOTON DE ELIMINAR DE LA TABLA
-    $(document).on('click', '.btn-group .btn-danger', function(evento) {
+    $(document).on('click', '.btn-group .btn-danger', function (evento) {
         let fila = $(this).closest("tr");
         let data = tablaReserva.row(fila).data();
         tablaReserva.row(fila).remove().draw();
@@ -126,7 +144,7 @@ $(document).ready(function() {
         $.ajax({
             url: URL_SERVIDOR + "Usuario/obtenerUsuario?nivel=CLIENTE",
             method: "GET"
-        }).done(function(response) {
+        }).done(function (response) {
             //REST_Controller::HTTP_OK
 
             let myData = [];
@@ -143,10 +161,10 @@ $(document).ready(function() {
             } else {
                 $('#comboUsuario').select2();
             }
-        }).fail(function(response) {
+        }).fail(function (response) {
             $('#comboUsuario').select2();
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingReservaTur').hide();
         });
 
@@ -156,7 +174,7 @@ $(document).ready(function() {
         $.ajax({
             url: `${URL_SERVIDOR}TurPaquete/showReserva?id_tours=${idTour}`,
             method: "GET"
-        }).done(function(response) {
+        }).done(function (response) {
             $('#titulo').html(`Reservar Tours (${response.nombre})`);
             nombre_producto = response.nombre;
             descripcionProducto = response.descripcion_tur;
@@ -209,7 +227,7 @@ $(document).ready(function() {
                 });
             }
 
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log("Error");
             console.log(response);
 
@@ -228,7 +246,7 @@ $(document).ready(function() {
             timeout: 0,
             processData: false,
             contentType: false,
-        }).done(function(response) {
+        }).done(function (response) {
             guardarBitacora();
 
             const Toast = Swal.mixin();
@@ -239,7 +257,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             })
             reset();
-        }).fail(function(response) {
+        }).fail(function (response) {
             //SI HUBO UN ERROR EN LA RESPUETA REST_Controller::HTTP_BAD_REQUEST
             console.log(response);
 
@@ -251,7 +269,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             });
 
-        }).always(function(xhr, opts) {
+        }).always(function (xhr, opts) {
             $('#loadingReservaTur').hide();
         });
 
@@ -280,7 +298,7 @@ $(document).ready(function() {
         descripcionReserva = `${descripcionReserva}  Total : $${total}`
 
         // CREAMOS EL OBJETO QUE SE OCUPARA PARA EL PRECHEQUEO
-        chequeo = requisitos.map(function(requisito) {
+        chequeo = requisitos.map(function (requisito) {
             let temporal = {};
             temporal["estado"] = false;
             temporal["requisito"] = requisito;
@@ -366,7 +384,7 @@ $(document).ready(function() {
 
     function existeFila(asiento, cantidad) {
         let encontrado = false;
-        tablaReserva.rows().every(function(value, index) {
+        tablaReserva.rows().every(function (value, index) {
             let data = this.data();
             if (asiento.id == data.id) {
                 let subTotal = (asiento.pasaje * cantidad).toFixed(2);
@@ -392,6 +410,15 @@ $(document).ready(function() {
         });
         $('#totalPago').html('$' + (totalReserva.toFixed(2)));
         $('#asientosAReservar').html(porElegir);
+    }
+
+
+    function modificarTotalForAcomodamiento() {
+        totalReserva = 0.0;
+        ASIENTOS_SELECCIONADOS.forEach((element) => {
+            totalReserva += parseFloat(element.subTotal);
+        });
+        $('#totalPago').html('$' + (totalReserva.toFixed(2)));
     }
 
     function eliminarDeLista(id) {
@@ -422,7 +449,7 @@ $(document).ready(function() {
             naming: {
                 top: false,
                 left: false,
-                getLabel: function(character, row, column) {
+                getLabel: function (character, row, column) {
                     return firstSeatLabel++;
                 },
             },
@@ -435,12 +462,12 @@ $(document).ready(function() {
                     ['e', 'available', 'Asientos Disponibles'],
                 ]
             },
-            click: function() {
+            click: function () {
                 if (this.status() == 'available') {
                     //let's create a new <li> which we'll add to the cart items
                     $('<li>' + this.data().category + ' Seat # ' + this.settings.label + ': <b>$' +
-                            this.data().price +
-                            '</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
+                        this.data().price +
+                        '</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
                         .attr('id', 'cart-item-' + this.settings.id)
                         .data('seatId', this.settings.id)
                         .appendTo($cart);
@@ -473,7 +500,7 @@ $(document).ready(function() {
                     return this.style();
                 }
             },
-            focus: function() {
+            focus: function () {
 
                 if (this.status() == 'available') {
                     return 'focused';
@@ -481,7 +508,7 @@ $(document).ready(function() {
                     return this.style();
                 }
             },
-            blur: function() {
+            blur: function () {
                 return this.status();
             }
         });
@@ -492,7 +519,7 @@ $(document).ready(function() {
         var total = 0;
 
         //basically find every selected seat and sum its price
-        sc.find('selected').each(function() {
+        sc.find('selected').each(function () {
             total += this.data().price;
         });
 
@@ -507,7 +534,7 @@ $(document).ready(function() {
         }
         //LOS ESPACIOS QUE SE VAN A COLOCAR ENTRE ASIENTOS DERECHOS E IZQUIERDOS
         strFila += "_"
-            //ASIENTOS DEL LADO IZQUIERDO
+        //ASIENTOS DEL LADO IZQUIERDO
         for (let index = 0; index < asientos_izquierdo; index++) {
             strFila += "e"
         }
@@ -554,5 +581,34 @@ $(document).ready(function() {
         totalReserva = 0;
         inicialData(ID_TUR);
 
+    }
+
+    function agregarFilaAcomodamiento(descripcion, cantidad, costo) {
+        let subTotal = (costo * cantidad).toFixed(2);
+        let html = "";
+        html += '<td>';
+        html += '    <div class="btn-group">';
+        html += '        <button type="button" name="" class="btn btn-danger" data-toggle="modal"';
+        html += '            data-target="#modal-eliminar">';
+        html += '            <i class="fas fa-trash" style="color: white"></i>';
+        html += '        </button>';
+        html += '    </div>';
+        html += '</td>';
+        let nuevoAsiento = {
+            id: Date.now(),
+            tipo: descripcion,
+            costo: costo,
+            cantidad: cantidad,
+            subTotal: subTotal,
+            eliminar: html,
+            seleccionables: 0
+        };
+
+        console.log(nuevoAsiento);
+
+        ASIENTOS_SELECCIONADOS = [...ASIENTOS_SELECCIONADOS, nuevoAsiento];
+        tablaReserva.row.add(nuevoAsiento).draw(false);
+        //PARA ORDENAR LA TABLA
+        //tabla.order([6, 'desc']).draw();
     }
 });

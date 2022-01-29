@@ -21,12 +21,12 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-9">
-               <h1 id="titulo">Reservar Tours</h1>
+               <h1 id="titulo">Reservar Tours Terrestre</h1>
             </div>
             <div class="col-sm-3">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Reservar Tours</li>
+                  <li class="breadcrumb-item active">Reservar Tours Terrestre</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
                      id="botonAyudaReservaTours"> <i class="fas fa-question"></i></button>
                </ol>
@@ -139,6 +139,56 @@
                   </div>
                   <!-- END timeline item -->
                   <!-- timeline item -->
+                  <!-- timeline item -->
+                  <div>
+                     <i class="fas fa-bed bg-red"></i>
+                     <div class="timeline-item">
+                        <!--<span class="time"><i class="fas fa-clock"></i> 5 mins ago</span>-->
+                        <h3 class="timeline-header no-border"><a href="#">Otros Servicios</a></h3>
+                        <div class="timeline-body">
+                           <div class="row">
+                              <div class="col-sm-4">
+                                 <div class="form-group multiple-form-group input-group">
+                                    <label>Descripción</label>
+                                    <div class="input-group">
+                                       <input type="text" class=" form-control" name="descripcionAcomodamiento"
+                                          id="descripcionAcomodamiento">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-sm-4">
+                                 <div class="form-group">
+                                    <label>Precio ($)</label>
+                                    <div class="input-group">
+                                       <input type="number" min="1" class=" form-control" name="costoAcomodamiento"
+                                          value="1" id="costoAcomodamiento">
+                                    </div>
+                                    <!-- /.input group -->
+                                 </div>
+                              </div>
+                              <div class="col-sm-4">
+                                 <div class="form-group">
+                                    <label>Cantidad ($)</label>
+                                    <div class="input-group">
+                                       <input type="number" min="1" class=" form-control" name="cantidadAcomodamiento"
+                                          value="1" id="cantidadAcomodamiento">
+                                    </div>
+                                    <!-- /.input group -->
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="timeline-footer">
+
+                           <div style="text-align: right;">
+                              <button id="btnAgregarAcomodamiento" class="btn btn-info btn-sm"
+                                 style="color: white">Agregar</button>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+                  <!-- END timeline item -->
                   <div>
                      <i class="fas fa-list bg-green"></i>
                      <div class="timeline-item">
@@ -230,7 +280,7 @@
       </div>
    </section>
 </div>
-<?php 
+<?php
 include_once '../../vistas/ayuda/modal-ayuda.php';
 include_once '../cliente/modalCliente.php';
 include_once '../../plantillas/footer.php'; ?>
