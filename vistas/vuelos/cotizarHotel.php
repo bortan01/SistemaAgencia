@@ -117,16 +117,17 @@ include_once '../../plantillas/cabecera.php';
                                                 </span>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="row">
-                                        <div class="col-sm-12">
-                                       <div class="form-group">
-                                          <label for="cars">Fecha de Entrada y Salida</label>
-                                          <div class="input-group">
-                                             <input class=" form-control" name="fecha_salida" id="fecha_salida">
-                                          </div>
-                                       </div>
-                                    </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="cars">Fecha de Entrada y Salida</label>
+                                                    <div class="input-group">
+                                                        <input class=" form-control" name="fecha_salida"
+                                                            id="fecha_salida">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,113 +139,13 @@ include_once '../../plantillas/cabecera.php';
                                     <h3 class="timeline-header no-border"><a href="#">Habitaciones:</a></h3>
                                     <div class="timeline-body">
                                         <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-star" style="color:#ffc107"></i><label>Suite
-                                                        Principal</label>
-                                                    <input type="number" class="form-control" name="suite" id="suite"
-                                                        min=0>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#28a745"></i><label>Habitación
-                                                        Individual</label>
-                                                    <input type="number" class="form-control" name="individual"
-                                                        id="individual" min=0>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#c82333"></i><i
-                                                        class="fas fa-user" style="color:#c82333"></i> <label>Habitación
-                                                        doble</label>
-                                                    <input type="number" class="form-control" name="doble" id="doble"
-                                                        min=0>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#28a745"></i> <i
-                                                        class="fas fa-user" style="color:#28a745"></i></i>
-                                                    <label>Habitación Doble</label>
-                                                    <input type="number" class="form-control" name="doble-indivudual"
-                                                        id="doble-indivudual" min=0>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#28a745"></i> <i
-                                                        class="fas fa-user" style="color:#28a745"></i> <i
-                                                        class="fas fa-user" style="color:#28a745"></i><label>Habitación
-                                                        Triple</label>
-                                                    <input type="number" class="form-control" name="triple-individual"
-                                                        id="triple-individual" min=0>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#c82333"></i><i
-                                                        class="fas fa-user" style="color:#c82333"></i> <i
-                                                        class="fas fa-user" style="color:#28a745"></i><label>Habitación
-                                                        Triple</label>
-                                                    <input type="number" class="form-control" name="triple" id="triple"
-                                                        min=0>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#28a745"></i> <i
-                                                        class="fas fa-user" style="color:#28a745"></i> <i
-                                                        class="fas fa-user" style="color:#28a745"></i> <i
-                                                        class="fas fa-user" style="color:#28a745"></i><label>Habitación
-                                                        Cuádruple </label>
-                                                    <input type="number" class="form-control" name="cuatro-individual"
-                                                        id="cuatro-individual" min=0>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#c82333"></i><i
-                                                        class="fas fa-user" style="color:#c82333"></i> <i
-                                                        class="fas fa-user" style="color:#c82333"></i><i
-                                                        class="fas fa-user" style="color:#c82333"></i><label>Habitación
-                                                        Cuádruple</label>
-                                                    <input type="number" class="form-control" name="cuatro-doble"
-                                                        id="cuatro-doble" min=0>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#28a745"></i><label>Cama
-                                                        Individual Extra</label>
-                                                    <input type="number" class="form-control" name="extra" id="extra"
-                                                        min=0>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4"
-                                                style="display: flex; align-items: center;  justify-content: center;">
-                                                <div class="form-group">
-                                                    <i class="fas fa-star" style="color:#ffc107"></i><label>Cama Doble
-                                                        (Matrimonial)</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4"
-                                                style="display: flex; align-items: center;  justify-content: center;">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#28a745"></i><label>Camas
-                                                        Individuales</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4"
-                                                style="display: flex; align-items: center;  justify-content: center;">
-                                                <div class="form-group">
-                                                    <i class="fas fa-user" style="color:#c82333"></i><i
-                                                        class="fas fa-user" style="color:#c82333"></i><label>Camas
-                                                        Dobles</label>
+                                                    <label>Descripción de Habitaciones:</label>
+                                                    <textarea class="form-control" rows="4" id="descripcion_habitacion"
+                                                        name="descripcion_habitacion"
+                                                        placeholder="Digitar aqui como desea la organización de camas en las habitaciones que esta solicitando..."></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -343,7 +244,7 @@ $(function() {
     $('.select2bs4').select2({
         theme: 'bootstrap4'
     })
-    
+
 
 })
 </script>
@@ -357,46 +258,46 @@ function OpcAvanzada() {
 </script>
 
 <script>
-     var fecha = new Date();
-        var hoy = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
+var fecha = new Date();
+var hoy = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
 
-        $('#fecha_salida').daterangepicker({
-            minDate: hoy,
-            locale: {
-                format: 'DD/MM/YYYY',
-                separator: " - ",
-                applyLabel: "Aplicar",
-                cancelLabel: "Cancelar",
-                fromLabel: "De",
-                toLabel: "A",
-                customRangeLabel: "Custom",
-                
-                daysOfWeek: [
-                    "Dom",
-                    "Lun",
-                    "Mar",
-                    "Mie",
-                    "Jue",
-                    "Vie",
-                    "Sab"
-                ],
-                monthNames: [
-                    "Enero",
-                    "Febrero",
-                    "Marzo",
-                    "Abril",
-                    "Mayo",
-                    "Junio",
-                    "Julio",
-                    "Agosto",
-                    "Septiembre",
-                    "Octubre",
-                    "Noviembre",
-                    "Diciembre"
-                ],
-                "firstDay": 0
-            }
-        });
+$('#fecha_salida').daterangepicker({
+    minDate: hoy,
+    locale: {
+        format: 'DD/MM/YYYY',
+        separator: " - ",
+        applyLabel: "Aplicar",
+        cancelLabel: "Cancelar",
+        fromLabel: "De",
+        toLabel: "A",
+        customRangeLabel: "Custom",
+
+        daysOfWeek: [
+            "Dom",
+            "Lun",
+            "Mar",
+            "Mie",
+            "Jue",
+            "Vie",
+            "Sab"
+        ],
+        monthNames: [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"
+        ],
+        "firstDay": 0
+    }
+});
 </script>
 
 <!-- INICIO DE SCRIPT PARA REGISTRO DE USUARIO -->

@@ -73,8 +73,8 @@ include_once '../../plantillas/cabecera.php';
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre de Hotel</label>
-                                                    <input type="text" class="form-control" name="nombreHotel"
-                                                        id="nombreHotel"
+                                                    <input type="text" class="form-control" name="hotel"
+                                                        id="hotel"
                                                         placeholder="Digite el nombre del Hotel">
                                                 </div>
                                             </div>
@@ -82,8 +82,8 @@ include_once '../../plantillas/cabecera.php';
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>País</label>
-                                                    <input type="text" class="form-control" name="nombrePais"
-                                                        id="nombrePais" placeholder="Digite nombre del País">
+                                                    <input type="text" class="form-control" name="pais"
+                                                        id="pais" placeholder="Digite nombre del País">
                                                 </div>
                                             </div>
                                            
@@ -91,8 +91,8 @@ include_once '../../plantillas/cabecera.php';
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Precio ($)</label>
-                                                    <input type="number" class="form-control" name="precioHotel"
-                                                        id="precioHotel" min=1>
+                                                    <input type="number" class="form-control" name="precio"
+                                                        id="precio" min=1>
                                                 </div>
                                             </div>
                                             <div class="col-sm-7">
@@ -136,7 +136,7 @@ include_once '../../plantillas/cabecera.php';
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Descripción del Hotel</label>
-                                                    <textarea class="textarea" name="desPromocion" id="desPromocion"
+                                                    <textarea class="textarea" name="descripcion" id="descripcion"
                                                         placeholder="Ingrese una breve descripción o historia del Hotel"
                                                         style="width: 100%; height: 50px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                                 </div>
