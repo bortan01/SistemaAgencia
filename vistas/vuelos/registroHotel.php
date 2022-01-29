@@ -185,7 +185,6 @@ include_once '../../plantillas/cabecera.php';
 
 <?php
 include_once '../../vistas/ayuda/modal-ayuda.php';
-
 include_once '../../plantillas/footer.php';
 ?>
 <script>
@@ -207,29 +206,10 @@ function OpcAvanzada() {
     $("#opc_avanzadas").append(seleccion).trigger('change');
 }
 </script>
-<script>
-$(function() {
-    var hoy = new Date();
-    var dd = hoy.getDate();
-    var mm = hoy.getMonth() + 1;
-    var yyyy = hoy.getFullYear();
-    if (dd < 10) {
-        dd = '0' + dd
-    }
-    if (mm < 10) {
-        mm = '0' + mm
-    }
 
-    hoy = yyyy + '-' + mm + '-' + dd;
-    document.getElementById("fechaDisponible").setAttribute("min", hoy);
-
-});
-</script>
 
 <script src="<?= $base_url ?>plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= $base_url ?>plugins/jquery-validation/additional-methods.min.js"></script>
-
-<script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <script src="<?= $base_url ?>plugins/subir-foto/js/plugins/piexif.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/js/plugins/sortable.js" type="text/javascript"></script>
@@ -238,7 +218,7 @@ $(function() {
 <script src="<?= $base_url ?>plugins/subir-foto/themes/fas/theme.js" type="text/javascript"></script>
 
 <script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
-
 <script src="<?= $base_url ?>js/controladores/vuelos/insertarHotel.js"></script>
+<script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <?php include_once '../../plantillas/cierre.php'; ?>

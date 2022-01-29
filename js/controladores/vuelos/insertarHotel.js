@@ -34,7 +34,7 @@ $(document).ready(function () {
 
             console.log(arregloOpciones);
         
-        form.append("nombreHotel", document.getElementById("nombre").value);
+        form.append("nombreHotel", document.getElementById("hotel").value);
         form.append("nombrePais", document.getElementById("pais").value);
         form.append("precioNoche", document.getElementById("precio").value);
         form.append("descripcionHotel", document.getElementById("descripcion").value);
