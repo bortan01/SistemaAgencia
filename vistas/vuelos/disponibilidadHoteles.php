@@ -18,7 +18,6 @@ h6 {
 
     text-align: center;
 }
-
 </style>
 
 
@@ -137,14 +136,14 @@ h6 {
                                         <div class="card-body p-0">
                                             <ul class="nav nav-pills flex-column">
 
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link">
-                                                             <span class=" float-right">
-                                                                <h7 name="detalles" id="detalles"></h7>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                               
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">
+                                                        <span class=" float-right">
+                                                            <h7 name="detalles" id="detalles"></h7>
+                                                        </span>
+                                                    </a>
+                                                </li>
+
 
                                             </ul>
                                         </div>
@@ -152,21 +151,19 @@ h6 {
                                 </div>
                             </div>
                             <div class="row mt-4">
-                        <nav class="w-100">
-                           <div class="nav nav-tabs" role="tablist">
-                              <a class="nav-item nav-link active" data-toggle="tab" href="#tab-descripcion" role="tab"
-                                 aria-selected="true">Incluye:</a>
-                              
-                           </div>
-                        </nav>
-                        <div class="tab-content p-3" id="nav-tabContent">
-                           <div class="tab-pane fade show active" id="tab-descripcion" role="tabpanel">
-                              <p style="text-align: center;" name="incluye" id="incluye"></p>
-                           </div>
-                           
-                        </div>
+                                <nav class="w-100">
+                                    <div class="nav nav-tabs" role="tablist">
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#tab-descripcion"
+                                            role="tab" aria-selected="true">Incluye:</a>
 
-                     </div>
+                                    </div>
+                                </nav>
+                                <div class="tab-content p-3" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="tab-descripcion" role="tabpanel">
+                                        <p style="text-align: center;" name="incluye" id="incluye"></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.card-body -->
                     </div>
