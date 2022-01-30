@@ -65,6 +65,18 @@ $(document).ready(function () {
         }
 
     });
+    //AGREGAR A LA TABLA
+    $(document).on('click', '#btnAgregarAcomodamiento', function () {
+        let cantidad = $('#cantidadAcomodamiento').val();
+        let costo = $('#costoAcomodamiento').val();
+        let descripcion = $('#descripcionAcomodamiento').val();
+
+        if (cantidad) {
+            agregarFilaAcomodamiento(descripcion, cantidad, costo);
+            modificarTotalForAcomodamiento();
+
+        }
+    });
     //BOTON DE ELIMINAR DE LA TABLA
     $(document).on('click', '.btn-group .btn-danger', function (evento) {
         let fila = $(this).closest("tr");
@@ -194,8 +206,22 @@ $(document).ready(function () {
 
         ASIENTOS_SELECCIONADOS.forEach((element) => {
             totalPago += parseFloat(element.subTotal);
-            descripcionReserva = `${descripcionReserva} ${element.cantidad} X Asiento(s) ${element.tipo}  $${element.costo} c/u, Sub Total: $${element.subTotal}\n`
-            cantidad_asientos += parseInt(element.cantidad) * parseInt(element.seleccionables);
+            
+            
+            
+            // los elementos con id mayor que 1000 corresponden a servicios adicionales
+            if (element.id> 1000) {
+                descripcionReserva = `${descripcionReserva} ${element.cantidad} X ${element.tipo}  $${element.costo} c/u, Sub total: ${element.subTotal}  \n`
+            } else {
+                descripcionReserva = `${descripcionReserva} ${element.cantidad} X Asiento(s) ${element.tipo}  $${element.costo} c/u, Sub total: ${element.subTotal}  \n`
+                cantidad_asientos += parseInt(element.cantidad) * parseInt(element.seleccionables);
+        
+            }
+
+
+
+
+
         });
         descripcionReserva = `${descripcionReserva}  Total : $${totalPago}`
 
@@ -389,5 +415,38 @@ $(document).ready(function () {
         totalReserva = 0;
         inicialData(ID_TUR);
 
+    }
+
+    function modificarTotalForAcomodamiento() {
+        totalReserva = 0.0;
+        ASIENTOS_SELECCIONADOS.forEach((element) => {
+            totalReserva += parseFloat(element.subTotal);
+        });
+        $('#totalPago').html('$' + (totalReserva.toFixed(2)));
+    }
+    function agregarFilaAcomodamiento(descripcion, cantidad, costo) {
+        let subTotal = (costo * cantidad).toFixed(2);
+        let html = "";
+        html += '<td>';
+        html += '    <div class="btn-group">';
+        html += '        <button type="button" name="" class="btn btn-danger" data-toggle="modal"';
+        html += '            data-target="#modal-eliminar">';
+        html += '            <i class="fas fa-trash" style="color: white"></i>';
+        html += '        </button>';
+        html += '    </div>';
+        html += '</td>';
+        let nuevoAsiento = {
+            id: Date.now(),
+            tipo: descripcion,
+            costo: costo,
+            cantidad: cantidad,
+            subTotal: subTotal,
+            eliminar: html,
+            seleccionables: 0
+        };
+        ASIENTOS_SELECCIONADOS = [...ASIENTOS_SELECCIONADOS, nuevoAsiento];
+        tablaReserva.row.add(nuevoAsiento).draw(false);
+        //PARA ORDENAR LA TABLA
+        //tabla.order([6, 'desc']).draw();
     }
 });

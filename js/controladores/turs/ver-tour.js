@@ -132,7 +132,7 @@ $(document).ready(function () {
 
          ],
          "ajax": {
-            "url": URL_SERVIDOR + "TurPaquete/show?estado=1&tipo=tour",
+            "url": URL_SERVIDOR + "TurPaquete/showApp?estado=1&tipo=terrestresAdmin",
             "method": "GET",
             "dataSrc": function (json) {
                //PARA CONPROVAR QUE EL SERVICIO EXISTE

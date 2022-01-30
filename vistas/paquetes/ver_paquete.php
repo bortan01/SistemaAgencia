@@ -18,12 +18,12 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Paquetes Registrados</h1>
+               <h1>Tours Aéreos</h1>
             </div>
             <div class="col-sm-6">
                <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="../../home.php">Inicio</a></li>
-                  <li class="breadcrumb-item active">Paquetes Registrados</li>
+                  <li class="breadcrumb-item active">Tours Aéreos</li>
                   <button class="button button-circle alert" data-toggle="modal" data-target="#modal-ayuda"
                      id="botonAyudaMostrarPaquetes"> <i class="fas fa-question"></i></button>
                </ol>
@@ -38,7 +38,7 @@
          <div class="col-12">
             <div class="card">
                <div class="card-header">
-                  <h3 class="card-title">Paquetes Registrados</h3>
+                  <h3 class="card-title">Tours Aéreos</h3>
                </div>
                <!-- /.card-header -->
                <div class="card-body">

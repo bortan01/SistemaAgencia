@@ -149,7 +149,7 @@ $(document).ready(function () {
 
          ],
          "ajax": {
-            "url": URL_SERVIDOR + "TurPaquete/show?estado=1&tipo=Allpaquete",
+            "url": URL_SERVIDOR + "TurPaquete/showApp?estado=1&tipo=aereosAdmin",
             "method": "GET",
             "dataSrc": function (json) {
                //PARA CONPROVAR QUE EL SERVICIO EXISTE

@@ -126,7 +126,6 @@ $(document).ready(function () {
             modificarTotalForAcomodamiento();
 
         }
-
     });
 
 
@@ -293,7 +292,16 @@ $(document).ready(function () {
         ASIENTOS_SELECCIONADOS.forEach((element) => {
             total += parseFloat(element.subTotal);
             cantidad_asientos += parseInt(element.cantidad) * parseInt(element.seleccionables);
-            descripcionReserva = `${descripcionReserva} ${element.cantidad} X Asiento(s) ${element.tipo}  $${element.costo} c/u, Sub total: ${element.subTotal}  \n`
+            console.log(element);
+
+            // los elementos con id mayor que 1000 corresponden a servicios adicionales
+            if (element.id> 1000) {
+                descripcionReserva = `${descripcionReserva} ${element.cantidad} X ${element.tipo}  $${element.costo} c/u, Sub total: ${element.subTotal}  \n`
+            } else {
+                descripcionReserva = `${descripcionReserva} ${element.cantidad} X Asiento(s) ${element.tipo}  $${element.costo} c/u, Sub total: ${element.subTotal}  \n`
+
+            }
+
         });
         descripcionReserva = `${descripcionReserva}  Total : $${total}`
 
@@ -603,9 +611,6 @@ $(document).ready(function () {
             eliminar: html,
             seleccionables: 0
         };
-
-        console.log(nuevoAsiento);
-
         ASIENTOS_SELECCIONADOS = [...ASIENTOS_SELECCIONADOS, nuevoAsiento];
         tablaReserva.row.add(nuevoAsiento).draw(false);
         //PARA ORDENAR LA TABLA
