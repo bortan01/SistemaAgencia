@@ -99,8 +99,8 @@ include_once '../../plantillas/cabecera.php';
                                                 <div class="form-group">
                                                     <label>Seleccione que incluye:</label>
                                                     <div class="select2-danger">
-                                                        <select class="select2" multiple="multiple" name="opc_avanzadas"
-                                                            id="opc_avanzadas" data-placeholder="Seleccione"
+                                                        <select class="select2" multiple="multiple" name="incluye_hotel"
+                                                            id="incluye_hotel" data-placeholder="Seleccione"
                                                             data-dropdown-css-class="select2-danger"
                                                             style="width: 100%;">
                                                             <option>Estacionamiento Gratis</option>
@@ -203,7 +203,7 @@ $(function() {
 function OpcAvanzada() {
     let x = $("#insertarOpcion").val();
     let seleccion = $("<option></option>").val(x).text(x);
-    $("#opc_avanzadas").append(seleccion).trigger('change');
+    $("#incluye_hotel").append(seleccion).trigger('change');
 }
 </script>
 

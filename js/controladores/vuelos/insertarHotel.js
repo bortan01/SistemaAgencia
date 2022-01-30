@@ -25,7 +25,7 @@ $(document).ready(function () {
             form.append('fotos[]', galeria[i]);
         }
 
-        let comboOpciones = $("#opc_avanzadas").select2('data');
+        let comboOpciones = $("#incluye_hotel").select2('data');
             let arregloOpciones = [];
 
             for (let index = 0; index < comboOpciones.length; index++) {
@@ -38,7 +38,7 @@ $(document).ready(function () {
         form.append("nombrePais", document.getElementById("pais").value);
         form.append("precioNoche", document.getElementById("precio").value);
         form.append("descripcionHotel", document.getElementById("descripcion").value);
-        form.append("opc_avanzadas", arregloOpciones);
+        form.append("incluye", arregloOpciones);
      
 
         //OCUPAR ESTA CONFIGURACION CUANDO SE ENVIAEN ARCHIVOS(FOTOS-IMAGENES)
