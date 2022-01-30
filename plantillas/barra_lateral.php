@@ -273,6 +273,7 @@
                </ul>
             </li>
             <!--INCIA CARGO EXPRES MENU-->
+            <!--
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-mail-bulk"></i>
@@ -329,7 +330,7 @@
             <ul class="sub-menu children dropdown-menu">
                <li><i class="fa fa-user"></i>
                </li>
-            </ul>
+            </ul>-->
             <!--TERMINA CARGO EXPRES MENU-->
             <!--INCIA ASESORIA MIGRATORIA MENU-->
             <li class="nav-item has-treeview">
