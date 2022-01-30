@@ -85,17 +85,6 @@ $(document).ready(function () {
         var select = moment(fechaHora[0]).format('YYYY-MM-DD');
         var hoy = moment(new Date()).format('YYYY-MM-DD');
 
-        if (nombreDia == 'domingo') {//si es domingo dia que no abre la agencia
-          const Toast = Swal.mixin();
-          Toast.fire({
-            title: 'Error',
-            icon: 'error',
-            text: 'Este dia esta cerrado!',
-            showConfirmButton: true,
-          });
-          $('#calendar').fullCalendar('refetchEvents');//refrescar el calendario
-        } else {
-
           if (select >= hoy) {
 
             //***********codigo de procedimientos
@@ -163,7 +152,7 @@ $(document).ready(function () {
             $('#calendar').fullCalendar('refetchEvents');//refrescar el calendario
           }
 
-        }
+        
 
       }//fin else estado==0
 
