@@ -23,15 +23,7 @@ $(document).ready(function () {
       var select = moment(date).format('YYYY-MM-DD');
       var hoy = moment(new Date()).format('YYYY-MM-DD');
 
-      if (nombreDia == 'domingo') {//si es domingo dia que no abre la agencia
-        const Toast = Swal.mixin();
-        Toast.fire({
-          title: 'Error',
-          icon: 'error',
-          text: 'Este dia esta cerrado!',
-          showConfirmButton: true,
-        });
-      } else {
+     
         if (select >= hoy) {
 
           $('#modal_registro').modal();
@@ -47,10 +39,6 @@ $(document).ready(function () {
             showConfirmButton: true,
           });
         }
-
-
-
-      }//fin else domingo
     },
     events: URL_SERVIDOR + 'Cita/Cita',
        
