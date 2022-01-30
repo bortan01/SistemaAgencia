@@ -10,7 +10,7 @@ $(document).ready(function () {
     mostrarDatos();
     inicializarTablaTours();
     inicializarTabla();
-    inicializarTablaEncomiendas();
+   // inicializarTablaEncomiendas();
     inicializarTablaVehiculos();
     inicializarTablaVuelos();
     inicializarTablaAsesorias();
@@ -114,7 +114,7 @@ $(document).ready(function () {
 
     }
 
-    function inicializarTablaEncomiendas() {
+   /* function inicializarTablaEncomiendas() {
         $("#add-encomiendas").DataTable({
             "responsive": true,
             "autoWidth": false,
@@ -153,7 +153,7 @@ $(document).ready(function () {
             ]
         });
 
-    }
+    }*/
 
     function inicializarTablaVehiculos() {
         tabla = $("#add-vehiculos").DataTable({

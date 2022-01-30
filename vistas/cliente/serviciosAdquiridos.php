@@ -91,13 +91,14 @@ include_once '../../plantillas/barra_lateral.php';
                                           href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home"
                                           aria-selected="true">Tours/Paquetes</a>
                                     </li>
-
+                                    <!-- QUITANDO ENCOMIENDAS DE SERVICIOS ADQUIRIDOS
                                     <li class="nav-item">
                                        <a class="nav-link" id="custom-tabs-four-encomiendas-tab" data-toggle="pill"
                                           href="#custom-tabs-four-encomiendas" role="tab"
                                           aria-controls="custom-tabs-four-encomiendas"
                                           aria-selected="false">Encomiendas</a>
-                                    </li>
+                                    </li>-->
+
                                     <li class="nav-item">
                                        <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill"
                                           href="#custom-tabs-four-settings" role="tab"
@@ -143,7 +144,7 @@ include_once '../../plantillas/barra_lateral.php';
                                           </table>
                                        </div>
                                     </div>
-
+                                 <!-- PANEL DE ENCOMIENDAS
                                     <div class="tab-pane fade" id="custom-tabs-four-encomiendas" role="tabpanel"
                                        aria-labelledby="custom-tabs-four-encomiendas-tab">
                                        <div class="col-sm-12">
@@ -163,7 +164,8 @@ include_once '../../plantillas/barra_lateral.php';
                                              </tbody>
                                           </table>
                                        </div>
-                                    </div>
+                                    </div>-->
+                                    
                                     <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel"
                                        aria-labelledby="custom-tabs-four-settings-tab">
                                        <div class="col-sm-12">
