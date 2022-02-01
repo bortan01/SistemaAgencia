@@ -318,6 +318,6 @@ $('#fecha_salida').daterangepicker({
 <script src="<?= $base_url ?>plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
 
 <script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
-<script src="<?= $base_url ?>js/controladores/vuelos/insertarCotizacionHotel.js"></script>
+<script src="<?= $base_url ?>js/controladores/hoteles/insertarCotizacionHotel.js"></script>
 
 <?php include_once '../../plantillas/cierre.php'; ?>

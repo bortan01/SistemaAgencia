@@ -223,7 +223,7 @@ include_once '../../plantillas/footer.php';?>
 <script src="<?= $base_url ?>plugins/subir-foto/js/locales/es.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>plugins/subir-foto/themes/fas/theme.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="<?= $base_url?>js/controladores/vuelos/hoteles-app.js"></script>
+<script type="text/javascript" src="<?= $base_url?>js/controladores/hoteles/hoteles-app.js"></script>
 <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 
 

@@ -186,7 +186,7 @@ include_once '../../plantillas/footer.php';
 <!-- SCRIPT ADICIONALES -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<script type="text/javascript" src="<?= $base_url ?>js/controladores/vuelos/disponibilidadHotel.js"></script>
+<script type="text/javascript" src="<?= $base_url ?>js/controladores/hoteles/disponibilidadHotel.js"></script>
 <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 <!--fecha actual-->
 

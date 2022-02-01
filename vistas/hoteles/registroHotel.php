@@ -218,7 +218,7 @@ function OpcAvanzada() {
 <script src="<?= $base_url ?>plugins/subir-foto/themes/fas/theme.js" type="text/javascript"></script>
 
 <script src="<?= $base_url ?>js/controladores/bitacora/bitacora.js"></script>
-<script src="<?= $base_url ?>js/controladores/vuelos/insertarHotel.js"></script>
+<script src="<?= $base_url ?>js/controladores/hoteles/insertarHotel.js"></script>
 <script type="text/javascript" src="<?= $base_url ?>plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <?php include_once '../../plantillas/cierre.php'; ?>
