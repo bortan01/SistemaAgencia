@@ -73,7 +73,7 @@ include_once '../../plantillas/cabecera.php';
                                         <thead style="text-align: center;">
                                             <tr>
                                                 <th>Nombre de Hotel</th>
-                                                <th>País de Destino</th>
+                                                <th>País</th>
                                                 <th>Precio por Noche ($)</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -150,7 +150,7 @@ include_once '../../plantillas/cabecera.php';
                            
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label>País de Destino</label>
+                                    <label>País</label>
                                     <div class="input-group">
                                         <input id="pais" name="pais" type="text" class="form-control" >
                                     </div>
