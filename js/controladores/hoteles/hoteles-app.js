@@ -39,7 +39,7 @@ $(document).ready(function () {
     $(document).on('click', '.btn-group .btn-warning', function () {
         $('#modal-imagenes').modal('show');
         let identificador = $(this).attr("name");
-        let nombreTabla = 'hotel';
+        let nombreTabla = 'hoteles';
         let informacionAdicional = { tipo: nombreTabla, identificador: identificador };
         let urlFotos = [];
         let infoFotos = [];

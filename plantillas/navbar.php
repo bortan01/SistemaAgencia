@@ -35,7 +35,7 @@
                   <a href="#" class="dropdown-item">
                      <i class="fas fa-map-marked-alt mr-2">
                      </i> <span id="notificationPaquete" name="notificationPaquete">0 Cotizacion(es) de
-                        paquete(s)</span>
+                        Tours</span>
                   </a>
                   <div class="dropdown-divider"></div>
                   <a href="#" class="dropdown-item">
