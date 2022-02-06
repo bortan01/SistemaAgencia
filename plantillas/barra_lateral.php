@@ -504,6 +504,13 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="<?= $base_url ?>vistas/hoteles/mostrarCotizacionesHotel.php" class="nav-link">
+                                <i class="fas fa-ellipsis-v nav-icon"></i>
+                                <p>Mostrar Cotizaciones</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
                 <!--TERMINA VUELOS MIGRATORIA MENU-->
