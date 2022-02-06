@@ -496,13 +496,7 @@
                                 <p>Registrar Hotel</p>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a href="<?= $base_url ?>vistas/hoteles/cotizarHotel.php" class="nav-link">
-                                <i class="fas fa-ellipsis-v nav-icon"></i>
-                                <p>Registrar Cotización Hotel</p>
-                            </a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a href="<?= $base_url ?>vistas/hoteles/mostrarHoteles.php" class="nav-link">
                                 <i class="fas fa-ellipsis-v nav-icon"></i>
