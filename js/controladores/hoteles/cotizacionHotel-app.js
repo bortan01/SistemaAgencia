@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 
                 document.getElementById("precioTotal").value = response.informacion[i].total;
-                document.getElementById("respuestaV").value = response.informacion[i].respuesta;
+                document.getElementById("respuestaH").value = response.informacion[i].respuesta;
             }
 
         }).fail(function(response) {
@@ -216,7 +216,7 @@ $(document).ready(function() {
         let data = {
             "idcotizacion_hotel": idCotizar,
             "total": document.getElementById("precioTotal").value,
-            "respuesta": document.getElementById("respuestaV").value
+            "respuesta": document.getElementById("respuestaH").value
         };
         ///OCUPAR ESTA CONFIGURACION CUANDO SOLO SEA TEXTO
         $.ajax({

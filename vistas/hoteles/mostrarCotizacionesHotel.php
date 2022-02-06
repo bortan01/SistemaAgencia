@@ -139,7 +139,7 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Correo Electronico</label>
+                                    <label>Correo Electrónico</label>
                                     <div class="input-group">
                                         <input id="correo" name="correo" type="text" class="form-control" disabled>
                                     </div>
@@ -157,7 +157,7 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label>Precio</label>
+                                    <label>Precio/Noche ($)</label>
                                     <div class="input-group">
                                         <input id="costo" name="costo" type="text" class="form-control" disabled>
                                     </div>
@@ -175,7 +175,7 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Opciones Avanzadas</label>
+                                    <label>Servicios Adicionales</label>
                                     <div class="input-group">
                                         <textarea class="form-control" rows="2" id="servicios" name="servicios"
                                             type="text" class="form-control" disabled></textarea>
@@ -185,7 +185,7 @@ include_once '../../plantillas/cabecera.php';
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>Descripción de Habitaciones:</label>
+                                    <label>Descripción de Habitaciones</label>
                                     <textarea class="form-control" rows="4" id="descripcion_habitacion"
                                         name="descripcion_habitacion" disabled></textarea>
                                 </div>
@@ -193,7 +193,7 @@ include_once '../../plantillas/cabecera.php';
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Respuesta</label>
-                                    <textarea class="textarea" name="respuestaV" id="respuestaV"
+                                    <textarea class="textarea" name="respuestaH" id="respuestaH"
                                         style="width: 100%; height: 50px; font-size: 16px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 </div>
                             </div>

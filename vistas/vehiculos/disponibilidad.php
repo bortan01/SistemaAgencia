@@ -180,7 +180,7 @@ h6 {
                            </div>
                            <div class="mt-4">
                               <button class="btn btn-block btn-success btn-flat" id="btnReservar" name="btnReservar">
-                                 <i class="fas fa-cart-plus fa-lg"></i>
+                                 <i class=" fa-lg"></i>
                                  Reservar Vehículo
                               </button>
                            </div>
