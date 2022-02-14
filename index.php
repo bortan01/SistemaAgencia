@@ -39,7 +39,7 @@ if (isset($_SESSION["activoA"]) && isset($_SESSION["nivelA"])) {
 </head>
 
 <body class="hold-transition login-page">
-            <svg viewBox="0 0 3387 1270">
+            <svg viewBox="0 0 3387 1075">
                 <path id="caminoAvion" class="caminoAvion"
                     d="M-226 626c439,4 636,-213 934,-225 755,-31 602,769 1334,658 562,-86 668,-698 266,-908 -401,-210 -893,189 -632,630 260,441 747,121 1051,91 360,-36 889,179 889,179" />
                 <g id="avion">
