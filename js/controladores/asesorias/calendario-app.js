@@ -23,8 +23,9 @@ $(document).ready(function () {
       var select = moment(date).format('YYYY-MM-DD');
       var hoy = moment(new Date()).format('YYYY-MM-DD');
 
+     // alert('select='+select+'hoy='+hoy);
      
-        if (select >= hoy) {
+        if (select > hoy) {
 
           $('#modal_registro').modal();
           $('#txtFecha').val(date.format("DD-MM-YYYY"));
@@ -35,7 +36,7 @@ $(document).ready(function () {
           Toast.fire({
             title: 'Error',
             icon: 'error',
-            text: 'No se puede agendar una cita en el pasado',
+            text: 'No se puede agendar una cita en el pasado, tampoco el dia actual',
             showConfirmButton: true,
           });
         }
