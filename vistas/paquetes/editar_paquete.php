@@ -75,7 +75,7 @@
                                     </div>
                                  </div>
                               </div>
-                              <div class="row">
+                              <!-- <div class="row">
                                  <div class="ml-2"><label for="">Tipo de Paquete</label></div>
                                  <div class="form-check mx-auto icheck-success">
 
@@ -92,7 +92,7 @@
                                        Paquete Internacional
                                     </label>
                                  </div>
-                              </div>
+                              </div> -->
                               <div class="row">
                                  <div class="col-sm-12">
                                     <!-- text input -->
