@@ -898,7 +898,7 @@ function obtenerData() {
       }
 
    }
-   let tipoPaquete = $("input[name='radioTipoPaquete']:checked").val();
+   let tipoPaquete = 'aereos';
 
    form.append("id_tours", ID_PAQUETE);
    form.append("sitios", JSON.stringify(sistiosTuristicos));

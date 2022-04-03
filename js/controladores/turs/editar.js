@@ -922,7 +922,7 @@ function obtenerData() {
    let fecha = valor.split(" - ");
    let start = fecha[0]
    let end = fecha[1]
-   let tipoPaquete = $("input[name='radioTipoPaquete']:checked").val();
+   let tipoPaquete = 'terrestres';
 
    form.append("id_tours", ID_TUR);
    form.append("sitios", JSON.stringify(sistiosTuristicos));
