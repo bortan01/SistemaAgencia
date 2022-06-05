@@ -253,9 +253,9 @@ $(document).on('click', '.info_contacto', function () {
 
 function inicializarTipo(tipo) {
    if (tipo == 'Paquete Internacional') {
-      document.getElementById('radioTipoPaqueteInternacional').checked = true;
+      //document.getElementById('radioTipoPaqueteInternacional').checked = true;
    } else {
-      document.getElementById('radioTipoPaqueteNacional').checked = true;
+      //document.getElementById('radioTipoPaqueteNacional').checked = true;
    }
 }
 
