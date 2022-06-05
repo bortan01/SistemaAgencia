@@ -82,7 +82,7 @@ $(document).ready(function () {
     });
     //Boton Eliminar
     $(document).on('click', '.btn-group .btn-danger', function (evento) {
-        idCotizar = $(this).attr("name");
+        idPromocion = $(this).attr("name");
         fila = $(this).closest("tr");
 
         const Toast = Swal.mixin();
