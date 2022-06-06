@@ -33,12 +33,12 @@ $(document).ready(function() {
                     imgBig.className = "product-image";
                     imgBig.src = galeria[index];
                     imagenGrande.appendChild(imgBig);
-                    let crear = $('#' + index);
+                    let crear = $('#2' + index);
                     crear.empty();
                     crear.append('<img src="' + galeria[index] + '" alt="">');
                     crear.show();
                 } else {
-                    let crear = $('#' + index);
+                    let crear = $('#2' + index);
                     crear.empty();
                     crear.append('<img src="' + galeria[index] + '" alt="">');
                     crear.show();
@@ -47,7 +47,7 @@ $(document).ready(function() {
             }
             for (let i = galeria.length; i <= 10; i++) {
                 //alert('aqui estoy');
-                $('#' + i).hide();
+                $('#2' + i).hide();
             }
             
            
