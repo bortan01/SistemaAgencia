@@ -271,7 +271,7 @@ $(document).ready(function() {
                 showConfirmButton: true,
             }).then((result) => {
                 $('#modal-editar').modal('hide');;
-                tablaCotizaciones.ajax.reload(null, false);
+                location.reload();
             });
         }).fail(function(response) {
             console.log(response);
@@ -309,7 +309,7 @@ $(document).ready(function() {
                 text: response.mensaje,
                 showConfirmButton: true,
             }).then((result) => {
-                tablaCotizaciones.ajax.reload(null, false);
+                location.reload();
             });
         }).fail(function(response) {
 
