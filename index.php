@@ -1,7 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION["activoA"]) && isset($_SESSION["nivelA"])) {
-   header('Location: home.php');
+   header('Location: home.php');  
+  //dd
 }
 ?>
 <!DOCTYPE html>
